@@ -1,0 +1,190 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6915,        182]
+NotebookOptionsPosition[      6200,        162]
+NotebookOutlinePosition[      6556,        178]
+CellTagsIndexPosition[      6513,        175]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "The number of divisors of 120 is 16.\nIn fact 120 is the smallest number \
+having 16 divisors.\n\nFind the smallest number with ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["2", "500500"], TraditionalForm]],ExpressionUUID->
+  "9d2a17a8-7e1f-48e3-a3bf-1ac7e61f76f0"],
+ " divisors.\nGive your answer modulo 500500507."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.731733228323801*^9, 
+  3.731733250058233*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "120\:7684\:56e0\:6570\:6570\:76ee\:4e3a16\:3002\n\
+\:4e8b\:5b9e\:4e0a120\:662f\:6700\:5c0f\:7684\:670916\:4e2a\:56e0\:6570\:7684\
+\:6570\:3002\n\n\:627e\:51fa\:6700\:5c0f\:7684\:6709",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["2", "500500"], TraditionalForm]],ExpressionUUID->
+  "b567e90b-8989-4d6d-a635-975089d5af89"],
+ "\:4e2a\:56e0\:6570\:7684\:6570\:3002\n\:7ed9\:51fa\:8fd9\:4e2a\:6570\:9664\
+\:4ee5500500507\:7684\:4f59\:6570\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.7317332449534817`*^9, 
+   3.731733255057855*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{"n", "=", 
+  RowBox[{
+   SuperscriptBox[
+    SubscriptBox["p", "1"], 
+    SubscriptBox["a", "1"]], " ", 
+   SuperscriptBox[
+    SubscriptBox["p", "2"], 
+    SubscriptBox["a", "2"]], " ", "\[Ellipsis]", " ", 
+   SuperscriptBox[
+    SubscriptBox["p", "k"], 
+    SubscriptBox["a", "k"]]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DivisorSigma", "[", 
+   RowBox[{"0", ",", "n"}], "]"}], "\[Equal]", 
+  RowBox[{"Length", "[", 
+   RowBox[{"Divisors", "[", "n", "]"}], "]"}], "\[Equal]", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     SubscriptBox["a", "1"], "+", "1"}], ")"}], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     SubscriptBox["a", "2"], "+", "1"}], ")"}], " ", "\[Ellipsis]", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     SubscriptBox["a", "k"], "+", "1"}], ")"}]}]}]}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.7317332449534817`*^9, 3.731733255057855*^9}, {3.7334819826589165`*^9, 
+   3.7334820652421846`*^9}},ExpressionUUID->"1c99af18-2154-487a-aafc-\
+427f18db9808"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "500500"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"m", "=", "500500507"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p", "=", 
+   RowBox[{"Prime", "[", 
+    RowBox[{"Range", "[", 
+     RowBox[{"1", ",", "n"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"i", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{"0", ",", "n"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"j", "=", "1"}], ",", 
+    RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+    RowBox[{"j", "=", 
+     RowBox[{"j", "+", "1"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"t", "=", 
+      RowBox[{"Ordering", "[", 
+       RowBox[{
+        SuperscriptBox["p", 
+         SuperscriptBox["2", "i"]], ",", "1"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"i", "\[LeftDoubleBracket]", "t", "\[RightDoubleBracket]"}], 
+      "=", 
+      RowBox[{
+       RowBox[{"i", "\[LeftDoubleBracket]", "t", "\[RightDoubleBracket]"}], 
+       "+", "1"}]}], ";"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Mod", "[", 
+  RowBox[{
+   RowBox[{"Times", "@@", 
+    RowBox[{"PowerMod", "[", 
+     RowBox[{"p", ",", 
+      RowBox[{
+       SuperscriptBox["2", "i"], "-", "1"}], ",", "m"}], "]"}]}], ",", "m"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+   3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+   3.7250282267187443`*^9}, {3.72503044347628*^9, 3.725030445342036*^9}, {
+   3.73137022057948*^9, 3.731370282652954*^9}, {3.7317332674657745`*^9, 
+   3.731733276346758*^9}, {3.731733655737017*^9, 3.731733713511917*^9}, {
+   3.7317337500859985`*^9, 3.7317338060428667`*^9}, {3.73173393951215*^9, 
+   3.7317340112987804`*^9}, {3.7317340432086496`*^9, 
+   3.7317340489981527`*^9}, {3.731734093280903*^9, 3.731734127083865*^9}, {
+   3.731734205566044*^9, 3.7317342313319907`*^9}, {3.731734302495943*^9, 
+   3.7317343173496304`*^9}, {3.7317343528435063`*^9, 
+   3.7317343853410177`*^9}, {3.7317344353341885`*^9, 
+   3.7317344485660515`*^9}, {3.7317345173503304`*^9, 
+   3.7317345288502507`*^9}, {3.731734578311825*^9, 3.731734623090129*^9}, {
+   3.731734663310317*^9, 3.7317346925671864`*^9}, {3.7317348107269382`*^9, 
+   3.7317348248718314`*^9}, {3.731734907479641*^9, 3.731734927070652*^9}, {
+   3.7317349793163705`*^9, 3.7317349871401405`*^9}, 3.7317350195976057`*^9, {
+   3.731735057693408*^9, 3.731735061670895*^9}, {3.7317351077756743`*^9, 
+   3.7317351090340877`*^9}, {3.731735175132369*^9, 3.73173522732699*^9}, 
+   3.7317352621461325`*^9, {3.731735301413226*^9, 3.731735342373247*^9}, {
+   3.7317353927498426`*^9, 
+   3.7317354202317204`*^9}},ExpressionUUID->"20386a64-a558-4827-99f8-\
+04921bede5b8"],
+
+Cell[BoxData["35407281"], "Output",
+ CellChangeTimes->{{3.731734123467803*^9, 3.731734127934824*^9}, {
+   3.731734207178852*^9, 3.7317342317454677`*^9}, 3.731734324645828*^9, 
+   3.731734369488222*^9, 3.7317345159447517`*^9, 3.7317345715292025`*^9, {
+   3.7317348189942293`*^9, 3.731734832550459*^9}, 3.731735052172208*^9, 
+   3.7317351019150925`*^9, {3.7317351783299413`*^9, 3.7317352299379234`*^9}, 
+   3.7317353177686014`*^9, 3.7317354025038223`*^9, 
+   3.7318616929378524`*^9},ExpressionUUID->"615b4787-d452-4139-ba74-\
+5fd99ff8b45b"]
+}, Open  ]]
+},
+WindowSize->{681, 676},
+WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 527, 12, 127, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1088, 34, 679, 15, 127, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[1770, 51, 1061, 31, 61, "Text",ExpressionUUID->"1c99af18-2154-487a-aafc-427f18db9808"],
+Cell[CellGroupData[{
+Cell[2856, 86, 2787, 63, 342, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[5646, 151, 538, 8, 37, "Output",ExpressionUUID->"615b4787-d452-4139-ba74-5fd99ff8b45b"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,493 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     19139,        485]
+NotebookOptionsPosition[     18021,        459]
+NotebookOutlinePosition[     18449,        476]
+CellTagsIndexPosition[     18406,        473]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Take a sequence of length n. Discard the first term then make a sequence of \
+the partial summations. Continue to do this over and over until we are left \
+with a single term. We define this to be ",
+ Cell[BoxData[
+  RowBox[{"f", "[", "n", "]"}]],ExpressionUUID->
+  "76fab2bd-9f67-4d10-a517-6fc795b8ae8a"],
+ ".\n\nConsider the example where we start with a sequence of length 8:\n\n",
+ Cell[BoxData[GridBox[{
+    {"1", "1", "1", "1", "1", "1", "1", "1"},
+    {"\[SpanFromAbove]", "1", "2", "3", "4", "5", "6", "7"},
+    {"\[SpanFromAbove]", "\[SpanFromAbove]", "2", "5", "9", "14", "20", "27"},
+    {"\[SpanFromAbove]", "\[SpanFromAbove]", "\[SpanFromAbove]", "5", "14", 
+     "28", "48", "75"},
+    {"\[SpanFromAbove]", "\[SpanFromAbove]", "\[SpanFromAbove]", 
+     "\[SpanFromAbove]", "14", "42", "90", "165"},
+    {"\[SpanFromAbove]", "\[SpanFromAbove]", "\[SpanFromAbove]", 
+     "\[SpanFromAbove]", "\[SpanFromAbove]", "42", "132", "297"},
+    {"\[SpanFromAbove]", "\[SpanFromAbove]", "\[SpanFromAbove]", 
+     "\[SpanFromAbove]", "\[SpanFromAbove]", "\[SpanFromAbove]", "132", "429"},
+    {"\[SpanFromAbove]", "\[SpanFromAbove]", "\[SpanFromAbove]", 
+     "\[SpanFromAbove]", "\[SpanFromAbove]", "\[SpanFromAbove]", 
+     "\[SpanFromAbove]", "429"}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]],
+  CellChangeTimes->{{3.8177216530740743`*^9, 3.8177216668501034`*^9}, {
+   3.817721741480616*^9, 3.8177217834100857`*^9}},ExpressionUUID->
+  "3868eeac-4170-4b68-b1d7-2ce533ea7524"],
+ "\n\nThen the final number is 429, so ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"f", "[", "8", "]"}], "=", "429"}]],ExpressionUUID->
+  "9f65b964-e409-4904-9b14-d68c8ae17a4a"],
+ ".\n\nFor this problem we start with the sequence ",
+ Cell[BoxData[
+  RowBox[{
+  "1", ",", "3", ",", "4", ",", "7", ",", "11", ",", "18", ",", "29", ",", 
+   "47", ",", "\[Ellipsis]"}]],ExpressionUUID->
+  "b5cb6620-8a42-4131-8922-3d921d7a71f2"],
+ "\nThis is the Lucas sequence where two terms are added to get the next \
+term.\nApplying the same process as above we get ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"f", "[", "8", "]"}], "=", "2663"}]],ExpressionUUID->
+  "1a6e011f-b76f-48d6-80be-b8b86f36f0a1"],
+ ".\nYou are also given ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"Mod", "[", 
+    RowBox[{
+     RowBox[{"f", "[", "20", "]"}], ",", "1000000007"}], "]"}], "=", 
+   "742296999"}]],ExpressionUUID->"2d80e274-c731-4d84-b029-264f80d4f308"],
+ "\nFind ",
+ Cell[BoxData[
+  RowBox[{"Mod", "[", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     SuperscriptBox["10", "8"], "]"}], ",", "1000000007"}], "]"}]],
+  ExpressionUUID->"bdf07eff-cc20-47d4-9a63-89bf309a2040"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.8177212515908413`*^9, 3.817721272437851*^9}, {
+  3.8177217930039797`*^9, 3.8177219129236593`*^9}, {3.8177220355197144`*^9, 
+  3.8177220355197144`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:53d6\:957f\:5ea6\:4e3an\:7684\:5e8f\:5217\:3002\:820d\:5f03\:7b2c\:4e00\
+\:9879\:ff0c\:7136\:540e\:6c42\:90e8\:5206\:548c\:7684\:5e8f\:5217\:3002\:7ee7\
+\:7eed\:53cd\:590d\:8fdb\:884c\:6b64\:64cd\:4f5c\:ff0c\:76f4\:5230\:6211\:4eec\
+\:5269\:4e0b\:4e00\:4e2a\:9879\:4e3a\:6b62\:3002\:6211\:4eec\:5c06\:5176\:5b9a\
+\:4e49\:4e3a",
+ Cell[BoxData[
+  RowBox[{"f", "[", "n", "]"}]],
+  FormatType->"StandardForm",ExpressionUUID->
+  "cc223327-5c98-44dc-8a88-d0921f8113b3"],
+ "\:3002\n\n\:8003\:8651\:4ece\:957f\:5ea6\:4e3a8\:7684\:5e8f\:5217\:5f00\
+\:59cb\:7684\:793a\:4f8b\:ff1a\n\n",
+ Cell[BoxData[GridBox[{
+    {"1", "1", "1", "1", "1", "1", "1", "1"},
+    {"\[SpanFromAbove]", "1", "2", "3", "4", "5", "6", "7"},
+    {"\[SpanFromAbove]", "\[SpanFromAbove]", "2", "5", "9", "14", "20", "27"},
+    {"\[SpanFromAbove]", "\[SpanFromAbove]", "\[SpanFromAbove]", "5", "14", 
+     "28", "48", "75"},
+    {"\[SpanFromAbove]", "\[SpanFromAbove]", "\[SpanFromAbove]", 
+     "\[SpanFromAbove]", "14", "42", "90", "165"},
+    {"\[SpanFromAbove]", "\[SpanFromAbove]", "\[SpanFromAbove]", 
+     "\[SpanFromAbove]", "\[SpanFromAbove]", "42", "132", "297"},
+    {"\[SpanFromAbove]", "\[SpanFromAbove]", "\[SpanFromAbove]", 
+     "\[SpanFromAbove]", "\[SpanFromAbove]", "\[SpanFromAbove]", "132", "429"},
+    {"\[SpanFromAbove]", "\[SpanFromAbove]", "\[SpanFromAbove]", 
+     "\[SpanFromAbove]", "\[SpanFromAbove]", "\[SpanFromAbove]", 
+     "\[SpanFromAbove]", "429"}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]],
+  CellChangeTimes->{{3.8177216530740743`*^9, 3.8177216668501034`*^9}, {
+   3.817721741480616*^9, 3.8177217834100857`*^9}},ExpressionUUID->
+  "7b7cca87-ed4d-4ae9-95c9-e52f535a1f07"],
+ "\n\n\:90a3\:4e48\:6700\:7ec8\:7684\:6570\:5b57\:662f429\:ff0c\:56e0\:6b64",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"f", "[", "8", "]"}], "=", "429"}]],
+  FormatType->"StandardForm",ExpressionUUID->
+  "79ca68f4-0fda-45a3-aa3e-9bfe28c3191b"],
+ "\:3002\n\n\
+\:5bf9\:4e8e\:8fd9\:4e2a\:95ee\:9898\:ff0c\:6211\:4eec\:4ece\:5e8f\:5217",
+ Cell[BoxData[
+  RowBox[{
+  "1", ",", "3", ",", "4", ",", "7", ",", "11", ",", "18", ",", "29", ",", 
+   "47", ",", "\[Ellipsis]"}]],
+  FormatType->"StandardForm",ExpressionUUID->
+  "73265f48-032e-47bd-9f78-e8be43d5079b"],
+ "\:5f00\:59cb\n\:8fd9\:662f\:5362\:5361\:65af\:5e8f\:5217\:ff0c\:5176\:4e2d\
+\:6dfb\:52a0\:4e86\:4e24\:4e2a\:9879\:4ee5\:5f97\:5230\:4e0b\:4e00\:4e2a\:9879\
+\:3002\n\:5e94\:7528\:4e0e\:4e0a\:8ff0\:76f8\:540c\:7684\:8fc7\:7a0b\:ff0c\
+\:6211\:4eec\:5f97\:5230",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"f", "[", "8", "]"}], "=", "2663"}]],
+  FormatType->"StandardForm",ExpressionUUID->
+  "9ea870e7-dce5-48b1-8dbd-b27ced985bc6"],
+ "\:3002\n\:5df2\:77e5",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"Mod", "[", 
+    RowBox[{
+     RowBox[{"f", "[", "20", "]"}], ",", "1000000007"}], "]"}], "=", 
+   "742296999"}]],
+  FormatType->"StandardForm",ExpressionUUID->
+  "21cb8f41-f1c9-413b-b715-4081a11d4fb0"],
+ "\:ff0c\n\:6c42",
+ Cell[BoxData[
+  RowBox[{"Mod", "[", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     SuperscriptBox["10", "8"], "]"}], ",", "1000000007"}], "]"}]],
+  FormatType->"StandardForm",ExpressionUUID->
+  "685e2ba1-9bed-416b-a04d-c49657473cae"],
+ "\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.8177220751384306`*^9, 
+   3.8177222126096745`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"FibonacciMod", "[", 
+    RowBox[{"0", ",", "m_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"FibonacciMod", "[", 
+     RowBox[{"0", ",", "m"}], "]"}], "=", 
+    RowBox[{"Mod", "[", 
+     RowBox[{"0", ",", "m"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"FibonacciMod", "[", 
+    RowBox[{"1", ",", "m_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"FibonacciMod", "[", 
+     RowBox[{"1", ",", "m"}], "]"}], "=", 
+    RowBox[{"Mod", "[", 
+     RowBox[{"1", ",", "m"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"FibonacciMod", "[", 
+    RowBox[{"n_", ",", "m_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"FibonacciMod", "[", 
+     RowBox[{"n", ",", "m"}], "]"}], "=", 
+    RowBox[{"Block", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"$RecursionLimit", "=", 
+        RowBox[{"+", "\[Infinity]"}]}], "}"}], ",", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"OddQ", "[", "n", "]"}], ",", 
+        RowBox[{"Mod", "[", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox[
+            RowBox[{"FibonacciMod", "[", 
+             RowBox[{
+              FractionBox[
+               RowBox[{"n", "+", "1"}], "2"], ",", "m"}], "]"}], "2"], "+", 
+           SuperscriptBox[
+            RowBox[{"FibonacciMod", "[", 
+             RowBox[{
+              FractionBox[
+               RowBox[{"n", "-", "1"}], "2"], ",", "m"}], "]"}], "2"]}], ",", 
+          "m"}], "]"}], ",", 
+        RowBox[{"Mod", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"FibonacciMod", "[", 
+            RowBox[{
+             FractionBox["n", "2"], ",", "m"}], "]"}], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", " ", 
+              RowBox[{"FibonacciMod", "[", 
+               RowBox[{
+                RowBox[{
+                 FractionBox["n", "2"], "-", "1"}], ",", "m"}], "]"}]}], "+", 
+             RowBox[{"FibonacciMod", "[", 
+              RowBox[{
+               FractionBox["n", "2"], ",", "m"}], "]"}]}], ")"}]}], ",", 
+          "m"}], "]"}]}], "]"}]}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"LucasLMod", "[", 
+    RowBox[{"n_", ",", "m_"}], "]"}], ":=", 
+   RowBox[{"Mod", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"FibonacciMod", "[", 
+       RowBox[{
+        RowBox[{"n", "-", "1"}], ",", "m"}], "]"}], "+", 
+      RowBox[{"FibonacciMod", "[", 
+       RowBox[{
+        RowBox[{"n", "+", "1"}], ",", "m"}], "]"}]}], ",", "m"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"LucasTheorem", "[", 
+    RowBox[{"a_", ",", "b_", ",", 
+     RowBox[{"p_", "?", "PrimeQ"}]}], "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"pn", "=", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"IntegerDigits", "[", 
+           RowBox[{"#", ",", "p"}], "]"}], "&"}], "/@", 
+         RowBox[{"{", 
+          RowBox[{"a", ",", "b"}], "}"}]}]}], ",", "sn"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"sn", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"PadLeft", "[", 
+          RowBox[{"#", ",", 
+           RowBox[{"Max", "[", 
+            RowBox[{"Length", "/@", "pn"}], "]"}]}], "]"}], "&"}], "/@", 
+        "pn"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Mod", "[", 
+       RowBox[{
+        RowBox[{"Times", "@@", 
+         RowBox[{"Mod", "[", 
+          RowBox[{
+           RowBox[{"Binomial", "@@@", 
+            RowBox[{"Transpose", "@", "sn"}]}], ",", "p"}], "]"}]}], ",", 
+        "p"}], "]"}]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SquareFreeMod", "[", 
+    RowBox[{"a_", ",", "b_", ",", 
+     RowBox[{"p_", "?", "SquareFreeQ"}]}], "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"pp", ",", "xx"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"pp", "=", 
+       RowBox[{
+        RowBox[{"FactorInteger", "[", "p", "]"}], "\[LeftDoubleBracket]", 
+        RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"xx", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"LucasTheorem", "[", 
+          RowBox[{"a", ",", "b", ",", "#"}], "]"}], "&"}], "/@", "pp"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"ChineseRemainder", "[", 
+       RowBox[{"xx", ",", "pp"}], "]"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"BinomialMod", "[", 
+   RowBox[{"n_Integer", ",", "m_Integer", ",", "p_Integer"}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"n", "<", "m"}], ",", 
+       RowBox[{"Return", "[", "0", "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Which", "[", 
+      RowBox[{
+       RowBox[{"PrimeQ", "@", "p"}], ",", 
+       RowBox[{"LucasTheorem", "[", 
+        RowBox[{"n", ",", "m", ",", "p"}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"SquareFreeQ", "@", "p"}], ",", 
+       RowBox[{"SquareFreeMod", "[", 
+        RowBox[{"n", ",", "m", ",", "p"}], "]"}], ",", "\[IndentingNewLine]", 
+       "True", ",", 
+       RowBox[{"Mod", "[", 
+        RowBox[{
+         RowBox[{"Binomial", "[", 
+          RowBox[{"n", ",", "m"}], "]"}], ",", "p"}], "]"}]}], "]"}]}]}], 
+   "]"}]}]}], "Input",
+ CellChangeTimes->{{3.8177276749551516`*^9, 3.8177276938588915`*^9}, {
+   3.8177278472462664`*^9, 3.8177279253113923`*^9}, {3.817728206502525*^9, 
+   3.81772836110075*^9}, {3.817728629975519*^9, 3.817728682916418*^9}, {
+   3.817728740758419*^9, 3.8177287454554863`*^9}, {3.8177288085971537`*^9, 
+   3.817728855436083*^9}, {3.817728888682827*^9, 3.817728920397169*^9}, {
+   3.8177289933118043`*^9, 3.8177290174134197`*^9}, {3.817729060997589*^9, 
+   3.8177291036904507`*^9}, {3.817770135389614*^9, 3.8177701395473824`*^9}, {
+   3.817770357145249*^9, 3.8177703622328606`*^9}, {3.8177727010506997`*^9, 
+   3.817772758557867*^9}, {3.817773945755127*^9, 3.8177739617539854`*^9}, 
+   3.8177740319788256`*^9, {3.817774103911173*^9, 3.8177741045333176`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"ff6be5d1-0652-444f-90df-77c3f9046cfa"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{
+    SuperscriptBox["10", "8"], "-", "1"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m", "=", "1000000007"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Monitor", "[", 
+  RowBox[{
+   RowBox[{"Mod", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Sum", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"LucasTheorem", "[", 
+          RowBox[{
+           RowBox[{"n", "+", "i", "-", "2"}], ",", 
+           RowBox[{"n", "-", "1"}], ",", "m"}], "]"}], " ", 
+         RowBox[{"(", 
+          RowBox[{"n", "-", "i", "+", "1"}], ")"}], " ", 
+         RowBox[{"LucasLMod", "[", 
+          RowBox[{
+           RowBox[{"n", "+", "2", "-", "i"}], ",", "m"}], "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], " ", 
+      RowBox[{"ModularInverse", "[", 
+       RowBox[{"n", ",", "m"}], "]"}]}], ",", "m"}], "]"}], ",", "i"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.817728374851473*^9, 3.817728540657699*^9}, {
+   3.8177287727687793`*^9, 3.8177287931842966`*^9}, {3.817728869102338*^9, 
+   3.817728878608522*^9}, {3.8177289386020956`*^9, 3.8177289850164137`*^9}, {
+   3.817729027507*^9, 3.817729040684579*^9}, {3.817729110518793*^9, 
+   3.817729146286886*^9}, {3.8177700482987404`*^9, 3.817770149587824*^9}, {
+   3.817772775591479*^9, 3.8177728819910808`*^9}, {3.817772933553362*^9, 
+   3.817772977665854*^9}, {3.8177739013174224`*^9, 3.81777393992802*^9}, 
+   3.8177739814948015`*^9, 
+   3.817774175098304*^9},ExpressionUUID->"006cc9a2-52a9-4754-819e-\
+474e62a01d4c"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Transpose", "nmtx", 
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"IntegerDigits\\\", \
+\\\"[\\\", RowBox[{RowBox[{\\\"99999997\\\", \\\"+\\\", \\\"i\\\"}], \
+\\\",\\\", \\\"1000000007\\\"}], \\\"]\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"0\\\", \\\",\\\", \\\"99999998\\\"}], \\\"}\\\"}]}], \
+\\\"}\\\"}]\\) \:7684\:524d\:4e24\:5c42\:65e0\:6cd5\:8f6c\:7f6e.\"", 2, 42, 1,
+    30709786741541978961, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.817773910665645*^9, 3.817773932893339*^9}, 
+   3.817773990995705*^9, 3.8177740362764587`*^9, 3.8177741441787615`*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[40]:=",ExpressionUUID->"a03cac89-9d3e-4ee6-979c-\
+615f5a31f162"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Transpose", "nmtx", 
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \\\",\\\", \
+RowBox[{\\\"Binomial\\\", \\\"[\\\", RowBox[{RowBox[{\\\"IntegerDigits\\\", \
+\\\"[\\\", RowBox[{RowBox[{\\\"99999997\\\", \\\"+\\\", \\\"i\\\"}], \
+\\\",\\\", \\\"1000000007\\\"}], \\\"]\\\"}], \\\",\\\", \\\"99999998\\\"}], \
+\\\"]\\\"}]}], \\\"}\\\"}]\\) \
+\:7684\:524d\:4e24\:5c42\:65e0\:6cd5\:8f6c\:7f6e.\"", 2, 42, 2, 
+   30709786741541978961, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.817773910665645*^9, 3.817773932893339*^9}, 
+   3.817773990995705*^9, 3.8177740362764587`*^9, 3.8177741441877613`*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[40]:=",ExpressionUUID->"17be16ff-7cec-4422-a9d1-\
+e7eeaafa64b4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", 
+   SuperscriptBox["10", "6"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m", "=", "1000000007"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Monitor", "[", 
+  RowBox[{
+   RowBox[{"Mod", "[", 
+    RowBox[{
+     RowBox[{"Sum", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"LucasTheorem", "[", 
+         RowBox[{
+          RowBox[{"n", "+", "i", "-", "2"}], ",", 
+          RowBox[{"n", "-", "1"}], ",", "m"}], "]"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"n", "-", "i", "+", "1"}], ")"}], " ", 
+        RowBox[{"LucasLMod", "[", 
+         RowBox[{
+          RowBox[{"n", "+", "2", "-", "i"}], ",", "m"}], "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", "m"}], "]"}], 
+   ",", "i"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.817774189167644*^9, 3.817774206475247*^9}, {
+  3.81777423755295*^9, 3.8177742394795723`*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"c3a43bda-4fbd-40f0-a052-075c5acaa530"],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{{3.8177741965761166`*^9, 3.817774203202913*^9}, {
+  3.8177742335995116`*^9, 3.8177742629173965`*^9}},
+ CellLabel->"Out[20]=",ExpressionUUID->"2d78e5a9-7770-4285-a800-2a0c577038b0"]
+}, Open  ]]
+},
+WindowSize->{1525.2, 796.1999999999999},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (2020\:5e747\:670815\
+\:65e5)",
+StyleDefinitions->"Homework.nb",
+ExpressionUUID->"a81912bd-4d91-43e5-a7c7-dab4d3c5072d"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 3087, 67, 465, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[3648, 89, 3599, 80, 465, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[7250, 171, 6338, 173, 686, "Input",ExpressionUUID->"ff6be5d1-0652-444f-90df-77c3f9046cfa"],
+Cell[CellGroupData[{
+Cell[13613, 348, 1582, 38, 89, "Input",ExpressionUUID->"006cc9a2-52a9-4754-819e-474e62a01d4c"],
+Cell[15198, 388, 747, 14, 24, "Message",ExpressionUUID->"a03cac89-9d3e-4ee6-979c-615f5a31f162"],
+Cell[15948, 404, 767, 15, 24, "Message",ExpressionUUID->"17be16ff-7cec-4422-a9d1-e7eeaafa64b4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16752, 424, 1015, 27, 89, "Input",ExpressionUUID->"c3a43bda-4fbd-40f0-a052-075c5acaa530"],
+Cell[17770, 453, 235, 3, 33, "Output",ExpressionUUID->"2d78e5a9-7770-4285-a800-2a0c577038b0"]
+}, Open  ]]
+}
+]
+*)
+

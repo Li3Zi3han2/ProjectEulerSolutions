@@ -1,0 +1,225 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8411,        217]
+NotebookOptionsPosition[      7783,        198]
+NotebookOutlinePosition[      8141,        214]
+CellTagsIndexPosition[      8098,        211]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Dave is doing his homework on the balcony and, preparing a presentation about \
+Pythagorean triangles, has just cut out a triangle with side lengths 30cm, \
+40cm and 50cm from some cardboard, when a gust of wind blows the triangle \
+down into the garden.
+Another gust blows a small ant straight onto this triangle. The poor ant is \
+completely disoriented and starts to crawl straight ahead in random direction \
+in order to get back into the grass.
+
+Assuming that all possible positions of the ant within the triangle and all \
+possible directions of moving on are equiprobable, what is the probability \
+that the ant leaves the triangle along its longest side?
+Give your answer rounded to 10 digits after the decimal point.\
+\>", "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.7333971525060234`*^9, 
+  3.7333971545281525`*^9}, {3.7551374397465725`*^9, 
+  3.7551374418132725`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell["\<\
+\:6234\:592b\:6b63\:5728\:9633\:53f0\:4e0a\:505a\:5bb6\:5ead\:4f5c\:4e1a\:ff1b\
+\:4e3a\:4e86\:51c6\:5907\:4e00\:4e2a\:5173\:4e8e\:6bd5\:8fbe\:54e5\:62c9\:65af\
+\:4e09\:89d2\:5f62\:7684\:5c55\:793a\:ff0c\:4ed6\:521a\:521a\:4ece\:786c\:7eb8\
+\:677f\:4e0a\:526a\:4e0b\:4e86\:4e00\:4e2a\:8fb9\:957f\:5206\:522b\:4e3a30\
+\:5398\:7c73\:300140\:5398\:7c73\:548c50\:5398\:7c73\:7684\:4e09\:89d2\:5f62\
+\:ff0c\:8fd9\:65f6\:4e00\:9635\:98ce\:5439\:6765\:628a\:4e09\:89d2\:5f62\:5439\
+\:5230\:4e86\:82b1\:56ed\:4e2d\:3002
+\:53e6\:4e00\:9635\:98ce\:628a\:4e00\:53ea\:5c0f\:8682\:8681\:5f84\:76f4\:5439\
+\:5230\:4e86\:4e09\:89d2\:5f62\:4e0a\:3002\:8fd9\:53ea\:53ef\:601c\:7684\:8682\
+\:8681\:5b8c\:5168\:8ff7\:5931\:4e86\:65b9\:5411\:ff0c\:53ea\:80fd\:968f\:673a\
+\:9009\:4e86\:4e2a\:65b9\:5411\:4e00\:76f4\:5411\:524d\:722c\:ff0c\:60f3\:8981\
+\:56de\:5230\:8349\:4e1b\:4e2d\:3002
+
+\:5047\:8bbe\:8682\:8681\:7b49\:53ef\:80fd\:5730\:843d\:5728\:4e09\:89d2\:5f62\
+\:5185\:7684\:4efb\:610f\:4f4d\:7f6e\:5e76\:9009\:62e9\:4e86\:4efb\:610f\:65b9\
+\:5411\:ff0c\:90a3\:4e48\:5b83\:6700\:7ec8\:4ece\:6700\:957f\:8fb9\:79bb\:5f00\
+\:4e09\:89d2\:5f62\:7684\:6982\:7387\:662f\:591a\:5c11\:ff1f
+\:5c06\:4f60\:7684\:7b54\:6848\:56db\:820d\:4e94\:5165\:5230\:5c0f\:6570\:70b9\
+\:540e10\:4f4d\:5c0f\:6570\:3002\
+\>", "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, 
+   3.7551374499230022`*^9},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"30", ",", "40", ",", "50"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", 
+    RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {
+          FractionBox["1", "600"], 
+          RowBox[{
+           RowBox[{"0", "\[LessEqual]", "x", "\[LessEqual]", "30"}], "&&", 
+           RowBox[{"0", "\[LessEqual]", "y", "\[LessEqual]", 
+            RowBox[{"40", "-", 
+             RowBox[{
+              FractionBox["4", "3"], " ", "x"}]}]}]}]},
+         {"0", "True"}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Theta]", "[", 
+    RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"ArcTan", "[", 
+      FractionBox[
+       RowBox[{"y", "-", "40"}], 
+       RowBox[{"x", "-", "0"}]], "]"}], "+", "\[Pi]", "-", 
+     RowBox[{"ArcTan", "[", 
+      FractionBox[
+       RowBox[{"y", "-", "0"}], 
+       RowBox[{"x", "-", "30"}]], "]"}]}], 
+    RowBox[{"2", " ", "\[Pi]"}]]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[ScriptCapitalD]", "=", 
+   RowBox[{"ImplicitRegion", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"0", "\[LessEqual]", "x", "\[LessEqual]", "30"}], "&&", 
+      RowBox[{"0", "\[LessEqual]", "y", "\[LessEqual]", 
+       RowBox[{"40", "-", 
+        RowBox[{
+         FractionBox["4", "3"], " ", "x"}]}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DecimalForm", "[", 
+  RowBox[{
+   RowBox[{"N", "[", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Theta]", "[", 
+        RowBox[{"x", ",", "y"}], "]"}], " ", 
+       RowBox[{"p", "[", 
+        RowBox[{"x", ",", "y"}], "]"}]}], ",", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y"}], "}"}], "\[Element]", "\[ScriptCapitalD]"}]}],
+      "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"+", "\[Infinity]"}], ",", "10"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+  3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+  3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+  3.733397177005328*^9, 3.7333972103847303`*^9}, {3.7551374619231105`*^9, 
+  3.7551374689390144`*^9}, {3.755137502300806*^9, 3.755137599246664*^9}, {
+  3.7551376343172016`*^9, 3.755137697086383*^9}, {3.755137777098886*^9, 
+  3.755137901972002*^9}, {3.7551379467710238`*^9, 3.7551379994217997`*^9}},
+ CellLabel->
+  "In[117]:=",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+
+Cell[BoxData[
+ TagBox[
+  InterpretationBox["\<\"0.3916721504\"\>",
+   0.39167215040874936`,
+   AutoDelete->True],
+  DecimalForm[#, {
+    DirectedInfinity[1], 10}]& ]], "Output",
+ CellChangeTimes->{{3.755137576172266*^9, 3.7551376027321186`*^9}, {
+  3.755137889697301*^9, 3.7551379032797947`*^9}, {3.7551379548507414`*^9, 
+  3.755137967491785*^9}},
+ CellLabel->
+  "Out[121]//DecimalForm=",ExpressionUUID->"993b9f0b-6889-4555-960c-\
+1aebec8e85e6"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1033, 18, 196, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1594, 40, 1613, 26, 150, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[3232, 70, 4087, 111, 262, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[7322, 183, 445, 12, 51, "Output",ExpressionUUID->"993b9f0b-6889-4555-960c-1aebec8e85e6"]
+}, Open  ]]
+}
+]
+*)
+

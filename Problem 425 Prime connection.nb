@@ -1,0 +1,286 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10671,        278]
+NotebookOptionsPosition[     10169,        262]
+NotebookOutlinePosition[     10528,        278]
+CellTagsIndexPosition[     10485,        275]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Two positive numbers A and B are said to be connected (denoted by \
+\[OpenCurlyDoubleQuote]",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "\[LeftRightArrow]", "B"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "91a11035-6561-45c6-9e89-4d8bdb40127d"],
+ "\[CloseCurlyDoubleQuote]) if one of these conditions holds:\n(1) A and B \
+have the same length and differ in exactly one digit; for example, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"123", "\[LeftRightArrow]", "173"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8f3f7764-f229-47c1-b58a-5e930139e6bb"],
+ ".\n(2) Adding one digit to the left of A (or B) makes B (or A); for \
+example, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"23", "\[LeftRightArrow]", "223"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "33ca2fae-5d04-49bc-b853-49e5b1c7776f"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"123", "\[LeftRightArrow]", "23"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e7d0b3f7-432d-4b4f-b850-72e0b020aeb3"],
+ ".\n\nWe call a prime P a 2\[CloseCurlyQuote]s relative if there exists a \
+chain of connected primes between 2 and P and no prime in the chain exceeds \
+P.\n\nFor example, 127 is a 2\[CloseCurlyQuote]s relative. One of the \
+possible chains is shown below:\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+   "2", "\[LeftRightArrow]", "3", "\[LeftRightArrow]", "13", 
+    "\[LeftRightArrow]", "113", "\[LeftRightArrow]", "103", 
+    "\[LeftRightArrow]", "107", "\[LeftRightArrow]", "127"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "26e12380-7a8d-4df4-8d46-d127924d8429"],
+ "\nHowever, 11 and 103 are not 2\[CloseCurlyQuote]s relatives.\n\nLet ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"F", "[", "N", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d2f94565-a0d8-4c9a-8e5d-459181a8c057"],
+ " be the sum of the primes \[LessEqual] N which are not 2\[CloseCurlyQuote]s \
+relatives.\nWe can verify that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"F", "[", 
+     SuperscriptBox["10", "3"], "]"}], "=", "431"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7245f17f-f121-43cf-a941-55a90749fe21"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"F", "[", 
+     SuperscriptBox["10", "4"], "]"}], "=", "78728"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3389c807-f8f9-4b3d-8643-2643e557824b"],
+ ".\n\nFind ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"F", "[", 
+    SuperscriptBox["10", "7"], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "95078e38-88ed-4e22-9126-7d16efd36ef6"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.7654238204324403`*^9, 3.7654238238902707`*^9}, {
+  3.765423991013112*^9, 
+  3.765424039753732*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:4e24\:4e2a\:6b63\:6574\:6570A\:548cB\:88ab\:79f0\:4e3a\:76f8\:8fde\:7684\
+\:ff08\:7528\[OpenCurlyDoubleQuote]",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "\[LeftRightArrow]", "B"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "038d2849-3447-406f-a7de-0fa83bc68014"],
+ "\[CloseCurlyDoubleQuote]\:8868\:793a\:ff09\:5982\:679c\:4ee5\:4e0b\:6761\
+\:4ef6\:4e4b\:4e00\:6210\:7acb\:ff1a\n\:ff081\:ff09A\:548cB\:7684\:4f4d\:6570\
+\:76f8\:540c\:ff0c\:4e14\:53ea\:6709\:4e00\:4f4d\:6570\:5b57\:4e0d\:540c\:ff0c\
+\:4f8b\:5982",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"123", "\[LeftRightArrow]", "173"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "33926e2a-b85c-48ac-8726-82f79aa1d92c"],
+ "\:3002\n\:ff082\:ff09\:5728A\:ff08\:6216B\:ff09\:7684\:5de6\:4fa7\:52a0\
+\:4e00\:4f4d\:6570\:5b57\:5373\:5f97\:5230B\:ff08\:6216A\:ff09\:ff0c\:4f8b\
+\:5982",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"23", "\[LeftRightArrow]", "223"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c5a0ecc3-5617-496f-863e-b47c59d05daa"],
+ "\:548c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"123", "\[LeftRightArrow]", "23"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bb68e6cb-9799-417f-b5a7-3918f63d1625"],
+ "\:3002\n\n\:6211\:4eec\:79f0\:7d20\:6570P\:662f2\:7684\:4eb2\:621a\:ff0c\
+\:5982\:679c\:80fd\:7528\:76f8\:8fde\:7684\:7d20\:6570\:7ec4\:6210\:7684\:94fe\
+\:8fde\:63a52\:548cP\:ff0c\:4e14\:8fd9\:4e9b\:7d20\:6570\:90fd\:4e0d\:8d85\
+\:8fc7P\:3002\n\n\:4f8b\:5982\:ff0c127\:662f2\:7684\:4eb2\:621a\:3002\:5176\
+\:4e2d\:4e00\:79cd\:7d20\:6570\:4e32\:5982\:4e0b\:6240\:793a\:ff1a\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+   "2", "\[LeftRightArrow]", "3", "\[LeftRightArrow]", "13", 
+    "\[LeftRightArrow]", "113", "\[LeftRightArrow]", "103", 
+    "\[LeftRightArrow]", "107", "\[LeftRightArrow]", "127"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9a42e615-7b25-4da9-907b-d892c725ee68"],
+ "\n\:7136\:800c\:ff0c11\:548c103\:4e0d\:662f2\:7684\:4eb2\:621a\:3002\n\n\
+\:8bb0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"F", "[", "N", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "182082ba-176d-47ef-ae0f-8498b3bd4e05"],
+ "\:662f\:6240\:6709\:5c0f\:4e8e\:7b49\:4e8eN\:4e14\:4e0d\:662f2\:7684\:4eb2\
+\:621a\:7684\:7d20\:6570\:548c\:3002\n\:53ef\:4ee5\:9a8c\:8bc1",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"F", "[", 
+     SuperscriptBox["10", "3"], "]"}], "=", "431"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "04a0b8b2-be56-40d2-8679-77b5f1dd1fbf"],
+ "\:4ee5\:53ca",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"F", "[", 
+     SuperscriptBox["10", "4"], "]"}], "=", "78728"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "00c15a5d-4dbc-4229-8377-81fd9fcb1913"],
+ "\:3002\n\n\:6c42",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"F", "[", 
+    SuperscriptBox["10", "7"], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a53485d6-ae47-4a64-83a8-96bd4876ab25"],
+ "\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.7654238303870907`*^9, 
+   3.765423972507005*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"limit", "=", 
+   SuperscriptBox["10", "3"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"PrimePi", "[", "limit", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"cons", "[", 
+    RowBox[{"i_", ",", "j_"}], "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"p", "=", 
+        RowBox[{"IntegerDigits", "[", 
+         RowBox[{"Prime", "[", "i", "]"}], "]"}]}], ",", 
+       RowBox[{"q", "=", 
+        RowBox[{"IntegerDigits", "[", 
+         RowBox[{"Prime", "[", "j", "]"}], "]"}]}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Which", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "[", "p", "]"}], "\[Equal]", 
+        RowBox[{"Length", "[", "q", "]"}]}], ",", 
+       RowBox[{
+        RowBox[{"Count", "[", 
+         RowBox[{
+          RowBox[{"MapThread", "[", 
+           RowBox[{"Equal", ",", 
+            RowBox[{"{", 
+             RowBox[{"p", ",", "q"}], "}"}]}], "]"}], ",", "False"}], "]"}], 
+        "\[Equal]", "1"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Length", "[", "p", "]"}], "\[Equal]", 
+        RowBox[{
+         RowBox[{"Length", "[", "q", "]"}], "-", "1"}]}], ",", 
+       RowBox[{"p", "\[Equal]", 
+        RowBox[{"q", "\[LeftDoubleBracket]", 
+         RowBox[{"2", ";;", "All"}], "\[RightDoubleBracket]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Length", "[", "p", "]"}], "\[Equal]", 
+        RowBox[{
+         RowBox[{"Length", "[", "q", "]"}], "+", "1"}]}], ",", 
+       RowBox[{
+        RowBox[{"p", "\[LeftDoubleBracket]", 
+         RowBox[{"2", ";;", "All"}], "\[RightDoubleBracket]"}], "\[Equal]", 
+        "q"}], ",", "\[IndentingNewLine]", "True", ",", "False"}], "]"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g", "=", 
+   RowBox[{"AdjacencyGraph", "[", 
+    RowBox[{"SparseArray", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"i_", ",", "j_"}], "}"}], "/;", 
+         RowBox[{"cons", "[", 
+          RowBox[{"i", ",", "j"}], "]"}]}], "\[Rule]", "1"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"m", ",", "m"}], "}"}]}], "]"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+   3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+   3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+   3.7564263646962595`*^9, 3.7564263899753056`*^9}, {3.76542407294084*^9, 
+   3.7654240771246157`*^9}, {3.7654241474146657`*^9, 3.765424205768852*^9}, {
+   3.7654242780083914`*^9, 3.765424518599343*^9}, {3.765424555122105*^9, 
+   3.7654245567108755`*^9}, {3.765424678163697*^9, 3.76542474681898*^9}, {
+   3.7654247969931755`*^9, 3.7654249316385765`*^9}, 3.7654250501605663`*^9, {
+   3.765425098533388*^9, 3.765425099768441*^9}, 3.765425151001789*^9},
+ CellLabel->"In[43]:=",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"]
+},
+WindowSize->{2560, 1336},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 3065, 78, 321, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[3626, 100, 3440, 83, 321, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[7069, 185, 3096, 75, 333, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"]
+}
+]
+*)
+

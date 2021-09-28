@@ -1,0 +1,263 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9600,        255]
+NotebookOptionsPosition[      8628,        230]
+NotebookOutlinePosition[      9016,        247]
+CellTagsIndexPosition[      8973,        244]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+A positive integer is called square root smooth if all of its prime factors \
+are strictly less than its square root.
+Including the number 1, there are 29 square root smooth numbers not exceeding \
+100.
+
+How many square root smooth numbers are there not exceeding 10000000000?\
+\>", "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.766383953031386*^9, 
+  3.766383957437188*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell["\<\
+\:5982\:679c\:4e00\:4e2a\:6b63\:6574\:6570\:7684\:6240\:6709\:7d20\:56e0\:6570\
+\:90fd\:5c0f\:4e8e\:5176\:5e73\:65b9\:6839\:ff0c\:5219\:79f0\:8be5\:6b63\:6574\
+\:6570\:662f\:5e73\:65b9\:6839\:5e73\:6ed1\:7684\:3002
+\:5305\:62ec\:6570\:5b571\:ff0c\:4e0d\:8d85\:8fc7100\:7684\:6570\:4e2d\:6709\
+29\:4e2a\:5e73\:65b9\:6839\:5e73\:6ed1\:6570\:3002
+
+\:4e0d\:8d85\:8fc710000000000\:7684\:6570\:4e2d\:6709\:591a\:5c11\:4e2a\:5e73\
+\:65b9\:6839\:5e73\:6ed1\:6570\:ff1f\
+\>", "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.766383965201396*^9, 
+   3.766384067117645*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{"n\:4e0d\:662f\:5e73\:65b9\:6839\:5e73\:6ed1\:6570", "\:ff0c", 
+  RowBox[{"\:5f53\:4e14\:4ec5\:5f53", 
+   RowBox[{"\[Exists]", 
+    RowBox[{"p", "\[Element]", "Primes"}]}]}], ",", 
+  RowBox[{"\[Exists]", 
+   RowBox[{"x", "\[LessEqual]", "p"}]}], ",", 
+  RowBox[{"\:6709n", "=", 
+   RowBox[{"p", " ", "x"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"limit", "-", 
+  RowBox[{
+   SubsuperscriptBox["\[Sum]", 
+    RowBox[{"i", "=", "1"}], 
+    RowBox[{"PrimePi", "[", "limit", "]"}]], 
+   RowBox[{"Min", "[", 
+    RowBox[{
+     RowBox[{"Prime", "[", "i", "]"}], ",", 
+     RowBox[{"\[LeftFloor]", 
+      FractionBox["limit", 
+       RowBox[{"Prime", "[", "i", "]"}]], "\[RightFloor]"}]}], 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"=", 
+  RowBox[{"limit", "-", 
+   RowBox[{
+    SubsuperscriptBox["\[Sum]", 
+     RowBox[{"i", "=", "1"}], 
+     RowBox[{"PrimePi", "[", 
+      SqrtBox["limit"], "]"}]], 
+    RowBox[{"Prime", "[", "i", "]"}]}], "-", 
+   RowBox[{
+    SubsuperscriptBox["\[Sum]", 
+     RowBox[{"i", "=", 
+      RowBox[{
+       RowBox[{"PrimePi", "[", 
+        SqrtBox["limit"], "]"}], "+", "1"}]}], 
+     RowBox[{"PrimePi", "[", "limit", "]"}]], 
+    RowBox[{"\[LeftFloor]", 
+     FractionBox["limit", 
+      RowBox[{"Prime", "[", "i", "]"}]], 
+     "\[RightFloor]"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"=", 
+  RowBox[{"limit", "-", 
+   RowBox[{
+    SubsuperscriptBox["\[Sum]", 
+     RowBox[{"i", "=", "1"}], 
+     RowBox[{"\[LeftFloor]", 
+      SqrtBox["limit"], "\[RightFloor]"}]], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"PrimePi", "[", 
+       RowBox[{"\[LeftFloor]", 
+        FractionBox["limit", "i"], "\[RightFloor]"}], "]"}], "-", 
+      RowBox[{"PrimePi", "[", 
+       RowBox[{"i", "-", "1"}], "]"}]}], ")"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"=", 
+  RowBox[{"limit", "-", 
+   RowBox[{
+    SubsuperscriptBox["\[Sum]", 
+     RowBox[{"i", "=", "1"}], 
+     RowBox[{"PrimePi", "[", 
+      SqrtBox["limit"], "]"}]], 
+    RowBox[{"Prime", "[", "i", "]"}]}], "-", 
+   RowBox[{
+    SubsuperscriptBox["\[Sum]", 
+     RowBox[{"i", "=", "1"}], 
+     RowBox[{"\[LeftFloor]", 
+      FractionBox["limit", 
+       RowBox[{"NextPrime", "[", 
+        SqrtBox["limit"], "]"}]], "\[RightFloor]"}]], 
+    RowBox[{"i", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"PrimePi", "[", 
+        RowBox[{"\[LeftFloor]", 
+         FractionBox["limit", "i"], "\[RightFloor]"}], "]"}], "-", 
+       RowBox[{"PrimePi", "[", 
+        RowBox[{"\[LeftFloor]", 
+         FractionBox["limit", 
+          RowBox[{"i", "+", "1"}]], "\[RightFloor]"}], "]"}]}], 
+      ")"}]}]}]}]}]}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.766383965201396*^9, 
+   3.766384067117645*^9}, {3.7665309235897236`*^9, 3.76653100683518*^9}, {
+   3.7665311351530733`*^9, 3.766531251422209*^9}, {3.766531315045102*^9, 
+   3.7665313839269357`*^9}, {3.7665314711856346`*^9, 
+   3.7665315417779226`*^9}, {3.76653226951118*^9, 3.766532280253459*^9}, {
+   3.7665323336546817`*^9, 3.76653233380129*^9}, 3.76653253123442*^9, {
+   3.766532987856596*^9, 
+   3.766533024254249*^9}},ExpressionUUID->"32c5aeb8-9358-46c2-8779-\
+e8a6d04b6043"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"1", "+", 
+   RowBox[{"ParallelSum", "[", 
+    RowBox[{
+     RowBox[{"Boole", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"FactorInteger", "[", "n", "]"}], "\[LeftDoubleBracket]", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "1"}], "\[RightDoubleBracket]"}], "<", 
+       SqrtBox["n"]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "1", ",", 
+       SuperscriptBox["10", "10"]}], "}"}]}], "]"}]}], "//", 
+  "AbsoluteTiming"}]], "Input",
+ CellChangeTimes->{{3.7663849704119263`*^9, 3.766385004218507*^9}, {
+  3.766393732680677*^9, 3.766393740488084*^9}, {3.766437984390626*^9, 
+  3.7664379846094365`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"f0d80ca2-f5e8-46b7-b0e2-e4eeeb504af9"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"81567.701153`", ",", "2811077773"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7663849933725386`*^9, {3.7663937253996973`*^9, 3.7663937443044214`*^9}, 
+   3.766437957495085*^9, 3.766519553507253*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"e4b6e246-3f3f-4535-8be1-598f97952783"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"limit", "=", 
+   SuperscriptBox["10", "10"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"limit", "-", 
+  RowBox[{
+   SubsuperscriptBox["\[Sum]", 
+    RowBox[{"i", "=", "1"}], 
+    RowBox[{"PrimePi", "[", 
+     SqrtBox["limit"], "]"}]], 
+   RowBox[{"Prime", "[", "i", "]"}]}], "-", 
+  RowBox[{
+   SubsuperscriptBox["\[Sum]", 
+    RowBox[{"i", "=", "1"}], 
+    RowBox[{"\[LeftFloor]", 
+     FractionBox["limit", 
+      RowBox[{"NextPrime", "[", 
+       SqrtBox["limit"], "]"}]], "\[RightFloor]"}]], 
+   RowBox[{"i", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"PrimePi", "[", 
+       RowBox[{"\[LeftFloor]", 
+        FractionBox["limit", "i"], "\[RightFloor]"}], "]"}], "-", 
+      RowBox[{"PrimePi", "[", 
+       RowBox[{"\[LeftFloor]", 
+        FractionBox["limit", 
+         RowBox[{"i", "+", "1"}]], "\[RightFloor]"}], "]"}]}], 
+     ")"}]}]}]}]}], "Input",
+ CellChangeTimes->{{3.7665306717779517`*^9, 3.766530734309794*^9}, {
+  3.7665315554483447`*^9, 3.7665315719801445`*^9}, {3.7665317980018377`*^9, 
+  3.7665317985334167`*^9}, {3.766531862111462*^9, 3.76653190027639*^9}, {
+  3.7665319564452133`*^9, 3.7665319634345503`*^9}, {3.7665322849788246`*^9, 
+  3.7665322908062444`*^9}, {3.766532346148305*^9, 3.766532353162524*^9}, {
+  3.7665325843952856`*^9, 3.766532667800288*^9}, {3.766532768985783*^9, 
+  3.766532881113986*^9}, {3.766532916577166*^9, 3.7665329572264595`*^9}, {
+  3.766533049714179*^9, 3.7665330659138656`*^9}},
+ CellLabel->
+  "In[139]:=",ExpressionUUID->"7e1c7c77-95f4-4afe-80db-2a9911e9e449"],
+
+Cell[BoxData["2811077773"], "Output",
+ CellChangeTimes->{{3.7665307137956424`*^9, 3.7665307348802996`*^9}, 
+   3.7665315729615474`*^9, 3.766531800388481*^9, {3.7665318651652927`*^9, 
+   3.766531897088913*^9}, {3.7665322883269043`*^9, 3.7665322912401156`*^9}, {
+   3.766532343977083*^9, 3.7665323542356553`*^9}, {3.766532588223051*^9, 
+   3.7665325931199856`*^9}, {3.7665326307802677`*^9, 3.766532661614826*^9}, {
+   3.7665327796343064`*^9, 3.7665328715365925`*^9}, {3.766532905040987*^9, 
+   3.7665329577909784`*^9}, {3.7665330503704243`*^9, 3.7665330668683147`*^9}},
+ CellLabel->
+  "Out[140]=",ExpressionUUID->"327911d3-71a1-46fd-94c5-9fc881bdfcd1"]
+}, Open  ]]
+},
+WindowSize->{2560, 1336},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
+Magnification:>2. Inherited,
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 576, 12, 200, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1137, 34, 811, 15, 200, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[1951, 51, 3327, 91, 473, "Text",ExpressionUUID->"32c5aeb8-9358-46c2-8779-e8a6d04b6043"],
+Cell[CellGroupData[{
+Cell[5303, 146, 744, 19, 106, "Input",ExpressionUUID->"f0d80ca2-f5e8-46b7-b0e2-e4eeeb504af9"],
+Cell[6050, 167, 317, 6, 66, "Output",ExpressionUUID->"e4b6e246-3f3f-4535-8be1-598f97952783"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6404, 178, 1555, 38, 237, "Input",ExpressionUUID->"7e1c7c77-95f4-4afe-80db-2a9911e9e449"],
+Cell[7962, 218, 650, 9, 148, "Output",ExpressionUUID->"327911d3-71a1-46fd-94c5-9fc881bdfcd1"]
+}, Open  ]]
+}
+]
+*)
+

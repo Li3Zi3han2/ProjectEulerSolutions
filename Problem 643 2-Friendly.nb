@@ -1,0 +1,262 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8749,        254]
+NotebookOptionsPosition[      8121,        235]
+NotebookOutlinePosition[      8479,        251]
+CellTagsIndexPosition[      8436,        248]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Two positive integers a and b are 2-friendly when ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{
+    RowBox[{"GCD", "[", 
+     RowBox[{"a", ",", "b"}], "]"}], "=", 
+    SuperscriptBox["2", "t"]}], ",", 
+   RowBox[{"t", ">", "0"}]}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "bbab1117-65ec-4005-9151-43c66a8c4ea2"],
+ ". For example, 24 and 40 are 2-friendly because ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"GCD", "[", 
+    RowBox[{"24", ",", "40"}], "]"}], "=", 
+   RowBox[{"8", "=", 
+    SuperscriptBox["2", "3"]}]}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "c57d732a-e751-4271-81ac-609b4bb1a743"],
+ " while 24 and 36 are not because ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"GCD", "[", 
+    RowBox[{"24", ",", "36"}], "]"}], "=", 
+   RowBox[{"12", "=", 
+    RowBox[{
+     SuperscriptBox["2", "2"], " ", "3"}]}]}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "12155753-f78c-40cb-a0ca-30adc7d97483"],
+ " not a power of 2.\n\nLet ",
+ Cell[BoxData[
+  RowBox[{"f", "[", "n", "]"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "85a3b3ac-51b0-4ed1-88f9-ada2c554d414"],
+ " be the number of pairs, ",
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{"p", ",", "q"}], "}"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "04c8e9ff-0132-45d2-b2c1-2285ddd04843"],
+ ", of positive integers with ",
+ Cell[BoxData[
+  RowBox[{"1", "\[LessEqual]", "p", "<", "q", "\[LessEqual]", "n"}]], 
+  "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "192c6322-122f-494e-9755-fff7d3418b46"],
+ " such that p and q are 2-friendly. You are given ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"f", "[", 
+    SuperscriptBox["10", "2"], "]"}], "=", "1031"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "186eace4-2d0a-4983-9ff7-392e0c62f391"],
+ " and ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"Mod", "[", 
+    RowBox[{
+     RowBox[{"f", "[", 
+      SuperscriptBox["10", "6"], "]"}], ",", "1000000007"}], "]"}], "=", 
+   "321418433"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "cb48780b-9bd3-403f-910e-2a3b7bc0f9a1"],
+ ".\n\nFind ",
+ Cell[BoxData[
+  RowBox[{"Mod", "[", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     SuperscriptBox["10", "11"], "]"}], ",", "1000000007"}], "]"}]], 
+  "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "f50346e7-c530-4a7a-ac9a-6c6087493f7f"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.76196063495179*^9, 3.7619607526686993`*^9}, {
+  3.7619608719631233`*^9, 
+  3.7619608721037445`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:5f53",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{
+    RowBox[{"GCD", "[", 
+     RowBox[{"a", ",", "b"}], "]"}], "=", 
+    SuperscriptBox["2", "t"]}], ",", 
+   RowBox[{"t", ">", "0"}]}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "6a5ff983-ebb2-42c8-851f-938939efa2a8"],
+ "\:65f6\:ff0c\:79f0\:4e24\:4e2a\:6b63\:6574\:6570a\:548cb\:662f2\:53cb\:597d\
+\:7684\:3002\:4f8b\:5982\:ff0c24\:548c40\:662f2\:53cb\:597d\:7684\:ff0c\:56e0\
+\:4e3a",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"GCD", "[", 
+    RowBox[{"24", ",", "40"}], "]"}], "=", 
+   RowBox[{"8", "=", 
+    SuperscriptBox["2", "3"]}]}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "305f5c19-965a-4a5f-b339-c71a3b604b16"],
+ "\:ff1b\:800c24\:548c36\:4e0d\:662f\:ff0c\:56e0\:4e3a",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"GCD", "[", 
+    RowBox[{"24", ",", "36"}], "]"}], "=", 
+   RowBox[{"12", "=", 
+    RowBox[{
+     SuperscriptBox["2", "2"], " ", "3"}]}]}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "ee2c2b80-ec27-426e-aca5-8ea70b38d6cd"],
+ "\:4e0d\:662f2\:7684\:5e42\:3002\n\n\:8bbe",
+ Cell[BoxData[
+  RowBox[{"f", "[", "n", "]"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "563d891f-bf16-4179-bdaf-33fcb62c6b03"],
+ "\:662f",
+ Cell[BoxData[
+  RowBox[{"1", "\[LessEqual]", "p", "<", "q", "\[LessEqual]", "n"}]], 
+  "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "b57f7e74-5220-46c3-a223-c6135464b9fa"],
+ "\:76842\:53cb\:597d\:7684\:6b63\:6574\:6570\:5bf9",
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{"p", ",", "q"}], "}"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "d3ffd67b-f2a6-410a-bed9-2c1db694d9d3"],
+ "\:7684\:4e2a\:6570\:3002\:5df2\:77e5",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"f", "[", 
+    SuperscriptBox["10", "2"], "]"}], "=", "1031"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "3098a640-c12f-46f7-8abb-34cd055ee51c"],
+ "\:548c",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"Mod", "[", 
+    RowBox[{
+     RowBox[{"f", "[", 
+      SuperscriptBox["10", "6"], "]"}], ",", "1000000007"}], "]"}], "=", 
+   "321418433"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "7b0956ea-0650-45d4-8a22-4a85f85ddb82"],
+ "\:3002\n\n\:6c42",
+ Cell[BoxData[
+  RowBox[{"Mod", "[", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     SuperscriptBox["10", "11"], "]"}], ",", "1000000007"}], "]"}]], 
+  "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "63a79702-7930-400d-9163-5e564642b776"],
+ "\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.7619607931761446`*^9, 
+   3.7619608880490513`*^9}, {3.7619609200484033`*^9, 3.7619610060503864`*^9}, 
+   3.7619610369239826`*^9},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"FriendlyPairsP", "[", 
+   RowBox[{"base_", ",", "n_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    SubsuperscriptBox["\[Sum]", 
+     RowBox[{"q", "=", "2"}], "n"], 
+    RowBox[{
+     SubsuperscriptBox["\[Sum]", 
+      RowBox[{"t", "=", "1"}], 
+      RowBox[{"IntegerExponent", "[", 
+       RowBox[{"q", ",", "2"}], "]"}]], 
+     RowBox[{"EulerPhi", "[", 
+      RowBox[{"\[LeftFloor]", 
+       FractionBox["q", 
+        SuperscriptBox["2", "t"]], "\[RightFloor]"}], "]"}]}]}], "-", 
+   RowBox[{"\[LeftFloor]", 
+    RowBox[{"Log", "[", 
+     RowBox[{"2", ",", "n"}], "]"}], 
+    "\[RightFloor]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Mod", "[", 
+   RowBox[{
+    RowBox[{"FriendlyPairsP", "[", 
+     RowBox[{"2", ",", 
+      SuperscriptBox["10", "2"]}], "]"}], ",", "1000000007"}], "]"}], "//", 
+  "AbsoluteTiming"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+  3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+  3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+  3.7564263646962595`*^9, 3.7564263899753056`*^9}, {3.7619610679399767`*^9, 
+  3.761961091712212*^9}, {3.7619611976658354`*^9, 3.7619612136390667`*^9}, {
+  3.7619612472196517`*^9, 3.76196126717554*^9}, {3.761961367721141*^9, 
+  3.7619613772251744`*^9}},
+ CellLabel->"In[58]:=",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.0013946513814366867`", ",", "1031"}], "}"}]], "Output",
+ CellChangeTimes->{{3.7313704890957747`*^9, 3.7313705114710016`*^9}, 
+   3.731370638655486*^9, 3.756426391477058*^9, 3.761961281613778*^9, {
+   3.761961369519537*^9, 3.761961378147018*^9}},
+ CellLabel->"Out[59]=",ExpressionUUID->"df2a137f-1168-4ae6-ac90-c1b1de2c6358"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2769, 80, 185, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[3330, 102, 2953, 83, 136, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[6308, 189, 1428, 35, 134, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[7739, 226, 366, 6, 41, "Output",ExpressionUUID->"df2a137f-1168-4ae6-ac90-c1b1de2c6358"]
+}, Open  ]]
+}
+]
+*)
+

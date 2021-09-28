@@ -1,0 +1,697 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     23585,        689]
+NotebookOptionsPosition[     22802,        668]
+NotebookOutlinePosition[     23216,        685]
+CellTagsIndexPosition[     23173,        682]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "\[OpenCurlyDoubleQuote]What? Where? When?\[CloseCurlyDoubleQuote] is a TV \
+game show in which a team of experts attempt to answer questions. The \
+following is a simplified version of the game.\n\nIt begins with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"2", " ", "n"}], "+", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "2836fdcd-faad-4c8f-8965-0c5fe65fc7c7"],
+ " envelopes. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"2", " ", "n"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "25896c50-79ee-4825-917e-8b9d3dbd3318"],
+ " of them contain a question and one contains a RED card.\n\nIn each round \
+one of the remaining envelopes is randomly chosen. If the envelope contains \
+the RED card the game ends. If the envelope contains a question the expert \
+gives their answer. If their answer is correct they earn one point, otherwise \
+the viewers earn one point. The game ends normally when either the expert \
+obtains n points or the viewers obtain n points.\n\nAssuming that the expert \
+provides the correct answer with a fixed probability ",
+ Cell[BoxData[
+  FormBox["p", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cee65b84-dab4-418d-8831-e3c3389dd2ad"],
+ ", let ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"f", "[", 
+    RowBox[{"n", ",", "p"}], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "38339261-3fa8-4fb5-b743-2467e1c8d49d"],
+ " be the probability that the game ends normally (i.e. RED card never turns \
+up).\n\nYou are given (rounded to 10 decimal places) that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"6", ",", 
+       FractionBox["1", "2"]}], "]"}], "\[TildeTilde]", "0.2851562500"}], ",", 
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"10", ",", 
+       FractionBox["3", "7"]}], "]"}], "\[TildeTilde]", "0.2330040743"}], ",", 
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{
+       SuperscriptBox["10", "4"], ",", 
+       FractionBox["3", "10"]}], "]"}], "\[TildeTilde]", "0.2857499982"}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f5bf6f92-ca70-471c-80be-204a7f761698"],
+ ".\n\nFind ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"f", "[", 
+    RowBox[{
+     SuperscriptBox["10", "11"], ",", "0.4999"}], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4b0c1574-b443-4c99-8603-d4704a4313e4"],
+ ". Give your answer rounded to 10 places behind the decimal point."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.821079479307805*^9, 3.821079566570697*^9}, {
+  3.8210807137017555`*^9, 3.821080767204147*^9}, {3.8210808064005985`*^9, 
+  3.821080829278837*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\[OpenCurlyDoubleQuote]\:4ec0\:4e48\:ff1f\:54ea\:91cc\:ff1f\:4f55\:65f6\
+\:ff1f\[CloseCurlyDoubleQuote]\:662f\:4e00\:4e2a\:7535\:89c6\:6e38\:620f\:8282\
+\:76ee\:ff0c\:5176\:4e2d\:4e00\:7ec4\:4e13\:5bb6\:8bd5\:56fe\:56de\:7b54\:95ee\
+\:9898\:3002\:4ee5\:4e0b\:662f\:6e38\:620f\:7684\:7b80\:5316\:7248\:672c\:3002\
+\n\n\:5b83\:4ee5",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"2", " ", "n"}], "+", "1"}], TraditionalForm]],ExpressionUUID->
+  "f3e37550-3c6a-42fb-834f-e5941575d450"],
+ "\:4e2a\:4fe1\:5c01\:5f00\:5934\:3002\:5176\:4e2d",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"2", " ", "n"}], TraditionalForm]],ExpressionUUID->
+  "5aa0b13f-ceb3-4219-9a09-33339b99a84f"],
+ "\:4e2a\:5305\:542b\:4e00\:4e2a\:95ee\:9898\:ff0c1\:4e2a\:5305\:542b\:4e00\
+\:5f20\:7ea2\:5361\:3002\n\n\:5728\:6bcf\:4e00\:8f6e\:4e2d\:ff0c\:968f\:673a\
+\:9009\:62e9\:5269\:4f59\:7684\:4fe1\:5c01\:4e4b\:4e00\:3002\:5982\:679c\:4fe1\
+\:5c01\:4e2d\:5305\:542b\:7ea2\:5361\:ff0c\:5219\:6e38\:620f\:7ed3\:675f\:3002\
+\:5982\:679c\:4fe1\:5c01\:4e2d\:6709\:95ee\:9898\:ff0c\:4e13\:5bb6\:4f1a\:7ed9\
+\:51fa\:7b54\:6848\:3002\:5982\:679c\:4ed6\:4eec\:7684\:7b54\:6848\:6b63\:786e\
+\:ff0c\:4ed6\:4eec\:5c06\:83b7\:5f97\:4e00\:5206\:ff0c\:5426\:5219\:89c2\:4f17\
+\:5c06\:83b7\:5f97\:4e00\:5206\:3002\:5f53\:4e13\:5bb6\:83b7\:5f97n\:5206\
+\:6216\:89c2\:4f17\:83b7\:5f97n\:5206\:65f6\:ff0c\:6e38\:620f\:6b63\:5e38\
+\:7ed3\:675f\:3002\n\n\:5047\:8bbe\:4e13\:5bb6\:4ee5\:56fa\:5b9a\:7684\:6982\
+\:7387",
+ Cell[BoxData[
+  FormBox["p", TraditionalForm]],ExpressionUUID->
+  "63a6d8e0-0d18-4081-b2f5-0696e76a25ee"],
+ "\:63d0\:4f9b\:6b63\:786e\:7684\:7b54\:6848\:ff0c\:5219\:4ee4",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"f", "[", 
+    RowBox[{"n", ",", "p"}], "]"}], TraditionalForm]],ExpressionUUID->
+  "f40b094e-07e8-45ee-b8f9-e9a764a8ffb8"],
+ "\:4e3a\:6e38\:620f\:6b63\:5e38\:7ed3\:675f\:7684\:6982\:7387\:ff08\:5373\
+\:7ea2\:5361\:6c38\:8fdc\:4e0d\:4f1a\:51fa\:73b0\:ff09\:3002\n\n\:5df2\:77e5",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"6", ",", 
+       FractionBox["1", "2"]}], "]"}], "\[TildeTilde]", "0.2851562500"}], ",", 
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"10", ",", 
+       FractionBox["3", "7"]}], "]"}], "\[TildeTilde]", "0.2330040743"}], ",", 
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{
+       SuperscriptBox["10", "4"], ",", 
+       FractionBox["3", "10"]}], "]"}], "\[TildeTilde]", "0.2857499982"}]}], 
+   TraditionalForm]],ExpressionUUID->"68f68491-6fc1-4a3f-8f55-065c2fa418d4"],
+ "\:ff08\:56db\:820d\:4e94\:5165\:5230\:5c0f\:6570\:70b9\:540e\:5341\:4f4d\
+\:ff09\:3002\n\n\:6c42",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"f", "[", 
+    RowBox[{
+     SuperscriptBox["10", "11"], ",", "0.4999"}], "]"}], TraditionalForm]],
+  ExpressionUUID->"965a6709-a7d4-46f9-8054-e9ce31dc8e69"],
+ "\:3002\:5c06\:7b54\:6848\:56db\:820d\:4e94\:5165\:5230\:5c0f\:6570\:70b9\
+\:540e\:5341\:4f4d\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.82108085775469*^9, 
+   3.821080996761553*^9}, 
+   3.8245395934507427`*^9},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"n", ",", "p"}], "]"}], "=", 
+  RowBox[{
+   RowBox[{
+    SubsuperscriptBox["\[Sum]", 
+     RowBox[{"i", "=", "0"}], 
+     RowBox[{"n", "-", "1"}]], 
+    RowBox[{
+     RowBox[{"PDF", "[", 
+      RowBox[{
+       RowBox[{"NegativeBinomialDistribution", "[", 
+        RowBox[{"n", ",", "p"}], "]"}], ",", "i"}], "]"}], " ", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"2", " ", "n"}], "+", "1", "-", 
+       RowBox[{"(", 
+        RowBox[{"n", "+", "i"}], ")"}]}], 
+      RowBox[{
+       RowBox[{"2", " ", "n"}], "+", "1"}]]}]}], "+", 
+   RowBox[{
+    SubsuperscriptBox["\[Sum]", 
+     RowBox[{"i", "=", "0"}], 
+     RowBox[{"n", "-", "1"}]], 
+    RowBox[{
+     RowBox[{"PDF", "[", 
+      RowBox[{
+       RowBox[{"NegativeBinomialDistribution", "[", 
+        RowBox[{"n", ",", 
+         RowBox[{"1", "-", "p"}]}], "]"}], ",", "i"}], "]"}], " ", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"2", " ", "n"}], "+", "1", "-", 
+       RowBox[{"(", 
+        RowBox[{"n", "+", "i"}], ")"}]}], 
+      RowBox[{
+       RowBox[{"2", " ", "n"}], "+", "1"}]]}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"f1", "=", 
+  RowBox[{
+   SubsuperscriptBox["\[Sum]", 
+    RowBox[{"i", "=", "0"}], 
+    RowBox[{"n", "-", "1"}]], 
+   RowBox[{
+    RowBox[{"PDF", "[", 
+     RowBox[{
+      RowBox[{"NegativeBinomialDistribution", "[", 
+       RowBox[{"n", ",", "p"}], "]"}], ",", "i"}], "]"}], " ", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"2", " ", "n"}], "+", "1", "-", 
+      RowBox[{"(", 
+       RowBox[{"n", "+", "i"}], ")"}]}], 
+     RowBox[{
+      RowBox[{"2", " ", "n"}], "+", "1"}]]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"=", 
+  RowBox[{
+   SubsuperscriptBox["\[Sum]", 
+    RowBox[{"i", "=", "0"}], 
+    RowBox[{"n", "-", "1"}]], 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"1", "-", "p"}], ")"}], "i"], " ", 
+    SuperscriptBox["p", "n"], " ", 
+    RowBox[{"Binomial", "[", 
+     RowBox[{
+      RowBox[{"n", "+", "i", "-", "1"}], ",", 
+      RowBox[{"n", "-", "1"}]}], "]"}], " ", 
+    FractionBox[
+     RowBox[{"n", "+", "1", "-", "i"}], 
+     RowBox[{
+      RowBox[{"2", " ", "n"}], "+", "1"}]]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"=", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"n", "+", "1"}], 
+     RowBox[{
+      RowBox[{"2", " ", "n"}], "+", "1"}]], " ", 
+    RowBox[{
+     SubsuperscriptBox["\[Sum]", 
+      RowBox[{"i", "=", "0"}], 
+      RowBox[{"n", "-", "1"}]], 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "-", "p"}], ")"}], "i"], " ", 
+      SuperscriptBox["p", "n"], " ", 
+      RowBox[{"Binomial", "[", 
+       RowBox[{
+        RowBox[{"n", "+", "i", "-", "1"}], ",", 
+        RowBox[{"n", "-", "1"}]}], "]"}]}]}]}], "-", 
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{
+      RowBox[{"2", " ", "n"}], "+", "1"}]], " ", 
+    RowBox[{
+     SubsuperscriptBox["\[Sum]", 
+      RowBox[{"i", "=", "0"}], 
+      RowBox[{"n", "-", "1"}]], 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "-", "p"}], ")"}], "i"], " ", 
+      SuperscriptBox["p", "n"], " ", 
+      RowBox[{"Binomial", "[", 
+       RowBox[{
+        RowBox[{"n", "+", "i", "-", "1"}], ",", 
+        RowBox[{"n", "-", "1"}]}], "]"}], " ", 
+      "i"}]}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"=", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"n", "+", "1"}], 
+     RowBox[{
+      RowBox[{"2", " ", "n"}], "+", "1"}]], " ", 
+    RowBox[{"CDF", "[", 
+     RowBox[{
+      RowBox[{"NegativeBinomialDistribution", "[", 
+       RowBox[{"n", ",", "p"}], "]"}], ",", 
+      RowBox[{"n", "-", "1"}]}], "]"}]}], "-", 
+   RowBox[{
+    FractionBox["n", 
+     RowBox[{
+      RowBox[{"2", " ", "n"}], "+", "1"}]], " ", 
+    RowBox[{
+     SubsuperscriptBox["\[Sum]", 
+      RowBox[{"i", "=", "0"}], 
+      RowBox[{"n", "-", "1"}]], 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "-", "p"}], ")"}], "i"], " ", 
+      SuperscriptBox["p", "n"], " ", 
+      RowBox[{"Binomial", "[", 
+       RowBox[{
+        RowBox[{"n", "+", "i", "-", "1"}], ",", "n"}], 
+       "]"}]}]}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"=", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"n", "+", "1"}], 
+     RowBox[{
+      RowBox[{"2", " ", "n"}], "+", "1"}]], " ", 
+    RowBox[{"CDF", "[", 
+     RowBox[{
+      RowBox[{"NegativeBinomialDistribution", "[", 
+       RowBox[{"n", ",", "p"}], "]"}], ",", 
+      RowBox[{"n", "-", "1"}]}], "]"}]}], "-", 
+   RowBox[{
+    FractionBox["n", 
+     RowBox[{
+      RowBox[{"2", " ", "n"}], "+", "1"}]], " ", 
+    RowBox[{
+     SubsuperscriptBox["\[Sum]", 
+      RowBox[{"i", "=", "1"}], 
+      RowBox[{"n", "-", "1"}]], 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "-", "p"}], ")"}], "i"], " ", 
+      SuperscriptBox["p", "n"], " ", 
+      RowBox[{"Binomial", "[", 
+       RowBox[{
+        RowBox[{"n", "+", "i", "-", "1"}], ",", "n"}], 
+       "]"}]}]}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"=", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"n", "+", "1"}], 
+     RowBox[{
+      RowBox[{"2", " ", "n"}], "+", "1"}]], " ", 
+    RowBox[{"CDF", "[", 
+     RowBox[{
+      RowBox[{"NegativeBinomialDistribution", "[", 
+       RowBox[{"n", ",", "p"}], "]"}], ",", 
+      RowBox[{"n", "-", "1"}]}], "]"}]}], "-", 
+   RowBox[{
+    FractionBox["n", 
+     RowBox[{
+      RowBox[{"2", " ", "n"}], "+", "1"}]], " ", 
+    RowBox[{
+     SubsuperscriptBox["\[Sum]", 
+      RowBox[{"i", "=", "0"}], 
+      RowBox[{"n", "-", "2"}]], 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "-", "p"}], ")"}], 
+       RowBox[{"i", "+", "1"}]], " ", 
+      SuperscriptBox["p", "n"], " ", 
+      RowBox[{"Binomial", "[", 
+       RowBox[{
+        RowBox[{"n", "+", "i"}], ",", "n"}], 
+       "]"}]}]}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"=", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"n", "+", "1"}], 
+     RowBox[{
+      RowBox[{"2", " ", "n"}], "+", "1"}]], " ", 
+    RowBox[{"CDF", "[", 
+     RowBox[{
+      RowBox[{"NegativeBinomialDistribution", "[", 
+       RowBox[{"n", ",", "p"}], "]"}], ",", 
+      RowBox[{"n", "-", "1"}]}], "]"}]}], "-", 
+   RowBox[{
+    FractionBox["n", 
+     RowBox[{
+      RowBox[{"2", " ", "n"}], "+", "1"}]], " ", 
+    FractionBox[
+     RowBox[{"1", "-", "p"}], "p"], " ", 
+    RowBox[{
+     SubsuperscriptBox["\[Sum]", 
+      RowBox[{"i", "=", "0"}], 
+      RowBox[{"n", "-", "2"}]], 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "-", "p"}], ")"}], "i"], " ", 
+      SuperscriptBox["p", 
+       RowBox[{"n", "+", "1"}]], " ", 
+      RowBox[{"Binomial", "[", 
+       RowBox[{
+        RowBox[{"n", "+", "i"}], ",", "n"}], 
+       "]"}]}]}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"=", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"n", "+", "1"}], 
+     RowBox[{
+      RowBox[{"2", " ", "n"}], "+", "1"}]], " ", 
+    RowBox[{"CDF", "[", 
+     RowBox[{
+      RowBox[{"NegativeBinomialDistribution", "[", 
+       RowBox[{"n", ",", "p"}], "]"}], ",", 
+      RowBox[{"n", "-", "1"}]}], "]"}]}], "-", 
+   RowBox[{
+    FractionBox["n", 
+     RowBox[{
+      RowBox[{"2", " ", "n"}], "+", "1"}]], " ", 
+    FractionBox[
+     RowBox[{"(", 
+      RowBox[{"1", "-", "p"}], ")"}], "p"], " ", 
+    RowBox[{"CDF", "[", 
+     RowBox[{
+      RowBox[{"NegativeBinomialDistribution", "[", 
+       RowBox[{
+        RowBox[{"n", "+", "1"}], ",", "p"}], "]"}], ",", 
+      RowBox[{"n", "-", "2"}]}], "]"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DiscreteLimit", "[", 
+   RowBox[{
+    RowBox[{"CDF", "[", 
+     RowBox[{
+      RowBox[{"NegativeBinomialDistribution", "[", 
+       RowBox[{"n", ",", "p"}], "]"}], ",", 
+      RowBox[{"n", "-", "1"}]}], "]"}], ",", 
+    RowBox[{"n", "\[Rule]", 
+     RowBox[{"+", "\[Infinity]"}]}]}], "]"}], "=", 
+  TagBox[GridBox[{
+     {"\[Piecewise]", GridBox[{
+        {"0", 
+         RowBox[{"0", "\[LessEqual]", "p", "<", 
+          FractionBox["1", "2"]}]},
+        {
+         FractionBox["1", "2"], 
+         RowBox[{"p", "\[Equal]", 
+          FractionBox["1", "2"]}]},
+        {"1", 
+         RowBox[{
+          FractionBox["1", "2"], "<", "p", "\[LessEqual]", "1"}]}
+       },
+       AllowedDimensions->{2, Automatic},
+       Editable->True,
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+         "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.84]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}},
+       Selectable->True]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxItemSize->{
+     "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.35]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   "Piecewise",
+   DeleteWithContents->True,
+   Editable->False,
+   SelectWithContents->True,
+   Selectable->False,
+   StripWrapperBoxes->True]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DiscreteLimit", "[", 
+   RowBox[{
+    RowBox[{"CDF", "[", 
+     RowBox[{
+      RowBox[{"NegativeBinomialDistribution", "[", 
+       RowBox[{
+        RowBox[{"n", "+", "1"}], ",", "p"}], "]"}], ",", 
+      RowBox[{"n", "-", "2"}]}], "]"}], ",", 
+    RowBox[{"n", "\[Rule]", 
+     RowBox[{"+", "\[Infinity]"}]}]}], "]"}], "=", 
+  TagBox[GridBox[{
+     {"\[Piecewise]", GridBox[{
+        {"0", 
+         RowBox[{"0", "\[LessEqual]", "p", "<", 
+          FractionBox["1", "2"]}]},
+        {
+         FractionBox["1", "2"], 
+         RowBox[{"p", "\[Equal]", 
+          FractionBox["1", "2"]}]},
+        {"1", 
+         RowBox[{
+          FractionBox["1", "2"], "<", "p", "\[LessEqual]", "1"}]}
+       },
+       AllowedDimensions->{2, Automatic},
+       Editable->True,
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+         "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.84]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}},
+       Selectable->True]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxItemSize->{
+     "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.35]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   "Piecewise",
+   DeleteWithContents->True,
+   Editable->False,
+   SelectWithContents->True,
+   Selectable->False,
+   StripWrapperBoxes->True]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\:5f53n", "\[Rule]", 
+   RowBox[{"+", "\[Infinity]\:65f6"}]}], "\:ff0c", 
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"n", ",", "p"}], "]"}], "\[Tilde]", 
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {
+          RowBox[{"1", "-", 
+           FractionBox["n", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"1", "+", 
+               RowBox[{"2", " ", "n"}]}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{"1", "-", "p"}], ")"}]}]]}], 
+          RowBox[{"0", "\[LessEqual]", "p", "<", 
+           FractionBox["1", "2"]}]},
+         {
+          RowBox[{"1", "-", 
+           FractionBox["n", 
+            RowBox[{"2", " ", 
+             RowBox[{"(", 
+              RowBox[{"1", "+", 
+               RowBox[{"2", " ", "n"}]}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{"1", "-", "p"}], ")"}], " ", "p"}]]}], 
+          RowBox[{"p", "\[Equal]", 
+           FractionBox["1", "2"]}]},
+         {
+          RowBox[{"1", "-", 
+           FractionBox["n", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"1", "+", 
+               RowBox[{"2", " ", "n"}]}], ")"}], " ", "p"}]]}], 
+          RowBox[{
+           FractionBox["1", "2"], "<", "p", "\[LessEqual]", "1"}]}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False,
+    StripWrapperBoxes->True]}]}]}], "Text",
+ CellChangeTimes->{{3.821079582586602*^9, 3.8210797191004734`*^9}, {
+  3.821079803764089*^9, 3.8210799414114714`*^9}, {3.8210801162225676`*^9, 
+  3.82108013260554*^9}, {3.821080189403099*^9, 3.8210802008462987`*^9}, {
+  3.8210802377301764`*^9, 3.8210802981866846`*^9}, {3.8210803397480745`*^9, 
+  3.821080345541582*^9}, {3.8210804292653465`*^9, 3.821080469002636*^9}, {
+  3.8210806532259407`*^9, 
+  3.8210806866766725`*^9}},ExpressionUUID->"eb395819-545a-4461-989f-\
+e178df6e1629"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", 
+   SuperscriptBox["10", "11"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p", "=", 
+   FractionBox["4999", "10000"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DecimalForm", "[", 
+  RowBox[{
+   RowBox[{"N", "[", 
+    RowBox[{"1", "-", 
+     FractionBox["n", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{"2", " ", "n"}]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", "p"}], ")"}]}]]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"+", "\[Infinity]"}], ",", "10"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8210804865427322`*^9, 3.8210805106504717`*^9}},
+ CellLabel->
+  "In[235]:=",ExpressionUUID->"2c85c956-6b82-42c9-815b-421ce64ce77c"],
+
+Cell[BoxData[
+ TagBox[
+  InterpretationBox[
+   StyleBox["\<\"0.0001999600\"\>",
+    ShowStringCharacters->False],
+   0.00019996001299740052`,
+   AutoDelete->True],
+  DecimalForm[#, {
+    DirectedInfinity[1], 10}]& ]], "Output",
+ CellChangeTimes->{{3.821080497169073*^9, 3.8210805141241827`*^9}},
+ CellLabel->
+  "Out[237]//DecimalForm=",ExpressionUUID->"b93af87a-2962-4e31-8895-\
+2187869ca8be"]
+}, Open  ]]
+},
+WindowSize->{1920, 997},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (2020\:5e747\:670815\
+\:65e5)",
+StyleDefinitions->"Homework.nb",
+ExpressionUUID->"a49e7182-7d06-4646-bc6a-4d67354e08f6"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2923, 70, 485, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[3484, 92, 3309, 72, 419, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[6796, 166, 14805, 458, 1062, "Text",ExpressionUUID->"eb395819-545a-4461-989f-e178df6e1629"],
+Cell[CellGroupData[{
+Cell[21626, 628, 764, 23, 214, "Input",ExpressionUUID->"2c85c956-6b82-42c9-815b-421ce64ce77c"],
+Cell[22393, 653, 393, 12, 61, "Output",ExpressionUUID->"b93af87a-2962-4e31-8895-2187869ca8be"]
+}, Open  ]]
+}
+]
+*)
+

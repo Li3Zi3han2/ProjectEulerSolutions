@@ -1,0 +1,193 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6360,        185]
+NotebookOptionsPosition[      5676,        165]
+NotebookOutlinePosition[      6091,        182]
+CellTagsIndexPosition[      6048,        179]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "=", 
+    RowBox[{
+     SubsuperscriptBox["\[Sum]", 
+      RowBox[{"n", "=", "1"}], 
+      RowBox[{"+", "\[Infinity]"}]], 
+     FractionBox["1", 
+      RowBox[{
+       SuperscriptBox["3", "n"], " ", 
+       SuperscriptBox["10", 
+        RowBox[{"3", " ", "n"}]]}]]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "61bdee56-b844-4f7a-aa57-bc2e2de7a2b9"],
+ "\n\nDefine ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9c1b9d89-9006-4fa9-94f3-01a7df522974"],
+ " to be the 10 decimal digits from the nth digit onward. For example, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"A", "[", "100", "]"}], "=", "4938271604"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "1132c360-bbea-4478-8792-656916d99c3f"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"A", "[", 
+     SuperscriptBox["10", "8"], "]"}], "=", "2584642393"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "683d6be5-62cd-4b05-ac87-9aeb72cd7b6e"],
+ ".\n\nFind ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "[", 
+    SuperscriptBox["10", "16"], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c91e9d90-e622-48fd-9b56-96b55e4cf2c2"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.821588204402579*^9, 
+  3.821588316505948*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "=", 
+    RowBox[{
+     SubsuperscriptBox["\[Sum]", 
+      RowBox[{"n", "=", "1"}], 
+      RowBox[{"+", "\[Infinity]"}]], 
+     FractionBox["1", 
+      RowBox[{
+       SuperscriptBox["3", "n"], " ", 
+       SuperscriptBox["10", 
+        RowBox[{"3", " ", "n"}]]}]]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c768a62c-08c9-4f72-9638-3bf057786284"],
+ "\n\n\:8bb0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "70417f47-ce5d-4f98-b150-b0295d227ff6"],
+ "\:4e3a\:4eceA\:7684\:5c0f\:6570\:70b9\:540en\:4f4d\:5f00\:59cb\:768410\:4e2a\
+\:6570\:5b57\:3002\:4f8b\:5982\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"A", "[", "100", "]"}], "=", "4938271604"}], ",", 
+    RowBox[{
+     RowBox[{"A", "[", 
+      SuperscriptBox["10", "8"], "]"}], "=", "2584642393"}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cbd8e8cc-cfba-4a27-88b3-54bfecde39d7"],
+ "\:3002\n\n\:6c42",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "[", 
+    SuperscriptBox["10", "16"], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6e9532c2-210b-4a12-9ac3-581c3f48b340"],
+ "\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.8215883220262284`*^9, 
+   3.8215883378161354`*^9}, {3.821588378806612*^9, 
+   3.8215884328238506`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", 
+   SuperscriptBox["10", "16"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"k", "=", "10"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"\[LeftFloor]", 
+  RowBox[{
+   SuperscriptBox["10", "k"], " ", 
+   RowBox[{"FractionalPart", "[", 
+    RowBox[{"Sum", "[", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"PowerMod", "[", 
+        RowBox[{"10", ",", 
+         RowBox[{"n", "-", "1", "-", 
+          SuperscriptBox["3", "i"]}], ",", 
+         SuperscriptBox["3", "i"]}], "]"}], 
+       SuperscriptBox["3", "i"]], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1", ",", 
+        RowBox[{"\[LeftFloor]", 
+         RowBox[{"Log", "[", 
+          RowBox[{"3", ",", "n"}], "]"}], "\[RightFloor]"}]}], "}"}]}], "]"}],
+     "]"}]}], "\[RightFloor]"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+  3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+  3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+  3.7564263646962595`*^9, 3.7564263899753056`*^9}, {3.821588596196407*^9, 
+  3.821588659909362*^9}, {3.82158873219794*^9, 3.821588755077774*^9}, {
+  3.821588817897973*^9, 3.8215888732475834`*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+
+Cell[BoxData["6086371427"], "Output",
+ CellChangeTimes->{{3.7313704890957747`*^9, 3.7313705114710016`*^9}, 
+   3.731370638655486*^9, 3.756426391477058*^9, {3.821588643370217*^9, 
+   3.821588660240508*^9}, {3.821588732924022*^9, 3.8215887481103992`*^9}, 
+   3.8215888081245203`*^9, {3.8215888614949865`*^9, 3.8215888736680317`*^9}},
+ CellLabel->"Out[22]=",ExpressionUUID->"3a5d8d9f-bcc6-43b3-9de2-d7cc5f07ad0f"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{Automatic, 204}, {89, Automatic}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (2020\:5e747\:670815\
+\:65e5)",
+StyleDefinitions->"Homework.nb",
+ExpressionUUID->"4041d3e3-e010-4642-803f-0961baf8cbc6"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1652, 49, 227, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[2213, 71, 1696, 49, 194, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[3934, 124, 1313, 31, 204, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[5250, 157, 410, 5, 76, "Output",ExpressionUUID->"3a5d8d9f-bcc6-43b3-9de2-d7cc5f07ad0f"]
+}, Open  ]]
+}
+]
+*)
+

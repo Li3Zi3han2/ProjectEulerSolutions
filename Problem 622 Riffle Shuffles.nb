@@ -1,0 +1,220 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8889,        212]
+NotebookOptionsPosition[      8138,        191]
+NotebookOutlinePosition[      8526,        208]
+CellTagsIndexPosition[      8483,        205]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "A riffle shuffle is executed as follows: a deck of cards is split into two \
+equal halves, with the top half taken in the left hand and the bottom half \
+taken in the right hand. Next, the cards are interleaved exactly, with the \
+top card in the right half inserted just after the top card in the left half, \
+the 2nd card in the right half just after the 2nd card in the left half, etc. \
+(Note that this process preserves the location of the top and bottom card of \
+the deck.)\n\nLet ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"s", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "92cd44a9-195b-4af9-bd21-cc76330c955f"],
+ " be the minimum number of consecutive riffle shuffles needed to restore a \
+deck of size n to its original configuration, where n is a positive even \
+number.\n\nAmazingly, a standard deck of 52 cards will first return to its \
+original configuration after only 8 perfect shuffles, so ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"s", "[", "52", "]"}], "=", "8"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "97f9e525-2ef1-4bd5-a3e1-26c80130e8fd"],
+ ". It can be verified that a deck of 86 cards will also return to its \
+original configuration after exactly 8 shuffles, and the sum of all values of \
+n that satisfy ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"s", "[", "n", "]"}], "=", "8"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6932202e-b98d-4a10-88f2-7f17fbac5603"],
+ " is 412.\n\nFind the sum of all values of n that satisfy ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"s", "[", "n", "]"}], "=", "60"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a0f94e0c-18dc-4732-a63d-7ce1fca1246e"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.7652471811222076`*^9, 3.7652472455100937`*^9}, {
+  3.7652473796584272`*^9, 
+  3.7652473805560274`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:5982\:4e0b\:6240\:8ff0\:6267\:884c\:4ea4\:4e92\:63d2\:5165\:6d17\:724c\
+\:ff1a\:5c06\:4e00\:526f\:724c\:5206\:6210\:4e24\:534a\:ff0c\:4e0a\:534a\:90e8\
+\:5206\:5728\:5de6\:624b\:ff0c\:4e0b\:534a\:90e8\:5206\:5728\:53f3\:624b\:3002\
+\:63a5\:4e0b\:6765\:ff0c\:5361\:7247\:6b63\:597d\:4ea4\:9519\:ff0c\:53f3\:534a\
+\:90e8\:5206\:7684\:9876\:90e8\:5361\:7247\:63d2\:5728\:5de6\:534a\:90e8\:5206\
+\:7684\:9876\:90e8\:5361\:7247\:4e4b\:540e\:ff0c\:53f3\:534a\:90e8\:5206\:7684\
+\:7b2c\:4e8c\:5f20\:5361\:7247\:7d27\:8ddf\:5728\:5de6\:534a\:90e8\:5206\:7684\
+\:7b2c\:4e8c\:5f20\:5361\:7247\:4e4b\:540e\:ff0c\:7b49\:7b49\:3002\:ff08\:6ce8\
+\:610f\:8fd9\:4e2a\:8fdb\:7a0b\:4fdd\:7559\:4e86\:724c\:7ec4\:9876\:90e8\:548c\
+\:5e95\:90e8\:724c\:7684\:4f4d\:7f6e\:3002\:ff09\n\n\:8bbe",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"s", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "eb7fe0b5-7ee3-4d17-b9f2-e5c886af7fa2"],
+ "\:662f\:5c06\:5927\:5c0f\:4e3an\:7684\:724c\:7ec4\:6062\:590d\:5230\:5176\
+\:539f\:59cb\:914d\:7f6e\:6240\:9700\:7684\:6700\:5c0f\:8fde\:7eed\:91cd\:590d\
+\:6d17\:724c\:6b21\:6570\:ff0c\:5176\:4e2dn\:662f\:6b63\:5076\:6570\:3002\n\n\
+\:4ee4\:4eba\:60ca\:8bb6\:7684\:662f\:ff0c\:57288\:6b21\:5b8c\:7f8e\:6d17\
+\:724c\:4e4b\:540e\:ff0c52\:5f20\:724c\:7684\:6807\:51c6\:724c\:7ec4\:5c06\
+\:9996\:6b21\:6062\:590d\:5230\:5176\:539f\:59cb\:914d\:7f6e\:ff0c\:56e0\:6b64\
+",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"s", "[", "52", "]"}], "=", "8"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "89c78a4e-e6bd-462e-bf1f-0e57b66244b3"],
+ "\:3002\:53ef\:4ee5\:8bc1\:5b9e\:ff0c\:57288\:6b21\:5b8c\:7f8e\:6d17\:724c\
+\:4e4b\:540e\:ff0c86\:5f20\:724c\:7684\:724c\:7ec4\:4e5f\:5c06\:6062\:590d\
+\:5230\:5176\:539f\:59cb\:914d\:7f6e\:ff0c\:5e76\:4e14\:6ee1\:8db3",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"s", "[", "n", "]"}], "=", "8"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f2d0ef32-d3f2-4192-9b16-026bb07d5ca5"],
+ "\:7684\:6240\:6709n\:503c\:7684\:603b\:548c\:4e3a412\:3002\n\n\:6c42\:6ee1\
+\:8db3",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"s", "[", "n", "]"}], "=", "60"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c8acb0b2-b42a-4406-8038-77e58156ed75"],
+ "\:7684\:6240\:6709n\:503c\:7684\:603b\:548c\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, 3.7652473027371016`*^9, {
+   3.765247346463202*^9, 3.765247425590656*^9}, 3.765247487103177*^9, {
+   3.765247519930414*^9, 3.7652475749982247`*^9}, {3.7652476181438465`*^9, 
+   3.765247683951449*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"s", "[", "n", "]"}], "=", 
+  RowBox[{"MultiplicativeOrder", "[", 
+   RowBox[{"2", ",", 
+    RowBox[{"n", "-", "1"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Mod", "[", 
+   RowBox[{
+    SuperscriptBox["2", 
+     RowBox[{"s", "[", "n", "]"}]], ",", 
+    RowBox[{"n", "-", "1"}]}], "]"}], "=", "1"}], "\[IndentingNewLine]", 
+ RowBox[{"Divisible", "[", 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["2", 
+     RowBox[{"s", "[", "n", "]"}]], "-", "1"}], ",", 
+   RowBox[{"n", "-", "1"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\:5f53s", "[", "n", "]"}], "=", 
+   RowBox[{"60", "\:65f6"}]}], "\:ff0c", 
+  RowBox[{"n", "-", 
+   RowBox[{"1", "\:662f", 
+    SuperscriptBox["2", 
+     RowBox[{"s", "[", "n", "]"}]]}], "-", 
+   RowBox[{"1", "\:7684\:7ea6\:6570"}]}]}]}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, 3.7652473027371016`*^9, {
+   3.765247346463202*^9, 3.765247425590656*^9}, 3.765247487103177*^9, {
+   3.765247519930414*^9, 3.7652475749982247`*^9}, {3.7652476181438465`*^9, 
+   3.7652478134791336`*^9}},ExpressionUUID->"806f7337-51ff-4b5f-ba90-\
+722d6cd7d56d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Total", "[", 
+  RowBox[{"1", "+", 
+   RowBox[{"Cases", "[", 
+    RowBox[{
+     RowBox[{"Divisors", "[", 
+      RowBox[{
+       SuperscriptBox["2", "60"], "-", "1"}], "]"}], ",", 
+     RowBox[{"x_", "/;", 
+      RowBox[{
+       RowBox[{"MultiplicativeOrder", "[", 
+        RowBox[{"2", ",", "x"}], "]"}], "\[Equal]", "60"}]}]}], "]"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+  3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+  3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+  3.7564263646962595`*^9, 3.7564263899753056`*^9}, {3.7652473163576603`*^9, 
+  3.765247318510903*^9}, {3.7652477527594657`*^9, 3.76524776018262*^9}, {
+  3.7652478232589874`*^9, 3.7652478558787794`*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+
+Cell[BoxData["3010983666182123972"], "Output",
+ CellChangeTimes->{{3.7313704890957747`*^9, 3.7313705114710016`*^9}, 
+   3.731370638655486*^9, 3.756426391477058*^9, 3.765247760564599*^9, 
+   3.7652478337260046`*^9, 3.765247875008673*^9},
+ CellLabel->"Out[18]=",ExpressionUUID->"9aa38d45-c28e-4daa-a6cb-77246b710a86"]
+}, Open  ]]
+},
+WindowSize->{2560, 1336},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
+Magnification:>2. Inherited,
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2138, 46, 464, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[2699, 68, 2870, 55, 420, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[5572, 125, 1322, 34, 218, "Text",ExpressionUUID->"806f7337-51ff-4b5f-ba90-722d6cd7d56d"],
+Cell[CellGroupData[{
+Cell[6919, 163, 885, 19, 95, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[7807, 184, 315, 4, 124, "Output",ExpressionUUID->"9aa38d45-c28e-4daa-a6cb-77246b710a86"]
+}, Open  ]]
+}
+]
+*)
+

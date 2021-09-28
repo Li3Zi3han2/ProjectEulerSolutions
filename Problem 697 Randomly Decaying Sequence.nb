@@ -1,0 +1,369 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12413,        361]
+NotebookOptionsPosition[     11634,        340]
+NotebookOutlinePosition[     12046,        357]
+CellTagsIndexPosition[     12003,        354]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Given a fixed real number c, define a random sequence ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox[
+    RowBox[{"{", 
+     SubscriptBox["X", "n"], "}"}], 
+    RowBox[{"n", "\[GreaterEqual]", "0"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e54a85bc-aeeb-432c-ade1-ae69eff1fd40"],
+ " by the following random process:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["X", "0"], "=", "c"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d265cfb2-87c5-4e0e-83df-ebe56aa305cf"],
+ "(with probability 1).\nFor ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", ">", "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8bbf007e-97a2-457a-9398-aa0313db728d"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["X", "n"], "=", 
+    RowBox[{
+     SubscriptBox["U", "n"], " ", 
+     SubscriptBox["X", 
+      RowBox[{"n", "-", "1"}]]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d453265b-eb8a-4acd-b426-9c6e85978895"],
+ " where Un is a real number chosen at random between zero and one, \
+uniformly, and independently of all previous choices ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox[
+    RowBox[{"{", 
+     SubscriptBox["U", "m"], "}"}], 
+    RowBox[{"m", "<", "n"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6910d62c-bcdd-4d76-8372-36360b5f0dd7"],
+ ".\n\nIf we desire there to be precisely a 25% probability that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["X", "100"], "<", "1"}], TraditionalForm]],ExpressionUUID->
+  "ccba334d-79e7-46ca-99e0-2a78e87e8b96"],
+ ", then this can be arranged by fixing c such that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Log", "[", 
+     RowBox[{"10", ",", "c"}], "]"}], "\[TildeTilde]", "46.27"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3fda0eec-c199-49ac-a7f1-aaf83ee5d5e8"],
+ ".\n\nSuppose now that c is set to a different value, so that there is \
+precisely a 25% probability that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["X", "10000000"], "<", "1"}], TraditionalForm]],
+  ExpressionUUID->"8c2f659f-799c-4167-9be5-f884e9c97db9"],
+ ".\n\nFind ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Log", "[", 
+    RowBox[{"10", ",", "c"}], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "dd1a1351-b36f-4787-b424-c9d2e9e52bb2"],
+ " and give your answer rounded to two places after the decimal point."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.804220736370407*^9, 3.8042207785601993`*^9}, {
+  3.804221196290002*^9, 3.804221264900947*^9}, {3.8042217363982906`*^9, 
+  3.8042217408044415`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:7ed9\:5b9a\:56fa\:5b9a\:7684\:5b9e\:6570c\:ff0c\:901a\:8fc7\:4ee5\:4e0b\
+\:968f\:673a\:8fc7\:7a0b\:5b9a\:4e49\:968f\:673a\:5e8f\:5217",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox[
+    RowBox[{"{", 
+     SubscriptBox["X", "n"], "}"}], 
+    RowBox[{"n", "\[GreaterEqual]", "0"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9fac8955-66d1-499c-b2c2-0ce5e5cde341"],
+ "\:ff1a\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["X", "n"], "=", 
+    TagBox[GridBox[{
+       {"\[Piecewise]", GridBox[{
+          {"c", 
+           RowBox[{"n", "\[Equal]", "0"}]},
+          {
+           RowBox[{
+            SubscriptBox["U", "n"], " ", 
+            SubscriptBox["X", 
+             RowBox[{"n", "-", "1"}]]}], 
+           RowBox[{"n", "\[GreaterEqual]", "1"}]}
+         },
+         AllowedDimensions->{2, Automatic},
+         Editable->True,
+         GridBoxAlignment->{
+          "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.84]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}},
+         Selectable->True]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{
+       "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.35]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     "Piecewise",
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True,
+     Selectable->False,
+     StripWrapperBoxes->True]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0afa3db6-73d3-454f-898b-09e7247dc9fa"],
+ "\n\:5176\:4e2d",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["U", "n"], "\[Distributed]", 
+    RowBox[{"UniformDistribution", "[", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}], "]"}]}], TraditionalForm]],
+  ExpressionUUID->"a5963498-9eec-4853-b711-86ba2e5acfbb"],
+ "\:4e14\:76f8\:4e92\:72ec\:7acb\:3002\n\n\
+\:5982\:679c\:6211\:4eec\:5e0c\:671b",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"P", "[", 
+     RowBox[{
+      SubscriptBox["X", "100"], "<", "1"}], "]"}], "=", 
+    FractionBox["1", "4"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0b02c236-e46a-4e9d-895d-0f4ee9598b08"],
+ "\:ff0c\:5219\:53ef\:4ee5\:901a\:8fc7\:5c06c\:56fa\:5b9a\:4e3a",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Log", "[", 
+     RowBox[{"10", ",", "c"}], "]"}], "\[TildeTilde]", "46.27"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5afeceeb-8766-440c-bd09-2b4e4fd0cc68"],
+ "\:6765\:5b9e\:73b0\:3002\n\n\:73b0\:5728\:5047\:8bbe\:5c06c\:8bbe\:7f6e\
+\:4e3a\:53e6\:4e00\:4e2a\:4e0d\:540c\:7684\:503c\:ff0c\:4f7f\:5f97",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"P", "[", 
+     RowBox[{
+      SubscriptBox["X", "10000000"], "<", "1"}], "]"}], "=", 
+    FractionBox["1", "4"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "413ecd81-21d8-45d7-b31b-7cf0a531a00b"],
+ "\:3002\n\n\:6c42",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Log", "[", 
+    RowBox[{"10", ",", "c"}], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f327f18a-ad9a-4fd0-a56b-52a63594ea29"],
+ "\:ff0c\:5e76\:5c06\:7b54\:6848\:56db\:820d\:4e94\:5165\:5230\:5c0f\:6570\
+\:70b9\:540e\:4e24\:4f4d\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.8042207912871304`*^9, 
+   3.804220815707398*^9}, {3.8042208534738045`*^9, 3.8042210701996756`*^9}, {
+   3.804221109701807*^9, 3.804221166292815*^9}, 3.804221300534902*^9, 
+   3.80422173261104*^9},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{
+  SubscriptBox["U", "i"], "\[Distributed]", 
+  RowBox[{"UniformDistribution", "[", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"-", 
+   RowBox[{"Log", "[", 
+    SubscriptBox["U", "i"], "]"}]}], "\[Distributed]", 
+  RowBox[{"ExponentialDistribution", "[", "1", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubsuperscriptBox["\[Sum]", 
+    RowBox[{"i", "=", "1"}], "n"], 
+   RowBox[{"(", 
+    RowBox[{"-", 
+     RowBox[{"Log", "[", 
+      SubscriptBox["U", "i"], "]"}]}], ")"}]}], "\[Distributed]", 
+  RowBox[{"GammaDistribution", "[", 
+   RowBox[{"n", ",", "1"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"P", "[", 
+  RowBox[{
+   SubscriptBox["X", "n"], "<", "1"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"=", 
+  RowBox[{"P", "[", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["X", "0"], " ", 
+     RowBox[{
+      SubsuperscriptBox["\[Product]", 
+       RowBox[{"i", "=", "1"}], "n"], 
+      SubscriptBox["U", "i"]}]}], "<", "1"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"=", 
+  RowBox[{"P", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Log", "[", 
+      SubscriptBox["X", "0"], "]"}], "+", 
+     RowBox[{
+      SubsuperscriptBox["\[Sum]", 
+       RowBox[{"i", "=", "1"}], "n"], 
+      RowBox[{"Log", "[", 
+       SubscriptBox["U", "i"], "]"}]}]}], "<", "0"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"=", 
+  RowBox[{"P", "[", 
+   RowBox[{
+    RowBox[{
+     SubsuperscriptBox["\[Sum]", 
+      RowBox[{"i", "=", "1"}], "n"], 
+     RowBox[{"(", 
+      RowBox[{"-", 
+       RowBox[{"Log", "[", 
+        SubscriptBox["U", "i"], "]"}]}], ")"}]}], ">", 
+    RowBox[{"Log", "[", 
+     SubscriptBox["X", "0"], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"=", 
+  RowBox[{"1", "-", 
+   RowBox[{"CDF", "[", 
+    RowBox[{
+     RowBox[{"GammaDistribution", "[", 
+      RowBox[{"n", ",", "1"}], "]"}], ",", 
+     RowBox[{"Log", "[", 
+      SubscriptBox["X", "0"], "]"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubscriptBox["X", "0"], "=", 
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{"InverseCDF", "[", 
+    RowBox[{
+     RowBox[{"GammaDistribution", "[", 
+      RowBox[{"n", ",", "1"}], "]"}], ",", 
+     FractionBox["3", "4"]}], "]"}]]}]}], "Text",
+ CellChangeTimes->{{3.8042213294986477`*^9, 3.804221468372549*^9}, {
+  3.8042215226018767`*^9, 3.8042216100492263`*^9}, {3.8042216637131815`*^9, 
+  3.804221680349146*^9}},ExpressionUUID->"9189f024-f82a-4f87-b9ab-\
+739f5920e8cc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DecimalForm", "[", 
+  RowBox[{
+   RowBox[{"N", "[", 
+    FractionBox[
+     RowBox[{"InverseCDF", "[", 
+      RowBox[{
+       RowBox[{"GammaDistribution", "[", 
+        RowBox[{
+         SuperscriptBox["10", "7"], ",", "1"}], "]"}], ",", 
+       FractionBox["3", "4"]}], "]"}], 
+     RowBox[{"Log", "[", "10", "]"}]], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"+", "\[Infinity]"}], ",", "2"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8042216168937597`*^9, 3.804221638915397*^9}, {
+  3.804221686721328*^9, 3.804221710889861*^9}, {3.8042240791571655`*^9, 
+  3.8042240864499416`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"bd50fb83-4989-4b85-8872-4554f3d9cd06"],
+
+Cell[BoxData[
+ TagBox[
+  InterpretationBox["\<\"4343871.06\"\>",
+   4.343871057160506*^6,
+   AutoDelete->True],
+  DecimalForm[#, {
+    DirectedInfinity[1], 2}]& ]], "Output",
+ CellChangeTimes->{{3.8042216285711265`*^9, 3.804221639264439*^9}, {
+   3.8042217010962954`*^9, 3.804221711697275*^9}, 3.804224087503154*^9},
+ CellLabel->
+  "Out[1]//DecimalForm=",ExpressionUUID->"ffdb80c3-1efb-43b1-9cf7-\
+9a1c2008b96c"]
+}, Open  ]]
+},
+WindowSize->{1904, 981},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (2020\:5e744\:670815\
+\:65e5)",
+StyleDefinitions->"Homework.nb",
+ExpressionUUID->"9a3badc2-860e-45c0-adac-d9338c26ebf0"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2890, 80, 232, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[3451, 102, 4526, 122, 256, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[7980, 226, 2494, 76, 267, "Text",ExpressionUUID->"9189f024-f82a-4f87-b9ab-739f5920e8cc"],
+Cell[CellGroupData[{
+Cell[10499, 306, 704, 18, 76, "Input",ExpressionUUID->"bd50fb83-4989-4b85-8872-4554f3d9cd06"],
+Cell[11206, 326, 412, 11, 48, "Output",ExpressionUUID->"ffdb80c3-1efb-43b1-9cf7-9a1c2008b96c"]
+}, Open  ]]
+}
+]
+*)
+

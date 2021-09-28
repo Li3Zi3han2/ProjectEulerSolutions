@@ -1,0 +1,162 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5737,        154]
+NotebookOptionsPosition[      5114,        135]
+NotebookOutlinePosition[      5472,        151]
+CellTagsIndexPosition[      5429,        148]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+70 colored balls are placed in an urn, 10 for each of the seven rainbow colors.
+
+What is the expected number of distinct colors in 20 randomly picked balls?
+
+Give your answer with nine digits after the decimal point (a.bcdefghij).\
+\>", "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.7262915512238846`*^9, 
+  3.726291555295912*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell["\<\
+70\:4e2a\:5f69\:7403\:653e\:5728\:4e00\:4e2a\:74ee\:4e2d\:ff0c\:6bcf\:79cd\
+\:5f69\:8679\:7684\:989c\:8272\:670910\:4e2a\:3002
+
+\:968f\:673a\:9009\:53d620\:4e2a\:7403\:ff0c\:671f\:671b\:989c\:8272\:79cd\
+\:6570\:662f\:591a\:5c11\:ff1f
+
+\:7528\:5c0f\:6570\:70b9\:540e\:76849\:4f4d\:6570\:5b57\:ff08a.bcdefghij\:ff09\
+\:7ed9\:51fa\:7b54\:6848\:3002\
+\>", "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.726291561125918*^9, {3.726291712025304*^9, 
+   3.7262917555614557`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"p", "[", 
+   RowBox[{
+   "red_", ",", "orange_", ",", "yellow_", ",", "green_", ",", "blue_", ",", 
+    "indigo_", ",", "violet_"}], "]"}], ":=", 
+  FractionBox[
+   RowBox[{
+    RowBox[{"Binomial", "[", 
+     RowBox[{"10", ",", "red"}], "]"}], " ", 
+    RowBox[{"Binomial", "[", 
+     RowBox[{"10", ",", "orange"}], "]"}], " ", 
+    RowBox[{"Binomial", "[", 
+     RowBox[{"10", ",", "yellow"}], "]"}], " ", 
+    RowBox[{"Binomial", "[", 
+     RowBox[{"10", ",", "green"}], "]"}], " ", 
+    RowBox[{"Binomial", "[", 
+     RowBox[{"10", ",", "blue"}], "]"}], " ", 
+    RowBox[{"Binomial", "[", 
+     RowBox[{"10", ",", "indigo"}], "]"}], " ", 
+    RowBox[{"Binomial", "[", 
+     RowBox[{"10", ",", "violet"}], "]"}]}], 
+   RowBox[{"Binomial", "[", 
+    RowBox[{"70", ",", "20"}], "]"}]]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "red", ",", "orange", ",", "yellow", ",", "green", ",", "blue", ",", 
+      "indigo", ",", "violet"}], "}"}], "/.", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+        "red", "+", "orange", "+", "yellow", "+", "green", "+", "blue", "+", 
+         "indigo", "+", "violet"}], "\[Equal]", "20"}], "&&", 
+       RowBox[{"0", "\[LessEqual]", "red", "\[LessEqual]", "10"}], "&&", 
+       RowBox[{"0", "\[LessEqual]", "orange", "\[LessEqual]", "10"}], "&&", 
+       RowBox[{"0", "\[LessEqual]", "yellow", "\[LessEqual]", "10"}], "&&", 
+       RowBox[{"0", "\[LessEqual]", "green", "\[LessEqual]", "10"}], "&&", 
+       RowBox[{"0", "\[LessEqual]", "blue", "\[LessEqual]", "10"}], "&&", 
+       RowBox[{"0", "\[LessEqual]", "indigo", "\[LessEqual]", "10"}], "&&", 
+       RowBox[{"0", "\[LessEqual]", "violet", "\[LessEqual]", "10"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "red", ",", "orange", ",", "yellow", ",", "green", ",", "blue", ",", 
+        "indigo", ",", "violet"}], "}"}], ",", "Integers"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"e", "=", 
+   RowBox[{"Total", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Count", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"Except", "[", "0", "]"}]}], "]"}], "&"}], "/@", "s"}], 
+      ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{"p", "@@@", "s"}], ")"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", 
+  RowBox[{"e", ",", "10"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+  3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+  3.7250282267187443`*^9}, {3.72503044347628*^9, 3.725030445342036*^9}, {
+  3.726291903364693*^9, 3.7262919079375706`*^9}, {3.726291958833251*^9, 
+  3.7262920890815496`*^9}, {3.7262922452675257`*^9, 3.7262923172355385`*^9}, {
+  3.7262923486725388`*^9, 3.7262923625146875`*^9}, {3.726292453331975*^9, 
+  3.726292509297103*^9}, {3.7262927318085213`*^9, 3.726292810267617*^9}, {
+  3.7262928551755843`*^9, 3.7262928628412848`*^9}, {3.7262930912547646`*^9, 
+  3.726293113266243*^9}, {3.7262933910755987`*^9, 3.7262933958501124`*^9}, {
+  3.726293523471203*^9, 3.72629353531959*^9}, {3.7299245416412325`*^9, 
+  3.729924542244933*^9}},ExpressionUUID->"20386a64-a558-4827-99f8-\
+04921bede5b8"],
+
+Cell[BoxData["6.8187418020197616167`10."], "Output",
+ CellChangeTimes->{3.7299238570027895`*^9, 
+  3.729924557742323*^9},ExpressionUUID->"a5de4f13-ec42-4341-acde-\
+a6c2a326e575"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 435, 10, 127, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[996, 32, 600, 14, 127, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[1621, 50, 3296, 77, 290, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[4920, 129, 178, 3, 68, "Output",ExpressionUUID->"a5de4f13-ec42-4341-acde-a6c2a326e575"]
+}, Open  ]]
+}
+]
+*)
+

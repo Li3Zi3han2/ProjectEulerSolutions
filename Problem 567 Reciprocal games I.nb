@@ -1,0 +1,483 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17628,        475]
+NotebookOptionsPosition[     16815,        453]
+NotebookOutlinePosition[     17256,        471]
+CellTagsIndexPosition[     17213,        468]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Tom has built a random generator that is connected to a row of n light \
+bulbs. Whenever the random generator is activated each of the n lights is \
+turned on with the probability of ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "1d6e8ecc-80d6-4686-846b-d121cdd42999"],
+ ", independently of its former state or the state of the other light bulbs.\n\
+\nWhile discussing with his friend Jerry how to use his generator, they \
+invent two different games, they call the reciprocal games:\nBoth games \
+consist of n turns. Each turn is started by choosing a number k randomly \
+between (and including) and , with equal probability of ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", "n"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4eb42193-3548-4905-b008-52a72667cc46"],
+ " for each number, while the possible win for that turn is the reciprocal of \
+k, that is ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", "k"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ecc9dab3-01d1-4336-bdbc-0949a5b34e64"],
+ ".\n\nIn game A, Tom activates his random generator once in each turn. If \
+the number of lights turned on is the same as the previously chosen number k, \
+Jerry wins and gets ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", "k"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "02533901-537b-41fa-942f-0f9e83d13c93"],
+ ", otherwise he will receive nothing for that turn. Jerry\[CloseCurlyQuote]s \
+expected win after playing the total game A consisting of n turns is called ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["J", "A"], "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "97a128de-fa97-424e-873c-6501d838cdb7"],
+ ". For example ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["J", "A"], "[", "6", "]"}], "=", "0.39505208"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b8c1b5f0-8b45-4f47-a5e2-81d84650f358"],
+ ", rounded to 8 decimal places.\n\nFor each turn in game B, after k has been \
+randomly selected, Tom keeps reactivating his random generator until exactly \
+k lights are turned on. After that Jerry takes over and reactivates the \
+random generator until he, too, has generated a pattern with exactly k lights \
+turned on. If this pattern is identical to Tom\[CloseCurlyQuote]s last \
+pattern, Jerry wins and gets ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", "k"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8658c9fb-54ec-4d55-99e3-f673205f013a"],
+ ", otherwise he will receive nothing. Jerry\[CloseCurlyQuote]s expected win \
+after the total game B consisting of n turns is called ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["J", "B"], "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e15c6e2d-9c42-493f-a708-7b75a26dd065"],
+ ". For example ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["J", "B"], "[", "6", "]"}], "=", 
+    "0.4333333333333333333`8."}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c908deda-16ca-4d83-9371-60febe365c34"],
+ ", rounded to 8 decimal places.\n\nLet ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"S", "[", "m", "]"}], "=", 
+    RowBox[{
+     SubsuperscriptBox["\[Sum]", 
+      RowBox[{"n", "=", "1"}], "m"], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["J", "A"], "[", "n", "]"}], "+", 
+       RowBox[{
+        SubscriptBox["J", "B"], "[", "n", "]"}]}], ")"}]}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "58457a6f-bd9f-4348-83f8-9ef042b27be3"],
+ ". For example ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"S", "[", "6", "]"}], "=", "7.58932292"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a921868f-7d5a-42d5-9668-7ab2c05223bd"],
+ ", rounded to 8 decimal places.\n\nFind ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"S", "[", "123456789", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "41ea4e9e-637c-4ef3-b44c-ccd00f8bf16c"],
+ ", rounded to 8 decimal places."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+   3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+   3.756426340041151*^9}, 3.8074332006303244`*^9, {3.807433434335185*^9, 
+   3.8074337096759243`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:6c64\:59c6\:5236\:4f5c\:4e86\:4e00\:53f0\:8fde\:63a5\:7740n\:4e2a\:7535\
+\:706f\:6ce1\:7684\:968f\:673a\:53d1\:7535\:673a\:3002\:6bcf\:6b21\:542f\:52a8\
+\:53d1\:7535\:673a\:ff0cn\:4e2a\:706f\:6ce1\:5c31\:4f1a\:5404\:81ea\:4ee5",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "26535e52-0f6e-4531-837c-761a54b8661c"],
+ "\:7684\:6982\:7387\:53d1\:5149\:ff0c\:6bcf\:4e2a\:706f\:6ce1\:662f\:5426\
+\:53d1\:5149\:4e0e\:5176\:4e4b\:524d\:7684\:72b6\:6001\:548c\:5176\:5b83\:706f\
+\:6ce1\:662f\:5426\:53d1\:5149\:5747\:72ec\:7acb\:3002\n\n\:5f53\:4ed6\:548c\
+\:670b\:53cb\:6770\:745e\:8ba8\:8bba\:8fd9\:53f0\:53d1\:7535\:673a\:65f6\:ff0c\
+\:4ed6\:4eec\:53d1\:660e\:4e86\:4e24\:4e2a\:4e0d\:540c\:7684\:6e38\:620f\:ff0c\
+\:90fd\:79f0\:4e3a\:5012\:6570\:6e38\:620f\:ff1a\:8fd9\:4e24\:4e2a\:6e38\:620f\
+\:90fd\:8fdb\:884cn\:8f6e\:ff0c\:6bcf\:4e00\:8f6e\:5f00\:59cb\:65f6\:5148\
+\:968f\:673a\:5730\:57281\:5230n\:ff08\:5305\:62ec1\:548cn\:ff09\:4e2d\:7b49\
+\:6982\:7387\:5730\:9009\:62e9\:4e00\:4e2a\:6574\:6570k\:ff0c\:8fd9\:4e00\
+\:8f6e\:7684\:80dc\:8005\:6536\:76ca\:5c06\:4f1a\:662fk\:7684\:5012\:6570\
+\:ff0c\:4e5f\:5c31\:662f",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", "k"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "fedd432d-f0a6-49b9-b1cd-76ae9b287b9c"],
+ "\:3002\n\n\:5728\:6e38\:620fA\:4e2d\:ff0c\:6c64\:59c6\:5728\:6bcf\:4e00\
+\:8f6e\:4e2d\:53ea\:542f\:52a8\:968f\:673a\:53d1\:7535\:673a\:4e00\:6b21\:3002\
+\:5982\:679c\:53d1\:5149\:7684\:706f\:6570\:548c\:4e4b\:524d\:9009\:62e9\:7684\
+\:6570k\:4e00\:81f4\:ff0c\:6770\:745e\:83b7\:80dc\:5e76\:83b7\:5f97\:6536\
+\:76ca",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", "k"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "74a0c21c-2a62-4382-b020-f9ba8b697ea4"],
+ "\:ff0c\:5426\:5219\:4ed6\:8fd9\:4e00\:8f6e\:6ca1\:6709\:6536\:76ca\:3002\
+\:6e38\:620fA\:8fdb\:884c\:5b8c\:6574\:7684n\:8f6e\:540e\:ff0c\:6770\:745e\
+\:7684\:9884\:671f\:6536\:76ca\:8bb0\:4e3a",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["J", "A"], "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bbcd38b7-4c81-47fd-b7fe-6e46ad3f3e79"],
+ "\:ff0c\:5df2\:77e5",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["J", "A"], "[", "6", "]"}], "=", "0.39505208"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "99578f37-8d1b-458f-94ef-042d68cfa631"],
+ "\:ff0c\:4fdd\:75598\:4f4d\:5c0f\:6570\:3002\n\n\:5728\:6e38\:620fB\:4e2d\
+\:ff0c\:9009\:5b9a\:6574\:6570k\:540e\:ff0c\:6c64\:59c6\:4e0d\:65ad\:5730\
+\:91cd\:542f\:968f\:673a\:53d1\:7535\:673a\:ff0c\:76f4\:81f3\:6070\:597d\:6709\
+k\:4e2a\:706f\:6ce1\:53d1\:5149\:ff0c\:7136\:540e\:7531\:6770\:745e\:63a5\
+\:624b\:53d1\:7535\:673a\:ff0c\:4e0d\:65ad\:91cd\:542f\:76f4\:81f3\:518d\:6b21\
+\:51fa\:73b0\:6709k\:4e2a\:706f\:6ce1\:53d1\:5149\:3002\:5982\:679c\:6770\
+\:745e\:5f97\:5230\:7684k\:4e2a\:53d1\:5149\:706f\:6ce1\:6070\:597d\:5c31\
+\:662f\:6c64\:59c6\:5f97\:5230\:7684k\:4e2a\:53d1\:5149\:706f\:6ce1\:ff0c\
+\:90a3\:4e48\:6770\:745e\:83b7\:80dc\:5e76\:83b7\:5f97\:6536\:76ca",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", "k"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d9913df9-e7b4-4ecb-919b-5f88a1e25efc"],
+ "\:ff0c\:5426\:5219\:4ed6\:8fd9\:4e00\:8f6e\:6ca1\:6709\:6536\:76ca\:3002\
+\:6e38\:620fB\:8fdb\:884c\:5b8c\:6574\:7684n\:8f6e\:540e\:ff0c\:6770\:745e\
+\:7684\:9884\:671f\:6536\:76ca\:8bb0\:4e3a",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["J", "B"], "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bb1dc6f8-d036-453e-bddb-735a148f5095"],
+ "\:ff0c\:5df2\:77e5",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["J", "B"], "[", "6", "]"}], "=", 
+    "0.4333333333333333333`8."}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "eb23b507-3fc8-4f2f-ac8b-a3079bdbf84e"],
+ "\:ff0c\:4fdd\:75598\:4f4d\:5c0f\:6570\n\n\:8bb0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"S", "[", "m", "]"}], "=", 
+    RowBox[{
+     SubsuperscriptBox["\[Sum]", 
+      RowBox[{"n", "=", "1"}], "m"], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["J", "A"], "[", "n", "]"}], "+", 
+       RowBox[{
+        SubscriptBox["J", "B"], "[", "n", "]"}]}], ")"}]}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "87400a1b-0b5a-4edc-9f6a-ede20b21094e"],
+ "\:3002\:5df2\:77e5",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"S", "[", "6", "]"}], "=", "7.58932292"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bdc73a83-bd66-4987-a30f-2f31a29a3b1d"],
+ "\:ff0c\:4fdd\:75598\:4f4d\:5c0f\:6570\:3002\n\n\:6c42",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"S", "[", "123456789", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5496e035-fb86-474a-80e8-3593e58358a5"],
+ "\:5e76\:4fdd\:75598\:4f4d\:5c0f\:6570\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.807433222500744*^9, 
+   3.8074332871419935`*^9}, {3.8074333203859315`*^9, 
+   3.8074334148793163`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   SubscriptBox["J", "A"], "[", "n", "]"}], "=", 
+  RowBox[{
+   RowBox[{
+    SubsuperscriptBox["\[Sum]", 
+     RowBox[{"k", "=", "1"}], "n"], 
+    RowBox[{
+     RowBox[{"Binomial", "[", 
+      RowBox[{"n", ",", "k"}], "]"}], " ", 
+     FractionBox["1", 
+      SuperscriptBox["2", "n"]], " ", 
+     FractionBox["1", "k"]}]}], "=", 
+   RowBox[{
+    FractionBox["1", 
+     SuperscriptBox["2", "n"]], " ", 
+    RowBox[{
+     SubsuperscriptBox["\[Sum]", 
+      RowBox[{"k", "=", "1"}], "n"], 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["2", "k"], "-", "1"}], 
+      "k"]}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["J", "B"], "[", "n", "]"}], "=", 
+  RowBox[{
+   RowBox[{
+    SubsuperscriptBox["\[Sum]", 
+     RowBox[{"k", "=", "1"}], "n"], 
+    FractionBox["1", 
+     RowBox[{
+      RowBox[{"Binomial", "[", 
+       RowBox[{"n", ",", "k"}], "]"}], " ", "k"}]]}], "=", 
+   RowBox[{
+    FractionBox["1", 
+     SuperscriptBox["2", "n"]], " ", 
+    RowBox[{
+     SubsuperscriptBox["\[Sum]", 
+      RowBox[{"k", "=", "1"}], "n"], 
+     FractionBox[
+      SuperscriptBox["2", "k"], "k"]}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"S", "[", "m", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"=", 
+  RowBox[{
+   SubsuperscriptBox["\[Sum]", 
+    RowBox[{"n", "=", "1"}], "m"], 
+   RowBox[{
+    SubsuperscriptBox["\[Sum]", 
+     RowBox[{"k", "=", "1"}], "n"], 
+    RowBox[{
+     FractionBox["1", 
+      SuperscriptBox["2", "n"]], " ", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["2", 
+        RowBox[{"k", "+", "1"}]], "-", "1"}], 
+      "k"]}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"=", 
+  RowBox[{
+   SubsuperscriptBox["\[Sum]", 
+    RowBox[{"k", "=", "1"}], "m"], 
+   RowBox[{
+    SubsuperscriptBox["\[Sum]", 
+     RowBox[{"n", "=", "k"}], "m"], 
+    RowBox[{
+     FractionBox["1", 
+      SuperscriptBox["2", "n"]], " ", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["2", 
+        RowBox[{"k", "+", "1"}]], "-", "1"}], 
+      "k"]}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"=", 
+  RowBox[{
+   SubsuperscriptBox["\[Sum]", 
+    RowBox[{"k", "=", "1"}], "m"], 
+   FractionBox[
+    RowBox[{"4", "+", 
+     FractionBox["1", 
+      SuperscriptBox["2", "m"]], "-", 
+     FractionBox["1", 
+      SuperscriptBox["2", 
+       RowBox[{"k", "-", "1"}]]], "-", 
+     FractionBox["1", 
+      SuperscriptBox["2", 
+       RowBox[{"m", "-", "k", "-", "1"}]]]}], "k"]}]}], "\[IndentingNewLine]", 
+ RowBox[{"=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"4", "+", 
+      FractionBox["1", 
+       SuperscriptBox["2", "m"]]}], ")"}], " ", 
+    RowBox[{"HarmonicNumber", "[", "m", "]"}]}], "+", 
+   RowBox[{
+    FractionBox["1", 
+     SuperscriptBox["2", "m"]], " ", 
+    RowBox[{"LerchPhi", "[", 
+     RowBox[{
+      FractionBox["1", "2"], ",", "1", ",", 
+      RowBox[{"1", "+", "m"}]}], "]"}]}], "-", 
+   RowBox[{"Log", "[", "4", "]"}], "+", 
+   FractionBox[
+    RowBox[{"\[ImaginaryI]", " ", "\[Pi]"}], 
+    SuperscriptBox["2", 
+     RowBox[{"m", "-", "1"}]]], "+", 
+   RowBox[{"4", " ", 
+    RowBox[{"LerchPhi", "[", 
+     RowBox[{"2", ",", "1", ",", 
+      RowBox[{"1", "+", "m"}]}], "]"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"\[TildeTilde]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"4", "+", 
+      FractionBox["1", 
+       SuperscriptBox["2", "m"]]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{"EulerGamma", "+", 
+      RowBox[{"Log", "[", "m", "]"}], "+", 
+      FractionBox["1", 
+       RowBox[{"2", " ", "m"}]], "-", 
+      FractionBox["1", 
+       RowBox[{"12", " ", 
+        SuperscriptBox["m", "2"]}]]}], ")"}]}], "-", 
+   RowBox[{"Log", "[", "4", "]"}], "-", 
+   FractionBox["4", "m"]}]}]}], "Text",
+ CellChangeTimes->{{3.807433750161971*^9, 3.807433767323208*^9}, {
+   3.807433821228094*^9, 3.807433847955671*^9}, {3.80743390991564*^9, 
+   3.807433936520647*^9}, {3.8074344905729055`*^9, 3.8074344966631575`*^9}, {
+   3.8074345647583895`*^9, 3.807434609496578*^9}, {3.8074346484269705`*^9, 
+   3.807434706518252*^9}, {3.8074347485871525`*^9, 3.8074347582134085`*^9}, {
+   3.8074348100543776`*^9, 3.807434813351132*^9}, {3.807434861097665*^9, 
+   3.807434901184521*^9}, {3.8074349338170214`*^9, 3.80743502506173*^9}, {
+   3.8074351712276106`*^9, 3.8074352274602795`*^9}, {3.8074354357280655`*^9, 
+   3.8074354441010475`*^9}, {3.8074355680100794`*^9, 3.807435569729481*^9}, {
+   3.807436036236047*^9, 3.8074360468141346`*^9}, {3.8074362474625874`*^9, 
+   3.8074362533369036`*^9}, {3.8074364924030743`*^9, 
+   3.8074365182707014`*^9}, {3.80743655554416*^9, 3.807436585111029*^9}, {
+   3.8074366554665213`*^9, 3.8074366577547054`*^9}, 
+   3.8075032132587576`*^9},ExpressionUUID->"79817382-9503-48cf-96fa-\
+460c7dd35738"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"m", "=", "123456789"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DecimalForm", "[", 
+  RowBox[{
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"4", "+", 
+         FractionBox["1", 
+          SuperscriptBox["2", "m"]]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{"EulerGamma", "+", 
+         RowBox[{"Log", "[", "m", "]"}], "+", 
+         FractionBox["1", 
+          RowBox[{"2", " ", "m"}]], "-", 
+         FractionBox["1", 
+          RowBox[{"12", " ", 
+           SuperscriptBox["m", "2"]}]]}], ")"}]}], "-", 
+      RowBox[{"Log", "[", "4", "]"}], "-", 
+      FractionBox["4", "m"]}], ",", "20"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"+", "\[Infinity]"}], ",", "8"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.807436527769122*^9, 3.807436597367425*^9}, 
+   3.807436629325149*^9, {3.8075031886189976`*^9, 3.8075031987160125`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"c6e091d2-4d66-4303-b385-3f3ded5bf6e6"],
+
+Cell[BoxData[
+ TagBox[
+  InterpretationBox["\<\"75.44817535\"\>",
+   75.4481753469583127870773157694763878537`20.,
+   AutoDelete->True],
+  DecimalForm[#, {
+    DirectedInfinity[1], 8}]& ]], "Output",
+ CellChangeTimes->{{3.8074365443284063`*^9, 3.8074365983228703`*^9}, 
+   3.8074366299016385`*^9, {3.8075031922298474`*^9, 3.8075032017508345`*^9}},
+ CellLabel->
+  "Out[4]//DecimalForm=",ExpressionUUID->"d77307fe-c12d-4b63-be2f-\
+db59aca377df"]
+}, Open  ]]
+},
+WindowSize->{1904, 989},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>2. Inherited,
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (2020\:5e744\:670815\
+\:65e5)",
+StyleDefinitions->"Homework.nb",
+ExpressionUUID->"5713b137-5e38-4739-a3dc-9173b06e30fd"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 4575, 115, 884, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[5136, 137, 5430, 123, 752, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[10569, 262, 4725, 143, 664, "Text",ExpressionUUID->"79817382-9503-48cf-96fa-460c7dd35738"],
+Cell[CellGroupData[{
+Cell[15319, 409, 1034, 28, 167, "Input",ExpressionUUID->"c6e091d2-4d66-4303-b385-3f3ded5bf6e6"],
+Cell[16356, 439, 443, 11, 91, "Output",ExpressionUUID->"d77307fe-c12d-4b63-be2f-db59aca377df"]
+}, Open  ]]
+}
+]
+*)
+
