@@ -1,0 +1,315 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12907,        307]
+NotebookOptionsPosition[     12152,        286]
+NotebookOutlinePosition[     12540,        303]
+CellTagsIndexPosition[     12497,        300]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Suppliers \[OpenCurlyQuote]A\[CloseCurlyQuote] and \[OpenCurlyQuote]B\
+\[CloseCurlyQuote] provided the following numbers of products for the luxury \
+hamper market:\n\n",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {"Product", 
+      RowBox[{"'", 
+       RowBox[{"A", "'"}]}], 
+      RowBox[{"'", 
+       RowBox[{"B", "'"}]}]},
+     {
+      RowBox[{"Beluga", " ", "Caviar"}], "5248", "640"},
+     {
+      RowBox[{"Christmas", " ", "Cake"}], "1312", "1888"},
+     {
+      RowBox[{"Gammon", " ", "Joint"}], "2624", "3776"},
+     {
+      RowBox[{"Vintage", " ", "Port"}], "5760", "3776"},
+     {
+      RowBox[{"Champagne", " ", "Truffles"}], "3936", "5664"}
+    }], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "1e3a6918-e415-41fe-ac7c-cb4b4e7c9645"],
+ "\n\nAlthough the suppliers try very hard to ship their goods in perfect \
+condition, there is inevitably some spoilage - i.e. products gone bad.\n\nThe \
+suppliers compare their performance using two types of statistic:\n\n    The \
+five per-product spoilage rates for each supplier are equal to the number of \
+products gone bad divided by the number of products supplied, for each of the \
+five products in turn.\n    The overall spoilage rate for each supplier is \
+equal to the total number of products gone bad divided by the total number of \
+products provided by that supplier.\n\nTo their surprise, the suppliers found \
+that each of the five per-product spoilage rates was worse (higher) for \
+\[OpenCurlyQuote]B\[CloseCurlyQuote] than for \[OpenCurlyQuote]A\
+\[CloseCurlyQuote] by the same factor (ratio of spoilage rates), ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"m", ">", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0752a302-0665-4a03-90dd-46779f7604c0"],
+ "; and yet, paradoxically, the overall spoilage rate was worse for \
+\[OpenCurlyQuote]A\[CloseCurlyQuote] than for \[OpenCurlyQuote]B\
+\[CloseCurlyQuote], also by a factor of m.\n\nThere are thirty-five ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"m", ">", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "495533a6-627a-4920-8571-4a93178d539c"],
+ " for which this surprising result could have occurred, the smallest of \
+which is 1476/1475.\n\nWhat\[CloseCurlyQuote]s the largest possible value of \
+m?\nGive your answer as a fraction reduced to its lowest terms, in the form \
+u/v."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.7333971525060234`*^9, 
+  3.7333971545281525`*^9}, {3.755824993191155*^9, 3.755825066094881*^9}, {
+  3.7558251930355635`*^9, 
+  3.7558251949282713`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:4f9b\:5e94\:5546\[OpenCurlyQuote]A\[CloseCurlyQuote]\:548c\
+\[OpenCurlyQuote]B\[CloseCurlyQuote]\:4e3a\:8c6a\:534e\:793c\:76d2\:5e02\:573a\
+\:63d0\:4f9b\:4ee5\:4e0b\:6570\:91cf\:7684\:5546\:54c1\:ff1a\n\n",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {"\:5546\:54c1", 
+      RowBox[{"'", 
+       RowBox[{"A", "'"}]}], 
+      RowBox[{"'", 
+       RowBox[{"B", "'"}]}]},
+     {"\:9c9f\:9c7c\:5b50\:9171", "5248", "640"},
+     {"\:5723\:8bde\:86cb\:7cd5", "1312", "1888"},
+     {"\:732a\:8089\:706b\:817f", "2624", "3776"},
+     {"\:5178\:85cf\:6ce2\:7279", "5760", "3776"},
+     {"\:9999\:69df\:677e\:9732", "3936", "5664"}
+    }], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "21fd7bce-aa0a-4260-880c-fd03f3554668"],
+ "\n\n\:5c3d\:7ba1\:4f9b\:5e94\:5546\:5341\:5206\:52aa\:529b\:4fdd\:6301\:5546\
+\:54c1\:5904\:4e8e\:826f\:597d\:72b6\:6001\:ff0c\:4f46\:603b\:4f1a\:51fa\:73b0\
+\:4e00\:4e9b\:4e0d\:53ef\:907f\:514d\:7684\:635f\:8017\:ff0c\:4e5f\:5c31\:662f\
+\:8bf4\:ff0c\:5546\:54c1\:53d8\:8d28\:4e86\:4e4b\:7c7b\:7684\:3002\n\n\:4f9b\
+\:5e94\:5546\:7528\:4e24\:79cd\:4e0d\:540c\:7684\:7edf\:8ba1\:91cf\:6765\:6bd4\
+\:8f83\:4ed6\:4eec\:7684\:8868\:73b0\:ff1a\n\n    \:4e24\:5bb6\:4f9b\:5e94\
+\:5546\:7684\:5404\:5546\:54c1\:635f\:8017\:7387\:662f\:6bcf\:79cd\:5546\:54c1\
+\:7684\:53d8\:8d28\:6570\:91cf\:9664\:4ee5\:6bcf\:79cd\:5546\:54c1\:7684\:4f9b\
+\:5e94\:91cf\:ff0c\:5bf9\:4e8e\:4e94\:79cd\:5546\:54c1\:5404\:81ea\:8ba1\:7b97\
+\:3002\n    \
+\:4e24\:5bb6\:4f9b\:5e94\:5546\:7684\:603b\:635f\:8017\:7387\:662f\:6240\:6709\
+\:5546\:54c1\:7684\:53d8\:8d28\:6570\:91cf\:9664\:4ee5\:6240\:6709\:5546\:54c1\
+\:7684\:603b\:4f9b\:5e94\:91cf\:3002\n\n\:4ee4\:4ed6\:4eec\:60ca\:8bb6\:7684\
+\:662f\:ff0c\:5c3d\:7ba1\:5c31\:4e94\:79cd\:5546\:54c1\:5404\:81ea\:7684\:635f\
+\:8017\:7387\:800c\:8a00\:ff0c\[OpenCurlyQuote]B\[CloseCurlyQuote]\:90fd\:8981\
+\:6bd4\[OpenCurlyQuote]A\[CloseCurlyQuote]\:8868\:73b0\:5f97\:5dee\:ff08\:635f\
+\:8017\:7387\:66f4\:9ad8\:ff09\:ff0c\:4e14\:5747\:4e3a",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"m", ">", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c9b77891-daa3-4655-bdf6-e3e421abd1c0"],
+ "\:500d\:ff0c\:7136\:800c\:5c31\:603b\:635f\:8017\:7387\:800c\:8a00\:ff0c\
+\[OpenCurlyQuote]A\[CloseCurlyQuote]\:5374\:8981\:6bd4\[OpenCurlyQuote]B\
+\[CloseCurlyQuote]\:8868\:73b0\:5f97\:5dee\:ff0c\:4e14\:540c\:6837\:4e3am\
+\:500d\:3002\n\n\:4e00\:5171\:670935\:4e2a\:4e0d\:540c\:7684",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"m", ">", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "75667e9b-b0e5-4eb0-8790-6f600a8cea49"],
+ "\:4f7f\:5f97\:4e0a\:8ff0\:60c5\:51b5\:6709\:53ef\:80fd\:53d1\:751f\:ff0c\
+\:5176\:4e2d\:6700\:5c0f\:7684\:662f1476/1475\:3002\n\n\:6700\:5927\:7684m\
+\:662f\:591a\:5c11\:ff1f\n\:4f60\:7684\:7b54\:6848\:5e94\:8be5\:5199\:6210\
+\:6700\:7b80\:5206\:6570\:ff0c\:683c\:5f0f\:4e3au/v\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, {3.755825087828354*^9, 
+   3.7558251857806096`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{"\:6839\:636e\:9898\:8bbe", "\:ff0c", 
+  RowBox[{
+   RowBox[{"\[Piecewise]", GridBox[{
+      {
+       RowBox[{
+        RowBox[{
+         FractionBox["spoilageA", "productA"], " ", "m"}], "=", 
+        FractionBox["spoilageB", "productB"]}]},
+      {
+       RowBox[{
+        FractionBox[
+         RowBox[{"Total", "[", "spoilageA", "]"}], 
+         RowBox[{"Total", "[", "productA", "]"}]], "=", 
+        RowBox[{
+         FractionBox[
+          RowBox[{"Total", "[", "spoilageB", "]"}], 
+          RowBox[{"Total", "[", "productB", "]"}]], " ", "m"}]}]}
+     }]}], "\[Implies]", 
+   RowBox[{"\[Piecewise]", GridBox[{
+      {
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox["5", "41"], ",", 
+           FractionBox["59", "41"], ",", 
+           FractionBox["59", "41"], ",", 
+           FractionBox["59", "90"], ",", 
+           FractionBox["59", "41"]}], "}"}], "spoilageA", " ", 
+         FractionBox["u", "v"]}], "=", "spoilageB"}]},
+      {
+       RowBox[{
+        RowBox[{"Total", "[", "spoilageA", "]"}], "=", 
+        RowBox[{
+         FractionBox["295", "246"], " ", 
+         RowBox[{"Total", "[", "spoilageB", "]"}], " ", 
+         FractionBox["u", "v"]}]}]}
+     }]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"\:56e0\:4e3a5", ",", "41", ",", 
+  RowBox[{"59", "\:662f\:7d20\:6570"}], "\:ff0c", 
+  "\:6240\:4ee5u\:5fc5\:987b\:662f41\:7684\:500d\:6570", "\:ff0c", 
+  "v\:5fc5\:987b\:662f5", ",", 
+  RowBox[{"59", "\:7684\:500d\:6570"}]}]}], "Text",
+ CellChangeTimes->{{3.7558270531582856`*^9, 3.7558271478530345`*^9}, {
+  3.7558271839985523`*^9, 
+  3.7558272812571306`*^9}},ExpressionUUID->"8c3a1408-5bbe-4ed5-b691-\
+e701bab0db94"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"productA", "=", 
+   RowBox[{"{", 
+    RowBox[{"5248", ",", "1312", ",", "2624", ",", "5760", ",", "3936"}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"productB", "=", 
+   RowBox[{"{", 
+    RowBox[{"640", ",", "1888", ",", "3776", ",", "3776", ",", "5664"}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spoilageA", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "[", "1", "]"}], ",", 
+     RowBox[{"x", "[", "2", "]"}], ",", 
+     RowBox[{"x", "[", "3", "]"}], ",", 
+     RowBox[{"x", "[", "4", "]"}], ",", 
+     RowBox[{"x", "[", "5", "]"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"spoilageB", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"y", "[", "1", "]"}], ",", 
+     RowBox[{"y", "[", "2", "]"}], ",", 
+     RowBox[{"y", "[", "3", "]"}], ",", 
+     RowBox[{"y", "[", "4", "]"}], ",", 
+     RowBox[{"y", "[", "5", "]"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"cons", "=", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Thread", "[", 
+       RowBox[{"0", "\[LessEqual]", "spoilageA", "\[LessEqual]", "productA"}],
+        "]"}], ",", 
+      RowBox[{"Thread", "[", 
+       RowBox[{"0", "\[LessEqual]", "spoilageB", "\[LessEqual]", "productB"}],
+        "]"}]}], "}"}], "/.", 
+    RowBox[{"List", "\[Rule]", "Sequence"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       FractionBox[
+        RowBox[{"spoilageA", "\[LeftDoubleBracket]", 
+         RowBox[{"1", ";;", "3"}], "\[RightDoubleBracket]"}], 
+        RowBox[{"productA", "\[LeftDoubleBracket]", 
+         RowBox[{"1", ";;", "3"}], "\[RightDoubleBracket]"}]], " ", 
+       FractionBox["u", "v"]}], "\[Equal]", 
+      FractionBox[
+       RowBox[{"spoilageB", "\[LeftDoubleBracket]", 
+        RowBox[{"1", ";;", "3"}], "\[RightDoubleBracket]"}], 
+       RowBox[{"productB", "\[LeftDoubleBracket]", 
+        RowBox[{"1", ";;", "3"}], "\[RightDoubleBracket]"}]]}], ",", 
+     RowBox[{"u", ">", "v", ">", "0"}], ",", "cons"}], "}"}], ",", 
+   RowBox[{"Join", "[", 
+    RowBox[{
+     RowBox[{"spoilageA", "\[LeftDoubleBracket]", 
+      RowBox[{"1", ";;", "3"}], "\[RightDoubleBracket]"}], ",", 
+     RowBox[{"spoilageB", "\[LeftDoubleBracket]", 
+      RowBox[{"1", ";;", "3"}], "\[RightDoubleBracket]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"u", ",", "v"}], "}"}]}], "]"}], ",", "Integers"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+  3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+  3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+  3.733397177005328*^9, 3.7333972103847303`*^9}, {3.7558252787592936`*^9, 
+  3.7558254121093397`*^9}, {3.7558254495663757`*^9, 3.755825478720973*^9}, {
+  3.7558255241916637`*^9, 3.755825599490245*^9}, {3.755825629743883*^9, 
+  3.7558256448615465`*^9}, {3.75582576503928*^9, 3.7558258006360683`*^9}, {
+  3.7558259381953363`*^9, 3.7558259521719027`*^9}, {3.7670582684077673`*^9, 
+  3.767058292793498*^9}, {3.767058388544218*^9, 3.7670586380891523`*^9}, {
+  3.76705875390417*^9, 3.767058770504738*^9}, {3.7670588010750985`*^9, 
+  3.7670589078107376`*^9}, {3.76705964054693*^9, 3.767059668668902*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Solve","svars",
+   "\"\:65b9\:7a0b\:53ef\:80fd\:65e0\:6cd5\:7ed9\:51fa\:6240\:6709 \\\" solve \
+\\\" \:53d8\:91cf\:7684\:89e3.\"",2,15,6,30377359837410373763,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.7670586292248783`*^9, 3.767058639479431*^9}},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[11]:=",ExpressionUUID->"c473791f-87e3-4969-ad25-\
+5bca1210b7ee"]
+}, Open  ]]
+},
+WindowSize->{2560, 1336},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
+Magnification:>2. Inherited,
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2746, 58, 1000, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[3307, 80, 3267, 60, 976, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[6577, 142, 1709, 47, 207, "Text",ExpressionUUID->"8c3a1408-5bbe-4ed5-b691-e701bab0db94"],
+Cell[CellGroupData[{
+Cell[8311, 193, 3406, 79, 371, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[11720, 274, 416, 9, 46, "Message",ExpressionUUID->"c473791f-87e3-4969-ad25-5bca1210b7ee"]
+}, Open  ]]
+}
+]
+*)
+

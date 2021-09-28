@@ -1,0 +1,159 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5292,        151]
+NotebookOptionsPosition[      4669,        132]
+NotebookOutlinePosition[      5027,        148]
+CellTagsIndexPosition[      4984,        145]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "For a positive integer n, let ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Sigma]", "2"], "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "82d05b44-cd30-4af3-bb73-e34c97854ba4"],
+ " be the sum of the squares of its divisors. For example,\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Sigma]", "2"], "[", "10", "]"}], "=", 
+    RowBox[{
+     RowBox[{"1", "+", "4", "+", "25", "+", "100"}], "=", "130"}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "433e131d-30ee-468d-bef3-fb9aed612f4a"],
+ ".\n\nFind the sum of all n, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", "<", "n", "<", "64000000"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b51b6774-2c7e-48d9-a613-537b3e432ddb"],
+ " such that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Sigma]", "2"], "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cc3e4f5e-2b84-4b44-ac82-29c2ed6bf6eb"],
+ " is a perfect square."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.7333971525060234`*^9, 
+  3.7333971545281525`*^9}, {3.756005673866887*^9, 
+  3.7560057456207495`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:5bf9\:4e8e\:6b63\:6574\:6570n\:ff0c\:8bb0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Sigma]", "2"], "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a54281c9-1731-4217-9501-76fa8ef451f4"],
+ "\:4e3a\:5176\:6240\:6709\:7ea6\:6570\:7684\:5e73\:65b9\:548c\:3002\:4f8b\
+\:5982\:ff0c\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Sigma]", "2"], "[", "10", "]"}], "=", 
+    RowBox[{
+     RowBox[{"1", "+", "4", "+", "25", "+", "100"}], "=", "130"}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "90d2e0d6-60b3-45ef-971f-5c563dcc48c0"],
+ ".\n\n\:5728",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", "<", "n", "<", "64000000"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a104cfc5-f647-42f6-990e-f0c043d66a3f"],
+ "\:4e2d\:ff0c\:6709\:4e9bn\:6ee1\:8db3",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Sigma]", "2"], "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c321a3f4-fd69-4578-be15-9ad5c69053db"],
+ "\:4e3a\:5b8c\:5168\:5e73\:65b9\:6570\:ff0c\:6c42\:6240\:6709\:8fd9\:4e9bn\
+\:7684\:548c\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, {3.756005753756486*^9, 
+   3.7560057844438014`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubsuperscriptBox["\[Sum]", 
+   RowBox[{"n", "=", "1"}], 
+   RowBox[{"64000000", "-", "1"}]], 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"IntegerQ", "[", 
+     SqrtBox[
+      RowBox[{"DivisorSigma", "[", 
+       RowBox[{"2", ",", "n"}], "]"}]], "]"}], ",", "n", ",", "0"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+   3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+   3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+   3.733397177005328*^9, 3.7333972103847303`*^9}, {3.7560057991954327`*^9, 
+   3.7560058503490143`*^9}, 3.7560059144081597`*^9, {3.7560062910235395`*^9, 
+   3.7560062973125644`*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+
+Cell[BoxData["1922364685"], "Output",
+ CellChangeTimes->{{3.7313704890957747`*^9, 3.7313705114710016`*^9}, 
+   3.731370638655486*^9, 3.7333972122504797`*^9, 3.7560058447898765`*^9, 
+   3.756005883509777*^9, 3.756005916821876*^9, 3.7560172781163816`*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"9928feac-86cd-4ece-a641-15fb51ffaf07"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1373, 38, 94, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1934, 60, 1546, 41, 94, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[3505, 105, 813, 18, 60, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[4321, 125, 332, 4, 33, "Output",ExpressionUUID->"9928feac-86cd-4ece-a641-15fb51ffaf07"]
+}, Open  ]]
+}
+]
+*)
+

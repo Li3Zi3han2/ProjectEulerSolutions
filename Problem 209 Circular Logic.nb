@@ -1,0 +1,208 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7127,        200]
+NotebookOptionsPosition[      6629,        184]
+NotebookOutlinePosition[      6985,        200]
+CellTagsIndexPosition[      6942,        197]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "A k-input binary truth table is a map from k input bits (binary digits, 0 \
+[false] or 1 [true]) to 1 output bit. For example, the 2-input binary truth \
+tables for the logical AND and XOR functions are:\n\n",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {"x", "y", 
+      RowBox[{"x", " ", "AND", " ", "y"}]},
+     {"0", "0", "0"},
+     {"0", "1", "0"},
+     {"1", "0", "0"},
+     {"1", "1", "1"}
+    }], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "15508bc8-5fc0-4eaa-a262-fe11dc54e40c"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {"x", "y", 
+      RowBox[{"x", " ", "XOR", " ", "y"}]},
+     {"0", "0", "0"},
+     {"0", "1", "1"},
+     {"1", "0", "1"},
+     {"1", "1", "0"}
+    }], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8d9e105d-878d-431b-a1c7-896b25bd4c90"],
+ "\n\nHow many 6-input binary truth tables, \[Tau], satisfy the formula\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"BitAnd", "[", 
+     RowBox[{
+      RowBox[{"\[Tau]", 
+       RowBox[{"{", 
+        RowBox[{"a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f"}], 
+        "}"}]}], ",", 
+      RowBox[{"\[Tau]", 
+       RowBox[{"{", 
+        RowBox[{"b", ",", "c", ",", "d", ",", "e", ",", "f", ",", 
+         RowBox[{"BitXor", "[", 
+          RowBox[{"a", ",", 
+           RowBox[{"BitAnd", "[", 
+            RowBox[{"b", ",", "c"}], "]"}]}], "]"}]}], "}"}]}]}], "]"}], "=", 
+    "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bcc2d400-d940-438d-a6ea-516f75c7e35a"],
+ "\nfor all 6-bit inputs ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f"}], "}"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0a0b5d26-4b34-44da-b1ff-e5b4405b7c04"],
+ "?"
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.7333971525060234`*^9, 
+  3.7333971545281525`*^9}, {3.7338288698909197`*^9, 3.7338288740022254`*^9}, {
+  3.733828906034339*^9, 3.733828987348442*^9}, {3.7338290375034924`*^9, 
+  3.733829117344699*^9}, {3.7338294844853377`*^9, 
+  3.733829489656746*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "k\:5143\:771f\:503c\:8868\:662f\:4ecek\:6bd4\:7279\:4f4d\:ff08\:5373\:4e8c\
+\:8fdb\:5236\:4f4d\:7684\:7b80\:79f0\:ff0c\:5176\:4e2d0\:4ee3\:8868\:5047\
+\:ff0c1\:4ee3\:8868\:771f\:ff09\:8f93\:5165\:52301\:6bd4\:7279\:4f4d\:8f93\
+\:51fa\:7684\:6620\:5c04\:3002\:4f8b\:5982\:ff0c\:903b\:8f91\:8fd0\:7b97\:7b26\
+AND\:ff08\:548c\:ff09\:548cXOR\:ff08\:5f02\:6216\:ff09\:76842\:5143\:771f\
+\:503c\:8868\:5982\:4e0b\:6240\:793a\:ff1a\n\n",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {"x", "y", 
+      RowBox[{"x", " ", "AND", " ", "y"}]},
+     {"0", "0", "0"},
+     {"0", "1", "0"},
+     {"1", "0", "0"},
+     {"1", "1", "1"}
+    }], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "794b32ec-bb6f-4376-b628-1604006efd23"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {"x", "y", 
+      RowBox[{"x", " ", "XOR", " ", "y"}]},
+     {"0", "0", "0"},
+     {"0", "1", "1"},
+     {"1", "0", "1"},
+     {"1", "1", "0"}
+    }], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cd5bcb41-89d6-488c-b3bc-af496020bf1c"],
+ "\n\n\:6709\:591a\:5c11\:4e2a6\:5143\:771f\:503c\:8868\[Tau]\:ff0c\:5bf9\
+\:4e8e\:6240\:6709\:76846\:6bd4\:7279\:4f4d\:8f93\:5165",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f"}], "}"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e8df38a6-eb9e-41df-9f7b-5a1718416417"],
+ "\:59cb\:7ec8\:6ee1\:8db3\:4e0b\:8ff0\:7b49\:5f0f\:ff1f\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"BitAnd", "[", 
+     RowBox[{
+      RowBox[{"\[Tau]", "@@", 
+       RowBox[{"{", 
+        RowBox[{"a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f"}], 
+        "}"}]}], ",", 
+      RowBox[{"\[Tau]", "@@", 
+       RowBox[{"{", 
+        RowBox[{"b", ",", "c", ",", "d", ",", "e", ",", "f", ",", 
+         RowBox[{"BitXor", "[", 
+          RowBox[{"a", ",", 
+           RowBox[{"BitAnd", "[", 
+            RowBox[{"b", ",", "c"}], "]"}]}], "]"}]}], "}"}]}]}], "]"}], "=", 
+    "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f30521cd-aef0-497a-8693-42b6d9fe93ec"]
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, 3.733828886036874*^9, {
+   3.733829013737153*^9, 3.7338290140544147`*^9}, {3.733829460451849*^9, 
+   3.7338294605776405`*^9}, {3.733829823037674*^9, 3.7338298247217274`*^9}, {
+   3.733830858779559*^9, 
+   3.733830867001584*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"input", "=", 
+   RowBox[{"Tuples", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1"}], "}"}], ",", "6"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"BitAnd", "[", 
+  RowBox[{
+   RowBox[{"input", "\[LeftDoubleBracket]", 
+    RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}], ",", 
+   RowBox[{"\[Tau]", 
+    RowBox[{"{", 
+     RowBox[{"b", ",", "c", ",", "d", ",", "e", ",", "f", ",", 
+      RowBox[{"BitXor", "[", 
+       RowBox[{"a", ",", 
+        RowBox[{"BitAnd", "[", 
+         RowBox[{"b", ",", "c"}], "]"}]}], "]"}]}], "}"}]}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+  3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+  3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+  3.733397177005328*^9, 3.7333972103847303`*^9}, {3.733829068167369*^9, 
+  3.733829071471563*^9}, {3.733829966069547*^9, 3.7338299690740433`*^9}, {
+  3.7338301534065194`*^9, 3.733830225413108*^9}, {3.733830400617505*^9, 
+  3.733830411218459*^9}},ExpressionUUID->"6a7c367e-c1c3-4109-93e6-\
+34add9704799"]
+},
+WindowSize->{681, 676},
+WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2261, 63, 454, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[2822, 85, 2653, 68, 454, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[5478, 155, 1147, 27, 100, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"]
+}
+]
+*)
+

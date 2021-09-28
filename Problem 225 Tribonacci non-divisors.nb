@@ -1,0 +1,234 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8473,        226]
+NotebookOptionsPosition[      7845,        207]
+NotebookOutlinePosition[      8203,        223]
+CellTagsIndexPosition[      8160,        220]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "The sequence ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+   "1", ",", "1", ",", "1", ",", "3", ",", "5", ",", "9", ",", "17", ",", 
+    "31", ",", "57", ",", "105", ",", "193", ",", "355", ",", "653", ",", 
+    RowBox[{"1201", "\[Ellipsis]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "77802569-f40c-43c7-b90e-b795129f20d9"],
+ "\nis defined by ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["T", "1"], "=", 
+    RowBox[{
+     SubscriptBox["T", "2"], "=", 
+     RowBox[{
+      SubscriptBox["T", "3"], "=", "1"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "1cf73be1-cf08-4032-af5c-3d9cbb463e20"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["T", "n"], "=", 
+    RowBox[{
+     SubscriptBox["T", 
+      RowBox[{"n", "-", "1"}]], "+", 
+     SubscriptBox["T", 
+      RowBox[{"n", "-", "2"}]], "+", 
+     SubscriptBox["T", 
+      RowBox[{"n", "-", "3"}]]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "709af023-0df9-4f48-aca4-4d0f1d50f8a7"],
+ ".\n\nIt can be shown that 27 does not divide any terms of this sequence.\n\
+In fact, 27 is the first odd number with this property.\n\nFind the 124th odd \
+number that does not divide any terms of the above sequence."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.7333971525060234`*^9, 
+  3.7333971545281525`*^9}, {3.7560244615095067`*^9, 
+  3.7560245229569635`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:5e8f\:5217",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+   "1", ",", "1", ",", "1", ",", "3", ",", "5", ",", "9", ",", "17", ",", 
+    "31", ",", "57", ",", "105", ",", "193", ",", "355", ",", "653", ",", 
+    RowBox[{"1201", "\[Ellipsis]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b6ff36bc-0d47-4575-b77e-8cf40891be5d"],
+ "\n\:7684\:5b9a\:4e49\:4e3a",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["T", "1"], "=", 
+    RowBox[{
+     SubscriptBox["T", "2"], "=", 
+     RowBox[{
+      SubscriptBox["T", "3"], "=", "1"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "eb1f519e-b0b0-47e3-bcd9-06aa53bdb6c5"],
+ "\:4ee5\:53ca",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["T", "n"], "=", 
+    RowBox[{
+     SubscriptBox["T", 
+      RowBox[{"n", "-", "1"}]], "+", 
+     SubscriptBox["T", 
+      RowBox[{"n", "-", "2"}]], "+", 
+     SubscriptBox["T", 
+      RowBox[{"n", "-", "3"}]]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "febbaa6e-ce4f-4a0a-8d18-45aed2982545"],
+ "\:3002\n\n\:53ef\:4ee5\:8bf4\:660e\:ff0c27\:4e0d\:80fd\:6574\:9664\:8fd9\
+\:4e2a\:5e8f\:5217\:4e2d\:7684\:4efb\:4f55\:4e00\:9879\:3002\:4e8b\:5b9e\:4e0a\
+\:ff0c27\:662f\:7b2c\:4e00\:4e2a\:62e5\:6709\:8fd9\:4e00\:6027\:8d28\:7684\
+\:5947\:6570\:3002\n\n\:6c42\:7b2c124\:4e2a\:4e0d\:80fd\:6574\:9664\:4e0a\
+\:8ff0\:5e8f\:5217\:4e2d\:4efb\:4f55\:4e00\:9879\:7684\:5947\:6570\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, 3.756024469659237*^9, {
+   3.7560245304008245`*^9, 
+   3.756024541851036*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"TribonacciDivisorQ", "[", "x_", "]"}], ":=", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"flag", "=", "0"}], ";", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"Divisible", "[", 
+        RowBox[{
+         RowBox[{"x", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+         ",", "i"}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"flag", "=", "1"}], ";", "True"}], ",", "False"}], "]"}]}], 
+    ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"j", "=", "0"}], ";", 
+  RowBox[{"Do", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"NestWhileList", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}],
+           ",", 
+          RowBox[{"#", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}],
+           ",", 
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+             "#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], "+", 
+             RowBox[{
+             "#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], "+", 
+             RowBox[{
+             "#", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}]}], 
+            ",", "i"}], "]"}]}], "}"}], "&"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "\[NotEqual]", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "&&", 
+         RowBox[{"!", 
+          RowBox[{"TribonacciDivisorQ", "[", "#", "]"}]}]}], "&"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", "1"}], "}"}], ",", "30000"}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"flag", "\[Equal]", "0"}], ",", 
+       RowBox[{"j", "=", 
+        RowBox[{"j", "+", "1"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"j", "\[Equal]", "124"}], ",", 
+       RowBox[{"Return", "[", "i", "]"}]}], "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", "\[Infinity]", ",", "2"}], "}"}]}], 
+   "]"}]}]}], "Input",
+ CellChangeTimes->{{3.7560791962060633`*^9, 3.7560791982177505`*^9}, {
+   3.7560807604524984`*^9, 3.756080840395012*^9}, {3.7560812390357733`*^9, 
+   3.756081255421197*^9}, {3.7560812927073927`*^9, 3.7560814506787024`*^9}, {
+   3.756081480798996*^9, 3.756081490344506*^9}, {3.756081521769601*^9, 
+   3.7560815387449474`*^9}, {3.7560815714938335`*^9, 
+   3.7560816259883423`*^9}, {3.7560817149094543`*^9, 3.756081719224779*^9}, {
+   3.7560822140704784`*^9, 3.756082246305444*^9}, {3.756082287496011*^9, 
+   3.7560824806308465`*^9}, {3.756084326431772*^9, 3.7560843627251034`*^9}, 
+   3.7560844405239525`*^9, {3.756084575908809*^9, 3.756084583867565*^9}, 
+   3.75608463172009*^9, {3.756086801300454*^9, 3.756086809193243*^9}, {
+   3.756086878278453*^9, 3.756086945406949*^9}, {3.7560870084341254`*^9, 
+   3.756087009476962*^9}},ExpressionUUID->"2637cc4f-6a2c-4bf4-a43b-\
+3b5f3fa8b7ce"],
+
+Cell[BoxData["2009"], "Output",
+ CellChangeTimes->{{3.756081358668071*^9, 3.7560813662528887`*^9}, 
+   3.7560814908364296`*^9, 3.7560815393658705`*^9, {3.7560815721867247`*^9, 
+   3.7560816265592318`*^9}, 3.756081719935672*^9, 3.7560822154392633`*^9, {
+   3.7560823115232816`*^9, 3.756082316371499*^9}, 3.7560824244906125`*^9, {
+   3.7560824547408895`*^9, 3.7560824749417343`*^9}, 3.7560825178770294`*^9, 
+   3.7560844419907227`*^9, 3.7560845433138967`*^9, 3.756084577568551*^9, {
+   3.7560846298973775`*^9, 3.7560846326179533`*^9}, {3.7560868073675075`*^9, 
+   3.756086834356292*^9}, {3.756086908984638*^9, 3.756086966961582*^9}},
+ CellLabel->
+  "Out[112]=",ExpressionUUID->"d62a8107-dfa0-420a-9835-a18f2ac2ea83"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1589, 43, 173, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[2150, 65, 1839, 47, 150, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[4014, 116, 3098, 76, 212, "Input",ExpressionUUID->"2637cc4f-6a2c-4bf4-a43b-3b5f3fa8b7ce"],
+Cell[7115, 194, 714, 10, 37, "Output",ExpressionUUID->"d62a8107-dfa0-420a-9835-a18f2ac2ea83"]
+}, Open  ]]
+}
+]
+*)
+

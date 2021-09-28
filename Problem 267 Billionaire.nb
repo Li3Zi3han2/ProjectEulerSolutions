@@ -1,0 +1,218 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8596,        210]
+NotebookOptionsPosition[      7875,        190]
+NotebookOutlinePosition[      8233,        206]
+CellTagsIndexPosition[      8190,        203]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "You are given a unique investment opportunity.\n\nStarting with \
+\[Sterling]1 of capital, you can choose a fixed proportion, f, of your \
+capital to bet on a fair coin toss repeatedly for 1000 tosses.\n\nYour return \
+is double your bet for heads and you lose your bet for tails.\n\nFor example, \
+if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"f", "\[ThinSpace]", "=", "\[ThinSpace]", 
+    FractionBox["1", "4"]}], TraditionalForm]],ExpressionUUID->
+  "70641a6a-9394-48c4-906d-2cd83e3c7584"],
+ ", for the first toss you bet \[Sterling]0.25, and if heads comes up you win \
+\[Sterling]0.5 and so then have \[Sterling]1.5. You then bet \[Sterling]0.375 \
+and if the second toss is tails, you have \[Sterling]1.125.\n\nChoosing f to \
+maximize your chances of having at least \[Sterling]1,000,000,000 after 1,000 \
+flips, what is the chance that you become a billionaire?\n\nAll computations \
+are assumed to be exact (no rounding), but give your answer rounded to 12 \
+digits behind the decimal point in the form 0.abcdefghijkl."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.7333971525060234`*^9, 
+  3.7333971545281525`*^9}, {3.73518278474824*^9, 
+  3.7351828166502733`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:73b0\:5728\:4f60\:9762\:524d\:6709\:4e00\:4e2a\:4ec5\:6b64\:4e00\:6b21\
+\:7684\:6295\:8d44\:673a\:4f1a\:3002\n\n\:4e00\:5f00\:59cb\:ff0c\:4f60\:6709\
+\[Sterling]1\:7684\:8d44\:672c\:3002\:4f60\:53ef\:4ee5\:9009\:62e9\:4e00\:4e2a\
+\:56fa\:5b9a\:7684\:6bd4\:4f8bf\:ff0c\:6bcf\:4e00\:8f6e\:6295\:5165\:8fd9\
+\:4e2a\:6bd4\:4f8b\:7684\:8d44\:672c\:ff0c\:5e76\:629b\:63b7\:4e00\:679a\:6807\
+\:51c6\:786c\:5e01\:ff0c\:8fd9\:6837\:7684\:8fc7\:7a0b\:91cd\:590d1000\:8f6e\
+\:3002\n\n\:5982\:679c\:786c\:5e01\:662f\:6b63\:9762\:671d\:4e0a\:ff0c\:4f60\
+\:7684\:56de\:62a5\:662f\:6295\:5165\:8d44\:672c\:7684\:4e24\:500d\:ff0c\:5982\
+\:679c\:662f\:53cd\:9762\:671d\:4e0a\:5219\:6ca1\:6709\:56de\:62a5\:3002\n\n\
+\:4f8b\:5982\:ff0c\:5982\:679c\:9009\:62e9",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"f", "\[ThinSpace]", "=", "\[ThinSpace]", 
+    FractionBox["1", "4"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0e04c716-e949-4c08-bc8c-70a3b5ab5bbe"],
+ "\:ff0c\:7b2c\:4e00\:8f6e\:6295\:5165\:7684\:8d44\:672c\:662f\[Sterling]0.25\
+\:ff0c\:5047\:5b9a\:6b63\:9762\:671d\:4e0a\:ff0c\:90a3\:4e48\:4f60\:83b7\:5f97\
+\:7684\:56de\:62a5\:662f\[Sterling]0.5\:ff0c\:56e0\:6b64\:603b\:8d44\:672c\
+\:53d8\:6210\[Sterling]1.5\:3002\:4e0b\:4e00\:8f6e\:4f60\:6295\:5165\:7684\
+\:8d44\:672c\:662f\[Sterling]0.375\:ff0c\:5047\:5b9a\:53cd\:9762\:671d\:4e0a\
+\:ff0c\:90a3\:4e48\:4f60\:73b0\:5728\:7684\:603b\:8d44\:672c\:662f\[Sterling]\
+1.125\:3002\n\n\:7ecf\:8fc71000\:8f6e\:540e\:4f60\:6709\:4e00\:5b9a\:51e0\
+\:7387\:62e5\:6709\:81f3\:5c11\[Sterling]1000000000\:7684\:8d44\:672c\:3002\
+\:9009\:62e9\:6700\:5927\:5316\:8fd9\:4e2a\:51e0\:7387\:7684f\:65f6\:ff0c\
+\:4f60\:6709\:591a\:5927\:7684\:51e0\:7387\:6210\:4e3a\:5341\:4ebf\:5bcc\:7fc1\
+\:ff1f\n\n\:8ba1\:7b97\:8fc7\:7a0b\:4e2d\:5fc5\:987b\:662f\:7cbe\:786e\:503c\
+\:ff08\:4e0d\:56db\:820d\:4e94\:5165\:ff09\:ff0c\:4f46\:5c06\:4f60\:7684\:7b54\
+\:6848\:56db\:820d\:4e94\:5165\:5230\:5c0f\:6570\:70b9\:540e12\:4f4d\:5c0f\
+\:6570\:ff0c\:5373\:5f62\:5f0f\:4e3a0.abcdefghijkl\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, {3.73518279488468*^9, 
+   3.735182869670035*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\:8bben", "=", "1000"}], "\:ff0c", 
+  "w\:662f\:6b63\:9762\:671d\:4e0a\:7684\:6b21\:6570"}], \
+"\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"1", " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      RowBox[{"2", " ", "f"}]}], ")"}], "w"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "-", "f"}], ")"}], 
+    RowBox[{"n", "-", "w"}]]}], "\[GreaterEqual]", 
+  SuperscriptBox["10", "9"]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"w", " ", 
+    RowBox[{"Log", "[", 
+     RowBox[{"1", "+", 
+      RowBox[{"2", " ", "f"}]}], "]"}]}], "+", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"n", "-", "w"}], ")"}], " ", 
+    RowBox[{"Log", "[", 
+     RowBox[{"1", "-", "f"}], "]"}]}]}], "\[GreaterEqual]", 
+  RowBox[{"9", " ", 
+   RowBox[{"Log", "[", "10", "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"w", "\[GreaterEqual]", 
+  FractionBox[
+   RowBox[{
+    RowBox[{"9", " ", 
+     RowBox[{"Log", "[", "10", "]"}]}], "-", 
+    RowBox[{"n", " ", 
+     RowBox[{"Log", "[", 
+      RowBox[{"1", "-", "f"}], "]"}]}]}], 
+   RowBox[{
+    RowBox[{"Log", "[", 
+     RowBox[{"1", "+", 
+      RowBox[{"2", " ", "f"}]}], "]"}], "-", 
+    RowBox[{"Log", "[", 
+     RowBox[{"1", "-", "f"}], "]"}]}]]}]}], "Text",
+ CellChangeTimes->{{3.735182913009268*^9, 
+  3.7351830323366885`*^9}},ExpressionUUID->"d25d7a7a-c92b-417d-be7c-\
+85fb35c51f27"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "1000"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"w", "[", "f_", "]"}], ":=", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"9", " ", 
+      RowBox[{"Log", "[", "10", "]"}]}], "-", 
+     RowBox[{"n", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"1", "-", "f"}], "]"}]}]}], 
+    RowBox[{
+     RowBox[{"Log", "[", 
+      RowBox[{"1", "+", 
+       RowBox[{"2", " ", "f"}]}], "]"}], "-", 
+     RowBox[{"Log", "[", 
+      RowBox[{"1", "-", "f"}], "]"}]}]]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{"CDF", "[", 
+    RowBox[{
+     RowBox[{"BinomialDistribution", "[", 
+      RowBox[{"n", ",", 
+       FractionBox["1", "2"]}], "]"}], ",", 
+     RowBox[{
+      RowBox[{"1000", "-", 
+       RowBox[{"w", "[", "f", "]"}]}], "/.", 
+      RowBox[{"NSolve", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"D", "[", 
+           RowBox[{
+            RowBox[{"w", "[", "f", "]"}], ",", "f"}], "]"}], "\[Equal]", 
+          "0"}], "&&", 
+         RowBox[{"0", "\[LessEqual]", "f", "\[LessEqual]", "1"}]}], ",", 
+        "f"}], "]"}]}]}], "]"}], ",", "12"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+  3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+  3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+  3.733397177005328*^9, 3.7333972103847303`*^9}, {3.7351830347583294`*^9, 
+  3.735183127114929*^9}, {3.7351831908590035`*^9, 3.735183205581712*^9}, {
+  3.7351832758737683`*^9, 
+  3.735183280801*^9}},ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+
+Cell[BoxData[
+ RowBox[{"{", "0.99999283618671359467070212600480837088`12.", "}"}]], "Output",
+ CellChangeTimes->{{3.7313704890957747`*^9, 3.7313705114710016`*^9}, 
+   3.731370638655486*^9, 3.7333972122504797`*^9, {3.7351830641587315`*^9, 
+   3.7351830714116035`*^9}, {3.7351831037235737`*^9, 3.735183106967087*^9}, {
+   3.735183195901218*^9, 3.7351832059606533`*^9}, {3.735183276564678*^9, 
+   3.7351832814719114`*^9}},ExpressionUUID->"8dc56802-8e01-4939-90bb-\
+ae9f4bdb3c9a"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1337, 23, 295, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1898, 45, 2390, 37, 295, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[4291, 84, 1398, 45, 137, "Text",ExpressionUUID->"d25d7a7a-c92b-417d-be7c-85fb35c51f27"],
+Cell[CellGroupData[{
+Cell[5714, 133, 1666, 45, 156, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[7383, 180, 476, 7, 72, "Output",ExpressionUUID->"8dc56802-8e01-4939-90bb-ae9f4bdb3c9a"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,189 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7477,        181]
+NotebookOptionsPosition[      6823,        161]
+NotebookOutlinePosition[      7211,        178]
+CellTagsIndexPosition[      7168,        175]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "It can be verified that there are 23 positive integers less than 1000 that \
+are divisible by at least four distinct primes less than 100.\n\nFind how \
+many positive integers less than ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "16"], TraditionalForm]],ExpressionUUID->
+  "3446fe0c-43b0-4fd5-a5ab-f62db7b2f026"],
+ " are divisible by at least four distinct primes less than 100."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.7678322498075514`*^9, 
+  3.7678322765650263`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:53ef\:4ee5\:9a8c\:8bc1\:ff0c\:5728\:5c0f\:4e8e1000\:7684\:6b63\:6574\:6570\
+\:4e2d\:ff0c\:670923\:4e2a\:80fd\:591f\:88ab\:81f3\:5c11\:56db\:4e2a\:5c0f\
+\:4e8e100\:7684\:4e0d\:540c\:8d28\:6570\:6574\:9664\:3002\n\n\:5728\:5c0f\
+\:4e8e",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "16"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "24766091-e5df-455d-a38e-b4ddf032d850"],
+ "\:7684\:6b63\:6574\:6570\:4e2d\:ff0c\:6c42\:51fa\:6709\:591a\:5c11\:4e2a\
+\:80fd\:591f\:88ab\:81f3\:5c11\:56db\:4e2a\:5c0f\:4e8e100\:7684\:4e0d\:540c\
+\:8d28\:6570\:6574\:9664\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.767832259147585*^9, 
+   3.76783227025592*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"primelimit_", ",", "numberlimit_", ",", "distinctprimeatleast_"}],
+    "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"p", ",", "subsets", ",", "g", ",", 
+      RowBox[{"count", "=", "0"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"p", "=", 
+      RowBox[{"Prime", "[", 
+       RowBox[{"Range", "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"PrimePi", "[", 
+          RowBox[{"primelimit", "-", "1"}], "]"}]}], "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"subsets", "=", 
+      RowBox[{"Subsets", "[", 
+       RowBox[{"p", ",", 
+        RowBox[{"{", 
+         RowBox[{"distinctprimeatleast", ",", 
+          RowBox[{"+", "\[Infinity]"}]}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"i", "=", "1"}], ",", 
+       RowBox[{"i", "\[LessEqual]", 
+        RowBox[{"Length", "[", "subsets", "]"}]}], ",", 
+       RowBox[{"i", "=", 
+        RowBox[{"i", "+", "1"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"vars", "=", 
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"x", "[", "j", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", "1", ",", 
+               RowBox[{"Length", "[", 
+                RowBox[{
+                "subsets", "\[LeftDoubleBracket]", "i", 
+                 "\[RightDoubleBracket]"}], "]"}]}], "}"}]}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"cons", "=", 
+           RowBox[{
+            RowBox[{"Thread", "[", 
+             RowBox[{"vars", ">", "0"}], "]"}], "/.", 
+            RowBox[{"List", "\[Rule]", "Sequence"}]}]}], ";"}], ".", 
+         "\[IndentingNewLine]", "count"}], "=", 
+        RowBox[{"count", "+", 
+         RowBox[{"Length", "[", 
+          RowBox[{"Solve", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"0", "<", 
+               RowBox[{
+                RowBox[{"Log", "[", 
+                 RowBox[{
+                 "subsets", "\[LeftDoubleBracket]", "i", 
+                  "\[RightDoubleBracket]"}], "]"}], ".", "vars"}], "<", 
+               RowBox[{"Log", "[", "numberlimit", "]"}]}], ",", "cons"}], 
+             "}"}], ",", "vars", ",", "Integers"}], "]"}], "]"}]}]}]}], "]"}],
+      ";", "\[IndentingNewLine]", "count"}]}], "\[IndentingNewLine]", 
+   "]"}]}], "\n", 
+ RowBox[{"f", "[", 
+  RowBox[{"100", ",", "1000", ",", "4"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+   3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+   3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+   3.7564263646962595`*^9, 3.7564263899753056`*^9}, {3.7678322879645796`*^9, 
+   3.7678324807156353`*^9}, {3.7678327363184924`*^9, 3.767832740594039*^9}, {
+   3.767834383797827*^9, 3.7678345192347064`*^9}, {3.767834564763033*^9, 
+   3.7678345762014303`*^9}, {3.767834898294038*^9, 3.7678349064125757`*^9}, {
+   3.767834939093219*^9, 3.7678349968949485`*^9}, {3.767835041978346*^9, 
+   3.7678351118436203`*^9}, {3.767934365762357*^9, 3.767934467442803*^9}, {
+   3.767934512801793*^9, 3.7679345269226437`*^9}, {3.7679345784518156`*^9, 
+   3.767934654814551*^9}, 3.7679346895212555`*^9, {3.7679347196837645`*^9, 
+   3.7679347895357094`*^9}, {3.7679348327486105`*^9, 3.767934834022916*^9}, {
+   3.767934938982166*^9, 3.7679351660557966`*^9}, {3.7679352012785997`*^9, 
+   3.7679352537913322`*^9}, {3.767935834951972*^9, 3.767935842616*^9}, {
+   3.76793619845506*^9, 3.767936216896723*^9}, {3.767936343246702*^9, 
+   3.76793634628657*^9}, {3.767936381708806*^9, 3.767936384425537*^9}, {
+   3.7679364274334793`*^9, 3.767936616465767*^9}, 
+   3.767936832893903*^9},ExpressionUUID->"6a7c367e-c1c3-4109-93e6-\
+34add9704799"],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{{3.7313704890957747`*^9, 3.7313705114710016`*^9}, 
+   3.731370638655486*^9, 3.756426391477058*^9, 3.767832298787625*^9, 
+   3.7678323401183996`*^9, {3.767832401710328*^9, 3.767832481695016*^9}, 
+   3.767832741235325*^9, 3.767834519799197*^9, 3.7678346041547365`*^9, {
+   3.7678349989724216`*^9, 3.767835019700895*^9}, 3.767835085520977*^9, 
+   3.767835131798306*^9, 3.7679352502542667`*^9, 3.767935384142253*^9, 
+   3.7679359477919164`*^9, 3.76793631585202*^9, 3.7679365976550903`*^9, 
+   3.7679368329168415`*^9},
+ CellLabel->"Out[16]=",ExpressionUUID->"21308dc9-caba-4539-b5e8-b16b1f2bdeb1"]
+}, Open  ]]
+},
+WindowSize->{2560, 1336},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
+Magnification:>2. Inherited,
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 699, 14, 156, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1260, 36, 946, 19, 156, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[2231, 59, 3926, 88, 650, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[6160, 149, 647, 9, 91, "Output",ExpressionUUID->"21308dc9-caba-4539-b5e8-b16b1f2bdeb1"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,207 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7256,        199]
+NotebookOptionsPosition[      6631,        180]
+NotebookOutlinePosition[      6989,        196]
+CellTagsIndexPosition[      6946,        193]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "The binomial coefficients ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Binomial", "[", 
+    RowBox[{"n", ",", "k"}], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "66904e63-6a7b-4d06-9297-520e1af659e3"],
+ " can be arranged in triangular form, Pascal\[CloseCurlyQuote]s triangle, \
+like this:\n\n",
+ Cell[BoxData[
+  TagBox[GridBox[{
+     {"1"},
+     {
+      RowBox[{"1", ",", "1"}]},
+     {
+      RowBox[{"1", ",", "2", ",", "1"}]},
+     {
+      RowBox[{"1", ",", "3", ",", "3", ",", "1"}]},
+     {
+      RowBox[{"1", ",", "4", ",", "6", ",", "4", ",", "1"}]},
+     {
+      RowBox[{"1", ",", "5", ",", "10", ",", "10", ",", "5", ",", "1"}]},
+     {
+      RowBox[{
+      "1", ",", "6", ",", "15", ",", "20", ",", "15", ",", "6", ",", "1"}]},
+     {GridBox[{
+        {
+         RowBox[{
+         "1", ",", "7", ",", "21", ",", "35", ",", "35", ",", "21", ",", "7", 
+          ",", "1"}]},
+        {"\[Ellipsis]\[Ellipsis]"}
+       }]}
+    },
+    DefaultBaseStyle->"Column",
+    GridBoxAlignment->{"Columns" -> {{Center}}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+   "Column"]],
+  CellContext->"Cell$$2716`",
+  ImageSize->{129, 100},
+  ImageMargins->{{0, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},ExpressionUUID->
+  "fff3f97b-b629-4b83-a299-812ac8353b8a"],
+ "\n\nIt can be seen that the first eight rows of Pascal\[CloseCurlyQuote]s \
+triangle contain twelve distinct numbers: 1, 2, 3, 4, 5, 6, 7, 10, 15, 20, 21 \
+and 35.\n\nA positive integer n is called squarefree if no square of a prime \
+divides n. Of the twelve distinct numbers in the first eight rows of Pascal\
+\[CloseCurlyQuote]s triangle, all except 4 and 20 are squarefree. The sum of \
+the distinct squarefree numbers in the first eight rows is 105.\n\nFind the \
+sum of the distinct squarefree numbers in the first 51 rows of Pascal\
+\[CloseCurlyQuote]s triangle."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.7312067569762645`*^9, 3.731206762043972*^9}, {3.7312068106144576`*^9, 
+  3.731206848361866*^9}, {3.731206913277812*^9, 
+  3.73120691352789*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:4e8c\:9879\:5f0f\:7cfb\:6570",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Binomial", "[", 
+    RowBox[{"n", ",", "k"}], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "454aef09-54f9-41ba-96f1-6a3b2751be88"],
+ "\:53ef\:4ee5\:5982\:4e0b\:6392\:6210\:4e00\:4e2a\:4e09\:89d2\:5f62\:ff0c\
+\:79f0\:4e3a\:5e15\:65af\:5361\:4e09\:89d2\:5f62\:ff1a\n\n",
+ Cell[BoxData[
+  TagBox[GridBox[{
+     {"1"},
+     {
+      RowBox[{"1", ",", "1"}]},
+     {
+      RowBox[{"1", ",", "2", ",", "1"}]},
+     {
+      RowBox[{"1", ",", "3", ",", "3", ",", "1"}]},
+     {
+      RowBox[{"1", ",", "4", ",", "6", ",", "4", ",", "1"}]},
+     {
+      RowBox[{"1", ",", "5", ",", "10", ",", "10", ",", "5", ",", "1"}]},
+     {
+      RowBox[{
+      "1", ",", "6", ",", "15", ",", "20", ",", "15", ",", "6", ",", "1"}]},
+     {GridBox[{
+        {
+         RowBox[{
+         "1", ",", "7", ",", "21", ",", "35", ",", "35", ",", "21", ",", "7", 
+          ",", "1"}]},
+        {"\[Ellipsis]\[Ellipsis]"}
+       }]}
+    },
+    DefaultBaseStyle->"Column",
+    GridBoxAlignment->{"Columns" -> {{Center}}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+   "Column"]],
+  CellContext->"Cell$$2716`",
+  ImageSize->{129, 100},
+  ImageMargins->{{0, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},ExpressionUUID->
+  "37bdef53-8c0b-438c-82b7-a61d475ce108"],
+ "\n\n\:53ef\:4ee5\:770b\:51fa\:5e15\:65af\:5361\:4e09\:89d2\:5f62\:7684\:524d\
+\:516b\:884c\:5305\:542b\:4e86\:5341\:4e8c\:4e2a\:4e0d\:540c\:7684\:6570\:ff1a\
+",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+   "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", "10",
+     ",", "15", ",", "20", ",", "21", ",", "35"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "2bd9cbc3-8cd9-43b2-ab5d-f559ef87e0b3"],
+ "\:3002\n\n\
+\:5982\:679c\:6b63\:6574\:6570\:4e0d\:88ab\:4efb\:4f55\:7d20\:6570\:7684\:5e73\
+\:65b9\:6574\:9664\:ff0cn\:5c31\:88ab\:79f0\:4e3a\:65e0\:5e73\:65b9\:56e0\
+\:5b50\:6570\:3002\n\:5728\:5e15\:65af\:5361\:4e09\:89d2\:5f62\:524d\:516b\
+\:884c\:7684\:5341\:4e8c\:4e2a\:4e0d\:540c\:7684\:6570\:4e2d\:ff0c\:9664\:4e86\
+4\:548c20\:4e4b\:5916\:90fd\:662f\:65e0\:5e73\:65b9\:56e0\:5b50\:6570\:3002\n\
+\:8fd9\:4e9b\:4e0d\:540c\:7684\:65e0\:5e73\:65b9\:56e0\:5b50\:6570\:4e4b\:548c\
+\:4e3a105\:3002\n\n\:6c42\:5e15\:65af\:5361\:4e09\:89d2\:5f62\:524d51\:884c\
+\:6240\:6709\:4e0d\:540c\:7684\:65e0\:5e73\:65b9\:56e0\:5b50\:6570\:4e4b\:548c\
+\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.7312067738963013`*^9, {3.7312068441740932`*^9, 
+   3.73120690933004*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Total", "[", 
+  RowBox[{"Select", "[", 
+   RowBox[{
+    RowBox[{"Union", "[", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"Binomial", "[", 
+         RowBox[{"n", ",", "k"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"n", ",", "0", ",", "50"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}], "]"}], "]"}], ",",
+     "SquareFreeQ"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+  3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+  3.7250282267187443`*^9}, {3.72503044347628*^9, 3.725030445342036*^9}, {
+  3.7312067784774323`*^9, 3.7312067796697917`*^9}, {3.7312069303960047`*^9, 
+  3.7312069470690193`*^9}},ExpressionUUID->"20386a64-a558-4827-99f8-\
+04921bede5b8"],
+
+Cell[BoxData["34029210557338"], "Output",
+ CellChangeTimes->{
+  3.7250281599876013`*^9, {3.7250281918871064`*^9, 3.725028227147995*^9}, 
+   3.7250304482388463`*^9, 
+   3.731206956228448*^9},ExpressionUUID->"3814ec98-c15e-4ba3-bc65-\
+2ac5fb61c838"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2199, 56, 416, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[2760, 78, 2718, 68, 439, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[5503, 150, 862, 20, 52, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[6368, 172, 247, 5, 68, "Output",ExpressionUUID->"3814ec98-c15e-4ba3-bc65-2ac5fb61c838"]
+}, Open  ]]
+}
+]
+*)
+

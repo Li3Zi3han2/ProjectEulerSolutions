@@ -1,0 +1,258 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10543,        250]
+NotebookOptionsPosition[      9916,        231]
+NotebookOutlinePosition[     10273,        247]
+CellTagsIndexPosition[     10230,        244]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "We define the Matrix Sum of a matrix as the maximum sum of matrix elements \
+with each element being the only one in his row and column. For example, the \
+Matrix Sum of the matrix below equals ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"3315", "=", 
+    RowBox[{"863", "+", "383", "+", "343", "+", "959", "+", "767"}]}], 
+   TraditionalForm]],ExpressionUUID->"686fbcf6-c3ef-40a7-a553-18fc2ee3265e"],
+ ":\n\n  7  53 183 439 ",
+ StyleBox["863",
+  FontColor->RGBColor[0, 1, 0]],
+ "\n497 ",
+ StyleBox["383",
+  FontColor->RGBColor[0, 1, 0]],
+ " 563  79 973\n287  63 ",
+ StyleBox["343",
+  FontColor->RGBColor[0, 1, 0]],
+ " 169 583\n627 343 773 ",
+ StyleBox["959",
+  FontColor->RGBColor[0, 1, 0]],
+ " 943\n",
+ StyleBox["767",
+  FontColor->RGBColor[0, 1, 0]],
+ " 473 103 699 303\n\nFind the Matrix Sum of:\n\n  7  53 183 439 863 497 383 \
+563  79 973 287  63 343 169 583\n627 343 773 959 943 767 473 103 699 303 957 \
+703 583 639 913\n447 283 463  29  23 487 463 993 119 883 327 493 423 159 743\n\
+217 623   3 399 853 407 103 983  89 463 290 516 212 462 350\n960 376 682 962 \
+300 780 486 502 912 800 250 346 172 812 350\n870 456 192 162 593 473 915  45 \
+989 873 823 965 425 329 803\n973 965 905 919 133 673 665 235 509 613 673 815 \
+165 992 326\n322 148 972 962 286 255 941 541 265 323 925 281 601  95 973\n445 \
+721  11 525 473  65 511 164 138 672  18 428 154 448 848\n414 456 310 312 798 \
+104 566 520 302 248 694 976 430 392 198\n184 829 373 181 631 101 969 613 840 \
+740 778 458 284 760 390\n821 461 843 513  17 901 711 993 293 157 274  94 192 \
+156 574\n 34 124   4 878 450 476 712 914 838 669 875 299 823 329 699\n815 559 \
+813 459 522 788 168 586 966 232 308 833 251 631 107\n813 883 451 509 615  77 \
+281 613 459 205 380 274 302  35 805"
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, 
+   3.730336710612795*^9, {3.7303367464419975`*^9, 
+   3.7303367587598763`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:5728\:4e00\:4e2a\:77e9\:9635\:4e2d\:9009\:62e9\:90e8\:5206\:5143\:7d20\
+\:ff0c\:4f7f\:5f97\:6bcf\:4e2a\:5143\:7d20\:90fd\:662f\:6240\:5728\:7684\:884c\
+\:548c\:5217\:4e2d\:552f\:4e00\:88ab\:9009\:4e2d\:7684\:5143\:7d20\:ff0c\:8fd9\
+\:4e9b\:5143\:7d20\:7684\:548c\:7684\:6700\:5927\:503c\:5b9a\:4e49\:4e3a\:77e9\
+\:9635\:7684\:77e9\:9635\:548c\:3002\:4f8b\:5982\:ff0c\:5982\:4e0b\:77e9\:9635\
+\:7684\:77e9\:9635\:548c\:4e3a",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"3315", "=", 
+    RowBox[{"863", "+", "383", "+", "343", "+", "959", "+", "767"}]}], 
+   TraditionalForm]],ExpressionUUID->"5244dded-1a93-45c2-b157-43e0c888b12f"],
+ "\:ff1a\n\n  7  53 183 439 ",
+ StyleBox["863",
+  FontColor->RGBColor[0, 1, 0]],
+ "\n497 ",
+ StyleBox["383",
+  FontColor->RGBColor[0, 1, 0]],
+ " 563  79 973\n287  63 ",
+ StyleBox["343",
+  FontColor->RGBColor[0, 1, 0]],
+ " 169 583\n627 343 773 ",
+ StyleBox["959",
+  FontColor->RGBColor[0, 1, 0]],
+ " 943\n",
+ StyleBox["767",
+  FontColor->RGBColor[0, 1, 0]],
+ " 473 103 699 303\n\n\:6c42\:5982\:4e0b\:77e9\:9635\:7684\:77e9\:9635\:548c\
+\:ff1a\n\n  7  53 183 439 863 497 383 563  79 973 287  63 343 169 583\n627 \
+343 773 959 943 767 473 103 699 303 957 703 583 639 913\n447 283 463  29  23 \
+487 463 993 119 883 327 493 423 159 743\n217 623   3 399 853 407 103 983  89 \
+463 290 516 212 462 350\n960 376 682 962 300 780 486 502 912 800 250 346 172 \
+812 350\n870 456 192 162 593 473 915  45 989 873 823 965 425 329 803\n973 965 \
+905 919 133 673 665 235 509 613 673 815 165 992 326\n322 148 972 962 286 255 \
+941 541 265 323 925 281 601  95 973\n445 721  11 525 473  65 511 164 138 672  \
+18 428 154 448 848\n414 456 310 312 798 104 566 520 302 248 694 976 430 392 \
+198\n184 829 373 181 631 101 969 613 840 740 778 458 284 760 390\n821 461 843 \
+513  17 901 711 993 293 157 274  94 192 156 574\n 34 124   4 878 450 476 712 \
+914 838 669 875 299 823 329 699\n815 559 813 459 522 788 168 586 966 232 308 \
+833 251 631 107\n813 883 451 509 615  77 281 613 459 205 380 274 302  35 805"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.730336730126506*^9, 3.7303367655505915`*^9}, {3.7303368134569836`*^9, 
+   3.730336836062701*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"matrix", "=", 
+   RowBox[{"ImportString", "[", 
+    RowBox[{
+    "\"\<  7  53 183 439 863 497 383 563  79 973 287  63 343 169 583\n627 343 \
+773 959 943 767 473 103 699 303 957 703 583 639 913\n447 283 463  29  23 487 \
+463 993 119 883 327 493 423 159 743\n217 623   3 399 853 407 103 983  89 463 \
+290 516 212 462 350\n960 376 682 962 300 780 486 502 912 800 250 346 172 812 \
+350\n870 456 192 162 593 473 915  45 989 873 823 965 425 329 803\n973 965 905 \
+919 133 673 665 235 509 613 673 815 165 992 326\n322 148 972 962 286 255 941 \
+541 265 323 925 281 601  95 973\n445 721  11 525 473  65 511 164 138 672  18 \
+428 154 448 848\n414 456 310 312 798 104 566 520 302 248 694 976 430 392 198\n\
+184 829 373 181 631 101 969 613 840 740 778 458 284 760 390\n821 461 843 513  \
+17 901 711 993 293 157 274  94 192 156 574\n 34 124   4 878 450 476 712 914 \
+838 669 875 299 823 329 699\n815 559 813 459 522 788 168 586 966 232 308 833 \
+251 631 107\n813 883 451 509 615  77 281 613 459 205 380 274 302  35 805\>\"",
+      ",", "\"\<Table\>\""}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"m", ",", "n"}], "}"}], "=", 
+   RowBox[{"Dimensions", "[", "matrix", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SubMatrix", "[", 
+    RowBox[{"matrix_", ",", 
+     RowBox[{"{", 
+      RowBox[{"i_", ",", "j_"}], "}"}]}], "]"}], ":=", 
+   RowBox[{"Drop", "[", 
+    RowBox[{"matrix", ",", 
+     RowBox[{"{", "i", "}"}], ",", 
+     RowBox[{"{", "j", "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"FindMatrixSum", "[", "matrix_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"FindMatrixSum", "[", "matrix", "]"}], "=", 
+    TagBox[GridBox[{
+       {"\[Piecewise]", GridBox[{
+          {
+           RowBox[{"matrix", "\[LeftDoubleBracket]", 
+            RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}], 
+           RowBox[{
+            RowBox[{"Dimensions", "[", "matrix", "]"}], "\[Equal]", 
+            RowBox[{"{", 
+             RowBox[{"1", ",", "1"}], "}"}]}]},
+          {
+           RowBox[{"Max", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"matrix", "\[LeftDoubleBracket]", 
+                RowBox[{"1", ",", "#"}], "\[RightDoubleBracket]"}], "+", 
+               RowBox[{"FindMatrixSum", "[", 
+                RowBox[{"SubMatrix", "[", 
+                 RowBox[{"matrix", ",", 
+                  RowBox[{"{", 
+                   RowBox[{"1", ",", "#"}], "}"}]}], "]"}], "]"}]}], "&"}], "/@", 
+             RowBox[{"Range", "[", 
+              RowBox[{"1", ",", 
+               RowBox[{
+                RowBox[{"Dimensions", "[", "matrix", "]"}], 
+                "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
+              "]"}]}], "]"}], "True"}
+         },
+         AllowedDimensions->{2, Automatic},
+         Editable->True,
+         GridBoxAlignment->{
+          "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.84]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}},
+         Selectable->True]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{
+       "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.35]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     "Piecewise",
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True,
+     Selectable->False]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"FindMatrixSum", "[", "matrix", "]"}]}], "Input",
+ CellChangeTimes->CompressedData["
+1:eJwdxU0oQwEAB/Ch7ICL05rNorSszfesrUzPAe0kZrm9WeFAkUQpCslHW2uj
+zQXpoXxsxCafNXMzwu6STVqep9lXL5d5/3f49SuzDHf25QoEAjEHazJRIxOg
+iYD+jsTbVmU/ripODGDF+PsgTmVNI/i4aXj+hzv9u8/v1AUWikI0UbdVYsMy
+lcGNRXLHGo71PvhwqdRwgQkmQiYeaYJ0qS141seMYVerfQYrpewyNm1QNsxq
+fE48Fe5xYye1so5jk0l+rb9tD+fZY9e4QxIP4icP84aNpPADvx4YPnHj6WEc
+U1QLi09ClVm8+GIrSHKbV4Xe+j+ayG/38O86ap6xbu4mjPXlwQi+z1RHsdyb
++sJWv4/GoiFJYQP32flEBdZ1sQpsvr1S4eC33ICbNy/5c5jpJTV3rTjKL+re
+SWu5R2VH/P9KfPd6
+  "],
+ CellLabel->"In[55]:=",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+
+Cell[BoxData["13938"], "Output",
+ CellChangeTimes->{3.755069362520809*^9},
+ CellLabel->"Out[59]=",ExpressionUUID->"0919d357-b91c-46ca-9b6f-2f7991887c74"]
+}, Open  ]]
+},
+WindowSize->{1350, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1974, 41, 610, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[2535, 63, 2295, 45, 610, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[4855, 112, 4889, 112, 626, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[9747, 226, 153, 2, 37, "Output",ExpressionUUID->"0919d357-b91c-46ca-9b6f-2f7991887c74"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,275 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10610,        267]
+NotebookOptionsPosition[      9890,        247]
+NotebookOutlinePosition[     10248,        263]
+CellTagsIndexPosition[     10205,        260]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+A set of disks numbered 1 through 100 are placed in a line in random order.
+
+What is the probability that we have a partial derangement such that exactly \
+22 prime number discs are found away from their natural positions?
+(Any number of non-prime disks may also be found in or out of their natural \
+positions.)
+
+Give your answer rounded to 12 places behind the decimal point in the form \
+0.abcdefghijkl.\
+\>", "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.7333971525060234`*^9, 
+  3.7333971545281525`*^9}, {3.7552173714153566`*^9, 
+  3.7552173733640747`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell["\<\
+\:5c06\:4e00\:7cfb\:5217\:6807\:67091\:81f3100\:7684\:76d8\:5b50\:6309\:968f\
+\:673a\:987a\:5e8f\:6392\:6210\:4e00\:6392\:3002
+
+\:5728\:8fd9\:4e2a\:91cd\:6392\:4e2d\:6709\:6070\:597d22\:4e2a\:7d20\:6570\
+\:4e0d\:5728\:539f\:4f4d\:4e0a\:7684\:6982\:7387\:662f\:591a\:5c11\:ff1f
+\:ff08\:5e76\:4e0d\:8981\:6c42\:4efb\:610f\:975e\:7d20\:6570\:76d8\:5b50\:662f\
+\:5426\:5728\:539f\:4f4d\:4e0a\:3002\:ff09
+
+\:5c06\:4f60\:7684\:7b54\:6848\:56db\:820d\:4e94\:5165\:81f3\:5c0f\:6570\:70b9\
+\:540e12\:4f4d\:5c0f\:6570\:ff0c\:5373\:683c\:5f0f\:4e3a0.abcdefghijkl\:3002\
+\>", "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, {3.7552173849122534`*^9, 
+   3.755217386573016*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{"\:4e0d\:59a8\:5148\:8003\:8651\:4ee5\:4e0b\:9519\:6392\:95ee\:9898",
+   "\:ff1a", "\[IndentingNewLine]", 
+  RowBox[{
+  "\:6ca1\:6709\:5143\:7d20\:51fa\:73b0\:5728\:81ea\:7136\:4f4d\:7f6e\:4e0a\
+\:7684\:6392\:5217\:79f0\:4e3a\:9519\:6392\:6216\:66f4\:5217", 
+   RowBox[{"\:ff08", "derangement", "\:ff09"}]}], "\:3002", 
+  SubscriptBox["n\:4e2a\:5143\:7d20\:7684\:9519\:6392\:6570\:8bb0\:4e3aD", 
+   "n"], "\:3002", "\[IndentingNewLine]", 
+  RowBox[{
+   SubscriptBox["D", "1"], "=", "0"}], ",", 
+  RowBox[{
+   SubscriptBox["D", "2"], "=", "1"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubscriptBox["D", "n"], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"n", "-", "1"}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["D", 
+       RowBox[{"n", "-", "1"}]], "+", 
+      SubscriptBox["D", 
+       RowBox[{"n", "-", "2"}]]}], ")"}]}], "=", 
+   RowBox[{
+    RowBox[{"n", " ", 
+     SubscriptBox["D", 
+      RowBox[{"n", "-", "1"}]]}], "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"-", "1"}], ")"}], "n"]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubscriptBox["D", "n"], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"n", "!"}], " ", 
+    RowBox[{
+     SubsuperscriptBox["\[Sum]", 
+      RowBox[{"i", "=", "2"}], "n"], 
+     FractionBox[
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"-", "1"}], ")"}], "i"], 
+      RowBox[{"i", "!"}]]}]}], "=", 
+   RowBox[{"Subfactorial", "[", "n", "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"\:518d\:8003\:8651\:539f\:6765\:7684\:90e8\:5206\:9519\:6392\:95ee\
+\:9898", "\:ff1a", "\[IndentingNewLine]", 
+  RowBox[{
+  "\:6070\:6709k\:4e2a\:5143\:7d20\:51fa\:73b0\:5728\:81ea\:7136\:4f4d\:7f6e\
+\:4e0a\:7684\:6392\:5217\:79f0\:4e3a\:90e8\:5206\:9519\:6392\:6216\:90e8\:5206\
+\:66f4\:5217", 
+   RowBox[{"\:ff08", 
+    RowBox[{"partial", " ", "derangement"}], "\:ff09"}]}], "\:3002", 
+  SubscriptBox[
+   "n\:4e2a\:5143\:7d20\:7684\:90e8\:5206\:9519\:6392\:6570\:8bb0\:4e3aPD", 
+   RowBox[{"n", ",", "k"}]], "\:3002", "\[IndentingNewLine]", 
+  RowBox[{
+   SubscriptBox["PD", 
+    RowBox[{"n", ",", "n"}]], "=", "1"}], ",", 
+  RowBox[{
+   SubscriptBox["P", 
+    RowBox[{"n", ",", 
+     RowBox[{"n", "-", "1"}]}]], "=", "0"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubscriptBox["PD", 
+   RowBox[{"n", ",", "k"}]], "=", 
+  RowBox[{
+   RowBox[{"Binomial", "[", 
+    RowBox[{"n", ",", "k"}], "]"}], " ", 
+   SubscriptBox["D", 
+    RowBox[{"n", "-", "k"}]]}]}]}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, {3.7552173849122534`*^9, 
+   3.755217386573016*^9}, {3.7552210054421597`*^9, 3.7552210745483985`*^9}, {
+   3.755221136896693*^9, 3.7552212058029613`*^9}, {3.7552216110745287`*^9, 
+   3.755221623518572*^9}, {3.755221655113651*^9, 3.755221736385996*^9}, {
+   3.755221942554893*^9, 3.7552219879688225`*^9}, {3.7552220731455584`*^9, 
+   3.7552221531381035`*^9}, {3.755222212325907*^9, 3.7552222169781632`*^9}, 
+   3.7552222952249784`*^9, {3.7552223355093594`*^9, 3.755222402513943*^9}, {
+   3.7552224833573585`*^9, 
+   3.7552224834843197`*^9}},ExpressionUUID->"3e19f7e3-1878-4494-84c8-\
+bcd59dc1af9d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "100"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"numberofpreimes", "=", 
+   RowBox[{"PrimePi", "[", "n", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"numberoffoolishpreimes", "=", "22"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"numberofsmartpreimes", "=", 
+   RowBox[{"numberofpreimes", "-", "numberoffoolishpreimes"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"numberofcomposites", "=", 
+   RowBox[{"n", "-", "numberofpreimes"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"derangementsp", "[", 
+   RowBox[{"nfp_", ",", "nc_"}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"result", "=", "0"}], ",", 
+      RowBox[{"i", "=", "nfp"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"i", "\[LessEqual]", "0"}], ",", 
+       RowBox[{"Return", "[", 
+        RowBox[{"nc", "!"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"i", "=", 
+      RowBox[{"i", "-", "1"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"result", "=", 
+      RowBox[{"nc", " ", 
+       RowBox[{"derangementsp", "[", 
+        RowBox[{"i", ",", "nc"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"i", ">", "0"}], ",", 
+       RowBox[{"result", "=", 
+        RowBox[{"result", "+", 
+         RowBox[{"i", " ", 
+          RowBox[{"derangementsp", "[", 
+           RowBox[{
+            RowBox[{"i", "-", "1"}], ",", 
+            RowBox[{"nc", "+", "1"}]}], "]"}]}]}]}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Return", "[", "result", "]"}]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p", "=", 
+   RowBox[{"N", "[", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"Binomial", "[", 
+       RowBox[{"numberofpreimes", ",", "numberoffoolishpreimes"}], "]"}], " ", 
+      RowBox[{"derangementsp", "[", 
+       RowBox[{"numberoffoolishpreimes", ",", "numberofcomposites"}], "]"}]}], 
+     RowBox[{"n", "!"}]], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DecimalForm", "[", 
+  RowBox[{"p", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"+", "\[Infinity]"}], ",", "12"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7552224133982306`*^9, 3.75522249971979*^9}, {
+   3.7552225634268913`*^9, 3.7552227006495156`*^9}, {3.7552230042612357`*^9, 
+   3.75522308164618*^9}, {3.75522316484441*^9, 3.7552231666941233`*^9}, {
+   3.7552232077337523`*^9, 3.7552232530236797`*^9}, {3.7552233435305867`*^9, 
+   3.755223385233116*^9}, {3.755223417744047*^9, 3.75522343291269*^9}, {
+   3.7552235528553305`*^9, 3.7552236589829316`*^9}, {3.755223732819009*^9, 
+   3.75522401438968*^9}, {3.755224094510753*^9, 3.755224159480694*^9}, {
+   3.7552242110682197`*^9, 3.7552242346526394`*^9}, {3.755224288601713*^9, 
+   3.755224305824625*^9}, {3.7552244645454416`*^9, 3.755224481647534*^9}, {
+   3.7552249354818125`*^9, 3.755224954384405*^9}, {3.755225002264727*^9, 
+   3.755225041929906*^9}, {3.7552252374789286`*^9, 3.755225240259475*^9}, {
+   3.755225287815171*^9, 3.7552255409316535`*^9}, {3.755225574096322*^9, 
+   3.755225593349581*^9}, {3.75522569568407*^9, 3.7552257452172437`*^9}, {
+   3.755226159212201*^9, 3.7552261616848354`*^9}, {3.7552262102234*^9, 
+   3.7552262271730385`*^9}, {3.7552262575369797`*^9, 
+   3.7552262774924974`*^9}, {3.7552263361723385`*^9, 
+   3.7552265073195148`*^9}, {3.7552266111935453`*^9, 3.755226681381424*^9}, {
+   3.755227822746702*^9, 3.7552279663416357`*^9}, {3.7552280383127337`*^9, 
+   3.7552280554396315`*^9}, {3.7552281099719377`*^9, 
+   3.7552281307589016`*^9}, {3.7552282081195*^9, 3.75522827546861*^9}, {
+   3.755228324962655*^9, 3.7552283659781246`*^9}, 3.755228401365151*^9, {
+   3.7552287279336953`*^9, 3.755228728313636*^9}},
+ CellLabel->"In[50]:=",ExpressionUUID->"83f50c73-6b15-459d-9893-a494b91ecea0"],
+
+Cell[BoxData[
+ TagBox[
+  InterpretationBox["\<\"0.001887854841\"\>",
+   0.0018878548410303406`,
+   AutoDelete->True],
+  DecimalForm[#, {
+    DirectedInfinity[1], 12}]& ]], "Output",
+ CellChangeTimes->{{3.755227961836338*^9, 3.7552279743796144`*^9}, {
+   3.7552280515029955`*^9, 3.7552280566524415`*^9}, 3.755228111579008*^9, 
+   3.75522873162012*^9},
+ CellLabel->
+  "Out[57]//DecimalForm=",ExpressionUUID->"d97e7603-de53-4cb7-a1eb-\
+4b9f1e487856"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 714, 15, 150, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1275, 37, 912, 17, 150, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[2190, 56, 3287, 84, 271, "Text",ExpressionUUID->"3e19f7e3-1878-4494-84c8-bcd59dc1af9d"],
+Cell[CellGroupData[{
+Cell[5502, 144, 3922, 86, 504, "Input",ExpressionUUID->"83f50c73-6b15-459d-9893-a494b91ecea0"],
+Cell[9427, 232, 447, 12, 51, "Output",ExpressionUUID->"d97e7603-de53-4cb7-a1eb-4b9f1e487856"]
+}, Open  ]]
+}
+]
+*)
+

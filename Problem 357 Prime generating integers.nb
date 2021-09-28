@@ -1,0 +1,140 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4629,        132]
+NotebookOptionsPosition[      4007,        113]
+NotebookOutlinePosition[      4364,        129]
+CellTagsIndexPosition[      4321,        126]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Consider the divisors of 30: 1,2,3,5,6,10,15,30.\nIt can be seen that for \
+every divisor d of 30, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"d", "+", 
+    FractionBox["30", "d"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "af00e06f-8835-452c-8421-8895b36200bb"],
+ " is prime.\n\nFind the sum of all positive integers n not exceeding 100 000 \
+000 such that for every divisor d of n, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"d", "+", 
+    FractionBox["n", "d"]}], TraditionalForm]],ExpressionUUID->
+  "85e4ab12-c05c-4def-9468-283c97a478ed"],
+ " is prime."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+   3.7262160825176134`*^9, 3.726216099882556*^9}, {3.726216149883994*^9, 
+   3.7262161544649816`*^9}, {3.726216201849912*^9, 3.7262162023102436`*^9}, 
+   3.7262163994623365`*^9},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:8003\:865130\:7684\:56e0\:5b50\:ff1a1,2,3,5,6,10,15,30\:3002\n\
+\:53ef\:4ee5\:770b\:51fa\:ff0c\:5bf9\:4e8e30\:7684\:6bcf\:4e2a\:56e0\:5b50d\
+\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"d", "+", 
+    FractionBox["30", "d"]}], TraditionalForm]],ExpressionUUID->
+  "6ee294ae-cd62-4cd1-9b30-2ff942b8c56f"],
+ "\:662f\:7d20\:6570\:3002\n\n\
+\:6c42\:51fa\:6240\:6709\:4e0d\:5927\:4e8e100000000\:7684\:6b63\:6574\:6570n\
+\:7684\:548c\:ff0c\:4f7f\:5f97\:5bf9\:4e8en\:7684\:6bcf\:4e2a\:56e0\:5b50d\
+\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"d", "+", 
+    FractionBox["n", "d"]}], TraditionalForm]],ExpressionUUID->
+  "9e2ed40f-3745-4ca6-ae03-e94b7b6f75da"],
+ "\:662f\:7d20\:6570\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.7262160977159276`*^9, 
+   3.7262162443923607`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Total", "[", 
+   RowBox[{"Select", "[", 
+    RowBox[{
+     RowBox[{"Join", "[", 
+      RowBox[{
+       RowBox[{"{", "1", "}"}], ",", 
+       RowBox[{"Range", "[", 
+        RowBox[{"2", ",", "100000000", ",", "2"}], "]"}]}], "]"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"Divisible", "[", 
+         RowBox[{"#", ",", 
+          SuperscriptBox["2", "2"]}], "]"}]}], "&&", 
+       RowBox[{"And", "@@", 
+        RowBox[{"PrimeQ", "[", 
+         RowBox[{
+          RowBox[{"Divisors", "[", "#", "]"}], "+", 
+          RowBox[{"Reverse", "[", 
+           RowBox[{"Divisors", "[", "#", "]"}], "]"}]}], "]"}]}]}], "&"}]}], 
+    "]"}], "]"}], "//", "Timing"}]], "Input",
+ CellChangeTimes->{{3.729137464361271*^9, 3.7291375087741566`*^9}, {
+   3.7291375573697433`*^9, 3.7291377034523344`*^9}, {3.729137733849844*^9, 
+   3.729137900688566*^9}, {3.72913904878364*^9, 3.729139086666691*^9}, 
+   3.7291393392931466`*^9},ExpressionUUID->"e621e18b-28ec-4462-a88f-\
+138a681b56b8"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1140.578125`", ",", "1739023853137"}], "}"}]], "Output",
+ CellChangeTimes->{{3.729137489687614*^9, 3.7291375108333406`*^9}, {
+   3.729137635980099*^9, 3.7291376697568617`*^9}, {3.7291377009806395`*^9, 
+   3.729137704177745*^9}, 3.7291377391292768`*^9, 3.7291377708531804`*^9, {
+   3.729137873253728*^9, 3.7291378832215967`*^9}, 3.729138968671277*^9, 
+   3.7291390721971517`*^9, 3.7291392027288594`*^9, 
+   3.7291404995827885`*^9},ExpressionUUID->"20860ece-84ca-4b29-8025-\
+313324ce2959"]
+}, Open  ]]
+},
+WindowSize->{1350, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 919, 22, 118, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1480, 44, 925, 24, 118, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[2430, 72, 1031, 27, 59, "Input",ExpressionUUID->"e621e18b-28ec-4462-a88f-138a681b56b8"],
+Cell[3464, 101, 527, 9, 68, "Output",ExpressionUUID->"20860ece-84ca-4b29-8025-313324ce2959"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,218 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8002,        210]
+NotebookOptionsPosition[      7344,        190]
+NotebookOutlinePosition[      7732,        207]
+CellTagsIndexPosition[      7689,        204]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "An even positive integer N will be called admissible, if it is a power of 2 \
+or its distinct prime factors are consecutive primes.\nThe first twelve \
+admissible numbers are ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+   "2", ",", "4", ",", "6", ",", "8", ",", "12", ",", "16", ",", "18", ",", 
+    "24", ",", "30", ",", "32", ",", "36", ",", "48"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7cc0b7ef-cd16-4cc3-a6a1-e4bafe4b56f2"],
+ ".\n\nIf N is admissible, the smallest integer ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"M", ">", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "794a5415-d320-4291-bae9-939f97641489"],
+ " such that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"N", "+", "M"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f21b1a2e-beda-44c0-a198-96baa2826025"],
+ " is prime, will be called the pseudo-Fortunate number for N.\n\nFor \
+example, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"N", "=", "630"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "34f35aca-238b-4213-87d0-e698e16cf781"],
+ " is admissible since it is even and its distinct prime factors are the \
+consecutive primes 2,3,5 and 7.\nThe next prime number after 631 is 641; \
+hence, the pseudo-Fortunate number for 630 is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"M", "=", "11"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c6638d90-0006-424d-9e5f-2668d6293f67"],
+ ".\nIt can also be seen that the pseudo-Fortunate number for 16 is 3.\n\n\
+Find the sum of all distinct pseudo-Fortunate numbers for admissible numbers \
+N less than ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "9"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e44534e4-aa58-4076-8677-7f1bedc9f7b4"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.767739807451538*^9, 
+  3.7677398974602194`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:5982\:679c\:6b63\:5076\:6570N\:662f2\:7684\:5e42\:ff0c\:6216\:8005\:5176\
+\:6240\:6709\:4e0d\:540c\:7684\:8d28\:56e0\:6570\:6070\:597d\:662f\:8fde\:7eed\
+\:8d28\:6570\:ff0c\:5c31\:88ab\:79f0\:4e3a\:662f\:53ef\:63a5\:53d7\:7684\:3002\
+\n\:524d\:5341\:4e8c\:4e2a\:53ef\:63a5\:53d7\:6570\:662f",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+   "2", ",", "4", ",", "6", ",", "8", ",", "12", ",", "16", ",", "18", ",", 
+    "24", ",", "30", ",", "32", ",", "36", ",", "48"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b71f23fc-fb38-4e8c-8dc4-d9fe7eed7c0f"],
+ "\:3002\n\n\:5982\:679cN\:662f\:53ef\:63a5\:53d7\:6570\:ff0c\:4f7f\:5f97",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"N", "+", "M"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f9b90905-5c39-4388-af4b-28ce59a8f012"],
+ "\:4e3a\:8d28\:6570\:7684\:6700\:5c0f\:6574\:6570",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"M", ">", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bfc9d1ad-51c1-49a3-a122-7df1b8f61d61"],
+ "\:5c31\:88ab\:79f0\:4e3aN\:7684\:4f2a\:5e78\:8fd0\:6570\:3002\n\n\:4f8b\
+\:5982\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"N", "=", "630"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "09199965-f116-46e5-a3ed-7e9133b2b4ba"],
+ "\:662f\:53ef\:63a5\:53d7\:6570\:ff0c\:56e0\:4e3a\:5b83\:662f\:5076\:6570\
+\:ff0c\:800c\:4e14\:5b83\:6240\:6709\:4e0d\:540c\:7684\:8d28\:56e0\:6570\:4e3a\
+\:8fde\:7eed\:8d28\:65702\:30013\:30015\:30017\:3002\n\:5728631\:4e4b\:540e\
+\:7684\:4e0b\:4e00\:4e2a\:7d20\:6570\:662f641\:ff1b\:56e0\:6b64\:ff0c630\:7684\
+\:4f2a\:5e78\:8fd0\:6570\:662f",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"M", "=", "11"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "857c5d61-7416-492d-a275-f0473487eb57"],
+ "\:3002\n\
+\:540c\:6837\:53ef\:4ee5\:770b\:51fa\:ff0c16\:7684\:4f2a\:5e78\:8fd0\:6570\
+\:662f3\:3002\n\n\:627e\:51fa\:6240\:6709\:5c0f\:4e8e",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "9"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5de6f34a-09a4-4736-b5a1-fea8ce22b214"],
+ "\:7684\:53ef\:63a5\:53d7\:6570N\:ff0c\:5206\:522b\:6c42\:51fa\:5176\:4f2a\
+\:5e78\:8fd0\:6570\:ff0c\:5e76\:6c42\:6240\:6709\:4e0d\:540c\:7684\:4f2a\:5e78\
+\:8fd0\:6570\:7684\:548c\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.767739820864104*^9, 
+   3.7677398930071497`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"PseudoFortunateNumberList", "[", "limit_", "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "dfs", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"dfs", "[", 
+       RowBox[{"x_", ",", "k_"}], "]"}], ":=", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"x", "<", "limit"}], ",", 
+        RowBox[{
+         RowBox[{"Sow", "[", 
+          RowBox[{
+           RowBox[{"NextPrime", "[", 
+            RowBox[{"x", "+", "1"}], "]"}], "-", "x"}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"dfs", "[", 
+          RowBox[{
+           RowBox[{"x", " ", 
+            RowBox[{"Prime", "[", "k", "]"}]}], ",", "k"}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"dfs", "[", 
+          RowBox[{
+           RowBox[{"x", " ", 
+            RowBox[{"Prime", "[", 
+             RowBox[{"k", "+", "1"}], "]"}]}], ",", 
+           RowBox[{"k", "+", "1"}]}], "]"}]}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Reap", "[", 
+       RowBox[{"dfs", "[", 
+        RowBox[{"2", ",", "1"}], "]"}], "]"}], "\[LeftDoubleBracket]", 
+      RowBox[{"2", ",", "1"}], "\[RightDoubleBracket]"}]}]}], "]"}]}], "\n", 
+ RowBox[{"Total", "[", 
+  RowBox[{"DeleteDuplicates", "[", 
+   RowBox[{"PseudoFortunateNumberList", "[", 
+    SuperscriptBox["10", "9"], "]"}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7677454791921797`*^9, 3.7677456125140796`*^9}, {
+  3.7677459107456217`*^9, 3.767745960312127*^9}, {3.76774607805668*^9, 
+  3.7677460816440907`*^9}},
+ CellLabel->
+  "In[149]:=",ExpressionUUID->"e9fb58b3-ae24-4424-a363-403d8623708f"],
+
+Cell[BoxData["2209"], "Output",
+ CellChangeTimes->{{3.7677454973925295`*^9, 3.767745531307746*^9}, {
+   3.7677455624235725`*^9, 3.767745569681417*^9}, 3.7677459608058076`*^9, 
+   3.767746083568946*^9},
+ CellLabel->
+  "Out[150]=",ExpressionUUID->"5b420a70-b484-4eda-89f0-17a4b1c78a5a"]
+}, Open  ]]
+},
+WindowSize->{2560, 1336},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
+Magnification:>2. Inherited,
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2122, 52, 464, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[2683, 74, 2663, 58, 464, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[5371, 136, 1670, 44, 485, "Input",ExpressionUUID->"e9fb58b3-ae24-4424-a363-403d8623708f"],
+Cell[7044, 182, 284, 5, 124, "Output",ExpressionUUID->"5b420a70-b484-4eda-89f0-17a4b1c78a5a"]
+}, Open  ]]
+}
+]
+*)
+

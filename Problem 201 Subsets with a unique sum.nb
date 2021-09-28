@@ -1,0 +1,627 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18885,        619]
+NotebookOptionsPosition[     18256,        600]
+NotebookOutlinePosition[     18614,        616]
+CellTagsIndexPosition[     18571,        613]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "For any set A of numbers, let ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Total", "[", "A", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3ddb59a1-92ce-40dc-b094-bcd7ecf7336b"],
+ " be the sum of the elements of A.\nConsider the set ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"B", "=", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "3", ",", "6", ",", "8", ",", "10", ",", "11"}], 
+     "}"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "16bd0261-1ccd-4640-aa4a-125d02f9417e"],
+ ".\nThere are 20 subsets of B containing three elements, and their sums are:\
+\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "3", ",", "6"}], "}"}], "]"}], "=", "10"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3ac59b94-8893-4a2c-85cb-684b539ac8a4"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "3", ",", "8"}], "}"}], "]"}], "=", "12"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f24f857c-f3cd-4688-b65f-1fc62d7cae7d"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "3", ",", "10"}], "}"}], "]"}], "=", "14"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "150fc081-b53e-4f90-be62-af3cec693604"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "3", ",", "11"}], "}"}], "]"}], "=", "15"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9ee4a8ca-42c3-4a33-91ae-a291820c9039"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "6", ",", "8"}], "}"}], "]"}], "=", "15"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4b3f45c5-f997-4f1e-b214-24b6b1b4eefd"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "6", ",", "10"}], "}"}], "]"}], "=", "17"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4b70c7e2-14d4-4340-82a1-b2b4bf769bcf"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "6", ",", "11"}], "}"}], "]"}], "=", "18"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "184e3bda-7c46-4119-b34c-f7da74780ee8"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "8", ",", "10"}], "}"}], "]"}], "=", "19"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ebe08ab4-3465-42fe-b419-ad1014095cc5"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "8", ",", "11"}], "}"}], "]"}], "=", "20"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a0c8f3b6-711b-4533-b6d5-7416501b3bbb"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "10", ",", "11"}], "}"}], "]"}], "=", "22"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8b1f38ed-3dbf-441c-811b-5ae48f80305e"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "6", ",", "8"}], "}"}], "]"}], "=", "17"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ee8df410-348f-48a5-a0a4-6543b72604f3"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "6", ",", "10"}], "}"}], "]"}], "=", "19"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "24b747c8-cec6-4ae0-b850-dd08dca672a9"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "6", ",", "11"}], "}"}], "]"}], "=", "20"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "68cc10c2-eb5d-4c7d-9a87-9064d87a64ed"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "8", ",", "10"}], "}"}], "]"}], "=", "21"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "fc2890a4-3dc4-41d6-8750-6ad9236dd1b5"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "8", ",", "11"}], "}"}], "]"}], "=", "22"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a5e7f2fa-011a-4218-8ae8-f79785d6cc5c"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "10", ",", "11"}], "}"}], "]"}], "=", "24"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7f55dcfe-5fec-4d59-918a-7ae51918abf5"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "8", ",", "10"}], "}"}], "]"}], "=", "24"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d7c94c93-ca61-4fe5-be41-69b3f3e222a2"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "8", ",", "11"}], "}"}], "]"}], "=", "25"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6152fb52-92d5-43da-88e2-b7fa3ab6f745"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "10", ",", "11"}], "}"}], "]"}], "=", "27"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b691f346-4210-4076-a5b3-c3cee2e99b42"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"8", ",", "10", ",", "11"}], "}"}], "]"}], "=", "29"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c3e0b859-b05d-42be-ad4c-0c20012eed9e"],
+ ".\n\nSome of these sums occur more than once, others are unique.\nFor a set \
+A, let ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"U", "[", 
+    RowBox[{"A", ",", "k"}], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bab3b64e-1383-4bc5-a2e6-b55d736cdb50"],
+ " be the set of unique sums of k-element subsets of A, in our example we \
+find ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"U", "[", 
+     RowBox[{"B", ",", "3"}], "]"}], "=", 
+    RowBox[{"{", 
+     RowBox[{
+     "10", ",", "12", ",", "14", ",", "18", ",", "21", ",", "25", ",", "27", 
+      ",", "29"}], "}"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f0243d6f-3cce-437b-b2e6-a054d8ecede5"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"U", "[", 
+      RowBox[{"B", ",", "3"}], "]"}], "]"}], "=", "156"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "df45a1fd-5929-4957-9951-6f1e5526f250"],
+ ".\n\nNow consider the 100-element set ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"S", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      SuperscriptBox["1", "2"], ",", 
+      SuperscriptBox["2", "2"], ",", "\[Ellipsis]", ",", 
+      SuperscriptBox["100", "2"]}], "}"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e5625aec-8c59-4e27-b780-ac0256e0de71"],
+ ".\nS has 100891344545564193334812497256 50-element subsets.\n\nDetermine \
+the sum of all integers which are the sum of exactly one of the 50-element \
+subsets of S, i.e. find ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Total", "[", 
+    RowBox[{"U", "[", 
+     RowBox[{"S", ",", "50"}], "]"}], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8ed341d6-8584-451c-9dfa-beedc46f162f"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.731041375478606*^9, 
+  3.731041586822665*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:5bf9\:4e8e\:4efb\:610f\:6570\:96c6A\:ff0c\:8bb0A\:4e2d\:6240\:6709\:5143\
+\:7d20\:7684\:548c\:4e3a",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Total", "[", "A", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "41af013c-32ac-43b1-8e5b-539b1262747a"],
+ "\:3002\n\:8003\:8651\:96c6\:5408",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"B", "=", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "3", ",", "6", ",", "8", ",", "10", ",", "11"}], 
+     "}"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ce9d599a-32cf-42fe-964f-d41aa928fe43"],
+ "\:3002\nB\:670920\:4e2a\:5b50\:96c6\:5305\:542b\:6070\:597d\:4e09\:4e2a\
+\:5143\:7d20\:ff0c\:800c\:8fd9\:4e9b\:5b50\:96c6\:7684\:5143\:7d20\:548c\:5206\
+\:522b\:662f\:ff1a\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "3", ",", "6"}], "}"}], "]"}], "=", "10"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ca63fa05-dbc0-4fce-8e12-04f68e611afc"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "3", ",", "8"}], "}"}], "]"}], "=", "12"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8da9c103-df7b-4108-9d2c-2a617bb8fd52"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "3", ",", "10"}], "}"}], "]"}], "=", "14"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "833c146b-4e26-42b0-9f14-5e134e0e620c"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "3", ",", "11"}], "}"}], "]"}], "=", "15"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4baf234c-9c78-4f3f-8d08-6c7f0d6afb33"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "6", ",", "8"}], "}"}], "]"}], "=", "15"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "44bf6de7-ee56-4cda-aa38-cbc8724edc65"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "6", ",", "10"}], "}"}], "]"}], "=", "17"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d1d30650-9387-4a4f-9b30-c44c9d985dbd"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "6", ",", "11"}], "}"}], "]"}], "=", "18"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a6d6c50d-c97f-42ed-ad15-ecfbd7535895"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "8", ",", "10"}], "}"}], "]"}], "=", "19"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d5c9d00e-b881-4cb0-a312-a4e5c57b216a"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "8", ",", "11"}], "}"}], "]"}], "=", "20"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4dd73623-acbf-4748-9686-da144e460a5c"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "10", ",", "11"}], "}"}], "]"}], "=", "22"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "859a5a75-5d4b-410f-b7c1-b2d7309985b8"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "6", ",", "8"}], "}"}], "]"}], "=", "17"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "addcceff-0bf2-4c8b-b3f7-aa93d72fcaa4"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "6", ",", "10"}], "}"}], "]"}], "=", "19"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "95cb0ecc-06b9-428f-aefd-ec7aaf858138"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "6", ",", "11"}], "}"}], "]"}], "=", "20"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b6fe8f7d-8b2b-4e84-8554-ef1fb81322d1"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "8", ",", "10"}], "}"}], "]"}], "=", "21"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "2e8a0d1a-4a06-4635-8836-a8683027544d"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "8", ",", "11"}], "}"}], "]"}], "=", "22"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c3bc938f-aba7-4ff9-847e-21f28c520b08"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "10", ",", "11"}], "}"}], "]"}], "=", "24"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "db4baede-be0d-4f8f-ae7b-7b56ef8a8676"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "8", ",", "10"}], "}"}], "]"}], "=", "24"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "23cf76a3-e3f2-4cd7-a71c-e003946f8aa2"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "8", ",", "11"}], "}"}], "]"}], "=", "25"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c36af17f-ec1a-42f1-a9e6-972f74262dd7"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "10", ",", "11"}], "}"}], "]"}], "=", "27"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "54042311-554c-4ad5-a64f-727c013a90b3"],
+ ",\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"{", 
+      RowBox[{"8", ",", "10", ",", "11"}], "}"}], "]"}], "=", "29"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6f244795-2de0-495c-81b6-ab044674f635"],
+ ".\n\n\:8fd9\:5176\:4e2d\:7684\:6709\:4e9b\:5143\:7d20\:548c\:51fa\:73b0\
+\:4e86\:4e0d\:6b62\:4e00\:6b21\:ff0c\:5176\:5b83\:5143\:7d20\:548c\:5219\:662f\
+\:552f\:4e00\:51fa\:73b0\:7684\:3002\n\:5bf9\:4e8e\:4efb\:610f\:96c6\:5408A\
+\:ff0c\:5148\:6c42A\:6240\:6709\:6070\:597d\:5305\:542bk\:4e2a\:5143\:7d20\
+\:7684\:5b50\:96c6\:7684\:5143\:7d20\:548c\:ff0c\:5176\:4e2d\:552f\:4e00\:51fa\
+\:73b0\:7684\:5143\:7d20\:548c\:6784\:6210\:96c6\:5408",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"U", "[", 
+    RowBox[{"A", ",", "k"}], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "59bcf100-855e-4b9f-9462-3e9683df1504"],
+ "\:3002\:5728\:6211\:4eec\:7684\:4f8b\:5b50\:4e2d\:ff0c\:6211\:4eec\:53d1\
+\:73b0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"U", "[", 
+     RowBox[{"B", ",", "3"}], "]"}], "=", 
+    RowBox[{"{", 
+     RowBox[{
+     "10", ",", "12", ",", "14", ",", "18", ",", "21", ",", "25", ",", "27", 
+      ",", "29"}], "}"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cc70fcb8-f95c-458f-b274-72058180b209"],
+ "\:ff0c\:56e0\:800c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"U", "[", 
+      RowBox[{"B", ",", "3"}], "]"}], "]"}], "=", "156"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7a01dd73-d62b-4801-8f44-c21299def9c1"],
+ "\:3002\n\n\:73b0\:5728\:8003\:8651\:6709100\:4e2a\:5143\:7d20\:7684\:96c6\
+\:5408",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"S", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      SuperscriptBox["1", "2"], ",", 
+      SuperscriptBox["2", "2"], ",", "\[Ellipsis]", ",", 
+      SuperscriptBox["100", "2"]}], "}"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0ffe31ce-f44e-4b6d-8b83-2d6cd13791e4"],
+ "\:3002\nS\:6709100891344545564193334812497256\:4e2a\:5b50\:96c6\:6070\:597d\
+\:5305\:542b50\:4e2a\:5143\:7d20\:3002\n\n\
+\:5728\:8fd9\:4e9b\:5b50\:96c6\:7684\:5143\:7d20\:548c\:4e2d\:ff0c\:627e\:51fa\
+\:90a3\:4e9b\:552f\:4e00\:51fa\:73b0\:7684\:5143\:7d20\:548c\:5e76\:6c42\:548c\
+\:ff0c\:4e5f\:5373\:6c42",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Total", "[", 
+    RowBox[{"U", "[", 
+     RowBox[{"S", ",", "50"}], "]"}], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f1a24fda-1145-4fde-83d2-2a3ae9024569"],
+ "\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.731041596248493*^9, 
+   3.731041670318542*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Binomial", "[", 
+  RowBox[{"100", ",", "50"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+  3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+  3.7250282267187443`*^9}, {3.72503044347628*^9, 3.725030445342036*^9}, {
+  3.73104169045255*^9, 
+  3.731041699459586*^9}},ExpressionUUID->"20386a64-a558-4827-99f8-\
+04921bede5b8"],
+
+Cell[BoxData["100891344545564193334812497256"], "Output",
+ CellChangeTimes->{
+  3.7250281599876013`*^9, {3.7250281918871064`*^9, 3.725028227147995*^9}, 
+   3.7250304482388463`*^9, {3.7310416952025003`*^9, 
+   3.7310417000689416`*^9}},ExpressionUUID->"bfc71b31-bb2f-4873-828e-\
+b505d4f760af"]
+}, Open  ]]
+},
+WindowSize->{775, 561},
+WindowMargins->{{287, Automatic}, {Automatic, 54}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 8117, 273, 865, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[8678, 295, 8834, 283, 842, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[17537, 582, 409, 8, 52, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[17949, 592, 291, 5, 37, "Output",ExpressionUUID->"bfc71b31-bb2f-4873-828e-b505d4f760af"]
+}, Open  ]]
+}
+]
+*)
+

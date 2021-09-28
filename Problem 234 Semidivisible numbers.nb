@@ -1,0 +1,342 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12184,        334]
+NotebookOptionsPosition[     11554,        315]
+NotebookOutlinePosition[     11913,        331]
+CellTagsIndexPosition[     11870,        328]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "For an integer ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "\[GreaterEqual]", "4"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f9507cd5-aa80-4892-a8e4-642cbdedef46"],
+ ", we define the lower prime square root of n, denoted by ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"lps", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "eaf9b5f0-7329-4787-8d83-c1767cbed59c"],
+ ", as the largest prime ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[LessEqual]", 
+    SqrtBox["n"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "31f166f8-2759-4e8d-80af-fde6959547ab"],
+ " and the upper prime square root of n, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"ups", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6992d204-9f1a-4a1b-883a-3106ca4e1e78"],
+ ", as the smallest prime ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[GreaterEqual]", 
+    SqrtBox["n"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e85f26a5-9ae1-4c9f-9d26-060c582b51cc"],
+ ".\n\nSo, for example, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"lps", "[", "4", "]"}], "=", 
+     RowBox[{"2", "=", 
+      RowBox[{"ups", "[", "4", "]"}]}]}], ",", 
+    RowBox[{
+     RowBox[{"lps", "[", "1000", "]"}], "=", "31"}], ",", 
+    RowBox[{
+     RowBox[{"ups", "[", "1000", "]"}], "=", "37"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a072a885-88be-483a-82c8-89c0fb975ec0"],
+ ".\nLet us call an integer ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "\[GreaterEqual]", "4"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cfbc45da-a08e-4d05-9ad1-e7ec963dc504"],
+ " semidivisible, if one of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"lps", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c356e17a-ef6f-413c-8d75-25adc2eaac14"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"ups", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d13cea3e-55ac-4b6d-9a1a-ab8d989487d7"],
+ " divides n, but not both.\n\nThe sum of the semidivisible numbers not \
+exceeding 15 is 30, the numbers are 8, 10 and 12.\n15 is not semidivisible \
+because it is a multiple of both ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"lps", "[", "15", "]"}], "=", "3"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "038d8ad7-cbc4-4935-8025-147b17cb90fd"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"ups", "[", "15", "]"}], "=", "5"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e70c84c0-ea0f-4722-830f-04fd02e0dfec"],
+ ".\nAs a further example, the sum of the 92 semidivisible numbers up to 1000 \
+is 34825.\n\nWhat is the sum of all semidivisible numbers not exceeding \
+999966663333?"
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.766794223426635*^9, 3.7667942265430593`*^9}, {
+  3.766794319656176*^9, 3.7667943198017864`*^9}, {3.766794363346251*^9, 
+  3.7667944384098577`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:5bf9\:4e8e\:4efb\:610f\:6574\:6570",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "\[GreaterEqual]", "4"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ef70f4e4-1c4f-401e-9c2f-c5488ae02366"],
+ "\:ff0c\:6211\:4eec\:5b9a\:4e49n\:7684\:4e0b\:7d20\:6570\:5e73\:65b9\:6839\
+\:4e3a",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[LessEqual]", 
+    SqrtBox["n"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cd434811-34e1-4d95-b970-01866da3e27d"],
+ "\:7684\:6700\:5927\:7d20\:6570\:ff0c\:8bb0\:4f5c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"lps", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8bf99d28-c16a-4ef3-8bbf-999a7404cfb8"],
+ "\:ff0c\:5e76\:5b9a\:4e49n\:7684\:4e0a\:7d20\:6570\:5e73\:65b9\:6839\:4e3a",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[GreaterEqual]", 
+    SqrtBox["n"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4becf365-b219-46e9-8f03-94be47d4ea15"],
+ "\:7684\:6700\:5c0f\:7d20\:6570\:ff0c\:8bb0\:4f5c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"ups", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ccfb8ace-9884-44fe-929e-e0df12dce352"],
+ "\:3002\n\n\:4e3e\:4f8b\:6765\:8bf4\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"lps", "[", "4", "]"}], "=", 
+     RowBox[{"2", "=", 
+      RowBox[{"ups", "[", "4", "]"}]}]}], ",", 
+    RowBox[{
+     RowBox[{"lps", "[", "1000", "]"}], "=", "31"}], ",", 
+    RowBox[{
+     RowBox[{"ups", "[", "1000", "]"}], "=", "37"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9b82c438-fa1e-48f6-bfa5-6173f309a835"],
+ "\:3002\n\:5982\:679c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"lps", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4f09a432-3628-4d78-bcba-7ae7a9dae25b"],
+ "\:548c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"ups", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5801531c-c25c-4104-9f02-4239d835f76f"],
+ "\:4e2d\:6709\:4e14\:53ea\:6709\:4e00\:4e2a\:6574\:9664n\:ff0c\:6211\:4eec\
+\:79f0\:6574\:6570",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "\[GreaterEqual]", "4"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "add04174-1ab8-4780-a173-f7ea087a5d91"],
+ "\:4e3a\:534a\:53ef\:7ea6\:7684\:3002\n\n\:6240\:6709\:4e0d\:8d85\:8fc715\
+\:7684\:534a\:53ef\:7ea6\:6574\:6570\:4e4b\:548c\:4e3a30\:ff0c\:8fd9\:4e9b\
+\:6574\:6570\:662f8\:300110\:548c12\:300215\:5e76\:4e0d\:662f\:534a\:53ef\
+\:7ea6\:6574\:6570\:ff0c\:56e0\:4e3a\:5b83\:540c\:65f6\:662f",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"lps", "[", "15", "]"}], "=", "3"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f4b70cb8-5125-4fa6-b4c8-2dd6c2674572"],
+ "\:548c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"ups", "[", "15", "]"}], "=", "5"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "70844ed9-e049-4dcf-a20d-5b68d5c5f189"],
+ "\:7684\:500d\:6570\:3002\n\
+\:518d\:4e3e\:4e00\:4f8b\:ff0c\:4e0d\:8d85\:8fc71000\:768492\:4e2a\:534a\:53ef\
+\:7ea6\:6574\:6570\:4e4b\:548c\:4e3a34825\:3002\n\n\
+\:4e0d\:8d85\:8fc7999966663333\:7684\:6240\:6709\:534a\:53ef\:7ea6\:6574\:6570\
+\:4e4b\:548c\:662f\:591a\:5c11\:ff1f"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.7667942414243464`*^9, 
+   3.766794356085526*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"limit", "=", "999966663333"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p", "=", 
+   RowBox[{"Prime", "[", 
+    RowBox[{"Range", "[", 
+     RowBox[{"1", ",", 
+      RowBox[{
+       RowBox[{"PrimePi", "[", 
+        SqrtBox["limit"], "]"}], "+", "1"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"s", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", "=", "1"}], ",", 
+    RowBox[{"i", "\[LessEqual]", 
+     RowBox[{
+      RowBox[{"Length", "[", "p", "]"}], "-", "1"}]}], ",", 
+    RowBox[{"i", "=", 
+     RowBox[{"i", "+", "1"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"a", "=", 
+      RowBox[{
+       RowBox[{"p", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+       " ", 
+       RowBox[{"Range", "[", 
+        RowBox[{
+         RowBox[{"\[LeftCeiling]", 
+          FractionBox[
+           RowBox[{
+            SuperscriptBox[
+             RowBox[{
+             "p", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+             "2"], "+", "1"}], 
+           RowBox[{
+           "p", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]], 
+          "\[RightCeiling]"}], ",", 
+         RowBox[{"\[LeftFloor]", 
+          FractionBox[
+           RowBox[{"Min", "[", 
+            RowBox[{
+             RowBox[{
+              SuperscriptBox[
+               RowBox[{"p", "\[LeftDoubleBracket]", 
+                RowBox[{"i", "+", "1"}], "\[RightDoubleBracket]"}], "2"], "-",
+               "1"}], ",", "limit"}], "]"}], 
+           RowBox[{
+           "p", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]], 
+          "\[RightFloor]"}]}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"b", "=", 
+      RowBox[{
+       RowBox[{"p", "\[LeftDoubleBracket]", 
+        RowBox[{"i", "+", "1"}], "\[RightDoubleBracket]"}], " ", 
+       RowBox[{"Range", "[", 
+        RowBox[{
+         RowBox[{"\[LeftCeiling]", 
+          FractionBox[
+           RowBox[{
+            SuperscriptBox[
+             RowBox[{
+             "p", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+             "2"], "+", "1"}], 
+           RowBox[{"p", "\[LeftDoubleBracket]", 
+            RowBox[{"i", "+", "1"}], "\[RightDoubleBracket]"}]], 
+          "\[RightCeiling]"}], ",", 
+         RowBox[{"\[LeftFloor]", 
+          FractionBox[
+           RowBox[{"Min", "[", 
+            RowBox[{
+             RowBox[{
+              SuperscriptBox[
+               RowBox[{"p", "\[LeftDoubleBracket]", 
+                RowBox[{"i", "+", "1"}], "\[RightDoubleBracket]"}], "2"], "-",
+               "1"}], ",", "limit"}], "]"}], 
+           RowBox[{"p", "\[LeftDoubleBracket]", 
+            RowBox[{"i", "+", "1"}], "\[RightDoubleBracket]"}]], 
+          "\[RightFloor]"}]}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"s", "=", 
+      RowBox[{"s", "+", 
+       RowBox[{"Total", "[", "a", "]"}], "+", 
+       RowBox[{"Total", "[", "b", "]"}], "-", 
+       RowBox[{"2", " ", 
+        RowBox[{"Total", "[", 
+         RowBox[{"a", "\[Intersection]", "b"}], "]"}]}]}]}]}]}], 
+   "\[IndentingNewLine]", "]"}], ";"}], "\[IndentingNewLine]", "s"}], "Input",
+ CellChangeTimes->{{3.7667950901170416`*^9, 3.7667951009538703`*^9}, {
+  3.766797641961601*^9, 3.7667976945367937`*^9}, {3.766797819378236*^9, 
+  3.766797999517759*^9}, {3.7667981335848217`*^9, 3.7667981448875723`*^9}, {
+  3.766798184101923*^9, 3.766798195314799*^9}, {3.7667982468096676`*^9, 
+  3.76679824799022*^9}},
+ CellLabel->"In[64]:=",ExpressionUUID->"470241d5-eb96-403a-97a9-1c728a82e9c7"],
+
+Cell[BoxData["1259187438574927161"], "Output",
+ CellChangeTimes->{
+  3.7667950958015556`*^9, 3.7667959668091063`*^9, {3.766797921201103*^9, 
+   3.7667979381710634`*^9}, {3.7667979706779003`*^9, 
+   3.7667980001650267`*^9}, {3.766798134444354*^9, 3.7667981455910196`*^9}, 
+   3.766798197338561*^9, 3.7667982614563828`*^9},
+ CellLabel->"Out[68]=",ExpressionUUID->"0c918028-0934-4deb-b299-421ef958cf18"]
+}, Open  ]]
+},
+WindowSize->{2560, 1336},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 3284, 90, 234, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[3845, 112, 3660, 95, 212, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[7530, 211, 3605, 93, 407, "Input",ExpressionUUID->"470241d5-eb96-403a-97a9-1c728a82e9c7"],
+Cell[11138, 306, 400, 6, 91, "Output",ExpressionUUID->"0c918028-0934-4deb-b299-421ef958cf18"]
+}, Open  ]]
+}
+]
+*)
+

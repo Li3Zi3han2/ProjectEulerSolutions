@@ -1,0 +1,227 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7187,        219]
+NotebookOptionsPosition[      6560,        200]
+NotebookOutlinePosition[      6920,        216]
+CellTagsIndexPosition[      6877,        213]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Consider numbers ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "46d072d4-3e6a-47a3-acf3-8e089a8941af"],
+ " of the form ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"t", "[", "n", "]"}], "=", 
+    RowBox[{
+     RowBox[{"2", " ", 
+      SuperscriptBox["n", "2"]}], "-", "1"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c683f041-b207-4095-b19d-d5516a4cee18"],
+ " with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", ">", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "aefa6156-6e22-45a3-9f04-6de52b050271"],
+ ".\nThe first such numbers are ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+   "7", ",", "17", ",", "31", ",", "49", ",", "71", ",", "97", ",", "127", 
+    ",", "161"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f6d5ca94-4997-4938-9152-74eccd5addc4"],
+ ".\nIt turns out that only ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"49", "=", 
+    RowBox[{"7", " ", "7"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "2e4093d7-b2d6-4822-9225-ac653b5dde38"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"161", "=", 
+    RowBox[{"7", " ", "23"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "56573941-40ed-4eb5-8b46-11b0f6e9aa1c"],
+ " are not prime.\nFor ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "\[LessEqual]", "10000"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b79dff95-4c74-4f8a-86c4-2fa32bb25e92"],
+ " there are 2202 numbers ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f4b9ca5b-c6f5-4e4c-870d-31957ddb9399"],
+ " that are prime.\n\nHow many numbers ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4fdf0db8-16e1-4240-ab54-6e4c1a39c78c"],
+ " are prime for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "\[LessEqual]", "50000000"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6e6d74d3-35fa-45d4-b35f-6b8f13c1e317"],
+ "?"
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.764384910623702*^9, 3.7643849653353667`*^9}, {
+  3.7643850465182276`*^9, 
+  3.764385109920678*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:8003\:8651\:5f62\:5982",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"t", "[", "n", "]"}], "=", 
+    RowBox[{
+     RowBox[{"2", " ", 
+      SuperscriptBox["n", "2"]}], "-", "1"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "97cd1209-276e-4498-a74d-c89a8a01e87a"],
+ "\:7684\:6570",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "43a3463a-ca8c-4153-90d6-6563e880a225"],
+ "\:ff0c\:5176\:4e2d",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", ">", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "eaa39ab9-fc52-4b8f-94e2-0bd68483d71a"],
+ "\:3002\n\:524d\:51e0\:4e2a\:8fd9\:6837\:7684\:6570\:5206\:522b\:662f",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+   "7", ",", "17", ",", "31", ",", "49", ",", "71", ",", "97", ",", "127", 
+    ",", "161"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "83e920d5-3dd5-470b-8308-036b8c20f258"],
+ "\:3002\n\:53ef\:89c1\:53ea\:6709",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"49", "=", 
+    RowBox[{"7", " ", "7"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "da0d260e-2e67-490f-85c9-f861e72c4a7e"],
+ "\:548c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"161", "=", 
+    RowBox[{"7", " ", "23"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e2cae956-193b-4de2-9938-66a279774210"],
+ "\:4e0d\:662f\:7d20\:6570\:3002\n\:5bf9\:4e8e",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "\[LessEqual]", "10000"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "97b5abb2-e5d5-49d1-970f-75e21bb99c24"],
+ "\:ff0c\:4e00\:5171\:67092202\:4e2a",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0646bff8-3198-475e-89fe-32dbc9301a49"],
+ "\:662f\:7d20\:6570\:3002\n\n\:5bf9\:4e8e",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "\[LessEqual]", "50000000"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e02ba923-71d5-4118-97dc-c76584c9fbf6"],
+ "\:ff0c\:4e00\:5171\:6709\:591a\:5c11\:4e2a",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4bef47e4-4093-4eb0-b1ba-9150898b7540"],
+ "\:662f\:7d20\:6570\:ff1f"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.7643849208074646`*^9, 
+   3.7643849370909114`*^9}, {3.764384973188361*^9, 
+   3.7643850337842875`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{
+    RowBox[{"2", " ", 
+     SuperscriptBox[
+      RowBox[{"Range", "[", 
+       RowBox[{"2", ",", "50000000"}], "]"}], "2"]}], "-", "1"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Count", "[", 
+  RowBox[{"a", ",", 
+   RowBox[{"x_", "/;", 
+    RowBox[{"PrimeQ", "[", "x", "]"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7643854051803465`*^9, 3.764385411798644*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"1d2f2049-dee5-4771-9193-a69df661e27b"],
+
+Cell[BoxData["5437849"], "Output",
+ CellChangeTimes->{3.764385523159571*^9},
+ CellLabel->"Out[14]=",ExpressionUUID->"6b277835-f743-400f-a224-eab36d0084f9"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{Automatic, 486}, {262, Automatic}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2544, 76, 144, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[3105, 98, 2747, 77, 144, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[5877, 179, 509, 14, 71, "Input",ExpressionUUID->"1d2f2049-dee5-4771-9193-a69df661e27b"],
+Cell[6389, 195, 155, 2, 34, "Output",ExpressionUUID->"6b277835-f743-400f-a224-eab36d0084f9"]
+}, Open  ]]
+}
+]
+*)
+

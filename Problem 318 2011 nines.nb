@@ -1,0 +1,511 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15527,        503]
+NotebookOptionsPosition[     14798,        483]
+NotebookOutlinePosition[     15157,        499]
+CellTagsIndexPosition[     15114,        496]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Consider the real number ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SqrtBox["2"], "+", 
+    SqrtBox["3"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ef76172d-2eff-413d-8122-f8388af4a216"],
+ ".\nWhen we calculate the even powers of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SqrtBox["2"], "+", 
+    SqrtBox["3"]}], TraditionalForm]],ExpressionUUID->
+  "46aceea8-2ac1-438e-bd17-8919c49f16b1"],
+ " we get:\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SqrtBox["2"], "+", 
+       SqrtBox["3"]}], ")"}], "2"], "=", 
+    RowBox[{"9.898979485566356", "\[Ellipsis]"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SqrtBox["2"], "+", 
+       SqrtBox["3"]}], ")"}], "4"], "=", 
+    RowBox[{"97.98979485566356", "\[Ellipsis]"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SqrtBox["2"], "+", 
+       SqrtBox["3"]}], ")"}], "6"], "=", 
+    RowBox[{"969.9989690710693", "\[Ellipsis]"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SqrtBox["2"], "+", 
+       SqrtBox["3"]}], ")"}], "8"], "=", 
+    RowBox[{"9601.999895855029", "\[Ellipsis]"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SqrtBox["2"], "+", 
+       SqrtBox["3"]}], ")"}], "10"], "=", 
+    RowBox[{"95049.99998947922", "\[Ellipsis]"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SqrtBox["2"], "+", 
+       SqrtBox["3"]}], ")"}], "12"], "=", 
+    RowBox[{"940897.9999989372", "\[Ellipsis]"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SqrtBox["2"], "+", 
+       SqrtBox["3"]}], ")"}], "14"], "=", 
+    RowBox[{"9313929.999999893", "\[Ellipsis]"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SqrtBox["2"], "+", 
+       SqrtBox["3"]}], ")"}], "16"], "=", 
+    RowBox[{"92198401.99999999", "\[Ellipsis]"}]}], TraditionalForm]}],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c996b5c1-76c6-48e2-aa91-f11f3ecf8822"],
+ "\n\nIt looks like that the number of consecutive nines at the beginning of \
+the fractional part of these powers is non-decreasing.\nIn fact it can be \
+proven that the fractional part of ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      SqrtBox["2"], "+", 
+      SqrtBox["3"]}], ")"}], 
+    RowBox[{"2", " ", "n"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b9a105d1-2e0a-4c28-85f5-8c7f4e8be9c3"],
+ " approaches 1 for large n.\n\nConsider all real numbers of the form ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SqrtBox["p"], "+", 
+    SqrtBox["q"]}], TraditionalForm]],ExpressionUUID->
+  "bd18a68b-8a4f-466e-b1a0-51b84585cdf6"],
+ " with p and q positive integers and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"p", "<", "q"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "da4bf9e3-2e48-4b9d-8d2b-8805003a88a9"],
+ ", such that the fractional part of ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      SqrtBox["p"], "+", 
+      SqrtBox["q"]}], ")"}], 
+    RowBox[{"2", " ", "n"}]], TraditionalForm]],ExpressionUUID->
+  "121f9cff-94bb-4acd-be06-b7d70905f0be"],
+ " approaches 1 for large n.\n\nLet ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"C", "[", 
+    RowBox[{"p", ",", "q", ",", "n"}], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c33f68ab-09a4-4ded-be76-d0b3b3c78db7"],
+ " be the number of consecutive nines at the beginning of the fractional part \
+of ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      SqrtBox["p"], "+", 
+      SqrtBox["q"]}], ")"}], 
+    RowBox[{"2", " ", "n"}]], TraditionalForm]],ExpressionUUID->
+  "cf443745-cc86-4cd6-abd0-0ac4075ec31c"],
+ ".\n\nLet ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"N", "[", 
+    RowBox[{"p", ",", "q"}], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0d60abf3-4e7e-4cda-9348-05f1dc628d38"],
+ " be the minimal value of n such that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"C", "[", 
+     RowBox[{"p", ",", "q", ",", "n"}], "]"}], "\[GreaterEqual]", "2011"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5cacf6f6-ed92-4a23-8dda-b9438b6c64e8"],
+ ".\n\nFind ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Sum]", 
+    RowBox[{"N", "[", 
+     RowBox[{"p", ",", "q"}], "]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d51fc678-9dda-4cea-9280-67fd53932dbe"],
+ " for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"p", "+", "q"}], "\[LessEqual]", "2011"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e8d568aa-3b2f-4029-acb1-213865a4e57e"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.7634657896693726`*^9, 3.763465845793393*^9}, {
+  3.763466059573767*^9, 3.763466254498602*^9}, {3.7634663658434277`*^9, 
+  3.7634663762724457`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:8003\:8651\:5b9e\:6570",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SqrtBox["2"], "+", 
+    SqrtBox["3"]}], TraditionalForm]],ExpressionUUID->
+  "e3ca7c52-99e7-47e0-99c5-2d058107ea54"],
+ "\:3002\n\:8ba1\:7b97",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SqrtBox["2"], "+", 
+    SqrtBox["3"]}], TraditionalForm]],ExpressionUUID->
+  "43da0e66-06e8-47d4-9a38-c3d1f23d363a"],
+ "\:7684\:5076\:6570\:6b21\:5e42\:ff0c\:6211\:4eec\:5f97\:5230\:ff1a\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SqrtBox["2"], "+", 
+       SqrtBox["3"]}], ")"}], "2"], "=", 
+    RowBox[{"9.898979485566356", "\[Ellipsis]"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SqrtBox["2"], "+", 
+       SqrtBox["3"]}], ")"}], "4"], "=", 
+    RowBox[{"97.98979485566356", "\[Ellipsis]"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SqrtBox["2"], "+", 
+       SqrtBox["3"]}], ")"}], "6"], "=", 
+    RowBox[{"969.9989690710693", "\[Ellipsis]"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SqrtBox["2"], "+", 
+       SqrtBox["3"]}], ")"}], "8"], "=", 
+    RowBox[{"9601.999895855029", "\[Ellipsis]"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SqrtBox["2"], "+", 
+       SqrtBox["3"]}], ")"}], "10"], "=", 
+    RowBox[{"95049.99998947922", "\[Ellipsis]"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SqrtBox["2"], "+", 
+       SqrtBox["3"]}], ")"}], "12"], "=", 
+    RowBox[{"940897.9999989372", "\[Ellipsis]"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SqrtBox["2"], "+", 
+       SqrtBox["3"]}], ")"}], "14"], "=", 
+    RowBox[{"9313929.999999893", "\[Ellipsis]"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SqrtBox["2"], "+", 
+       SqrtBox["3"]}], ")"}], "16"], "=", 
+    RowBox[{"92198401.99999999", "\[Ellipsis]"}]}], TraditionalForm]}],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d8a087c9-2e70-46f4-ac0e-47f5470dc9e3"],
+ "\n\n\:770b\:8d77\:6765\:4f3c\:4e4e\:8fd9\:4e9b\:5e42\:7684\:5c0f\:6570\:90e8\
+\:5206\:5f00\:5934\:8fde\:7eed\:76849\:7684\:6570\:76ee\:59cb\:7ec8\:4e0d\
+\:964d\:3002\n\:4e8b\:5b9e\:4e0a\:ff0c\:53ef\:4ee5\:8bc1\:660e",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      SqrtBox["2"], "+", 
+      SqrtBox["3"]}], ")"}], 
+    RowBox[{"2", " ", "n"}]], TraditionalForm]],ExpressionUUID->
+  "3063a320-0324-4aef-849b-7560ab9440fd"],
+ "\:7684\:5c0f\:6570\:90e8\:5206\:5728n\:5145\:5206\:5927\:65f6\:8d8b\:5411\
+\:4e8e1\:3002\n\n\:8003\:8651\:6240\:6709\:53ef\:4ee5\:8868\:793a\:4e3a",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SqrtBox["p"], "+", 
+    SqrtBox["q"]}], TraditionalForm]],ExpressionUUID->
+  "7f640068-1615-4697-9204-0ab56f51d371"],
+ "\:7684\:5b9e\:6570\:ff0c\:8981\:6c42p\:548cq\:5747\:4e3a\:6b63\:6574\:6570\
+\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"p", "<", "q"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3d37b630-76a6-4713-b1bc-5402287460b1"],
+ "\:ff0c\:5e76\:4e14",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      SqrtBox["p"], "+", 
+      SqrtBox["q"]}], ")"}], 
+    RowBox[{"2", " ", "n"}]], TraditionalForm]],ExpressionUUID->
+  "ebab166d-835e-4e52-b4a6-2316be2552ec"],
+ "\:7684\:5c0f\:6570\:90e8\:5206\:5728n\:5145\:5206\:5927\:65f6\:8d8b\:5411\
+\:4e8e1\:3002\n\n\:8bb0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"C", "[", 
+    RowBox[{"p", ",", "q", ",", "n"}], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ffa36217-bfb6-4e08-bcf3-78060e9d2fbd"],
+ "\:4e3a",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      SqrtBox["p"], "+", 
+      SqrtBox["q"]}], ")"}], 
+    RowBox[{"2", " ", "n"}]], TraditionalForm]],ExpressionUUID->
+  "331d3484-e437-4567-852d-180d7d4e28e9"],
+ "\:7684\:5c0f\:6570\:90e8\:5206\:5f00\:5934\:8fde\:7eed\:76849\:7684\:6570\
+\:76ee\:3002\n\n\:8bb0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"N", "[", 
+    RowBox[{"p", ",", "q"}], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "62a4a6f8-f04f-4561-bde6-1c1b2a7e66ce"],
+ "\:4e3a\:4f7f\:5f97",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"C", "[", 
+     RowBox[{"p", ",", "q", ",", "n"}], "]"}], "\[GreaterEqual]", "2011"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8603ad5e-dcaf-4914-9ff2-70f6d2fba89b"],
+ "\:7684\:6700\:5c0fn\:503c\:3002\n\n\:5bf9\:4e8e\:6240\:6709",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"p", "+", "q"}], "\[LessEqual]", "2011"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8d61fef5-fe83-49dd-a4cc-e016dc532ece"],
+ "\:ff0c\:6c42",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Sum]", 
+    RowBox[{"N", "[", 
+     RowBox[{"p", ",", "q"}], "]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b4419d80-d502-4661-8f63-6284782fa380"],
+ "\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.763466256604991*^9, 
+   3.7634663572913465`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\:56e0\:4e3a", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      SqrtBox["q"], "+", 
+      SqrtBox["p"]}], ")"}], 
+    RowBox[{"2", " ", "n"}]]}], "+", 
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      SqrtBox["q"], "-", 
+      SqrtBox["p"]}], ")"}], 
+    RowBox[{"2", " ", "n"}]], 
+   "\:603b\:662f\:6574\:6570"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"\:6240\:4ee5\:5f53", 
+     SqrtBox["q"]}], "-", 
+    SqrtBox["p"]}], "<", 
+   RowBox[{"1", "\:65f6"}]}], "\:ff0c", 
+  RowBox[{
+   RowBox[{"Limit", "[", 
+    RowBox[{
+     RowBox[{"FractionalPart", "[", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         SqrtBox["q"], "+", 
+         SqrtBox["p"]}], ")"}], 
+       RowBox[{"2", " ", "n"}]], "]"}], ",", 
+     RowBox[{"n", "\[Rule]", 
+      RowBox[{"+", "\[Infinity]"}]}]}], "]"}], "=", 
+   "1"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     SqrtBox["q"], "+", 
+     SqrtBox["p"]}], ")"}], 
+   RowBox[{"2", " ", "n"}]], 
+  "\:7684\:5c0f\:6570\:90e8\:5206\:5f00\:5934\:8fde\:7eed\:76849\:7684\:4e2a\
+\:6570\:7b49\:4e8e", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     SqrtBox["q"], "-", 
+     SqrtBox["p"]}], ")"}], 
+   RowBox[{"2", " ", "n"}]], 
+  "\:7684\:5c0f\:6570\:90e8\:5206\:5f00\:5934\:8fde\:7eed\:76840\:7684\:4e2a\
+\:6570"}]}], "Text",
+ CellChangeTimes->{{3.7634666924542475`*^9, 3.763466702632012*^9}, {
+   3.7634667388780174`*^9, 3.7634667655652857`*^9}, {3.7634668668798647`*^9, 
+   3.7634669614329824`*^9}, 3.7634670862735653`*^9, {3.7634671554143777`*^9, 
+   3.763467182042323*^9}, {3.763467694548875*^9, 
+   3.763467713711901*^9}},ExpressionUUID->"d1b6b67d-a1b2-4290-b5e5-\
+f5bececf5b74"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"n", "[", 
+    RowBox[{"p_", ",", "q_"}], "]"}], ":=", 
+   RowBox[{"\[LeftCeiling]", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"-", "2011"}], " ", 
+      RowBox[{"Log", "[", "10", "]"}]}], 
+     RowBox[{"2", " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"(", 
+        RowBox[{
+         SqrtBox["q"], "-", 
+         SqrtBox["p"]}], ")"}], "]"}]}]], "\[RightCeiling]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubsuperscriptBox["\[Sum]", 
+   RowBox[{"p", "=", "1"}], "1005"], 
+  RowBox[{
+   SubsuperscriptBox["\[Sum]", 
+    RowBox[{"q", "=", 
+     RowBox[{"p", "+", "1"}]}], 
+    RowBox[{"Min", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[LeftCeiling]", 
+        RowBox[{"1", "+", 
+         RowBox[{"2", " ", 
+          SqrtBox["p"]}], "+", "p"}], "\[RightCeiling]"}], "-", "1"}], ",", 
+      RowBox[{"2011", "-", "p"}]}], "]"}]], 
+   RowBox[{"n", "[", 
+    RowBox[{"p", ",", "q"}], "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.7634676362219076`*^9, 3.7634676694851913`*^9}, {
+  3.7634678524847317`*^9, 3.7634679211953287`*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"6c0dffa7-edc9-469f-bc79-27ff693408eb"],
+
+Cell[BoxData["709313889"], "Output",
+ CellChangeTimes->{3.7634679247477136`*^9},
+ CellLabel->"Out[13]=",ExpressionUUID->"e3758a40-9292-4bc8-babf-4ee1eee384ff"]
+}, Open  ]]
+},
+WindowSize->{2560, 1336},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 5454, 176, 559, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[6015, 198, 5630, 177, 559, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[11648, 377, 1772, 59, 105, "Text",ExpressionUUID->"d1b6b67d-a1b2-4290-b5e5-f5bececf5b74"],
+Cell[CellGroupData[{
+Cell[13445, 440, 1175, 36, 126, "Input",ExpressionUUID->"6c0dffa7-edc9-469f-bc79-27ff693408eb"],
+Cell[14623, 478, 159, 2, 34, "Output",ExpressionUUID->"e3758a40-9292-4bc8-babf-4ee1eee384ff"]
+}, Open  ]]
+}
+]
+*)
+

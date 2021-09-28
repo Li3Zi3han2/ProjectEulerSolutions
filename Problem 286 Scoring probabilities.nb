@@ -1,0 +1,240 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8888,        232]
+NotebookOptionsPosition[      8261,        213]
+NotebookOutlinePosition[      8618,        229]
+CellTagsIndexPosition[      8575,        226]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Barbara is a mathematician and a basketball player. She has found that the \
+probability of scoring a point when shooting from a distance x is exactly ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "-", 
+    FractionBox["x", "q"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "73178126-ac7e-4405-8b88-f0c3e2acb776"],
+ ", where q is a real constant greater than 50.\n\nDuring each practice run, \
+she takes shots from distances ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"x", "\[ThinSpace]", "=", "\[ThinSpace]", "1"}], ",", 
+    RowBox[{"x", "\[ThinSpace]", "=", "\[ThinSpace]", "2"}], ",", 
+    "\[Ellipsis]", ",", 
+    RowBox[{"x", "\[ThinSpace]", "=", "\[ThinSpace]", "50"}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f8c99964-09af-4d59-8f69-addaeaf934da"],
+ " and, according to her records, she has precisely a 2\[ThinSpace]% chance \
+to score a total of exactly 20 points.\n\nFind q and give your answer rounded \
+to 10 decimal places."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.7333971525060234`*^9, 
+  3.7333971545281525`*^9}, {3.756109957259658*^9, 
+  3.756109993780055*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:82ad\:82ad\:62c9\:662f\:4e00\:540d\:6570\:5b66\:5bb6\:ff0c\:4e5f\:662f\
+\:4e00\:540d\:7bee\:7403\:8fd0\:52a8\:5458\:3002\:5979\:53d1\:73b0\:ff0c\:5728\
+\:8ddd\:79bbx\:5904\:6295\:7bee\:5f97\:5206\:7684\:6982\:7387\:6070\:597d\
+\:662f",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "-", 
+    FractionBox["x", "q"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f85293c5-34b9-4eaa-a2ba-c8259b2563dc"],
+ "\:ff0c\:5176\:4e2dq\:662f\:4e00\:4e2a\:5927\:4e8e50\:7684\:5e38\:6570\:3002\
+\n\n\:5728\:6bcf\:6b21\:7ec3\:4e60\:65f6\:ff0c\:5979\:90fd\:5206\:522b\:4ece\
+\:8ddd\:79bb\:4e3a",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"x", "\[ThinSpace]", "=", "\[ThinSpace]", "1"}], ",", 
+    RowBox[{"x", "\[ThinSpace]", "=", "\[ThinSpace]", "2"}], ",", 
+    "\[Ellipsis]", ",", 
+    RowBox[{"x", "\[ThinSpace]", "=", "\[ThinSpace]", "50"}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "aaecc12d-acd1-49a9-afe3-fce91e4de1cd"],
+ "\:7684\:5730\:65b9\:6295\:7bee\:ff0c\:6839\:636e\:5979\:7684\:8bb0\:5f55\
+\:ff0c\:5979\:6070\:597d\:5f97\:520620\:6b21\:7684\:7cbe\:786e\:6982\:7387\
+\:4e3a2%\:3002\n\n\:6c42\:51faq\:ff0c\:5e76\:5c06\:4f60\:7684\:7b54\:6848\
+\:56db\:820d\:4e94\:5165\:523010\:4f4d\:5c0f\:6570\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, 3.756109965709339*^9, {
+   3.756110002170742*^9, 
+   3.7561100098285465`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"probability", "[", 
+    RowBox[{"x_", ",", "p_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"probability", "[", 
+     RowBox[{"x", ",", "p"}], "]"}], "=", 
+    RowBox[{"FullSimplify", "[", 
+     TagBox[GridBox[{
+        {"\[Piecewise]", GridBox[{
+           {
+            FractionBox["x", "q"], 
+            RowBox[{
+             RowBox[{"x", "\[Equal]", "1"}], "&&", 
+             RowBox[{"p", "\[Equal]", "0"}]}]},
+           {
+            RowBox[{"1", "-", 
+             FractionBox["x", "q"]}], 
+            RowBox[{
+             RowBox[{"x", "\[Equal]", "1"}], "&&", 
+             RowBox[{"p", "\[Equal]", "1"}]}]},
+           {
+            RowBox[{
+             RowBox[{
+              RowBox[{"probability", "[", 
+               RowBox[{
+                RowBox[{"x", "-", "1"}], ",", "p"}], "]"}], " ", 
+              FractionBox["x", "q"]}], "+", 
+             RowBox[{
+              RowBox[{"probability", "[", 
+               RowBox[{
+                RowBox[{"x", "-", "1"}], ",", 
+                RowBox[{"p", "-", "1"}]}], "]"}], " ", 
+              RowBox[{"(", 
+               RowBox[{"1", "-", 
+                FractionBox["x", "q"]}], ")"}]}]}], 
+            RowBox[{
+             RowBox[{"x", "\[GreaterEqual]", "2"}], "&&", 
+             RowBox[{"0", "\[LessEqual]", "p", "\[LessEqual]", "x"}]}]},
+           {"0", "True"}
+          },
+          AllowedDimensions->{2, Automatic},
+          Editable->True,
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.84]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+              Offset[0.2], {
+               Offset[0.4]}, 
+              Offset[0.2]}, "RowsIndexed" -> {}},
+          Selectable->True]}
+       },
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+         "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.35]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}],
+      "Piecewise",
+      DeleteWithContents->True,
+      Editable->False,
+      SelectWithContents->True,
+      Selectable->False], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"temp", "=", 
+   RowBox[{"probability", "[", 
+    RowBox[{"50", ",", "20"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DecimalForm", "[", 
+  RowBox[{
+   RowBox[{"q", "/.", 
+    RowBox[{"FindRoot", "[", 
+     RowBox[{
+      RowBox[{"temp", "\[Equal]", 
+       FractionBox["2", "100"]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"q", ",", "50"}], "}"}], ",", 
+      RowBox[{"WorkingPrecision", "\[Rule]", "50"}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"+", "\[Infinity]"}], ",", "10"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+  3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+  3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+  3.733397177005328*^9, 3.7333972103847303`*^9}, {3.7561100470986557`*^9, 
+  3.756110187193759*^9}, {3.7561102204695797`*^9, 3.7561102977394943`*^9}, {
+  3.756111540279279*^9, 3.756111597000188*^9}, {3.7561116377715306`*^9, 
+  3.756111640757065*^9}, {3.7561117023135386`*^9, 3.756111795503094*^9}, {
+  3.756112628567419*^9, 3.756112640987482*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+
+Cell[BoxData[
+ TagBox[
+  InterpretationBox["\<\"52.6494571953\"\>",
+   52.649457195309171449788242873237256548120945433013779464285925960841902105\
+03039`50.,
+   AutoDelete->True],
+  DecimalForm[#, {
+    DirectedInfinity[1], 10}]& ]], "Output",
+ CellChangeTimes->{{3.756111582134508*^9, 3.756111600896579*^9}, 
+   3.7561116431006985`*^9, 3.7561117322686157`*^9, 3.75611176475554*^9, 
+   3.756112213068231*^9, {3.7561123162383184`*^9, 3.7561123324212933`*^9}, 
+   3.7561126182840414`*^9, 3.756112876862213*^9},
+ CellLabel->
+  "Out[5]//DecimalForm=",ExpressionUUID->"f5c5c292-6c23-4685-91ff-\
+4f50cd19dd86"]
+}, Open  ]]
+},
+WindowSize->{1350, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1321, 29, 182, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1882, 51, 1651, 35, 136, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[3558, 90, 4079, 104, 248, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[7640, 196, 605, 14, 51, "Output",ExpressionUUID->"f5c5c292-6c23-4685-91ff-4f50cd19dd86"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,249 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8250,        241]
+NotebookOptionsPosition[      7624,        222]
+NotebookOutlinePosition[      7981,        238]
+CellTagsIndexPosition[      7938,        235]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Let ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["y", "0"], ",", 
+    SubscriptBox["y", "1"], ",", 
+    SubscriptBox["y", "2"], ",", "\[Ellipsis]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bca50841-109a-4bcd-9544-c7790875faa8"],
+ " be a sequence of random unsigned 32 bit integers\n(i.e. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", "\[LessEqual]", "yi", "<", 
+    SuperscriptBox["2", "32"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ebab2692-a1a4-47be-86a4-9d813696bde4"],
+ ", every value equally likely).\n\nFor the sequence ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "i"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "2ead3f7d-64a7-4010-96f3-6a6ce81248e5"],
+ " the following recursion is given:\n\n    ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["x", "0"], "=", "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "075a147f-1da0-4b06-ba84-008c96fcd660"],
+ " and\n    ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["x", "i"], "=", 
+    RowBox[{
+     SubscriptBox["x", 
+      RowBox[{"i", "-", "1"}]], "|", 
+     SubscriptBox["y", 
+      RowBox[{"i", "-", "1"}]]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "257a1195-f67c-4251-a557-6fcb402f1582"],
+ ", for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"i", ">", "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "432b9cb0-d334-4f87-b952-2c09664c7241"],
+ ". ( ",
+ Cell[BoxData[
+  FormBox["|", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6d8b950b-d71b-42b1-aa00-2c572602557f"],
+ " is the bitwise-OR operator)\n\nIt can be seen that eventually there will \
+be an index N such that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["x", "i"], "=", 
+    RowBox[{
+     SuperscriptBox["2", "32"], "-", "1"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b7b034f2-92d6-4432-bd0f-dc6f72ebcb65"],
+ " (a bit-pattern of all ones) for all ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"i", "\[GreaterEqual]", "N"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "46f9416f-f56a-42be-929c-d0f681ee16c1"],
+ ".\n\nFind the expected value of N.\nGive your answer rounded to 10 digits \
+after the decimal point."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.7317071022948685`*^9, 3.731707104877267*^9}, {3.731707135118916*^9, 
+  3.7317071956754017`*^9}, {3.731707236192594*^9, 
+  3.7317073040529523`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:8bb0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["y", "0"], ",", 
+    SubscriptBox["y", "1"], ",", 
+    SubscriptBox["y", "2"], ",", "\[Ellipsis]"}], TraditionalForm]],
+  ExpressionUUID->"cc734053-6c0b-4b50-8562-d0d11a3e0055"],
+ "\:662f\:4e00\:7cfb\:521732\:6bd4\:7279\:65e0\:7b26\:53f7\:968f\:673a\:6574\
+\:6570\:3002\n\:ff08\:4e5f\:5c31\:662f\:8bf4\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", "\[LessEqual]", "yi", "<", 
+    SuperscriptBox["2", "32"]}], TraditionalForm]],ExpressionUUID->
+  "993ed558-7ddd-42c0-8b52-9b9f73a62e13"],
+ "\:ff0c\:5176\:4e2d\:6bcf\:4e2a\:6570\:7b49\:6982\:7387\:51fa\:73b0)\:3002\n\
+\n\:5e8f\:5217",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "i"], TraditionalForm]],ExpressionUUID->
+  "829fd8a4-0e9b-4280-8529-ae95c70310d7"],
+ "\:6309\:5982\:4e0b\:65b9\:5f0f\:9012\:5f52\:5b9a\:4e49\:ff1a\n\n    ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["x", "0"], "=", "0"}], TraditionalForm]],ExpressionUUID->
+  "7e420985-a15c-43e9-ba8e-9516efb25b48"],
+ "\:ff0c\:4ee5\:53ca\n    \:5bf9\:4e8e\:6240\:6709",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"i", ">", "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0bdfe1ee-6bfc-4027-a79e-5c010e0e9e64"],
+ "\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["x", "i"], "=", 
+    RowBox[{
+     SubscriptBox["x", 
+      RowBox[{"i", "-", "1"}]], "|", 
+     SubscriptBox["y", 
+      RowBox[{"i", "-", "1"}]]}]}], TraditionalForm]],ExpressionUUID->
+  "c1e7b56c-04d8-4bdf-a502-8d53a398f3ff"],
+ "\:3002\:ff08",
+ Cell[BoxData[
+  FormBox["|", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8f75154e-e9a8-43d2-8aa1-4b86aa0e9a62"],
+ "\:6307\:6309\:4f4d\:6216\:8fd0\:7b97\:7b26\:ff09\n\n\
+\:53ef\:4ee5\:770b\:51fa\:ff0c\:5b58\:5728\:4e0b\:6807N\:ff0c\:4f7f\:5f97\
+\:5bf9\:4e8e\:6240\:6709",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"i", "\[GreaterEqual]", "N"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "289fe2ba-8694-4563-b22f-1cd60512660f"],
+ "\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["x", "i"], "=", 
+    RowBox[{
+     SuperscriptBox["2", "32"], "-", "1"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4151ecf8-0c9f-41ee-856c-4b638a7983d8"],
+ "\:ff08\:6240\:6709\:6bd4\:7279\:4f4d\:5747\:53d61\:ff09\:3002\n\n\:6c42N\
+\:7684\:671f\:671b\:503c\:3002\n\:5c06\:4f60\:7684\:7b54\:6848\:4fdd\:7559\
+\:5c0f\:6570\:70b9\:540e\:5341\:4f4d\:5c0f\:6570\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.7317071293046975`*^9, {3.7317072761030254`*^9, 
+   3.731707342416518*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"cdf", "[", "n_", "]"}], ":=", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        FractionBox["1", "2"], ")"}], "n"]}], ")"}], "32"]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"pdf", "[", "n_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"cdf", "[", "n", "]"}], "-", 
+    RowBox[{"cdf", "[", 
+     RowBox[{"n", "-", "1"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{
+    SubsuperscriptBox["\[Sum]", 
+     RowBox[{"n", "=", "0"}], 
+     RowBox[{"+", "\[Infinity]"}]], 
+    RowBox[{"n", " ", 
+     RowBox[{"pdf", "[", "n", "]"}]}]}], ",", "11"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+  3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+  3.7250282267187443`*^9}, {3.72503044347628*^9, 3.725030445342036*^9}, {
+  3.73137022057948*^9, 3.731370282652954*^9}, {3.73170762952402*^9, 
+  3.7317076937369623`*^9}, {3.7317077529868817`*^9, 3.7317077581671715`*^9}, {
+  3.731707847369445*^9, 
+  3.7317078980664673`*^9}},ExpressionUUID->"20386a64-a558-4827-99f8-\
+04921bede5b8"],
+
+Cell[BoxData["6.35517584510393822360288069057556712342`11."], "Output",
+ CellChangeTimes->{
+  3.7250281599876013`*^9, {3.7250281918871064`*^9, 3.725028227147995*^9}, 
+   3.7250304482388463`*^9, {3.7313702770172396`*^9, 3.7313702832809863`*^9}, {
+   3.73170768325225*^9, 3.731707694201525*^9}, 3.731707760051457*^9, {
+   3.731707868485077*^9, 
+   3.731707898803363*^9}},ExpressionUUID->"fc3be27c-77f5-41d2-903c-\
+6132cbdce7bc"]
+}, Open  ]]
+},
+WindowSize->{1350, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2646, 76, 290, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[3207, 98, 2742, 75, 290, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[5974, 177, 1205, 33, 132, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[7182, 212, 426, 7, 68, "Output",ExpressionUUID->"fc3be27c-77f5-41d2-903c-6132cbdce7bc"]
+}, Open  ]]
+}
+]
+*)
+

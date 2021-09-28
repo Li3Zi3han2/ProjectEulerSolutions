@@ -1,0 +1,398 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     14368,        390]
+NotebookOptionsPosition[     13593,        369]
+NotebookOutlinePosition[     14007,        386]
+CellTagsIndexPosition[     13964,        383]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "How many triangles are there with integral sides, at least one integral \
+angle (measured in degrees), and a perimeter that does not exceed ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "8"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5985ab4a-474d-4ff0-b514-98708ed83dfc"],
+ "?"
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.806204389405944*^9, 
+  3.806204396738837*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:6709\:591a\:5c11\:4e2a\:4e09\:89d2\:5f62\:ff0c\:5176\:4e09\:8fb9\:957f\
+\:5747\:4e3a\:6574\:6570\:ff0c\:81f3\:5c11\:6709\:4e00\:4e2a\:89d2\:662f\:6574\
+\:6570\:ff08\:4ee5\:5ea6\:4e3a\:5355\:4f4d\:ff09\:ff0c\:5e76\:4e14\:5468\:957f\
+\:4e0d\:8d85\:8fc7",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "8"], TraditionalForm]],ExpressionUUID->
+  "fac4aeb9-f1a1-4eff-8196-8908e0ffa2aa"],
+ "\:ff1f"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.80620441228939*^9, 
+   3.806204418505731*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{"\:5c3c\:4e91\:5b9a\:7406", "\:ff1a", 
+  RowBox[{
+   RowBox[{"\:5982\:679c0", "\[LessEqual]", "x", "\[LessEqual]", 
+    FractionBox["\[Pi]", "2"]}], "&&", 
+   RowBox[{"RationalQ", "[", 
+    FractionBox["x", "\[Pi]"], "]"}], "&&", 
+   RowBox[{"RationalQ", "[", 
+    RowBox[{"Sin", "[", "x", "]"}], "]"}]}], "\:ff0c", 
+  RowBox[{
+   RowBox[{"\:5219x", "\[Equal]", "0"}], "||", 
+   RowBox[{"x", "\[Equal]", 
+    FractionBox["\[Pi]", "6"]}], "||", 
+   RowBox[{"x", "\[Equal]", 
+    FractionBox["\[Pi]", "2"]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"\:6839\:636e\:4f59\:5f26\:5b9a\:7406", "\:ff0c", 
+  "\:53ea\:67093\:79cd\:53ef\:80fd\:7684\:4e09\:89d2\:5f62", "\:ff1a", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["a", "2"], "-", 
+     RowBox[{"a", " ", "b"}], "+", 
+     SuperscriptBox["b", "2"]}], "\[Equal]", 
+    SuperscriptBox["c", "2"]}], "||", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["a", "2"], "+", 
+     SuperscriptBox["b", "2"]}], "\[Equal]", 
+    SuperscriptBox["c", "2"]}], "||", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["a", "2"], "+", 
+     RowBox[{"a", " ", "b"}], "+", 
+     SuperscriptBox["b", "2"]}], "\[Equal]", 
+    SuperscriptBox["c", "2"]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"\:7b80\:5355\:5206\:6790\:53ef\:77e5", "\:ff0c", 
+  RowBox[{"\:4e0d\:5b58\:5728\:5185\:89d2\:4e3a", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["\[Pi]", "6"], ",", 
+     FractionBox["\[Pi]", "3"], ",", 
+     FractionBox["\[Pi]", "2"]}], "}"}]}], "\:3001", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["\[Pi]", "6"], ",", 
+     FractionBox["\[Pi]", "6"], ",", 
+     FractionBox[
+      RowBox[{"2", " ", "\[Pi]"}], "3"]}], "}"}], 
+   "\:7684\:6574\:6570\:4e09\:89d2\:5f62"}]}]}], "Text",
+ CellChangeTimes->{{3.806204510575229*^9, 3.8062045845024185`*^9}, {
+  3.806204675842914*^9, 3.8062047124562683`*^9}, {3.806204757034731*^9, 
+  3.806204778639085*^9}, {3.806204814581132*^9, 
+  3.8062049912425103`*^9}},ExpressionUUID->"f60ec127-f62b-44a5-868f-\
+26552a10e9f0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"PrimitivePythagoreanTriples", "[", "x_", "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", "result", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"result", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            SuperscriptBox["u", "2"], "-", 
+            SuperscriptBox["v", "2"]}], ",", 
+           RowBox[{"2", " ", "u", " ", "v"}], ",", 
+           RowBox[{
+            SuperscriptBox["u", "2"], "+", 
+            SuperscriptBox["v", "2"]}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"u", ",", "2", ",", 
+           RowBox[{"\[LeftFloor]", 
+            SqrtBox[
+             RowBox[{"x", "-", "1"}]], "\[RightFloor]"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"v", ",", 
+           RowBox[{"Select", "[", 
+            RowBox[{
+             RowBox[{"Range", "[", 
+              RowBox[{
+               RowBox[{"1", "+", 
+                RowBox[{"Boole", "[", 
+                 RowBox[{"OddQ", "[", "u", "]"}], "]"}]}], ",", 
+               RowBox[{"Min", "[", 
+                RowBox[{
+                 RowBox[{"\[LeftFloor]", 
+                  SqrtBox[
+                   RowBox[{"x", "-", 
+                    SuperscriptBox["u", "2"]}]], "\[RightFloor]"}], ",", 
+                 RowBox[{"u", "-", "1"}]}], "]"}], ",", "2"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"CoprimeQ", "[", 
+               RowBox[{"u", ",", "#"}], "]"}], "&"}]}], "]"}]}], "}"}]}], 
+        "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"result", "=", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{"result", ",", "1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"SortBy", "[", 
+       RowBox[{
+        RowBox[{"Sort", "/@", "result"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"Last", ",", "First"}], "}"}]}], "]"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PrimitiveEisensteinTriples", "[", "x_", "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", "result", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"x", "<", "1"}], ",", 
+        RowBox[{"Return", "[", 
+         RowBox[{"{", "}"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"result", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"Splice", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"2", " ", "u", " ", "v"}], "-", 
+               SuperscriptBox["v", "2"]}], ",", 
+              RowBox[{
+               SuperscriptBox["u", "2"], "-", 
+               SuperscriptBox["v", "2"]}], ",", 
+              RowBox[{
+               SuperscriptBox["u", "2"], "-", 
+               RowBox[{"u", " ", "v"}], "+", 
+               SuperscriptBox["v", "2"]}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               SuperscriptBox["u", "2"], "-", 
+               RowBox[{"2", " ", "u", " ", "v"}]}], ",", 
+              RowBox[{
+               SuperscriptBox["u", "2"], "-", 
+               SuperscriptBox["v", "2"]}], ",", 
+              RowBox[{
+               SuperscriptBox["u", "2"], "-", 
+               RowBox[{"u", " ", "v"}], "+", 
+               SuperscriptBox["v", "2"]}]}], "}"}]}], "}"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"u", ",", "2", ",", 
+           RowBox[{"\[LeftFloor]", 
+            RowBox[{"2", " ", 
+             SqrtBox[
+              FractionBox["x", "3"]]}], "\[RightFloor]"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"v", ",", 
+           RowBox[{"Select", "[", 
+            RowBox[{
+             RowBox[{"Range", "[", 
+              RowBox[{
+               RowBox[{"Max", "[", 
+                RowBox[{"1", ",", 
+                 RowBox[{"\[LeftCeiling]", 
+                  FractionBox[
+                   RowBox[{"u", "-", 
+                    SqrtBox[
+                    RowBox[{
+                    RowBox[{"4", " ", "x"}], "-", 
+                    RowBox[{"3", " ", 
+                    SuperscriptBox["u", "2"]}]}]]}], "2"], 
+                  "\[RightCeiling]"}]}], "]"}], ",", 
+               RowBox[{"\[LeftFloor]", 
+                FractionBox["u", "2"], "\[RightFloor]"}]}], "]"}], ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"CoprimeQ", "[", 
+                RowBox[{"u", ",", "#"}], "]"}], "&&", 
+               RowBox[{
+                RowBox[{"Mod", "[", 
+                 RowBox[{"u", ",", "3"}], "]"}], "\[NotEqual]", 
+                RowBox[{"Mod", "[", 
+                 RowBox[{
+                  RowBox[{"-", "#"}], ",", "3"}], "]"}]}]}], "&"}]}], "]"}]}],
+           "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"result", "=", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{"result", ",", "1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"SortBy", "[", 
+       RowBox[{
+        RowBox[{"PrependTo", "[", 
+         RowBox[{"result", ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"Last", ",", "First"}], "}"}]}], "]"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PrimitiveEisenstein2Triples", "[", "x_", "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", "result", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"result", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            SuperscriptBox["u", "2"], "-", 
+            SuperscriptBox["v", "2"]}], ",", 
+           RowBox[{
+            RowBox[{"2", " ", "u", " ", "v"}], "+", 
+            SuperscriptBox["v", "2"]}], ",", 
+           RowBox[{
+            SuperscriptBox["u", "2"], "+", 
+            RowBox[{"u", " ", "v"}], "+", 
+            SuperscriptBox["v", "2"]}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"u", ",", "2", ",", 
+           RowBox[{"\[LeftFloor]", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"-", "1"}], "+", 
+              SqrtBox[
+               RowBox[{
+                RowBox[{"4", " ", "x"}], "-", "3"}]]}], "2"], 
+            "\[RightFloor]"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"v", ",", 
+           RowBox[{"Select", "[", 
+            RowBox[{
+             RowBox[{"Range", "[", 
+              RowBox[{"1", ",", 
+               RowBox[{"Min", "[", 
+                RowBox[{
+                 RowBox[{"\[LeftFloor]", 
+                  FractionBox[
+                   RowBox[{
+                    RowBox[{"-", "u"}], "+", 
+                    SqrtBox[
+                    RowBox[{
+                    RowBox[{"4", " ", "x"}], "-", 
+                    RowBox[{"3", " ", 
+                    SuperscriptBox["u", "2"]}]}]]}], "2"], "\[RightFloor]"}], 
+                 ",", 
+                 RowBox[{"u", "-", "1"}]}], "]"}]}], "]"}], ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"CoprimeQ", "[", 
+                RowBox[{"u", ",", "#"}], "]"}], "&&", 
+               RowBox[{
+                RowBox[{"Mod", "[", 
+                 RowBox[{"u", ",", "3"}], "]"}], "\[NotEqual]", 
+                RowBox[{"Mod", "[", 
+                 RowBox[{"#", ",", "3"}], "]"}]}]}], "&"}]}], "]"}]}], 
+          "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"result", "=", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{"result", ",", "1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"SortBy", "[", 
+       RowBox[{
+        RowBox[{"Sort", "/@", "result"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"Last", ",", "First"}], "}"}]}], "]"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"perimeter", "=", 
+   SuperscriptBox["10", "8"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Total", "[", 
+   RowBox[{"\[LeftFloor]", 
+    FractionBox["perimeter", 
+     RowBox[{"Total", "[", 
+      RowBox[{
+       RowBox[{"PrimitivePythagoreanTriples", "[", 
+        FractionBox["perimeter", "2"], "]"}], ",", 
+       RowBox[{"{", "2", "}"}]}], "]"}]], "\[RightFloor]"}], "]"}], "+", 
+  RowBox[{"Total", "[", 
+   RowBox[{"\[LeftFloor]", 
+    FractionBox["perimeter", 
+     RowBox[{"Total", "[", 
+      RowBox[{
+       RowBox[{"PrimitiveEisensteinTriples", "[", 
+        FractionBox["perimeter", "2"], "]"}], ",", 
+       RowBox[{"{", "2", "}"}]}], "]"}]], "\[RightFloor]"}], "]"}], "+", 
+  RowBox[{"Total", "[", 
+   RowBox[{"\[LeftFloor]", 
+    FractionBox["perimeter", 
+     RowBox[{"Total", "[", 
+      RowBox[{
+       RowBox[{"PrimitiveEisenstein2Triples", "[", 
+        FractionBox["perimeter", "2"], "]"}], ",", 
+       RowBox[{"{", "2", "}"}]}], "]"}]], "\[RightFloor]"}], 
+   "]"}]}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+  3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+  3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+  3.7564263646962595`*^9, 3.7564263899753056`*^9}, {3.806204444416678*^9, 
+  3.806204467523899*^9}, {3.8062050347808685`*^9, 3.8062050636526084`*^9}, {
+  3.806205847620158*^9, 
+  3.8062058652709446`*^9}},ExpressionUUID->"6a7c367e-c1c3-4109-93e6-\
+34add9704799"],
+
+Cell[BoxData["416577688"], "Output",
+ CellChangeTimes->{3.806205654457504*^9},
+ CellLabel->"Out[14]=",ExpressionUUID->"ed656821-fa3e-4c49-8903-0fb7d1a8d034"]
+}, Open  ]]
+},
+WindowSize->{1920, 997},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (2020\:5e744\:670815\
+\:65e5)",
+StyleDefinitions->"Homework.nb",
+ExpressionUUID->"c86f5e50-5cb8-4def-b154-8c048c60311d"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 620, 14, 34, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1181, 36, 754, 16, 34, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[1938, 54, 2025, 54, 119, "Text",ExpressionUUID->"f60ec127-f62b-44a5-868f-26552a10e9f0"],
+Cell[CellGroupData[{
+Cell[3988, 112, 9429, 250, 755, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[13420, 364, 157, 2, 34, "Output",ExpressionUUID->"ed656821-fa3e-4c49-8903-0fb7d1a8d034"]
+}, Open  ]]
+}
+]
+*)
+

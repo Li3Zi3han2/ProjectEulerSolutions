@@ -1,0 +1,433 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15942,        425]
+NotebookOptionsPosition[     15309,        406]
+NotebookOutlinePosition[     15666,        422]
+CellTagsIndexPosition[     15623,        419]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "A modified Collatz sequence of integers is obtained from a starting value ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"a", "[", "1", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ef1e282e-b5d4-4a28-8b28-4d13c312705c"],
+ " in the following way:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"a", "[", 
+     RowBox[{"n", "+", "1"}], "]"}], "=", 
+    FractionBox[
+     RowBox[{"a", "[", "n", "]"}], "3"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7b782e24-bb06-45c4-8f76-37957b1db103"],
+ " if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"a", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d4484721-b2e3-4b60-a072-086ba48d66e4"],
+ " is divisible by 3. We shall denote this as a large downward step, \
+\[OpenCurlyDoubleQuote]D\[CloseCurlyDoubleQuote].\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"a", "[", 
+     RowBox[{"n", "+", "1"}], "]"}], "=", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"4", " ", 
+       RowBox[{"a", "[", "n", "]"}]}], "+", "2"}], "3"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "386f6496-9c0b-4239-9832-156289dd06b9"],
+ " if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"a", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "56ec0ce8-6993-4630-a6cf-4c840e5cc32d"],
+ " divided by 3 gives a remainder of 1. We shall denote this as an upward \
+step, \[OpenCurlyDoubleQuote]U\[CloseCurlyDoubleQuote].\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"a", "[", 
+     RowBox[{"n", "+", "1"}], "]"}], "=", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"2", " ", 
+       RowBox[{"a", "[", "n", "]"}]}], "-", "1"}], "3"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "51458154-f57b-424b-b49f-062c5d4bc816"],
+ " if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"a", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "58d691b6-4691-4795-b220-52c7615cc1ca"],
+ " divided by 3 gives a remainder of 2. We shall denote this as a small \
+downward step, \[OpenCurlyDoubleQuote]d\[CloseCurlyDoubleQuote].\n\nThe \
+sequence terminates when some ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"a", "[", "n", "]"}], "=", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3673fd54-af41-4762-b168-7846f2960be3"],
+ ".\n\nGiven any integer, we can list out the sequence of steps.\nFor \
+instance if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"a", "[", "1", "]"}], "=", "231"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "93976842-b51a-4cd0-ba8e-e286b0ed44cb"],
+ ", then the sequence ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"a", "[", "n", "]"}], "}"}], "=", 
+    RowBox[{"{", 
+     RowBox[{
+     "231", ",", "77", ",", "51", ",", "17", ",", "11", ",", "7", ",", "10", 
+      ",", "14", ",", "9", ",", "3", ",", "1"}], "}"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "68021825-a77e-4ad3-aa07-fab5af489401"],
+ " corresponds to the steps \[OpenCurlyDoubleQuote]DdDddUUdDD\
+\[CloseCurlyDoubleQuote].\n\nOf course, there are other sequences that begin \
+with that same sequence \[OpenCurlyDoubleQuote]DdDddUUdDD\[Ellipsis]\
+\[CloseCurlyDoubleQuote].\nFor instance, if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"a", "[", "1", "]"}], "=", "1004064"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bef3dd71-dc40-428f-9d0a-78fe27cae03d"],
+ ", then the sequence is DdDddUUdDDDdUDUUUdDdUUDDDUdDD.\nIn fact, 1004064 is \
+the smallest possible ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"a", "[", "1", "]"}], ">", 
+    SuperscriptBox["10", "6"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0124c905-0258-4bc6-ba45-4b3dc36176f1"],
+ " that begins with the sequence DdDddUUdDD.\n\nWhat is the smallest ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"a", "[", "1", "]"}], ">", 
+    SuperscriptBox["10", "15"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "36841c6a-acd6-4e2c-a84a-07cfd787b09d"],
+ " that begins with the sequence \
+\[OpenCurlyDoubleQuote]UDDDUdddDDUDDddDdDddDDUDDdUUDd\[CloseCurlyDoubleQuote]?"
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.792294908203017*^9, 3.79229493829986*^9}, {
+  3.7922950005658894`*^9, 3.7922951453326406`*^9}, {3.7922951893737855`*^9, 
+  3.7922951966820803`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:7531",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"a", "[", "1", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e4d268d6-9e51-4079-9dfb-aef71f5fe14d"],
+ "\:5f00\:59cb\:6839\:636e\:4e0b\:5217\:89c4\:5219\:751f\:6210\:7684\:6574\
+\:6570\:6570\:5217\:88ab\:79f0\:4e3a\:53d8\:79cd\:8003\:62c9\:5179\:5e8f\:5217\
+\:ff1a\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"a", "[", 
+     RowBox[{"n", "+", "1"}], "]"}], "=", 
+    FractionBox[
+     RowBox[{"a", "[", "n", "]"}], "3"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "53b94860-dfc7-47ba-98e2-d5b9b95c30bb"],
+ "\:ff0c\:5982\:679c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"a", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7dadf6f0-0648-4a6e-a4b4-d0f7dc7696b8"],
+ "\:80fd\:88ab3\:6574\:9664\:3002\:8fd9\:662f\:4e00\:4e2a\:8f83\:5927\:7684\
+\:4e0b\:964d\:ff0c\:6211\:4eec\:8bb0\:8fd9\:4e00\:6b65\:64cd\:4f5c\:4e3a\
+\[OpenCurlyDoubleQuote]D\[CloseCurlyDoubleQuote]\:3002\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"a", "[", 
+     RowBox[{"n", "+", "1"}], "]"}], "=", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"4", " ", 
+       RowBox[{"a", "[", "n", "]"}]}], "+", "2"}], "3"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "50561ea6-2b41-437f-8d51-4bdad92d1de9"],
+ "\:ff0c\:5982\:679c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"a", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f2dbaede-57d0-4144-9775-a4e8d52e9240"],
+ "\:9664\:4ee53\:4f591\:3002\:8fd9\:662f\:4e00\:4e2a\:8f83\:5927\:7684\:4e0a\
+\:5347\:ff0c\:6211\:4eec\:8bb0\:8fd9\:4e00\:6b65\:64cd\:4f5c\:4e3a\
+\[OpenCurlyDoubleQuote]U\[CloseCurlyDoubleQuote]\:3002\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"a", "[", 
+     RowBox[{"n", "+", "1"}], "]"}], "=", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"2", " ", 
+       RowBox[{"a", "[", "n", "]"}]}], "-", "1"}], "3"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ae1a3fbb-9703-4ef5-b65d-9e1dde1b8622"],
+ "\:ff0c\:5982\:679c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"a", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "02034391-9d08-4a88-9294-ba13fbe0cb4a"],
+ "\:9664\:4ee53\:4f592\:3002\:8fd9\:662f\:4e00\:4e2a\:8f83\:5c0f\:7684\:4e0b\
+\:964d\:ff0c\:6211\:4eec\:8bb0\:8fd9\:4e00\:6b65\:64cd\:4f5c\:4e3a\
+\[OpenCurlyDoubleQuote]d\[CloseCurlyDoubleQuote]\:3002\n\n\:4e00\:65e6\:6709",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"a", "[", "n", "]"}], "=", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "073606f9-ea76-4cd2-a5fe-6a3c39c58bc9"],
+ "\:ff0c\:5e8f\:5217\:7ed3\:675f\:3002\n\n\
+\:7ed9\:5b9a\:4efb\:610f\:6b63\:6574\:6570\:ff0c\:6211\:4eec\:53ef\:4ee5\:5217\
+\:51fa\:5176\:64cd\:4f5c\:6b65\:9aa4\:3002\n\:4f8b\:5982\:ff0c\:82e5",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"a", "[", "1", "]"}], "=", "231"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a37de308-5db7-4b0f-bbf5-865b30334445"],
+ "\:ff0c\:6574\:6570\:6570\:5217",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"a", "[", "n", "]"}], "}"}], "=", 
+    RowBox[{"{", 
+     RowBox[{
+     "231", ",", "77", ",", "51", ",", "17", ",", "11", ",", "7", ",", "10", 
+      ",", "14", ",", "9", ",", "3", ",", "1"}], "}"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3d0705a4-70fd-4251-861b-4291411fcc9f"],
+ "\:5bf9\:5e94\:7684\:64cd\:4f5c\:6b65\:9aa4\:662f\[OpenCurlyDoubleQuote]\
+DdDddUUdDD\[CloseCurlyDoubleQuote]\:3002\n\n\:5f53\:7136\:ff0c\:5b58\:5728\
+\:5176\:5b83\:7684\:6574\:6570\:6570\:5217\:5176\:64cd\:4f5c\:6b65\:9aa4\:7684\
+\:5f00\:5934\:540c\:6837\:662f\[OpenCurlyDoubleQuote]DdDddUUdDD\[Ellipsis].\
+\[CloseCurlyDoubleQuote]\:3002\n\:4f8b\:5982\:ff0c\:82e5",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"a", "[", "1", "]"}], "=", "1004064"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "502c929e-5cdc-4ad3-b6b0-299f124db796"],
+ "\:ff0c\:5219\:64cd\:4f5c\:6b65\:9aa4\:662fDdDddUUdDDDdUDUUUdDdUUDDDUdDD\
+\:3002\n\:4e8b\:5b9e\:4e0a\:ff0c1004064\:662f\:5728",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"a", "[", "1", "]"}], ">", 
+    SuperscriptBox["10", "6"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "41dedf57-35f0-4d9d-bd94-ad29a3d4e93d"],
+ "\:8303\:56f4\:5185\:ff0c\:64cd\:4f5c\:6b65\:9aa4\:4ee5DdDddUUdDD\:5f00\:5934\
+\:7684\:6700\:5c0f\:503c\:3002\n\n\:5728",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"a", "[", "1", "]"}], ">", 
+    SuperscriptBox["10", "15"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4049f7c6-8b45-4d8c-821f-5e4c9e70b8af"],
+ "\:8303\:56f4\:5185\:ff0c\:64cd\:4f5c\:6b65\:9aa4\:4ee5\
+\[OpenCurlyDoubleQuote]UDDDUdddDDUDDddDdDddDDUDDdUUDd\[CloseCurlyDoubleQuote]\
+\:5f00\:5934\:7684\:6700\:5c0f\:503c\:662f\:591a\:5c11\:ff1f"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, 3.792294983617264*^9, {
+   3.792295159402936*^9, 3.7922952687555857`*^9}, {3.7922953103628564`*^9, 
+   3.79229534949914*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"BeginWithQ", "[", 
+    RowBox[{"x_", ",", "string_"}], "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"y", ",", "l", ",", "c", ",", "i", ",", "r"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"y", "=", "x"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"l", "=", 
+       RowBox[{"StringLength", "[", "string", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"c", "=", 
+       RowBox[{"Characters", "[", "string", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", "=", "1"}], ",", 
+        RowBox[{"i", "\[LessEqual]", "l"}], ",", 
+        RowBox[{"i", "=", 
+         RowBox[{"i", "+", "1"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"r", "=", 
+          RowBox[{"Mod", "[", 
+           RowBox[{"y", ",", "3"}], "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"Which", "[", 
+          RowBox[{
+           RowBox[{"r", "\[Equal]", "0"}], ",", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+              "c", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+              "\[NotEqual]", "\"\<D\>\""}], ",", 
+             RowBox[{"Return", "[", "False", "]"}], ",", 
+             RowBox[{
+              RowBox[{"y", "=", 
+               FractionBox["y", "3"]}], ";", "Break"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"r", "\[Equal]", "1"}], ",", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+              "c", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+              "\[NotEqual]", "\"\<U\>\""}], ",", 
+             RowBox[{"Return", "[", "False", "]"}], ",", 
+             RowBox[{
+              RowBox[{"y", "=", 
+               FractionBox[
+                RowBox[{
+                 RowBox[{"4", " ", "y"}], "+", "2"}], "3"]}], ";", 
+              "Break"}]}], "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"r", "\[Equal]", "2"}], ",", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+              "c", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+              "\[NotEqual]", "\"\<d\>\""}], ",", 
+             RowBox[{"Return", "[", "False", "]"}], ",", 
+             RowBox[{
+              RowBox[{"y", "=", 
+               FractionBox[
+                RowBox[{
+                 RowBox[{"2", " ", "y"}], "-", "1"}], "3"]}], ";", 
+              "Break"}]}], "]"}]}], "]"}]}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", "True", "]"}]}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"current", "=", 
+   SuperscriptBox["10", "15"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"string", "=", "\"\<UDDDUdddDDUDDddDdDddDDUDDdUUDd\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"step", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", "=", "1"}], ",", 
+    RowBox[{"i", "\[LessEqual]", 
+     RowBox[{"StringLength", "[", "string", "]"}]}], ",", 
+    RowBox[{"i", "=", 
+     RowBox[{"i", "+", "1"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"partial", "=", 
+      RowBox[{"StringTake", "[", 
+       RowBox[{"string", ",", "i"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"While", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"BeginWithQ", "[", 
+         RowBox[{"current", ",", "partial"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"current", "=", 
+        RowBox[{"current", "+", "step"}]}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"step", "=", 
+      RowBox[{"3", " ", "step"}]}]}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", "current"}], "Input",
+ CellChangeTimes->{{3.7922952957648373`*^9, 3.792295303256241*^9}, {
+  3.7922954083827314`*^9, 3.792295913342884*^9}, {3.7922961285391145`*^9, 
+  3.7922962944287815`*^9}, {3.792296329650977*^9, 3.7922964114003353`*^9}, {
+  3.7922965648142347`*^9, 3.792296574292875*^9}, {3.792296650514686*^9, 
+  3.792296650752049*^9}},
+ CellLabel->
+  "In[111]:=",ExpressionUUID->"ab1facac-fe0f-407d-ba0e-226323553f68"],
+
+Cell[BoxData["1125977393124310"], "Output",
+ CellChangeTimes->{{3.792295827459507*^9, 3.7922958369996552`*^9}, 
+   3.7922963798694887`*^9, 3.792296413374053*^9, 3.7922965748498898`*^9, 
+   3.7922967152237825`*^9},
+ CellLabel->
+  "Out[116]=",ExpressionUUID->"e89cb423-a0e7-4085-8f42-22e6bb4b22a0"]
+}, Open  ]]
+},
+WindowSize->{960, 976},
+WindowMargins->{{Automatic, -9}, {Automatic, -9}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (2019\:5e745\:670818\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 4686, 125, 959, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[5247, 147, 5406, 134, 860, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[10678, 285, 4316, 111, 1254, "Input",ExpressionUUID->"ab1facac-fe0f-407d-ba0e-226323553f68"],
+Cell[14997, 398, 296, 5, 47, "Output",ExpressionUUID->"e89cb423-a0e7-4085-8f42-22e6bb4b22a0"]
+}, Open  ]]
+}
+]
+*)
+

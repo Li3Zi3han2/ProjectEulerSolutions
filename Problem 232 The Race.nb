@@ -1,0 +1,605 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     23146,        597]
+NotebookOptionsPosition[     22100,        572]
+NotebookOutlinePosition[     22457,        588]
+CellTagsIndexPosition[     22414,        585]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Two players share an unbiased coin and take it in turns to play \
+\[OpenCurlyDoubleQuote]The Race\[CloseCurlyDoubleQuote]. On Player 1\
+\[CloseCurlyQuote]s turn, he tosses the coin once: if it comes up Heads, he \
+scores one point; if it comes up Tails, he scores nothing. On Player 2\
+\[CloseCurlyQuote]s turn, she chooses a positive integer T and tosses the \
+coin T times: if it comes up all Heads, she scores ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["2", 
+    RowBox[{"T", "-", "1"}]], TraditionalForm]],ExpressionUUID->
+  "9f5e3368-4ee9-46dc-a983-e258ee3706ef"],
+ " points; otherwise, she scores nothing. Player 1 goes first. The winner is \
+the first to 100 or more points.\n\nOn each turn Player 2 selects the number, \
+T, of coin tosses that maximises the probability of her winning.\n\nWhat is \
+the probability that Player 2 wins?\n\nGive your answer rounded to eight \
+decimal places in the form 0.abcdefgh."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+   3.725028473459318*^9, 3.7250284801961555`*^9}, {3.7333971525060234`*^9, 
+   3.7333971545281525`*^9}, {3.7552144322122555`*^9, 3.755214460074918*^9}, 
+   3.755246309169997*^9},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:4e24\:540d\:73a9\:5bb6\:8f6e\:6d41\:629b\:63b7\:4e00\:679a\:6807\:51c6\
+\:786c\:5e01\:8fdb\:884c\[OpenCurlyDoubleQuote]\:8d5b\:8dd1\:6e38\:620f\
+\[CloseCurlyDoubleQuote]\:3002\:8f6e\:5230\:73a9\:5bb61\:65f6\:ff0c\:4ed6\
+\:63b7\:786c\:5e011\:6b21\:ff1a\:82e5\:786c\:5e01\:662f\:6b63\:9762\:671d\
+\:4e0a\:5219\:5f971\:5206\:ff1b\:82e5\:786c\:5e01\:662f\:53cd\:9762\:671d\
+\:4e0a\:5219\:4e0d\:5f97\:5206\:3002\:8f6e\:5230\:73a9\:5bb62\:65f6\:ff0c\
+\:5979\:6307\:5b9a\:4e00\:4e2a\:6b63\:6574\:6570T\:ff0c\:5e76\:63b7\:786c\
+\:5e01T\:6b21\:ff1a\:82e5\:786c\:5e01\:6bcf\:6b21\:5747\:6b63\:9762\:671d\
+\:4e0a\:ff0c\:5219\:5979\:5f97",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["2", 
+    RowBox[{"T", "-", "1"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "51f241c1-8381-4582-a0df-b47fdca26e0c"],
+ "\:5206\:ff1b\:5426\:5219\:5979\:4e0d\:5f97\:5206\:3002\:73a9\:5bb61\:5148\
+\:884c\:3002\:9996\:5148\:5230\:8fbe100\:5206\:6216\:66f4\:591a\:7684\:73a9\
+\:5bb6\:83b7\:80dc\:3002\n\n\:6bcf\:4e00\:8f6e\:ff0c\:73a9\:5bb62\:603b\:662f\
+\:9009\:62e9\:6700\:5927\:5316\:81ea\:5df1\:83b7\:80dc\:6982\:7387\:7684\:63b7\
+\:786c\:5e01\:6b21\:6570T\:3002\n\n\
+\:73a9\:5bb62\:83b7\:80dc\:7684\:6982\:7387\:662f\:591a\:5c11\:ff1f\n\n\:5c06\
+\:4f60\:7684\:7b54\:6848\:56db\:820d\:4e94\:5165\:5230\:516b\:4f4d\:5c0f\:6570\
+\:ff0c\:5373\:683c\:5f0f\:4e3a0.abcdefgh\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, {3.7552144446093245`*^9, 
+   3.7552144670108557`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   SubscriptBox["\:8bbeX", "n"], 
+   "\:8868\:793a\:73a9\:5bb61\:7b2cn\:8f6e\:5f00\:59cb\:65f6\:7684\:5206\:6570\
+"}], "\:ff0c", 
+  RowBox[{
+   SubscriptBox["Y", "n"], 
+   "\:8868\:793a\:73a9\:5bb62\:7b2cn\:8f6e\:5f00\:59cb\:65f6\:7684\:5206\:6570\
+"}], "\:ff0c", 
+  RowBox[{
+   SubscriptBox["T", "n"], 
+   "\:8868\:793a\:73a9\:5bb62\:7b2cn\:8f6e\:63b7\:786c\:5e01\:7684\:4e2a\:6570\
+"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubscriptBox["X", "1"], "=", 
+  RowBox[{
+   SubscriptBox["Y", "1"], "=", "0"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubscriptBox["T", "n"], "=", 
+  RowBox[{"f", "[", 
+   RowBox[{
+    SubscriptBox["X", 
+     RowBox[{"n", "+", "1"}]], ",", 
+    SubscriptBox["Y", "n"]}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"P", "[", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["X", 
+      RowBox[{"n", "+", "1"}]], "\[Equal]", 
+     RowBox[{
+      SubscriptBox["x", "n"], "+", "1"}]}], "\[Conditioned]", 
+    RowBox[{
+     SubscriptBox["X", "n"], "\[Equal]", 
+     SubscriptBox["x", "n"]}]}], "]"}], "=", 
+  FractionBox["1", "2"]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"P", "[", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["X", 
+      RowBox[{"n", "+", "1"}]], "\[Equal]", 
+     SubscriptBox["x", "n"]}], "\[Conditioned]", 
+    RowBox[{
+     SubscriptBox["X", "n"], "\[Equal]", 
+     SubscriptBox["x", "n"]}]}], "]"}], "=", 
+  FractionBox["1", "2"]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"P", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SubscriptBox["Y", 
+       RowBox[{"n", "+", "1"}]], "\[Equal]", 
+      RowBox[{
+       SubscriptBox["y", "n"], "+", 
+       SuperscriptBox["2", 
+        RowBox[{
+         RowBox[{"f", "[", 
+          RowBox[{
+           SubscriptBox["x", 
+            RowBox[{"n", "+", "1"}]], ",", 
+           SubscriptBox["y", "n"]}], "]"}], "-", "1"}]]}]}], "\[Conditioned]", 
+     RowBox[{
+      SubscriptBox["X", 
+       RowBox[{"n", "+", "1"}]], "\[Equal]", 
+      SubscriptBox["x", 
+       RowBox[{"n", "+", "1"}]]}]}], ",", 
+    RowBox[{
+     SubscriptBox["Y", "n"], "\[Equal]", 
+     SubscriptBox["y", "n"]}]}], "]"}], "=", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    FractionBox["1", "2"], ")"}], 
+   RowBox[{"f", "[", 
+    RowBox[{
+     SubscriptBox["x", 
+      RowBox[{"n", "+", "1"}]], ",", 
+     SubscriptBox["y", "n"]}], "]"}]]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"P", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SubscriptBox["Y", 
+       RowBox[{"n", "+", "1"}]], "\[Equal]", 
+      SubscriptBox["y", "n"]}], "\[Conditioned]", 
+     RowBox[{
+      SubscriptBox["X", 
+       RowBox[{"n", "+", "1"}]], "\[Equal]", 
+      SubscriptBox["x", 
+       RowBox[{"n", "+", "1"}]]}]}], ",", 
+    RowBox[{
+     SubscriptBox["Y", "n"], "\[Equal]", 
+     SubscriptBox["y", "n"]}]}], "]"}], "=", 
+  RowBox[{"1", "-", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     FractionBox["1", "2"], ")"}], 
+    RowBox[{"f", "[", 
+     RowBox[{
+      SubscriptBox["x", 
+       RowBox[{"n", "+", "1"}]], ",", 
+      SubscriptBox["y", "n"]}], "]"}]]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"P", "[", 
+   RowBox[{
+    RowBox[{"\:73a9\:5bb62\:83b7\:80dc", "\[Conditioned]", 
+     RowBox[{
+      SubscriptBox["X", "n"], "\[Equal]", 
+      SubscriptBox["x", "n"]}]}], ",", 
+    RowBox[{
+     SubscriptBox["Y", "n"], "\[Equal]", 
+     SubscriptBox["y", "n"]}]}], "]"}], "=", 
+  RowBox[{
+   RowBox[{
+    FractionBox["1", "2"], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox["1", "2"], ")"}], 
+     RowBox[{"f", "[", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["x", "n"], "+", "1"}], ",", 
+       SubscriptBox["y", "n"]}], "]"}]], 
+    RowBox[{"P", "[", 
+     RowBox[{
+      RowBox[{"\:73a9\:5bb62\:83b7\:80dc", "\[Conditioned]", 
+       RowBox[{
+        SubscriptBox["X", 
+         RowBox[{"n", "+", "1"}]], "\[Equal]", 
+        RowBox[{
+         SubscriptBox["x", "n"], "+", "1"}]}]}], ",", 
+      RowBox[{
+       SubscriptBox["Y", 
+        RowBox[{"n", "+", "1"}]], "\[Equal]", 
+       RowBox[{
+        SubscriptBox["y", "n"], "+", 
+        SuperscriptBox["2", 
+         RowBox[{
+          RowBox[{"f", "[", 
+           RowBox[{
+            RowBox[{
+             SubscriptBox["x", "n"], "+", "1"}], ",", 
+            SubscriptBox["y", "n"]}], "]"}], "-", "1"}]]}]}]}], "]"}]}], "+", 
+   RowBox[{
+    FractionBox["1", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        FractionBox["1", "2"], ")"}], 
+       RowBox[{"f", "[", 
+        RowBox[{
+         SubscriptBox["x", 
+          RowBox[{"n", "+", "1"}]], ",", 
+         SubscriptBox["y", "n"]}], "]"}]]}], ")"}], 
+    RowBox[{"P", "[", 
+     RowBox[{
+      RowBox[{"\:73a9\:5bb62\:83b7\:80dc", "\[Conditioned]", 
+       RowBox[{
+        SubscriptBox["X", 
+         RowBox[{"n", "+", "1"}]], "\[Equal]", 
+        RowBox[{
+         SubscriptBox["x", "n"], "+", "1"}]}]}], ",", 
+      RowBox[{
+       SubscriptBox["Y", 
+        RowBox[{"n", "+", "1"}]], "\[Equal]", 
+       SubscriptBox["y", "n"]}]}], "]"}]}], "+", 
+   RowBox[{
+    FractionBox["1", "2"], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox["1", "2"], ")"}], 
+     RowBox[{"f", "[", 
+      RowBox[{
+       SubscriptBox["x", "n"], ",", 
+       SubscriptBox["y", "n"]}], "]"}]], 
+    RowBox[{"P", "[", 
+     RowBox[{
+      RowBox[{"\:73a9\:5bb62\:83b7\:80dc", "\[Conditioned]", 
+       RowBox[{
+        SubscriptBox["X", 
+         RowBox[{"n", "+", "1"}]], "\[Equal]", 
+        SubscriptBox["x", "n"]}]}], ",", 
+      RowBox[{
+       SubscriptBox["Y", 
+        RowBox[{"n", "+", "1"}]], "\[Equal]", 
+       RowBox[{
+        SubscriptBox["y", "n"], "+", 
+        SuperscriptBox["2", 
+         RowBox[{
+          RowBox[{"f", "[", 
+           RowBox[{
+            SubscriptBox["x", "n"], ",", 
+            SubscriptBox["y", "n"]}], "]"}], "-", "1"}]]}]}]}], "]"}]}], "+", 
+   RowBox[{
+    FractionBox["1", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        FractionBox["1", "2"], ")"}], 
+       RowBox[{"f", "[", 
+        RowBox[{
+         SubscriptBox["x", "n"], ",", 
+         SubscriptBox["y", "n"]}], "]"}]]}], ")"}], 
+    RowBox[{"P", "[", 
+     RowBox[{
+      RowBox[{"\:73a9\:5bb62\:83b7\:80dc", "\[Conditioned]", 
+       RowBox[{
+        SubscriptBox["X", 
+         RowBox[{"n", "+", "1"}]], "\[Equal]", 
+        SubscriptBox["x", "n"]}]}], ",", 
+      RowBox[{
+       SubscriptBox["Y", 
+        RowBox[{"n", "+", "1"}]], "\[Equal]", 
+       SubscriptBox["y", "n"]}]}], "]"}]}]}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\:8fb9\:754c\:6761\:4ef6", ":", 
+    RowBox[{"P", "[", 
+     RowBox[{
+      RowBox[{"\:73a9\:5bb62\:83b7\:80dc", "\[Conditioned]", 
+       RowBox[{
+        SubscriptBox["X", 
+         RowBox[{"n", "+", "1"}]], "\[GreaterEqual]", "100"}]}], ",", 
+      RowBox[{
+       SubscriptBox["Y", "n"], "<", "100"}]}], "]"}]}], "=", "0"}], ",", 
+  RowBox[{
+   RowBox[{"P", "[", 
+    RowBox[{
+     RowBox[{"\:73a9\:5bb62\:83b7\:80dc", "\[Conditioned]", 
+      RowBox[{
+       SubscriptBox["X", 
+        RowBox[{"n", "+", "1"}]], "<", "100"}]}], ",", 
+     RowBox[{
+      SubscriptBox["Y", 
+       RowBox[{"n", "+", "1"}]], "\[GreaterEqual]", "100"}]}], "]"}], "=", 
+   "1"}]}], "\n", 
+ RowBox[{"\:6700\:540e\:8981\:6c42", ":", 
+  RowBox[{"P", "[", 
+   RowBox[{
+    RowBox[{"\:73a9\:5bb62\:83b7\:80dc", "\[Conditioned]", 
+     RowBox[{
+      SubscriptBox["X", "1"], "\[Equal]", "0"}]}], ",", 
+    RowBox[{
+     SubscriptBox["Y", "1"], "\[Equal]", "0"}]}], "]"}]}]}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, {3.7552144446093245`*^9, 
+   3.7552144670108557`*^9}, {3.7552145366779885`*^9, 3.75521454674542*^9}, {
+   3.7552145817519693`*^9, 3.7552146339548407`*^9}, {3.7552146746295094`*^9, 
+   3.755214771022499*^9}, {3.755214831407116*^9, 3.7552148823011913`*^9}, {
+   3.755214948672839*^9, 3.755214966425072*^9}, 3.7552157608970375`*^9, {
+   3.755215941499895*^9, 3.7552160239140635`*^9}, {3.7552161911471367`*^9, 
+   3.7552161936137533`*^9}, {3.7552163426885414`*^9, 3.755216361116671*^9}, {
+   3.755216411252884*^9, 3.755216468275984*^9}, {3.755216762535186*^9, 
+   3.7552168583222723`*^9}, {3.755216924405961*^9, 3.755216942002237*^9}, {
+   3.7620426124125667`*^9, 3.762042659593158*^9}, {3.762042708769455*^9, 
+   3.7620427338035307`*^9}, {3.762042832893029*^9, 3.76204286289331*^9}, {
+   3.762042934671077*^9, 3.762042937642601*^9}, {3.762043033732549*^9, 
+   3.7620430819930053`*^9}, {3.762043115721709*^9, 3.762043238780449*^9}, {
+   3.7620433932842274`*^9, 3.7620434590949183`*^9}, {3.762043543798654*^9, 
+   3.7620435578594494`*^9}, {3.7620458833147116`*^9, 
+   3.762045975234332*^9}},ExpressionUUID->"32be782a-b254-470a-87ab-\
+353bfd2021c0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "(*", "\:73a9\:5bb61\:63b7\:786c\:5e01\:5f97\:5206\:7684\:6982\:7387", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"p1", ",", "q1"}], "}"}], "=", 
+     RowBox[{"{", 
+      RowBox[{
+       FractionBox["1", "2"], ",", 
+       FractionBox["1", "2"]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", "\:6e38\:620f\:4f55\:65f6\:7ec8\:6b62", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"maxPoints", "=", "100"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:7ed9\:5b9a\:73a9\:5bb61\:83b7\:80dc\:8fd8\:9700\:7684\:5206\:6570", 
+     "\:3001", "\:73a9\:5bb61\:83b7\:80dc\:8fd8\:9700\:7684\:5206\:6570", 
+     "\:ff0c", "\:73a9\:5bb62\:83b7\:80dc\:7684\:6982\:7387"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Player2WinningProbability", "[", 
+      RowBox[{"Player1NeedsPoints_", ",", "Player2NeedsPoints_"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{"Player2WinningProbability", "[", 
+       RowBox[{"Player1NeedsPoints", ",", "Player2NeedsPoints"}], "]"}], "=", 
+      RowBox[{"Module", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"p2", ",", "q2", ",", 
+          RowBox[{"probability", "=", "0"}], ",", "current", ",", 
+          RowBox[{"NumberOfTosses", "=", "1"}], ",", 
+          "NextPlayer2NeedsPoints"}], "}"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Which", "[", 
+          RowBox[{
+           RowBox[{"Player2NeedsPoints", "\[Equal]", "0"}], ",", 
+           RowBox[{
+            RowBox[{"Sow", "[", "NumberOfTosses", "]"}], ";", 
+            RowBox[{"Return", "[", "1", "]"}]}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Player1NeedsPoints", "\[Equal]", "0"}], ",", 
+           RowBox[{
+            RowBox[{"Sow", "[", "NumberOfTosses", "]"}], ";", 
+            RowBox[{"Return", "[", "0", "]"}]}]}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"While", "[", 
+          RowBox[{"True", ",", "\[IndentingNewLine]", 
+           RowBox[{
+           "(*", "\:73a9\:5bb62\:63b7\:786c\:5e01\:5f97\:5206\:7684\:6982\
+\:7387", "*)"}], "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"p2", "=", 
+             SuperscriptBox[
+              FractionBox["1", "2"], "NumberOfTosses"]}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"q2", "=", 
+             RowBox[{"1", "-", "p2"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"NextPlayer2NeedsPoints", "=", 
+             RowBox[{"Max", "[", 
+              RowBox[{"0", ",", 
+               RowBox[{"Player2NeedsPoints", "-", 
+                SuperscriptBox["2", 
+                 RowBox[{"NumberOfTosses", "-", "1"}]]}]}], "]"}]}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"current", "=", 
+             RowBox[{
+              RowBox[{"p1", " ", "p2", " ", 
+               RowBox[{"Player2WinningProbability", "[", 
+                RowBox[{
+                 RowBox[{"Player1NeedsPoints", "-", "1"}], ",", 
+                 "NextPlayer2NeedsPoints"}], "]"}]}], "+", 
+              RowBox[{"p1", " ", "q2", " ", 
+               RowBox[{"Player2WinningProbability", "[", 
+                RowBox[{
+                 RowBox[{"Player1NeedsPoints", "-", "1"}], ",", 
+                 "Player2NeedsPoints"}], "]"}]}], "+", 
+              RowBox[{"q1", " ", "p2", " ", 
+               RowBox[{"Player2WinningProbability", "[", 
+                RowBox[{"Player1NeedsPoints", ",", "NextPlayer2NeedsPoints"}],
+                 "]"}]}]}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"current", "=", 
+             FractionBox["current", 
+              RowBox[{"1", "-", 
+               RowBox[{"q1", " ", "q2"}]}]]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"probability", "<", "current"}], ",", 
+              RowBox[{"probability", "=", "current"}]}], "]"}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"NextPlayer2NeedsPoints", "\[Equal]", "0"}], ",", 
+              RowBox[{"Break", "[", "]"}]}], "]"}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"NumberOfTosses", "=", 
+             RowBox[{"NumberOfTosses", "+", "1"}]}]}]}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Sow", "[", "NumberOfTosses", "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Return", "[", "probability", "]"}]}]}], 
+       "\[IndentingNewLine]", "]"}]}]}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.762045893820086*^9, 3.762045894890898*^9}, {
+   3.762046372784686*^9, 3.76204641432707*^9}, {3.76204644467478*^9, 
+   3.7620464827375436`*^9}, {3.762046546085991*^9, 3.7620465716154504`*^9}, {
+   3.7620466518785553`*^9, 3.762046725340096*^9}, {3.7620469445233464`*^9, 
+   3.7620469501615067`*^9}, {3.762046981817515*^9, 3.7620470902032547`*^9}, {
+   3.762047358619732*^9, 3.7620473655649214`*^9}, {3.762047513490281*^9, 
+   3.7620475182455344`*^9}, {3.762047667073597*^9, 3.7620476683415627`*^9}, {
+   3.762047750140221*^9, 3.762047840519431*^9}, {3.762047911296418*^9, 
+   3.7620480782068853`*^9}, {3.7620482242089443`*^9, 
+   3.7620482489975767`*^9}, {3.762048303004266*^9, 3.7620483574581556`*^9}, {
+   3.762048409849002*^9, 3.762048678963106*^9}, {3.7620487246003604`*^9, 
+   3.7620487485053234`*^9}, {3.7620488384905167`*^9, 3.762048844658984*^9}, {
+   3.762048937587888*^9, 3.76204895524914*^9}, {3.762049037666232*^9, 
+   3.7620490723857613`*^9}, {3.7620491378628807`*^9, 
+   3.7620491590997972`*^9}, {3.762049193547887*^9, 3.7620493052326565`*^9}, {
+   3.762049365838485*^9, 3.7620494348549566`*^9}, 3.7620495751105556`*^9, {
+   3.7620497073580675`*^9, 3.7620497116039853`*^9}, {3.7620499207609253`*^9, 
+   3.7620499387151995`*^9}, {3.762049970808014*^9, 3.7620499747633467`*^9}, {
+   3.7620500778478084`*^9, 3.7620503526208076`*^9}, {3.762050395113333*^9, 
+   3.762050399925578*^9}, {3.762050546068429*^9, 3.762050554213154*^9}, {
+   3.7620506002791724`*^9, 3.7620506008970766`*^9}, {3.7620506854403276`*^9, 
+   3.762050698046459*^9}, {3.7620508333258753`*^9, 3.762050834988613*^9}, {
+   3.7620508885910254`*^9, 3.7620508888399878`*^9}, {3.762051093655959*^9, 
+   3.762051094565796*^9}, {3.762051211641489*^9, 3.7620512210065804`*^9}, {
+   3.7620512521707954`*^9, 3.76205136999543*^9}},
+ CellLabel->
+  "In[173]:=",ExpressionUUID->"23d54707-c54c-4932-ae3b-f0eef2561f10"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Reap", "[", 
+      RowBox[{"Player2WinningProbability", "[", 
+       RowBox[{"i", ",", "j"}], "]"}], "]"}], "\[LeftDoubleBracket]", 
+     RowBox[{
+      RowBox[{"-", "1"}], ",", "1", ",", "1"}], "\[RightDoubleBracket]"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "0", ",", "10"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"j", ",", "0", ",", "10"}], "}"}]}], "]"}], "//", 
+  "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.7620513378891892`*^9, 3.762051375381545*^9}},
+ CellLabel->
+  "In[176]:=",ExpressionUUID->"3a534bc3-a56f-4ea2-848a-c172991421de"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"},
+     {"1", "1", "2", "3", "3", "4", "4", "4", "4", "5", "5"},
+     {"1", "1", "2", "3", "3", "4", "4", "4", "4", "5", "5"},
+     {"1", "1", "2", "3", "3", "4", "4", "4", "4", "5", "5"},
+     {"1", "1", "2", "3", "3", "4", "4", "4", "4", "5", "5"},
+     {"1", "1", "2", "3", "3", "4", "4", "4", "4", "5", "5"},
+     {"1", "1", "2", "3", "3", "4", "4", "4", "4", "5", "5"},
+     {"1", "1", "2", "3", "3", "4", "4", "4", "4", "5", "5"},
+     {"1", "1", "2", "3", "3", "4", "4", "4", "4", "5", "5"},
+     {"1", "1", "2", "3", "3", "4", "4", "4", "4", "5", "5"},
+     {"1", "1", "2", "3", "3", "4", "4", "4", "4", "5", "5"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.762051340211825*^9, 3.7620513762266006`*^9}},
+ CellLabel->
+  "Out[176]//MatrixForm=",ExpressionUUID->"29188d3d-fdda-428f-b3c4-\
+1eb4431a3b1c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"result", "=", 
+   RowBox[{
+    RowBox[{"p1", " ", 
+     RowBox[{"Player2WinningProbability", "[", 
+      RowBox[{
+       RowBox[{"maxPoints", "-", "1"}], ",", "maxPoints"}], "]"}]}], "+", 
+    RowBox[{"q1", " ", 
+     RowBox[{"Player2WinningProbability", "[", 
+      RowBox[{"maxPoints", ",", "maxPoints"}], "]"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DecimalForm", "[", 
+  RowBox[{
+   RowBox[{"N", "[", "result", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"+", "\[Infinity]"}], ",", "8"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.7620514006797276`*^9},ExpressionUUID->"3616f2f8-198a-4b64-ae63-\
+22c6963e5b2e"],
+
+Cell[BoxData[
+ TagBox[
+  InterpretationBox["\<\"0.83648556\"\>",
+   0.8364855558469468,
+   AutoDelete->True],
+  DecimalForm[#, {
+    DirectedInfinity[1], 8}]& ]], "Output",
+ CellChangeTimes->{3.7620514014725833`*^9},
+ CellLabel->
+  "Out[178]//DecimalForm=",ExpressionUUID->"b8491410-eb68-464b-ab59-\
+b33cf9447cb6"]
+}, Open  ]]
+},
+WindowSize->{1350, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1262, 22, 219, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1823, 44, 1740, 30, 196, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[3566, 76, 8903, 268, 443, "Text",ExpressionUUID->"32be782a-b254-470a-87ab-353bfd2021c0"],
+Cell[12472, 346, 6496, 132, 971, "Input",ExpressionUUID->"23d54707-c54c-4932-ae3b-f0eef2561f10"],
+Cell[CellGroupData[{
+Cell[18993, 482, 653, 18, 55, "Input",ExpressionUUID->"3a534bc3-a56f-4ea2-848a-c172991421de"],
+Cell[19649, 502, 1398, 30, 269, "Output",ExpressionUUID->"29188d3d-fdda-428f-b3c4-1eb4431a3b1c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21084, 537, 683, 20, 81, "Input",ExpressionUUID->"3616f2f8-198a-4b64-ae63-22c6963e5b2e"],
+Cell[21770, 559, 314, 10, 51, "Output",ExpressionUUID->"b8491410-eb68-464b-ab59-b33cf9447cb6"]
+}, Open  ]]
+}
+]
+*)
+

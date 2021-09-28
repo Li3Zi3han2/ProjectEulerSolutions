@@ -1,0 +1,357 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13467,        349]
+NotebookOptionsPosition[     12648,        328]
+NotebookOutlinePosition[     13006,        344]
+CellTagsIndexPosition[     12963,        341]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "A cyclic number with n digits has a very interesting property:\nWhen it is \
+multiplied by 1, 2, 3, 4, ... n, all the products have exactly the same \
+digits, in the same order, but rotated in a circular fashion!\n\nThe smallest \
+cyclic number is the 6-digit number 142857 :\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    RowBox[{"142857", "\[Times]", "1"}], "=", "142857"}], 
+   TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    RowBox[{"142857", "\[Times]", "2"}], "=", "285714"}], 
+   TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    RowBox[{"142857", "\[Times]", "3"}], "=", "428571"}], 
+   TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    RowBox[{"142857", "\[Times]", "4"}], "=", "571428"}], 
+   TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    RowBox[{"142857", "\[Times]", "5"}], "=", "714285"}], 
+   TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    RowBox[{"142857", "\[Times]", "6"}], "=", "857142"}], TraditionalForm]}],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4b78f635-a88d-430a-8e5c-40f479ec4a4e"],
+ "\n\nThe next cyclic number is 0588235294117647 with 16 digits :\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    RowBox[{"0588235294117647", "\[Times]", "1"}], "=", "0588235294117647"}], 
+   TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    RowBox[{"0588235294117647", "\[Times]", "2"}], "=", "1176470588235294"}], 
+   TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    RowBox[{"0588235294117647", "\[Times]", "3"}], "=", "1764705882352941"}], 
+   TraditionalForm], "\n", 
+  FormBox["\[Ellipsis]", TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    RowBox[{"0588235294117647", "\[Times]", "16"}], "=", "9411764705882352"}],
+    TraditionalForm]}],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e35223b7-8375-4225-becb-b924e89f717a"],
+ "\n\nNote that for cyclic numbers, leading zeros are important.\n\nThere is \
+only one cyclic number for which, the eleven leftmost digits are 00000000137 \
+and the five rightmost digits are 56789 (i.e., it has the form 00000000137\
+\[Ellipsis]56789 with an unknown number of digits in the middle). Find the \
+sum of all its digits."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.7333971525060234`*^9, 
+  3.7333971545281525`*^9}, {3.7551390821253414`*^9, 3.755139155243924*^9}, {
+  3.7551391950037155`*^9, 
+  3.755139195432646*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "n\:4f4d\:5faa\:73af\:6570\:662f\:6307\:62e5\:6709\:5982\:4e0b\:6709\:8da3\
+\:6027\:8d28\:7684\:6570\:ff1a\n\
+\:5f53\:5b83\:4e58\:4ee51\:30012\:30013\:30014\:3001\[Ellipsis]\[Ellipsis]\
+\:3001n\:65f6\:ff0c\:6240\:6709\:7684\:4e58\:79ef\:62e5\:6709\:6309\:76f8\
+\:540c\:987a\:5e8f\:6392\:5217\:7684\:76f8\:540c\:6570\:5b57\:ff0c\:53ea\:662f\
+\:5728\:5faa\:73af\:5730\:8f6e\:8f6c\:800c\:5df2\:ff01\n\n\:6700\:5c0f\:7684\
+\:5faa\:73af\:6570\:662f6\:4f4d\:6570142857\:ff1a\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    RowBox[{"142857", "\[Times]", "1"}], "=", "142857"}], 
+   TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    RowBox[{"142857", "\[Times]", "2"}], "=", "285714"}], 
+   TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    RowBox[{"142857", "\[Times]", "3"}], "=", "428571"}], 
+   TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    RowBox[{"142857", "\[Times]", "4"}], "=", "571428"}], 
+   TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    RowBox[{"142857", "\[Times]", "5"}], "=", "714285"}], 
+   TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    RowBox[{"142857", "\[Times]", "6"}], "=", "857142"}], TraditionalForm]}],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "eefc29cb-74d9-4a92-ac1e-20a74b84b694"],
+ "\n\n\:4e0b\:4e00\:4e2a\:5faa\:73af\:6570\:662f16\:4f4d\:6570\
+0588235294117647\:ff1a\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{
+    RowBox[{"0588235294117647", "\[Times]", "1"}], "=", "0588235294117647"}], 
+   TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    RowBox[{"0588235294117647", "\[Times]", "2"}], "=", "1176470588235294"}], 
+   TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    RowBox[{"0588235294117647", "\[Times]", "3"}], "=", "1764705882352941"}], 
+   TraditionalForm], "\n", 
+  FormBox["\[Ellipsis]", TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{
+    RowBox[{"0588235294117647", "\[Times]", "16"}], "=", "9411764705882352"}],
+    TraditionalForm]}],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "543a09be-22ff-4113-bf1c-6ca44d11d78a"],
+ "\n\n\:6ce8\:610f\:5bf9\:4e8e\:5faa\:73af\:6570\:800c\:8a00\:ff0c\:524d\:5bfc\
+\:96f6\:662f\:5f88\:91cd\:8981\:7684\:3002\n\n\:6ee1\:8db3\:4ee5\:4e0b\:6761\
+\:4ef6\:7684\:5faa\:73af\:6570\:662f\:552f\:4e00\:7684\:ff1a\:5176\:6700\:5de6\
+\:4fa7\:768411\:4f4d\:6570\:5b57\:4e3a00000000137\:ff0c\:6700\:53f3\:4fa7\
+\:76845\:4f4d\:6570\:5b57\:662f56789\:ff08\:4e5f\:5c31\:662f\:8bf4\:ff0c\:5b83\
+\:7684\:5f62\:5f0f\:662f00000000137\[Ellipsis]56789\:ff0c\:4e2d\:95f4\:7684\
+\:6570\:5b57\:672a\:77e5\:ff09\:3002\:6c42\:5b83\:7684\:6240\:6709\:5404\:4f4d\
+\:6570\:5b57\:4e4b\:548c\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, 3.755139097319971*^9, {
+   3.7551391670530972`*^9, 
+   3.755139201078785*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{"\:5faa\:73af\:6570\:4e0e\:5355\:4f4d\:5206\:6570\:7684\:5faa\:73af\
+\:5c0f\:6570\:8868\:793a\:5f62\:5f0f\:6709\:5173", "\:3002", 
+  RowBox[{
+  "\:4e00\:4e2a\:957f\:4e3aL\:7684\:5faa\:73af\:6570\:5728\:6570\:5b57\:4e0a\
+\:662f", 
+   FractionBox["1", 
+    RowBox[{"L", "+", "1"}]], 
+   "\:7684\:5faa\:73af\:8282"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\:76f8\:53cd\:7684", "\:ff0c", 
+  RowBox[{
+   RowBox[{"\:5982\:679c", 
+    FractionBox["1", "p"], 
+    RowBox[{"\:ff08", "p\:662f\:7d20\:6570", "\:ff09"}], 
+    "\:7684\:5faa\:73af\:8282\:957f\:5ea6\:4e3ap"}], "-", "1"}], "\:ff0c", 
+  "\:5b83\:7684\:5faa\:73af\:8282\:5728\:6570\:5b57\:4e0a\:5c31\:662f\:4e00\
+\:4e2a\:5faa\:73af\:6570"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+  "\:6240\:4ee5", "\:ff0c", 
+   "\:5faa\:73af\:6570\:6709\:8fd9\:6837\:7684\:5f62\:5f0f", "\:ff1a", 
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["b", 
+      RowBox[{"p", "-", "1"}]], "-", "1"}], "p"], "\:ff0c", 
+   RowBox[{"\:5176\:4e2db\:662f\:6570\:57fa", 
+    RowBox[{"\:ff08", 
+     RowBox[{"\:5bf9\:4e8e\:5341\:8fdb\:5236", "\:ff0c", 
+      RowBox[{"b", "=", "10"}]}], "\:ff09"}]}], "\:ff0c", 
+   "\:800cp\:662f\:4e00\:4e2a\:4e0d\:662fb\:7684\:500d\:6570\:4e14p\:6ee1\
+\:8db3b\:662fp\:7684\:6a21p\:539f\:6839\:7684\:7d20\:6570"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{"\:8fd9\:4e2a\:6570\:5217\:4e2d\:6240\:6709\:7684\:6570p\:6ee1\:8db3\
+10\:662fp\:7684\:6a21p\:539f\:6839", "\:3002"}]}], "Text",
+ CellChangeTimes->{{3.755139219333913*^9, 3.7551392193449135`*^9}, {
+  3.75513927314051*^9, 3.7551393818305993`*^9}, {3.755139415334366*^9, 
+  3.7551394247368975`*^9}, {3.7551394859273205`*^9, 3.755139582030333*^9}, {
+  3.755139619115523*^9, 
+  3.755139624435708*^9}},ExpressionUUID->"36c61c91-c4a9-4de4-a764-\
+2d49e801d6f8"],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+  "\:4ee5\:4e0b\:4e24\:79cd\:65b9\:6cd5\:90fd\:80fd\:6c42\:51fa\:7b26\:5408\
+\:6761\:4ef6\:7684p", "\:ff1a", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"b", "=", "10"}], ";", 
+    RowBox[{"Select", "[", 
+     RowBox[{
+      RowBox[{"Prime", "[", 
+       RowBox[{"Range", "[", "1000", "]"}], "]"}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"MultiplicativeOrder", "[", 
+         RowBox[{"b", ",", "#"}], "]"}], "\[Equal]", 
+        RowBox[{"#", "-", "1"}]}], "&"}]}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Join", "[", 
+     RowBox[{
+      RowBox[{"{", "7", "}"}], ",", 
+      RowBox[{"Select", "[", 
+       RowBox[{
+        RowBox[{"Prime", "[", 
+         RowBox[{"Range", "[", "1000", "]"}], "]"}], ",", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"PrimitiveRoot", "[", 
+           RowBox[{"#", ",", "10"}], "]"}], "\[Equal]", "10"}], "&"}]}], 
+       "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+    "\:6211\:4eec\:91c7\:7528\:7b2c\:4e00\:79cd\:65b9\:6cd5"}]}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+   3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+   3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+   3.733397177005328*^9, 3.7333972103847303`*^9}, 3.755139445598619*^9, {
+   3.7551396717782946`*^9, 
+   3.7551397378660583`*^9}},ExpressionUUID->"6a7c367e-c1c3-4109-93e6-\
+34add9704799"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"IntegerDigitsSum", "[", "n_", "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"sum", "=", "0"}], ",", 
+       RowBox[{"m", "=", "n"}]}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{"m", "\[NotEqual]", "0"}], ",", 
+        RowBox[{
+         RowBox[{"sum", "=", 
+          RowBox[{"sum", "+", 
+           RowBox[{"Mod", "[", 
+            RowBox[{"m", ",", "10"}], "]"}]}]}], ";", 
+         RowBox[{"m", "=", 
+          RowBox[{"Quotient", "[", 
+           RowBox[{"m", ",", "10"}], "]"}]}]}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", "sum", "]"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", "10"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Monitor", "[", 
+  RowBox[{
+   RowBox[{"Do", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"p", "=", 
+       RowBox[{"Prime", "[", "n", "]"}]}], ";", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"MultiplicativeOrder", "[", 
+           RowBox[{"b", ",", "p"}], "]"}], "\[Equal]", 
+          RowBox[{"p", "-", "1"}]}], "&&", 
+         RowBox[{
+          RowBox[{"PowerMod", "[", 
+           RowBox[{"b", ",", 
+            RowBox[{"p", "-", "1"}], ",", 
+            SuperscriptBox["10", "5"]}], "]"}], "\[Equal]", 
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"p", " ", "56789"}], "+", "1"}], ",", 
+            SuperscriptBox["10", "5"]}], "]"}]}], "&&", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"c", "=", 
+            FractionBox[
+             RowBox[{
+              SuperscriptBox["b", 
+               RowBox[{"p", "-", "1"}]], "-", "1"}], "p"]}], ";", 
+           RowBox[{
+            RowBox[{"Quotient", "[", 
+             RowBox[{"c", ",", 
+              SuperscriptBox["10", 
+               RowBox[{"p", "-", "1", "-", "8", "-", "3"}]]}], "]"}], 
+            "\[Equal]", "137"}]}], ")"}]}], ",", 
+        RowBox[{"IntegerDigitsSum", "[", "c", "]"}]}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "1", ",", "\[Infinity]"}], "}"}]}], "]"}], ",", "n"}],
+   "]"}]}], "Input",
+ CellChangeTimes->{{3.7551397458318167`*^9, 3.7551399072406015`*^9}, {
+   3.7551399586175613`*^9, 3.7551399624029703`*^9}, {3.755140006465105*^9, 
+   3.75514000889773*^9}, {3.7551401005554*^9, 3.755140150134652*^9}, 
+   3.755140237149082*^9, {3.755140279055537*^9, 3.755140305263424*^9}, {
+   3.7551407594479914`*^9, 3.755140782432401*^9}, {3.755140846988319*^9, 
+   3.755140862059964*^9}, {3.75514099312051*^9, 3.755141018870473*^9}, 
+   3.7551410625141706`*^9, {3.755141096834813*^9, 3.7551410985915527`*^9}, {
+   3.7551412300540075`*^9, 3.7551412593314323`*^9}, {3.755141338828037*^9, 
+   3.7551414343481016`*^9}, {3.7551415223603897`*^9, 3.755141539045784*^9}},
+ CellLabel->
+  "In[171]:=",ExpressionUUID->"d93f4f10-a7ac-4806-9867-e39281c3aa01"],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{
+  3.755139921626341*^9, 3.7551399698678064`*^9, 3.7551400096635885`*^9, {
+   3.755140143451717*^9, 3.7551401518723793`*^9}, 3.755140591658695*^9, 
+   3.7551437442444115`*^9},
+ CellLabel->
+  "Out[173]=",ExpressionUUID->"c3ff7a68-f15b-4fbb-a2e8-16eab7e3bf33"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2480, 63, 532, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[3041, 85, 2964, 71, 532, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[6008, 158, 1798, 39, 213, "Text",ExpressionUUID->"36c61c91-c4a9-4de4-a764-2d49e801d6f8"],
+Cell[7809, 199, 1474, 36, 109, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[CellGroupData[{
+Cell[9308, 239, 3008, 78, 324, "Input",ExpressionUUID->"d93f4f10-a7ac-4806-9867-e39281c3aa01"],
+Cell[12319, 319, 313, 6, 37, "Output",ExpressionUUID->"c3ff7a68-f15b-4fbb-a2e8-16eab7e3bf33"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,417 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13808,        409]
+NotebookOptionsPosition[     13175,        390]
+NotebookOutlinePosition[     13534,        406]
+CellTagsIndexPosition[     13491,        403]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Consider the number 3600. It is very special, because\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{"3600", "=", 
+    RowBox[{
+     SuperscriptBox["48", "2"], "+", 
+     SuperscriptBox["36", "2"]}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"3600", "=", 
+    RowBox[{
+     SuperscriptBox["20", "2"], "+", 
+     RowBox[{"2", " ", 
+      SuperscriptBox["40", "2"]}]}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"3600", "=", 
+    RowBox[{
+     SuperscriptBox["30", "2"], "+", 
+     RowBox[{"3", " ", 
+      SuperscriptBox["30", "2"]}]}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"3600", "=", 
+    RowBox[{
+     SuperscriptBox["45", "2"], "+", 
+     RowBox[{"7", " ", 
+      SuperscriptBox["15", "2"]}]}]}], TraditionalForm]}],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "1366176d-0525-49ee-86dc-9c6dad125e21"],
+ "\n\nSimilarly, we find that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"88201", "=", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["99", "2"], "+", 
+      SuperscriptBox["280", "2"]}], "=", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["287", "2"], "+", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["54", "2"]}]}], "=", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["283", "2"], "+", 
+        RowBox[{"3", " ", 
+         SuperscriptBox["52", "2"]}]}], "=", 
+       RowBox[{
+        SuperscriptBox["197", "2"], "+", 
+        RowBox[{"7", " ", 
+         SuperscriptBox["84", "2"]}]}]}]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bace1b8c-fc2c-4bf8-af68-8223f47bc83d"],
+ ".\n\nIn 1747, Euler proved which numbers are representable as a sum of two \
+squares. We are interested in the numbers n which admit representations of \
+all of the following four types:\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{"n", "=", 
+    RowBox[{
+     SuperscriptBox[
+      SubscriptBox["a", "1"], "2"], "+", 
+     SuperscriptBox[
+      SubscriptBox["b", "1"], "2"]}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"n", "=", 
+    RowBox[{
+     SuperscriptBox[
+      SubscriptBox["a", "2"], "2"], "+", 
+     RowBox[{"2", " ", 
+      SuperscriptBox[
+       SubscriptBox["b", "2"], "2"]}]}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"n", "=", 
+    RowBox[{
+     SuperscriptBox[
+      SubscriptBox["a", "3"], "2"], "+", 
+     RowBox[{"3", " ", 
+      SuperscriptBox[
+       SubscriptBox["b", "3"], "2"]}]}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"n", "=", 
+    RowBox[{
+     SuperscriptBox[
+      SubscriptBox["a", "4"], "2"], "+", 
+     RowBox[{"7", " ", 
+      SuperscriptBox[
+       SubscriptBox["b", "4"], "2"]}]}]}], TraditionalForm]}],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "48d2e928-ea80-437e-abd2-8285cb67968a"],
+ "\nwhere the ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "k"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "89b1c596-60cd-42c9-8640-712f3e658ffe"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["b", "k"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "1fefc484-aa7f-4988-a27d-7fa0a8cfe662"],
+ " are positive integers.\n\nThere are 75373 such numbers that do not exceed ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "7"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6808a919-a1c1-4ea2-bdd1-1afbfd866c87"],
+ ".\nHow many such numbers are there that do not exceed ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"2", " ", 
+    SuperscriptBox["10", "9"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3f8b446e-b28a-435e-aac4-579494bd58a7"],
+ "?"
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.764904010058326*^9, 3.7649040130094357`*^9}, {
+  3.76490423871097*^9, 
+  3.7649042775592794`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "3600\:662f\:4e2a\:7279\:522b\:7684\:6570\:ff0c\:56e0\:4e3a\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{"3600", "=", 
+    RowBox[{
+     SuperscriptBox["48", "2"], "+", 
+     SuperscriptBox["36", "2"]}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"3600", "=", 
+    RowBox[{
+     SuperscriptBox["20", "2"], "+", 
+     RowBox[{"2", " ", 
+      SuperscriptBox["40", "2"]}]}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"3600", "=", 
+    RowBox[{
+     SuperscriptBox["30", "2"], "+", 
+     RowBox[{"3", " ", 
+      SuperscriptBox["30", "2"]}]}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"3600", "=", 
+    RowBox[{
+     SuperscriptBox["45", "2"], "+", 
+     RowBox[{"7", " ", 
+      SuperscriptBox["15", "2"]}]}]}], TraditionalForm]}],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "12c5c148-3fe1-4d46-a9ef-f36eca87e1aa"],
+ "\n\n\:76f8\:4f3c\:5730\:ff0c\:6211\:4eec\:53d1\:73b0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"88201", "=", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["99", "2"], "+", 
+      SuperscriptBox["280", "2"]}], "=", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["287", "2"], "+", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["54", "2"]}]}], "=", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["283", "2"], "+", 
+        RowBox[{"3", " ", 
+         SuperscriptBox["52", "2"]}]}], "=", 
+       RowBox[{
+        SuperscriptBox["197", "2"], "+", 
+        RowBox[{"7", " ", 
+         SuperscriptBox["84", "2"]}]}]}]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "af31c5bd-c264-404b-a18f-46c0ed8bf58b"],
+ "\:3002\n\n\:57281747\:5e74\:ff0c\:6b27\:62c9\:8bc1\:660e\:4e86\:54ea\:4e9b\
+\:6570\:5b57\:53ef\:4ee5\:8868\:793a\:6210\:4e24\:4e2a\:5e73\:65b9\:6570\:4e4b\
+\:548c\:3002\:6211\:4eec\:611f\:5174\:8da3\:7684\:5219\:662f\:90a3\:4e9b\:6570\
+\:5b57n\:53ef\:4ee5\:5199\:6210\:5982\:4e0b\:56db\:79cd\:5f62\:5f0f\:7684\
+\:5e73\:65b9\:6570\:4e4b\:548c\:ff1a\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{"n", "=", 
+    RowBox[{
+     SuperscriptBox[
+      SubscriptBox["a", "1"], "2"], "+", 
+     SuperscriptBox[
+      SubscriptBox["b", "1"], "2"]}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"n", "=", 
+    RowBox[{
+     SuperscriptBox[
+      SubscriptBox["a", "2"], "2"], "+", 
+     RowBox[{"2", " ", 
+      SuperscriptBox[
+       SubscriptBox["b", "2"], "2"]}]}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"n", "=", 
+    RowBox[{
+     SuperscriptBox[
+      SubscriptBox["a", "3"], "2"], "+", 
+     RowBox[{"3", " ", 
+      SuperscriptBox[
+       SubscriptBox["b", "3"], "2"]}]}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"n", "=", 
+    RowBox[{
+     SuperscriptBox[
+      SubscriptBox["a", "4"], "2"], "+", 
+     RowBox[{"7", " ", 
+      SuperscriptBox[
+       SubscriptBox["b", "4"], "2"]}]}]}], TraditionalForm]}],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3da3acfa-a6fc-44eb-b852-2dce33952838"],
+ "\n\:5176\:4e2d",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "k"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "307a5409-c236-47a7-aa97-f944718c9380"],
+ "\:548c",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["b", "k"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "fc9578fa-1a15-4829-b13e-9cc71a86e716"],
+ "\:5747\:4e3a\:6b63\:6574\:6570\:3002\n\n\:5728\:4e0d\:8d85\:8fc7",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "7"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "658fdb64-8fc2-42c7-a434-e6d656e74f9b"],
+ "\:7684\:6570\:4e2d\:ff0c\:6ee1\:8db3\:8fd9\:4e00\:6027\:8d28\:7684\:6709\
+75373\:4e2a\:3002\n\:5728\:4e0d\:8d85\:8fc7",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"2", " ", 
+    SuperscriptBox["10", "9"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "871482bc-6194-4f6f-ba8a-4fb1a441bb09"],
+ "\:7684\:6570\:4e2d\:ff0c\:6ee1\:8db3\:8fd9\:4e00\:6027\:8d28\:7684\:6709\
+\:591a\:5c11\:4e2a\:ff1f"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.764904024492391*^9, 
+   3.7649042310504785`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"limit", "=", 
+   RowBox[{"2", " ", 
+    SuperscriptBox["10", "9"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{"False", ",", "limit"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"temp", "=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["a", "2"], "+", 
+       SuperscriptBox["b", "2"]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"a", ",", "1", ",", 
+        RowBox[{"\[LeftFloor]", 
+         SqrtBox["limit"], "\[RightFloor]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"b", ",", "a", ",", 
+        RowBox[{"\[LeftFloor]", 
+         SqrtBox[
+          RowBox[{"limit", "-", 
+           SuperscriptBox["a", "2"]}]], "\[RightFloor]"}]}], "}"}]}], "]"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"temp", "=", 
+   RowBox[{"Union", "[", 
+    RowBox[{"temp", ",", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{
+         SuperscriptBox["a", "2"], "+", 
+         RowBox[{"2", " ", 
+          SuperscriptBox["b", "2"]}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"a", ",", "1", ",", 
+          RowBox[{"\[LeftFloor]", 
+           SqrtBox["limit"], "\[RightFloor]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"b", ",", "1", ",", 
+          RowBox[{"\[LeftFloor]", 
+           SqrtBox[
+            FractionBox[
+             RowBox[{"limit", "-", 
+              SuperscriptBox["a", "2"]}], "2"]], "\[RightFloor]"}]}], "}"}]}],
+        "]"}], "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"temp", "=", 
+   RowBox[{"Union", "[", 
+    RowBox[{"temp", ",", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{
+         SuperscriptBox["a", "2"], "+", 
+         RowBox[{"3", " ", 
+          SuperscriptBox["b", "2"]}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"a", ",", "1", ",", 
+          RowBox[{"\[LeftFloor]", 
+           SqrtBox["limit"], "\[RightFloor]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"b", ",", "1", ",", 
+          RowBox[{"\[LeftFloor]", 
+           SqrtBox[
+            FractionBox[
+             RowBox[{"limit", "-", 
+              SuperscriptBox["a", "2"]}], "3"]], "\[RightFloor]"}]}], "}"}]}],
+        "]"}], "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"temp", "=", 
+   RowBox[{"Union", "[", 
+    RowBox[{"temp", ",", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{
+         SuperscriptBox["a", "2"], "+", 
+         RowBox[{"7", " ", 
+          SuperscriptBox["b", "2"]}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"a", ",", "1", ",", 
+          RowBox[{"\[LeftFloor]", 
+           SqrtBox["limit"], "\[RightFloor]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"b", ",", "1", ",", 
+          RowBox[{"\[LeftFloor]", 
+           SqrtBox[
+            FractionBox[
+             RowBox[{"limit", "-", 
+              SuperscriptBox["a", "2"]}], "7"]], "\[RightFloor]"}]}], "}"}]}],
+        "]"}], "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Length", "[", "temp", "]"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+   3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+   3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+   3.7564263646962595`*^9, 3.7564263899753056`*^9}, {3.764904484894491*^9, 
+   3.764904564707108*^9}, {3.76490473585254*^9, 3.764904840710475*^9}, {
+   3.764904904740288*^9, 3.7649049598039336`*^9}, 3.764904997453349*^9, {
+   3.764905137346244*^9, 3.7649051410423613`*^9}, 3.7649052680219812`*^9, {
+   3.7649053809878483`*^9, 3.7649054221158905`*^9}, {3.7649054545860786`*^9, 
+   3.7649054822293873`*^9}, {3.764905772285016*^9, 3.764905777954857*^9}, {
+   3.764984149170272*^9, 3.7649841876783423`*^9}, {3.7649848383797617`*^9, 
+   3.764984844207182*^9}, {3.764984968138134*^9, 3.764985035530933*^9}, {
+   3.7649875022782755`*^9, 
+   3.764987517786191*^9}},ExpressionUUID->"6a7c367e-c1c3-4109-93e6-\
+34add9704799"],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{3.7649844585369444`*^9, 3.764984886452278*^9},
+ CellLabel->"Out[16]=",ExpressionUUID->"6adc1e87-3a7c-486f-a46a-599388dcdd92"]
+}, Open  ]]
+},
+WindowSize->{2560, 1336},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 3933, 121, 394, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[4494, 143, 4276, 125, 394, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[8795, 272, 4181, 111, 470, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[12979, 385, 180, 2, 34, "Output",ExpressionUUID->"6adc1e87-3a7c-486f-a46a-599388dcdd92"]
+}, Open  ]]
+}
+]
+*)
+

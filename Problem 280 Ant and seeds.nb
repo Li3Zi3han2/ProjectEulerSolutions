@@ -1,0 +1,159 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5935,        151]
+NotebookOptionsPosition[      5436,        135]
+NotebookOutlinePosition[      5794,        151]
+CellTagsIndexPosition[      5751,        148]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+A laborious ant walks randomly on a 5x5 grid. The walk starts from the \
+central square. At each step, the ant moves to an adjacent square at random, \
+without leaving the grid; thus there are 2, 3 or 4 possible moves at each \
+step depending on the ant\[CloseCurlyQuote]s position.
+
+At the start of the walk, a seed is placed on each square of the lower row. \
+When the ant isn\[CloseCurlyQuote]t carrying a seed and reaches a square of \
+the lower row containing a seed, it will start to carry the seed. The ant \
+will drop the seed on the first empty square of the upper row it eventually \
+reaches.
+
+What\[CloseCurlyQuote]s the expected number of steps until all seeds have \
+been dropped in the top row?
+Give your answer rounded to 6 decimal places.\
+\>", "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.756511389756448*^9, 
+  3.7565113917711315`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell["\<\
+\:4e00\:53ea\:52e4\:52b3\:7684\:8682\:8681\:57285x5\:7684\:7f51\:683c\:4e0a\
+\:4ece\:4e2d\:5fc3\:65b9\:683c\:5f00\:59cb\:968f\:673a\:884c\:8d70\:3002\:6bcf\
+\:4e00\:6b65\:5b83\:90fd\:968f\:673a\:79fb\:52a8\:5230\:76f8\:90bb\:7684\:4e00\
+\:683c\:ff0c\:4f46\:4e0d\:4f1a\:79bb\:5f00\:7f51\:683c\:ff1b\:56e0\:6b64\:ff0c\
+\:6839\:636e\:5b83\:6240\:5728\:7684\:4f4d\:7f6e\:ff0c\:5b83\:6bcf\:4e00\:6b65\
+\:67092\:30013\:62164\:79cd\:4e0d\:540c\:7684\:9009\:62e9\:3002
+
+\:5728\:5f00\:59cb\:524d\:ff0c\:7f51\:683c\:7684\:6700\:4e0b\:4e00\:884c\:7684\
+\:6bcf\:4e00\:4e2a\:683c\:5b50\:4e0a\:90fd\:6446\:6709\:4e00\:7c92\:79cd\:5b50\
+\:3002\:5982\:679c\:8682\:8681\:5230\:8fbe\:6700\:4e0b\:4e00\:884c\:7684\:683c\
+\:5b50\:ff0c\:6b64\:65f6\:683c\:5b50\:4e0a\:6709\:79cd\:5b50\:800c\:8682\:8681\
+\:5e76\:6ca1\:6709\:643a\:5e26\:79cd\:5b50\:7684\:8bdd\:ff0c\:8682\:8681\:5c06\
+\:4f1a\:62ff\:8d77\:79cd\:5b50\:3002\:5b83\:5c06\:5728\:4e4b\:540e\:7b2c\:4e00\
+\:6b21\:5230\:8fbe\:6700\:4e0a\:4e00\:884c\:6ca1\:6709\:79cd\:5b50\:7684\:683c\
+\:5b50\:65f6\:653e\:4e0b\:79cd\:5b50\:3002
+
+\:6240\:6709\:7684\:79cd\:5b50\:90fd\:88ab\:653e\:5230\:6700\:4e0a\:4e00\:884c\
+\:6240\:9700\:7684\:671f\:671b\:6b65\:6570\:662f\:591a\:5c11\:ff1f
+\:5c06\:4f60\:7684\:7b54\:6848\:56db\:820d\:4e94\:5165\:5230\:516d\:4f4d\:5c0f\
+\:6570\:3002\
+\>", "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, 
+   3.756511402659408*^9},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"m", ",", "n"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "5"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"transitionmatrix", "=", 
+   RowBox[{"SparseArray", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"i_", ",", "j_"}], "}"}], "/;", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"j", "\[Equal]", 
+            RowBox[{"i", "+", "1"}]}], "&&", 
+           RowBox[{"!", 
+            RowBox[{"Divisible", "[", 
+             RowBox[{"i", ",", "n"}], "]"}]}]}], "||", 
+          RowBox[{
+           RowBox[{"j", "\[Equal]", 
+            RowBox[{"i", "-", "1"}]}], "&&", 
+           RowBox[{"!", 
+            RowBox[{"Divisible", "[", 
+             RowBox[{
+              RowBox[{"i", "-", "1"}], ",", "n"}], "]"}]}]}], "||", 
+          RowBox[{"j", "\[Equal]", 
+           RowBox[{"i", "+", "n"}]}], "||", 
+          RowBox[{"j", "\[Equal]", 
+           RowBox[{"i", "-", "n"}]}]}], ")"}]}], "\[RuleDelayed]", 
+       FractionBox["1", 
+        RowBox[{"Total", "[", 
+         RowBox[{"Boole", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"!", 
+             RowBox[{"Divisible", "[", 
+              RowBox[{"i", ",", "n"}], "]"}]}], ",", 
+            RowBox[{"!", 
+             RowBox[{"Divisible", "[", 
+              RowBox[{
+               RowBox[{"i", "-", "1"}], ",", "n"}], "]"}]}], ",", 
+            RowBox[{
+             RowBox[{"Quotient", "[", 
+              RowBox[{"i", ",", "n", ",", 
+               RowBox[{"1", "-", "n"}]}], "]"}], "\[NotEqual]", "1"}], ",", 
+            RowBox[{
+             RowBox[{"Quotient", "[", 
+              RowBox[{"i", ",", "n", ",", 
+               RowBox[{"1", "-", "n"}]}], "]"}], "\[NotEqual]", "m"}]}], 
+           "}"}], "]"}], "]"}]]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"m", " ", "n"}], ",", 
+       RowBox[{"m", " ", "n"}]}], "}"}]}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7565114262697287`*^9, 
+  3.756511433888517*^9}},ExpressionUUID->"6c8c8a78-3dd1-47ec-9cbc-\
+3164a3d70d90"]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1056, 20, 196, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1617, 42, 1632, 27, 196, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[3252, 71, 2180, 62, 162, "Input",ExpressionUUID->"6c8c8a78-3dd1-47ec-9cbc-3164a3d70d90"]
+}
+]
+*)
+

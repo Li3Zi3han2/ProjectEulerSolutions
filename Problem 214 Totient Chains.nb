@@ -1,0 +1,172 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6663,        164]
+NotebookOptionsPosition[      6037,        145]
+NotebookOutlinePosition[      6395,        161]
+CellTagsIndexPosition[      6352,        158]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Let \[CurlyPhi] be Euler\[CloseCurlyQuote]s totient function, i.e. for a \
+natural number n, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[CurlyPhi]", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c4ddabfd-4e24-4739-9272-45cd6a373cbc"],
+ " is the number of k, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "\[LessEqual]", "k", "\[LessEqual]", "n"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "329d8989-3e0e-4e32-bbe3-d0383c842133"],
+ ", for which ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"GCD", "[", 
+     RowBox[{"k", ",", "n"}], "]"}], "=", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e2745b25-71d7-4277-96dc-e1bf8579d593"],
+ ".\n\nBy iterating \[CurlyPhi], each positive integer generates a decreasing \
+chain of numbers ending in 1.\nE.g. if we start with 5 the sequence 5,4,2,1 \
+is generated.\nHere is a listing of all chains with length 4:\n5,4,2,1\n\
+7,6,2,1\n8,4,2,1\n9,6,2,1\n10,4,2,1\n12,4,2,1\n14,6,2,1\n18,6,2,1\n\nOnly two \
+of these chains start with a prime, their sum is 12.\n\nWhat is the sum of \
+all primes less than 40000000 which generate a chain of length 25?"
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.7333971525060234`*^9, 
+  3.7333971545281525`*^9}, {3.7560217442394743`*^9, 3.756021810966221*^9}, {
+  3.756021845219936*^9, 
+  3.7560218480585165`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:4ee4\[CurlyPhi]\:8868\:793a\:6b27\:62c9\:603b\:8ba1\:51fd\:6570\:ff0c\
+\:4e5f\:5c31\:662f\:8bf4\:ff0c\:5bf9\:4e8e\:81ea\:7136\:6570n\:ff0c\:6240\
+\:6709",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "\[LessEqual]", "k", "\[LessEqual]", "n"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "75aa82c3-00dc-4fcc-ab53-27c28a48327b"],
+ "\:4e14",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"GCD", "[", 
+     RowBox[{"k", ",", "n"}], "]"}], "=", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "09365c00-114b-4189-997a-bb91970582b5"],
+ "\:7684\:6b63\:6574\:6570k\:7684\:6570\:76ee\:8bb0\:4e3a",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[CurlyPhi]", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "2456d841-319f-4efa-82f2-66b1d0b0d5f8"],
+ "\:3002\n\n\:901a\:8fc7\:8fed\:4ee3\:6c42\[CurlyPhi]\:ff0c\:6bcf\:4e2a\:6b63\
+\:6574\:6570\:90fd\:80fd\:751f\:6210\:4e00\:6761\:4e0d\:65ad\:4e0b\:964d\:6700\
+\:7ec8\:4ee51\:7ed3\:675f\:7684\:94fe\:3002\n\:4f8b\:5982\:ff0c\:5982\:679c\
+\:6211\:4eec\:4ece5\:5f00\:59cb\:ff0c\:751f\:6210\:7684\:5e8f\:5217\:4e3a5\
+\:30014\:30012\:30011\:3002\n\:5982\:4e0b\:6240\:5217\:662f\:6240\:6709\:957f\
+\:5ea6\:4e3a4\:7684\:94fe\:ff1a\n\n5,4,2,1\n7,6,2,1\n8,4,2,1\n9,6,2,1\n\
+10,4,2,1\n12,4,2,1\n14,6,2,1\n18,6,2,1\n\n\
+\:5176\:4e2d\:53ea\:6709\:4e24\:6761\:94fe\:4ece\:7d20\:6570\:5f00\:59cb\:ff0c\
+\:8fd9\:4e24\:4e2a\:7d20\:6570\:7684\:548c\:4e3a12\:3002\n\n\
+\:5728\:5c0f\:4e8e40000000\:7684\:7d20\:6570\:4e2d\:ff0c\:80fd\:751f\:6210\
+\:957f\:5ea6\:4e3a25\:7684\:94fe\:7684\:7d20\:6570\:4e4b\:548c\:662f\:591a\
+\:5c11\:ff1f"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, 3.7560217532920785`*^9, {
+   3.756021818991974*^9, 
+   3.7560218319789705`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubsuperscriptBox["\[Sum]", 
+   RowBox[{"n", "=", "1"}], 
+   RowBox[{"PrimePi", "[", 
+    RowBox[{"40000000", "-", "1"}], "]"}]], 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"tc", "=", 
+      RowBox[{"NestWhileList", "[", 
+       RowBox[{"EulerPhi", ",", 
+        RowBox[{"Prime", "[", "n", "]"}], ",", 
+        RowBox[{
+         RowBox[{"#", "\[NotEqual]", "1"}], "&"}], ",", "1", ",", "24"}], 
+       "]"}]}], ";", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Length", "[", "tc", "]"}], "\[Equal]", "25"}], "&&", 
+      RowBox[{
+       RowBox[{"tc", "\[LeftDoubleBracket]", 
+        RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "\[Equal]", "1"}]}]}], 
+    ",", 
+    RowBox[{"Prime", "[", "n", "]"}], ",", "0"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+  3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+  3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+  3.733397177005328*^9, 3.7333972103847303`*^9}, {3.7560218829011364`*^9, 
+  3.7560218874264407`*^9}, {3.7560219588224773`*^9, 3.7560219792653313`*^9}, {
+  3.7560220113683743`*^9, 3.7560220500244246`*^9}, {3.756022122358317*^9, 
+  3.7560221940462885`*^9}, {3.7560224803572226`*^9, 3.75602255297805*^9}, {
+  3.756022633849606*^9, 3.75602267373249*^9}, {3.756022774459976*^9, 
+  3.7560227867060924`*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+
+Cell[BoxData["1677366278943"], "Output",
+ CellChangeTimes->{{3.7313704890957747`*^9, 3.7313705114710016`*^9}, 
+   3.731370638655486*^9, 3.7333972122504797`*^9, 3.756022495443919*^9, {
+   3.756022637983972*^9, 3.756022664660866*^9}, 3.756022699499506*^9, 
+   3.756023082937517*^9},
+ CellLabel->"Out[26]=",ExpressionUUID->"2b96e664-bd94-4dde-b3bc-f99d7bea2bc4"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1558, 34, 338, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[2119, 56, 2032, 42, 357, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[4176, 102, 1483, 33, 58, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[5662, 137, 359, 5, 33, "Output",ExpressionUUID->"2b96e664-bd94-4dde-b3bc-f99d7bea2bc4"]
+}, Open  ]]
+}
+]
+*)
+

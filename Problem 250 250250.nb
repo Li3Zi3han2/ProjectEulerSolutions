@@ -1,0 +1,181 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6594,        173]
+NotebookOptionsPosition[      6004,        156]
+NotebookOutlinePosition[      6363,        172]
+CellTagsIndexPosition[      6320,        169]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Find the number of non-empty subsets of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["1", "1"], ",", 
+     SuperscriptBox["2", "2"], ",", 
+     SuperscriptBox["3", "3"], ",", "\[Ellipsis]", ",", 
+     SuperscriptBox["250250", "250250"]}], "}"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e498d81c-2dfc-4c45-9325-f76e9d31f038"],
+ ", the sum of whose elements is divisible by 250. Enter the rightmost 16 \
+digits as your answer."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.731283040383174*^9, 
+  3.7312830673144426`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:5728\:96c6\:5408",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["1", "1"], ",", 
+     SuperscriptBox["2", "2"], ",", 
+     SuperscriptBox["3", "3"], ",", "\[Ellipsis]", ",", 
+     SuperscriptBox["250250", "250250"]}], "}"}], TraditionalForm]],
+  ExpressionUUID->"31b46806-26d3-429d-b6c6-3d83c65a3610"],
+ "\:7684\:6240\:6709\:5b50\:96c6\:4e2d\:ff0c\:6709\:4e9b\:975e\:7a7a\:5b50\
+\:96c6\:7684\:5143\:7d20\:548c\:80fd\:591f\:88ab250\:6574\:9664\:ff0c\:6c42\
+\:8fd9\:6837\:7684\:5b50\:96c6\:7684\:6570\:76ee\:3002\:8f93\:5165\:8fd9\:4e2a\
+\:6570\:7684\:540e\:5341\:516d\:4f4d\:4f5c\:4e3a\:4f60\:7684\:7b54\:6848\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.7312830886053734`*^9, 
+   3.731283093146478*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"limit", "=", "250250"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m", "=", 
+   SuperscriptBox["10", "16"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pm", "=", 
+   RowBox[{"PowerMod", "[", 
+    RowBox[{
+     RowBox[{"Range", "[", 
+      RowBox[{"1", ",", "limit"}], "]"}], ",", 
+     RowBox[{"Range", "[", 
+      RowBox[{"1", ",", "limit"}], "]"}], ",", "250"}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+   3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+   3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+   3.7564263646962595`*^9, 3.7564263899753056`*^9}, {3.768287334278107*^9, 
+   3.7682873782535295`*^9}, {3.768287478616125*^9, 3.768287706628117*^9}, {
+   3.7682877454121456`*^9, 3.7682877955249443`*^9}, {3.768288228312328*^9, 
+   3.7682882415165553`*^9}, {3.7682882794994707`*^9, 3.768288283111776*^9}, {
+   3.7682886130367503`*^9, 3.7682886151581197`*^9}, {3.7682886582682*^9, 
+   3.768288766168311*^9}, {3.768288887603468*^9, 3.7682888932087297`*^9}, {
+   3.76828895000194*^9, 3.7682889592585583`*^9}, {3.7683735042417107`*^9, 
+   3.768373550329033*^9}, {3.7683823285586104`*^9, 3.7683824741658983`*^9}, {
+   3.768454169503948*^9, 3.7684541723163977`*^9}, {3.768454233900165*^9, 
+   3.7684542650318995`*^9}, {3.7684690452406535`*^9, 3.768469084856167*^9}, 
+   3.768469190500249*^9},
+ CellLabel->"In[4]:=",ExpressionUUID->"6fdfa33c-b44d-4432-a97d-bb5a04db3311"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"count", "=", 
+   RowBox[{"ConstantArray", "[", 
+    RowBox[{"0", ",", "250"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"largest", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"count", "\[LeftDoubleBracket]", 
+    RowBox[{"largest", "+", "1"}], "\[RightDoubleBracket]"}], "=", "1"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", "=", "1"}], ",", 
+    RowBox[{"i", "\[LessEqual]", 
+     RowBox[{"Length", "[", "p", "]"}]}], ",", 
+    RowBox[{"i", "=", 
+     RowBox[{"i", "+", "1"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"largest", "=", 
+      RowBox[{"largest", "+", 
+       RowBox[{
+       "p", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"j", "=", "largest"}], ",", 
+       RowBox[{"j", "\[GreaterEqual]", 
+        RowBox[{"p", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}],
+        ",", 
+       RowBox[{"j", "=", 
+        RowBox[{"j", "-", "1"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"count", "\[LeftDoubleBracket]", 
+         RowBox[{"j", "+", "1"}], "\[RightDoubleBracket]"}], "=", 
+        RowBox[{"Mod", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"count", "\[LeftDoubleBracket]", 
+            RowBox[{"j", "+", "1"}], "\[RightDoubleBracket]"}], "+", 
+           RowBox[{"count", "\[LeftDoubleBracket]", 
+            RowBox[{"j", "-", 
+             RowBox[{
+             "p", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], "+",
+              "1"}], "\[RightDoubleBracket]"}]}], ",", "m"}], "]"}]}]}], 
+      "]"}]}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Mod", "[", 
+  RowBox[{
+   RowBox[{"Total", "[", 
+    RowBox[{"count", "\[LeftDoubleBracket]", 
+     RowBox[{"1", "+", 
+      RowBox[{"Prime", "[", 
+       RowBox[{"Range", "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"PrimePi", "[", 
+          RowBox[{"Total", "[", "p", "]"}], "]"}]}], "]"}], "]"}]}], 
+     "\[RightDoubleBracket]"}], "]"}], ",", "m"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7684691689694223`*^9, 
+  3.7684691943881464`*^9}},ExpressionUUID->"95e39907-710e-43d3-8f20-\
+6b069d45310f"]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{Automatic, 91}, {Automatic, 218}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 701, 18, 36, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1262, 40, 886, 20, 36, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[2151, 62, 1539, 29, 92, "Input",ExpressionUUID->"6fdfa33c-b44d-4432-a97d-bb5a04db3311"],
+Cell[3693, 93, 2307, 61, 273, "Input",ExpressionUUID->"95e39907-710e-43d3-8f20-6b069d45310f"]
+}
+]
+*)
+
