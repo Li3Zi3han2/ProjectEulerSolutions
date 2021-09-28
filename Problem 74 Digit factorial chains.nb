@@ -1,0 +1,168 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6878,        160]
+NotebookOptionsPosition[      6252,        141]
+NotebookOutlinePosition[      6610,        157]
+CellTagsIndexPosition[      6567,        154]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "The number 145 is well known for the property that the sum of the factorial \
+of its digits is equal to 145:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"1", "!"}], "+", 
+      RowBox[{"4", "!"}], "+", "5"}], "!=", 
+     RowBox[{"1", "+", "24", "+", "120"}]}], "=", "145"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "389d94fe-ea45-4c5e-b0f8-e1dbe34f7cb0"],
+ "\n\nPerhaps less well known is 169, in that it produces the longest chain \
+of numbers that link back to 169; it turns out that there are only three such \
+loops that exist:\n\n169\[RightArrow]363601\[RightArrow]1454\[RightArrow]169\n\
+871\[RightArrow]45361\[RightArrow]871\n872\[RightArrow]45362\[RightArrow]872\n\
+\nIt is not difficult to prove that EVERY starting number will eventually get \
+stuck in a loop. For example,\n\n69\[RightArrow]363600\[RightArrow]1454\
+\[RightArrow]169\[RightArrow]363601(\[RightArrow]1454)\n78\[RightArrow]45360\
+\[RightArrow]871\[RightArrow]45361(\[RightArrow]871)\n540\[RightArrow]145(\
+\[RightArrow]145)\n\nStarting with 69 produces a chain of five non-repeating \
+terms, but the longest non-repeating chain with a starting number below one \
+million is sixty terms.\n\nHow many chains, with a starting number below one \
+million, contain exactly sixty non-repeating terms?"
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.7291489481265717`*^9, 
+  3.729149037948655*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "145\:4e4b\:6240\:4ee5\:5e7f\:4e3a\:4eba\:77e5\:ff0c\:662f\:56e0\:4e3a\:5b83\
+\:7684\:5404\:4f4d\:6570\:5b57\:7684\:9636\:4e58\:4e4b\:548c\:6070\:597d\:7b49\
+\:4e8e\:672c\:8eab\:ff1a\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"1", "!"}], "+", 
+      RowBox[{"4", "!"}], "+", "5"}], "!=", 
+     RowBox[{"1", "+", "24", "+", "120"}]}], "=", "145"}], TraditionalForm]],
+  ExpressionUUID->"3829312c-fe67-43ab-836c-a5d1ee641d4a"],
+ "\n\n\:800c169\:5219\:53ef\:80fd\:4e0d\:592a\:4e3a\:4eba\:6240\:77e5\:ff0c\
+\:5c3d\:7ba1\:4ece169\:5f00\:59cb\:4e0d\:65ad\:5730\:53d6\:5404\:4f4d\:6570\
+\:5b57\:7684\:9636\:4e58\:4e4b\:548c\:6784\:6210\:4e86\:6700\:957f\:7684\:5faa\
+\:73af\:56de\:5230169\:ff1b\:4e8b\:5b9e\:4e0a\:ff0c\:53ea\:5b58\:5728\:4e09\
+\:4e2a\:8fd9\:6837\:7684\:5faa\:73af\:ff1a\n\n169\[RightArrow]363601\
+\[RightArrow]1454\[RightArrow]169\n871\[RightArrow]45361\[RightArrow]871\n872\
+\[RightArrow]45362\[RightArrow]872\n\n\:4e0d\:96be\:8bc1\:660e\:ff0c\:4ece\
+\:4efb\:610f\:6570\:5b57\:51fa\:53d1\:6700\:7ec8\:90fd\:4f1a\:9677\:5165\:5faa\
+\:73af\:3002\:4f8b\:5982\:ff0c\n\n69\[RightArrow]363600\[RightArrow]1454\
+\[RightArrow]169\[RightArrow]363601(\[RightArrow]1454)\n78\[RightArrow]45360\
+\[RightArrow]871\[RightArrow]45361(\[RightArrow]871)\n540\[RightArrow]145(\
+\[RightArrow]145)\n\n\:4ece69\:5f00\:59cb\:53ef\:4ee5\:5f97\:5230\:4e00\:4e2a\
+\:62e5\:6709\:4e94\:4e2a\:4e0d\:91cd\:590d\:9879\:7684\:94fe\:ff0c\:4f46\:662f\
+\:4ece\:4e00\:4e2a\:5c0f\:4e8e1000000\:7684\:6570\:51fa\:53d1\:80fd\:591f\
+\:5f97\:5230\:7684\:6700\:957f\:7684\:65e0\:91cd\:590d\:9879\:94fe\:5305\:542b\
+\:670960\:9879\:3002\n\n\:4ece\:5c0f\:4e8e1000000\:7684\:6570\:51fa\:53d1\
+\:ff0c\:6709\:591a\:5c11\:6761\:94fe\:6070\:597d\:5305\:542b\:670960\:4e2a\
+\:4e0d\:91cd\:590d\:9879\:ff1f"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.7291489678417573`*^9, {3.729149047113968*^9, 
+   3.7291490967868676`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"f", "[", "x", "]"}], "=", 
+    RowBox[{"Total", "/@", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"IntegerDigits", "[", "x", "]"}], "!"}], ")"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{"NestList", "[", 
+    RowBox[{"f", ",", 
+     RowBox[{"Range", "[", 
+      RowBox[{"1", ",", 
+       RowBox[{"1000000", "-", "1"}]}], "]"}], ",", "60"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Count", "[", 
+  RowBox[{
+   RowBox[{"DeleteDuplicates", "/@", 
+    RowBox[{"(", 
+     RowBox[{"t", "\[Transpose]"}], ")"}]}], ",", 
+   RowBox[{"x_", "/;", 
+    RowBox[{
+     RowBox[{"Length", "[", "x", "]"}], "\[Equal]", "60"}]}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+  3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+  3.7250282267187443`*^9}, {3.72503044347628*^9, 3.725030445342036*^9}, {
+  3.729149112535593*^9, 3.7291491331728163`*^9}, {3.7291492613810987`*^9, 
+  3.729149379345869*^9}, {3.7291494240732794`*^9, 3.7291494528306427`*^9}, {
+  3.729149492784605*^9, 3.729149510875969*^9}, {3.729149554566137*^9, 
+  3.729149555234888*^9}, {3.7291496083366585`*^9, 3.7291497219945498`*^9}, {
+  3.7291499234202456`*^9, 3.72915000497402*^9}, {3.729150116985058*^9, 
+  3.7291501268331423`*^9}, {3.729150376249834*^9, 3.7291503764530535`*^9}, {
+  3.7299103303255825`*^9, 3.729910415377137*^9}, {3.729910450836996*^9, 
+  3.729910463845592*^9}, {3.729910602237082*^9, 3.7299106198558693`*^9}, {
+  3.729911482162717*^9, 
+  3.7299114822801*^9}},ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+
+Cell[BoxData["402"], "Output",
+ CellChangeTimes->{{3.7299103614275246`*^9, 3.7299103728233476`*^9}, 
+   3.7299104157595873`*^9, {3.7299104532647047`*^9, 3.7299104644583054`*^9}, 
+   3.7299106098666673`*^9, 3.7299110299154034`*^9, 
+   3.7299118548626842`*^9},ExpressionUUID->"b54174c1-7327-4d98-9fe3-\
+ea7380136668"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1551, 29, 469, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[2112, 51, 2069, 36, 446, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[4206, 91, 1712, 40, 148, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[5921, 133, 315, 5, 37, "Output",ExpressionUUID->"b54174c1-7327-4d98-9fe3-ea7380136668"]
+}, Open  ]]
+}
+]
+*)
+

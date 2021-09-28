@@ -1,0 +1,230 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9230,        222]
+NotebookOptionsPosition[      8603,        203]
+NotebookOutlinePosition[      8961,        219]
+CellTagsIndexPosition[      8918,        216]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "The proper divisors of a number are all the divisors excluding the number \
+itself. For example, the proper divisors of 28 are 1, 2, 4, 7, and 14. As the \
+sum of these divisors is equal to 28, we call it a perfect number.\n\n\
+Interestingly the sum of the proper divisors of 220 is 284 and the sum of the \
+proper divisors of 284 is 220, forming a chain of two numbers. For this \
+reason, 220 and 284 are called an amicable pair.\n\nPerhaps less well known \
+are longer chains. For example, starting with 12496, we form a chain of five \
+numbers:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"12496", "\[Rule]", 
+    RowBox[{"14288", "\[Rule]", 
+     RowBox[{"15472", "\[Rule]", 
+      RowBox[{"14536", "\[Rule]", 
+       RowBox[{"14264", 
+        RowBox[{"(", 
+         RowBox[{"\[Rule]", 
+          RowBox[{"12496", "\[Rule]", "\[Ellipsis]"}]}], ")"}]}]}]}]}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ab709942-b016-4367-9e55-1b04afcd32a2"],
+ "\n\nSince this chain returns to its starting point, it is called an \
+amicable chain.\n\nFind the smallest member of the longest amicable chain \
+with no element exceeding one million."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.729163794973362*^9, 3.729163799605137*^9}, {3.754988308329881*^9, 
+  3.754988310908868*^9}, {3.75498834347618*^9, 
+  3.754988370745069*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:4e00\:4e2a\:6570\:9664\:4e86\:672c\:8eab\:4e4b\:5916\:7684\:56e0\:6570\
+\:79f0\:4e3a\:771f\:56e0\:6570\:3002\:4f8b\:5982\:ff0c28\:7684\:771f\:56e0\
+\:6570\:662f1\:30012\:30014\:30017\:548c14\:3002\:8fd9\:4e9b\:771f\:56e0\:6570\
+\:7684\:548c\:6070\:597d\:4e3a28\:ff0c\:56e0\:6b64\:6211\:4eec\:79f028\:662f\
+\:5b8c\:5168\:6570\:3002\n\n\:6709\:8da3\:7684\:662f\:ff0c220\:7684\:771f\
+\:56e0\:6570\:4e4b\:548c\:662f284\:ff0c\:540c\:65f6284\:7684\:771f\:56e0\:6570\
+\:4e4b\:548c\:662f220\:ff0c\:6784\:6210\:4e86\:4e00\:4e2a\:957f\:5ea6\:4e3a2\
+\:7684\:94fe\:ff0c\:6211\:4eec\:4e5f\:79f0\:4e4b\:4e3a\:4eb2\:548c\:6570\:5bf9\
+\:3002\n\n\:6709\:4e00\:4e9b\:66f4\:957f\:7684\:5e8f\:5217\:5e76\:4e0d\:592a\
+\:4e3a\:4eba\:6240\:77e5\:3002\:4f8b\:5982\:ff0c\:4ece12496\:51fa\:53d1\:ff0c\
+\:53ef\:4ee5\:6784\:6210\:4e00\:4e2a\:957f\:5ea6\:4e3a5\:7684\:94fe\:ff1a\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"12496", "\[Rule]", 
+    RowBox[{"14288", "\[Rule]", 
+     RowBox[{"15472", "\[Rule]", 
+      RowBox[{"14536", "\[Rule]", 
+       RowBox[{"14264", 
+        RowBox[{"(", 
+         RowBox[{"\[Rule]", 
+          RowBox[{"12496", "\[Rule]", "\[Ellipsis]"}]}], ")"}]}]}]}]}]}], 
+   TraditionalForm]],ExpressionUUID->"334796a9-239e-4917-b467-54d5a2335fad"],
+ "\n\n\:7531\:4e8e\:8fd9\:6761\:94fe\:6700\:540e\:53c8\:56de\:5230\:4e86\:8d77\
+\:70b9\:ff0c\:6211\:4eec\:79f0\:4e4b\:4e3a\:4eb2\:548c\:6570\:94fe\:3002\n\n\
+\:627e\:51fa\:6240\:6709\:5143\:7d20\:90fd\:4e0d\:8d85\:8fc7\:4e00\:767e\:4e07\
+\:7684\:4eb2\:548c\:6570\:94fe\:4e2d\:6700\:957f\:7684\:90a3\:6761\:ff0c\:5e76\
+\:7ed9\:51fa\:5176\:4e2d\:6700\:5c0f\:7684\:90a3\:4e2a\:6570\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.7291638402455034`*^9, 3.729163940864291*^9, 3.754988335109496*^9, {
+   3.7549883752583327`*^9, 
+   3.7549883757112584`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"limit", "=", 
+   SuperscriptBox["10", "6"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"NextAmicableNumber", "[", "n_", "]"}], ":=", 
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {"Indeterminate", 
+          RowBox[{"n", "\[Equal]", "0"}]},
+         {
+          RowBox[{
+           RowBox[{"DivisorSigma", "[", 
+            RowBox[{"1", ",", "n"}], "]"}], "-", "n"}], 
+          RowBox[{
+           RowBox[{
+            RowBox[{"DivisorSigma", "[", 
+             RowBox[{"1", ",", "n"}], "]"}], "-", "n"}], "\[LessEqual]", 
+           "limit"}]},
+         {"\"\<Overflow\>\"", 
+          RowBox[{"n", "\[Equal]", "\"\<Overflow\>\""}]}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AmicableChain", "[", "n_", "]"}], ":=", 
+  RowBox[{"NestWhileList", "[", 
+   RowBox[{
+   "NextAmicableNumber", ",", "n", ",", "Unequal", ",", "All", ",", 
+    "\[Infinity]"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"AmicableChain", "[", "#", "]"}], "&"}], "/@", 
+    RowBox[{"Range", "[", 
+     RowBox[{"1", ",", 
+      SuperscriptBox["10", "6"]}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Min", "[", 
+  RowBox[{"FirstCase", "[", 
+   RowBox[{
+    RowBox[{"Reverse", "[", 
+     RowBox[{"SortBy", "[", 
+      RowBox[{"t", ",", "Length"}], "]"}], "]"}], ",", 
+    RowBox[{"a_", "/;", 
+     RowBox[{
+      RowBox[{"a", "\[LeftDoubleBracket]", 
+       RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "\[Equal]", 
+      RowBox[{
+      "a", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}]}]}], 
+   "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.754988396127509*^9, 3.75498840450857*^9}, {
+   3.7549884477263665`*^9, 3.7549884544788704`*^9}, {3.75498849508339*^9, 
+   3.754988513722134*^9}, {3.754988656777286*^9, 3.7549887362902627`*^9}, {
+   3.7549887932864656`*^9, 3.7549889053447495`*^9}, {3.754988981124304*^9, 
+   3.7549890614168224`*^9}, 3.7549891495744486`*^9, {3.754989200180109*^9, 
+   3.7549892350398417`*^9}, {3.7549893114898434`*^9, 3.754989343160927*^9}, 
+   3.754989396577223*^9, {3.7549895129446554`*^9, 3.7549895435313797`*^9}, 
+   3.754989683112007*^9, {3.75498971409881*^9, 3.7549897189355016`*^9}, {
+   3.754989819658574*^9, 3.7549898325748634`*^9}, {3.754989997635212*^9, 
+   3.7549900425044823`*^9}, {3.754990085037465*^9, 3.754990085157479*^9}, {
+   3.754990247392635*^9, 3.7549902989286427`*^9}, {3.754990391042199*^9, 
+   3.7549903934265575`*^9}, {3.7549910201762285`*^9, 
+   3.7549910693693495`*^9}, {3.7549911870790105`*^9, 
+   3.7549912572095623`*^9}, {3.754991358006712*^9, 3.7549913933894625`*^9}, {
+   3.7549914425678744`*^9, 3.754991486356551*^9}, {3.75499152147618*^9, 
+   3.7549915468413315`*^9}, {3.754991670533359*^9, 3.7549917177055483`*^9}, {
+   3.754991759610594*^9, 3.7549917911904025`*^9}, {3.754991829416787*^9, 
+   3.754991850087309*^9}, {3.75499209554284*^9, 3.754992096786916*^9}, {
+   3.7549927605509615`*^9, 
+   3.754992760827927*^9}},ExpressionUUID->"1be13afc-cc3a-4924-a9fa-\
+266dd69a7977"],
+
+Cell[BoxData["14316"], "Output",
+ CellChangeTimes->{3.7549925398531375`*^9},
+ CellLabel->
+  "Out[130]=",ExpressionUUID->"10363c72-cb1f-4867-bfb1-6cb163654d82"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1469, 30, 312, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[2030, 52, 1944, 34, 266, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[3999, 90, 4426, 105, 257, "Input",ExpressionUUID->"1be13afc-cc3a-4924-a9fa-266dd69a7977"],
+Cell[8428, 197, 159, 3, 37, "Output",ExpressionUUID->"10363c72-cb1f-4867-bfb1-6cb163654d82"]
+}, Open  ]]
+}
+]
+*)
+

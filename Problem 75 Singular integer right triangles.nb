@@ -1,0 +1,233 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8778,        225]
+NotebookOptionsPosition[      8151,        206]
+NotebookOutlinePosition[      8509,        222]
+CellTagsIndexPosition[      8466,        219]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "It turns out that 12 cm is the smallest length of wire that can be bent to \
+form an integer sided right angle triangle in exactly one way, but there are \
+many more examples.\n\n12 cm: (3,4,5)\n24 cm: (6,8,10)\n30 cm: (5,12,13)\n36 \
+cm: (9,12,15)\n40 cm: (8,15,17)\n48 cm: (12,16,20)\n\nIn contrast, some \
+lengths of wire, like 20 cm, cannot be bent to form an integer sided right \
+angle triangle, and other lengths allow more than one solution to be found; \
+for example, using 120 cm it is possible to form exactly three different \
+integer sided right angle triangles.\n\n120 cm: (30,40,50), (20,48,52), \
+(24,45,51)\n\nGiven that L is the length of the wire, for how many values of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"L", "\[LessEqual]", "1500000"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e1c9745c-5f7b-4cb4-9b1d-8f5bdbbbb17a"],
+ " can exactly one integer sided right angle triangle be formed?"
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.7333971525060234`*^9, 
+  3.7333971545281525`*^9}, {3.7367690765207663`*^9, 3.7367690789243903`*^9}, {
+  3.736769150995709*^9, 
+  3.7367691511610413`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:53ea\:80fd\:552f\:4e00\:5730\:5f2f\:6298\:6210\:6574\:6570\:8fb9\:76f4\
+\:89d2\:4e09\:89d2\:5f62\:7684\:7535\:7ebf\:6700\:77ed\:957f\:5ea6\:662f12\
+\:5398\:7c73\:ff1b\:5f53\:7136\:ff0c\:8fd8\:6709\:5f88\:591a\:957f\:5ea6\:7684\
+\:7535\:7ebf\:90fd\:53ea\:80fd\:552f\:4e00\:5730\:5f2f\:6298\:6210\:6574\:6570\
+\:8fb9\:76f4\:89d2\:4e09\:89d2\:5f62\:ff0c\:4f8b\:5982\:ff1a\n\n\
+12\:5398\:7c73: (3,4,5)\n24\:5398\:7c73: (6,8,10)\n30\:5398\:7c73: (5,12,13)\n\
+36\:5398\:7c73: (9,12,15)\n40\:5398\:7c73: (8,15,17)\n48\:5398\:7c73: \
+(12,16,20)\n\n\:76f8\:53cd\:5730\:ff0c\:6709\:4e9b\:957f\:5ea6\:7684\:7535\
+\:7ebf\:ff0c\:6bd4\:598220\:5398\:7c73\:ff0c\:4e0d\:53ef\:80fd\:5f2f\:6298\
+\:6210\:4efb\:4f55\:6574\:6570\:8fb9\:76f4\:89d2\:4e09\:89d2\:5f62\:ff0c\:800c\
+\:53e6\:4e00\:4e9b\:957f\:5ea6\:5219\:6709\:591a\:4e2a\:89e3\:ff1b\:4f8b\:5982\
+\:ff0c120\:5398\:7c73\:7684\:7535\:7ebf\:53ef\:4ee5\:5f2f\:6298\:6210\:4e09\
+\:4e2a\:4e0d\:540c\:7684\:6574\:6570\:8fb9\:76f4\:89d2\:4e09\:89d2\:5f62\:3002\
+\n\n120\:5398\:7c73: (30,40,50), (20,48,52), (24,45,51)\n\n\:8bb0\:7535\:7ebf\
+\:957f\:5ea6\:4e3aL\:ff0c\:5bf9\:4e8e",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"L", "\[LessEqual]", "1500000"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b504020f-ca64-460c-ae48-e2fd98a0bb29"],
+ "\:ff0c\:6709\:591a\:5c11\:79cd\:53d6\:503c\:53ea\:80fd\:552f\:4e00\:5730\
+\:5f2f\:6298\:6210\:6574\:6570\:8fb9\:76f4\:89d2\:4e09\:89d2\:5f62\:ff1f"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, 3.7367690866802635`*^9, {
+   3.736769129728812*^9, 
+   3.7367691450705895`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"NextPrimitivePythagoreanTriples", "[", "l_", "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"u", "=", 
+        RowBox[{"(", GridBox[{
+           {"1", "2", "2"},
+           {
+            RowBox[{"-", "2"}], 
+            RowBox[{"-", "1"}], 
+            RowBox[{"-", "2"}]},
+           {"2", "2", "3"}
+          }], ")"}]}], ",", 
+       RowBox[{"a", "=", 
+        RowBox[{"(", GridBox[{
+           {"1", "2", "2"},
+           {"2", "1", "2"},
+           {"2", "2", "3"}
+          }], ")"}]}], ",", 
+       RowBox[{"d", "=", 
+        RowBox[{"(", GridBox[{
+           {
+            RowBox[{"-", "1"}], 
+            RowBox[{"-", "2"}], 
+            RowBox[{"-", "2"}]},
+           {"2", "1", "2"},
+           {"2", "2", "3"}
+          }], ")"}]}], ",", 
+       RowBox[{"limit", "=", "1500000"}]}], "}"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"l", "\[NotEqual]", 
+        RowBox[{"{", "}"}]}], ",", 
+       RowBox[{"Select", "[", 
+        RowBox[{
+         RowBox[{"Flatten", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"l", ".", "u"}], ",", 
+             RowBox[{"l", ".", "a"}], ",", 
+             RowBox[{"l", ".", "d"}]}], "}"}], ",", "1"}], "]"}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Total", "[", "#", "]"}], "\[LessEqual]", "limit"}], 
+          "&"}]}], "]"}], ",", 
+       RowBox[{"{", "}"}]}], "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"PrimitivePythagoreanTriples", "[", "n_", "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"fppt", "=", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"3", ",", "4", ",", "5"}], "}"}], "}"}]}], "}"}], ",", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{
+       RowBox[{"NestList", "[", 
+        RowBox[{"NextPrimitivePythagoreanTriples", ",", "fppt", ",", "n"}], 
+        "]"}], ",", "1"}], "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"limit", "=", "1500000"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"perimeter", "=", 
+   RowBox[{"Sort", "[", 
+    RowBox[{"Total", "[", 
+     RowBox[{
+      RowBox[{"PrimitivePythagoreanTriples", "[", "1000", "]"}], ",", 
+      RowBox[{"{", "2", "}"}]}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"m", "[", "p_", "]"}], ":=", 
+   RowBox[{"p", " ", 
+    RowBox[{"Range", "[", 
+     RowBox[{"1", ",", 
+      RowBox[{"Quotient", "[", 
+       RowBox[{"limit", ",", "p"}], "]"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{"0", ",", "limit"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", "=", "1"}], ",", 
+    RowBox[{"i", "\[LessEqual]", 
+     RowBox[{"Length", "[", "perimeter", "]"}]}], ",", 
+    RowBox[{"i", "=", 
+     RowBox[{"i", "+", "1"}]}], ",", 
+    RowBox[{
+     RowBox[{"t", "\[LeftDoubleBracket]", 
+      RowBox[{"m", "[", 
+       RowBox[{
+       "perimeter", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+       "]"}], "\[RightDoubleBracket]"}], "=", 
+     RowBox[{
+      RowBox[{"t", "\[LeftDoubleBracket]", 
+       RowBox[{"m", "[", 
+        RowBox[{
+        "perimeter", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+        "]"}], "\[RightDoubleBracket]"}], "+", "1"}]}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Count", "[", 
+  RowBox[{"t", ",", "1"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+  3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+  3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+  3.733397177005328*^9, 3.7333972103847303`*^9}, {3.736769192561906*^9, 
+  3.736769388115699*^9}, {3.736769420651617*^9, 3.7367694454777393`*^9}, {
+  3.736770087233513*^9, 3.736770146193306*^9}, {3.736770183931413*^9, 
+  3.736770273872363*^9}, {3.7367703787429843`*^9, 3.7367703794898677`*^9}, {
+  3.7367705133849564`*^9, 3.7367705155196247`*^9}, {3.736814407079846*^9, 
+  3.7368144107828264`*^9}},ExpressionUUID->"6a7c367e-c1c3-4109-93e6-\
+34add9704799"],
+
+Cell[BoxData["161667"], "Output",
+ CellChangeTimes->{
+  3.736814419720031*^9},ExpressionUUID->"2b82b686-b624-4359-a339-\
+07f26bf7f751"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1305, 22, 380, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1866, 44, 1836, 30, 334, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[3727, 78, 4270, 120, 447, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[8000, 200, 135, 3, 68, "Output",ExpressionUUID->"2b82b686-b624-4359-a339-07f26bf7f751"]
+}, Open  ]]
+}
+]
+*)
+

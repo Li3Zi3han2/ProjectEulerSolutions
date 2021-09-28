@@ -1,0 +1,156 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5382,        148]
+NotebookOptionsPosition[      4758,        129]
+NotebookOutlinePosition[      5116,        145]
+CellTagsIndexPosition[      5073,        142]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "If a box contains twenty-one coloured discs, composed of fifteen blue discs \
+and six red discs, and two discs were taken at random, it can be seen that \
+the probability of taking two blue discs, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Probability", "[", "BB", "]"}], "=", 
+    RowBox[{
+     RowBox[{
+      FractionBox["15", "21"], "\[Times]", 
+      FractionBox["14", "20"]}], "=", 
+     FractionBox["1", "2"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "36c3c45a-911b-4572-9ea6-ed0efffd780b"],
+ ".\n\nThe next such arrangement, for which there is exactly 50% chance of \
+taking two blue discs at random, is a box containing eighty-five blue discs \
+and thirty-five red discs.\n\nBy finding the first arrangement to contain \
+over ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["10", "12"], "=", "1000000000000"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ce498ae9-8a5e-4056-8f41-6c167408bf26"],
+ " discs in total, determine the number of blue discs that the box would \
+contain."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.729997518195255*^9, 3.7299975723731236`*^9}, {3.7299976165767865`*^9, 
+  3.72999761675601*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:5728\:4e00\:4e2a\:76d2\:5b50\:4e2d\:88c5\:670921\:4e2a\:5f69\:8272\:789f\
+\:5b50\:ff0c\:5176\:4e2d15\:4e2a\:662f\:84dd\:7684\:ff0c6\:4e2a\:662f\:7ea2\
+\:7684\:3002\:5982\:679c\:968f\:673a\:5730\:4ece\:76d2\:5b50\:4e2d\:53d6\:51fa\
+\:4e24\:4e2a\:789f\:5b50\:ff0c\:53d6\:51fa\:4e24\:4e2a\:84dd\:8272\:789f\:5b50\
+\:7684\:6982\:7387\:662f",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Probability", "[", "BB", "]"}], "=", 
+    RowBox[{
+     RowBox[{
+      FractionBox["15", "21"], "\[Times]", 
+      FractionBox["14", "20"]}], "=", 
+     FractionBox["1", "2"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "97cead88-e9a7-4de6-a2b3-a1235935b627"],
+ "\:3002\n\n\
+\:4e0b\:4e00\:7ec4\:4f7f\:5f97\:53d6\:51fa\:4e24\:4e2a\:84dd\:8272\:76d8\:5b50\
+\:7684\:6982\:7387\:6070\:597d\:4e3a50%\:7684\:5b89\:6392\:ff0c\:662f\:5728\
+\:76d2\:5b50\:4e2d\:88c5\:670985\:4e2a\:84dd\:8272\:789f\:5b50\:548c35\:4e2a\
+\:7ea2\:8272\:789f\:5b50\:3002\n\n\:5f53\:76d2\:5b50\:4e2d\:88c5\:6709\:8d85\
+\:8fc7",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["10", "12"], "=", "1000000000000"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8c284a6e-14e2-48b2-80df-ae375413b8e4"],
+ "\:4e2a\:789f\:5b50\:65f6\:ff0c\:627e\:51fa\:7b2c\:4e00\:7ec4\:6ee1\:8db3\
+\:4e0a\:8ff0\:8981\:6c42\:7684\:5b89\:6392\:ff0c\:5e76\:6c42\:6b64\:65f6\:76d2\
+\:5b50\:4e2d\:84dd\:8272\:789f\:5b50\:7684\:6570\:91cf\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.7299975273375254`*^9, {3.7299975769762945`*^9, 
+   3.7299976041197906`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindInstance", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"b", " ", 
+       RowBox[{"(", 
+        RowBox[{"b", "-", "1"}], ")"}]}], 
+      RowBox[{"t", " ", 
+       RowBox[{"(", 
+        RowBox[{"t", "-", "1"}], ")"}]}]], "\[Equal]", 
+     FractionBox["1", "2"]}], "&&", 
+    RowBox[{"0", "<", "b", "<", "t"}], "&&", 
+    RowBox[{
+     SuperscriptBox["10", "12"], "<", "t"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"b", ",", "t"}], "}"}], ",", "Integers"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7299977598197207`*^9, 3.7299978277760696`*^9}, {
+  3.729997954707678*^9, 3.7299979623222313`*^9}, {3.7299979955365486`*^9, 
+  3.7299979979923077`*^9}},ExpressionUUID->"35a3149e-deac-4910-abd2-\
+3d70cc0d903e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"b", "\[Rule]", "756872327473"}], ",", 
+    RowBox[{"t", "\[Rule]", "1070379110497"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.7299977991378965`*^9, 3.729997828600999*^9}, 
+   3.7299979630820894`*^9, 
+   3.7299979986440797`*^9},ExpressionUUID->"fa9b70b9-a696-4010-b994-\
+3645569649b2"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1328, 31, 180, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1889, 53, 1704, 37, 134, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[3618, 94, 758, 21, 74, "Input",ExpressionUUID->"35a3149e-deac-4910-abd2-3d70cc0d903e"],
+Cell[4379, 117, 363, 9, 97, "Output",ExpressionUUID->"fa9b70b9-a696-4010-b994-3645569649b2"]
+}, Open  ]]
+}
+]
+*)
+

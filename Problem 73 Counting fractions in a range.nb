@@ -1,0 +1,251 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8358,        243]
+NotebookOptionsPosition[      7733,        224]
+NotebookOutlinePosition[      8089,        240]
+CellTagsIndexPosition[      8046,        237]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Consider the fraction, ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["n", "d"], TraditionalForm]],ExpressionUUID->
+  "627f5889-9392-45c9-8201-a8a3cbcfcc93"],
+ ", where n and d are positive integers. If ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "<", "d"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d6307d4a-f9b4-466c-8db2-2cf2d674003d"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"GCD", "[", 
+     RowBox[{"n", ",", "d"}], "]"}], "=", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "1e965d70-453f-41b4-ae7c-70332266ae77"],
+ ", it is called a reduced proper fraction.\n\nIf we list the set of reduced \
+proper fractions for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"d", "\[LessEqual]", "8"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f6fefe38-ae8a-48da-b15d-1f8ad8839be1"],
+ " in ascending order of size, we get:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["1", "8"], ",", 
+    FractionBox["1", "7"], ",", 
+    FractionBox["1", "6"], ",", 
+    FractionBox["1", "5"], ",", 
+    FractionBox["1", "4"], ",", 
+    FractionBox["2", "7"], ",", 
+    FractionBox["1", "3"], ",", 
+    FractionBox["3", "8"], ",", 
+    FractionBox["2", "5"], ",", 
+    FractionBox["3", "7"], ",", 
+    FractionBox["1", "2"], ",", 
+    FractionBox["4", "7"], ",", 
+    FractionBox["3", "5"], ",", 
+    FractionBox["5", "8"], ",", 
+    FractionBox["2", "3"], ",", 
+    FractionBox["5", "7"], ",", 
+    FractionBox["3", "4"], ",", 
+    FractionBox["4", "5"], ",", 
+    FractionBox["5", "6"], ",", 
+    FractionBox["6", "7"], ",", 
+    FractionBox["7", "8"]}], TraditionalForm]],ExpressionUUID->
+  "dc311014-5c6d-4a98-8e30-7af52fd7866c"],
+ "\n\nIt can be seen that there are 3 fractions between 1/3 and 1/2.\n\nHow \
+many fractions lie between 1/3 and 1/2 in the sorted set of reduced proper \
+fractions for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"d", "\[LessEqual]", "12000"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "aa15b2cd-7dff-4410-9104-44ce3295d19d"],
+ "?"
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.7291647653463*^9, 3.729164768019158*^9}, {3.7291648467389336`*^9, 
+  3.7291648814610786`*^9}, {3.7291649935529737`*^9, 
+  3.729164997752714*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:8003\:8651\:5206\:6570",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["n", "d"], TraditionalForm]],ExpressionUUID->
+  "f143a955-1292-4a89-bcc6-6d13a3001d0e"],
+ "\:ff0c\:5176\:4e2dn\:548cd\:662f\:6b63\:6574\:6570\:3002 \:5982\:679c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "<", "d"}], TraditionalForm]],ExpressionUUID->
+  "8a643cef-785d-49c3-94fb-6ce7e1120078"],
+ "\:4e14",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"GCD", "[", 
+     RowBox[{"n", ",", "d"}], "]"}], "=", "1"}], TraditionalForm]],
+  ExpressionUUID->"5a21309a-0f57-47cd-97c9-05bcf386d1a0"],
+ "\:ff0c\:5219\:79f0\:5176\:4e3a\:4e00\:4e2a\:65e2\:7ea6\:771f\:5206\:6570\
+\:3002\n\n\:5982\:679c\:6211\:4eec\:6309\:7167\:5927\:5c0f\:5347\:5e8f\:5217\
+\:51fa",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"d", "\[LessEqual]", "8"}], TraditionalForm]],ExpressionUUID->
+  "b4403e4b-ed8a-4434-a84e-a5dd74326b4f"],
+ "\:7684\:65e2\:7ea6\:771f\:5206\:6570\:96c6\:5408\:ff0c\:6211\:4eec\:5f97\
+\:5230\:ff1a\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["1", "8"], ",", 
+    FractionBox["1", "7"], ",", 
+    FractionBox["1", "6"], ",", 
+    FractionBox["1", "5"], ",", 
+    FractionBox["1", "4"], ",", 
+    FractionBox["2", "7"], ",", 
+    FractionBox["1", "3"], ",", 
+    FractionBox["3", "8"], ",", 
+    FractionBox["2", "5"], ",", 
+    FractionBox["3", "7"], ",", 
+    FractionBox["1", "2"], ",", 
+    FractionBox["4", "7"], ",", 
+    FractionBox["3", "5"], ",", 
+    FractionBox["5", "8"], ",", 
+    FractionBox["2", "3"], ",", 
+    FractionBox["5", "7"], ",", 
+    FractionBox["3", "4"], ",", 
+    FractionBox["4", "5"], ",", 
+    FractionBox["5", "6"], ",", 
+    FractionBox["6", "7"], ",", 
+    FractionBox["7", "8"]}], TraditionalForm]],ExpressionUUID->
+  "2131b6bd-89e8-412d-a928-02c2c56c9ed6"],
+ "\n\n\:53ef\:4ee5\:770b\:51fa",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", "3"], TraditionalForm]],ExpressionUUID->
+  "e81ece03-9525-4028-b75d-9f1b1ae07f00"],
+ "\:548c",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", "2"], TraditionalForm]],ExpressionUUID->
+  "c1409999-d897-4152-b500-5ec79f3f684b"],
+ "\:4e4b\:95f4\:67093\:4e2a\:5206\:6570\:3002\n\n\:6309\:7167\:5927\:5c0f\
+\:5347\:5e8f\:5217\:51fa",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"d", "\[LessEqual]", "12000"}], TraditionalForm]],ExpressionUUID->
+  "f837aa86-96d6-412e-af93-f5bb1591d5d9"],
+ "\:7684\:65e2\:7ea6\:771f\:5206\:6570\:96c6\:5408\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", "3"], TraditionalForm]],ExpressionUUID->
+  "abbd7b66-8fcd-4b06-af35-441d1a7dadba"],
+ "\:548c",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", "2"], TraditionalForm]],ExpressionUUID->
+  "0ada5a59-5dc8-4376-93d7-c980309431bd"],
+ "\:4e4b\:95f4\:6709\:591a\:5c11\:4e2a\:5206\:6570\:ff1f"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.729164776711995*^9, 3.7291648137798276`*^9, {3.729164900651301*^9, 
+   3.7291649768203716`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{"Sort", "[", 
+    RowBox[{"DeleteDuplicates", "[", 
+     RowBox[{"Flatten", "[", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        FractionBox["n", "d"], ",", 
+        RowBox[{"{", 
+         RowBox[{"d", ",", "1", ",", "12000"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"n", ",", 
+          RowBox[{"Ceiling", "[", 
+           RowBox[{
+            FractionBox["1", "3"], " ", "d"}], "]"}], ",", 
+          RowBox[{
+           FractionBox["1", "2"], " ", "d"}]}], "}"}]}], "]"}], "]"}], "]"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"FirstPosition", "[", 
+    RowBox[{"s", ",", 
+     FractionBox["1", "2"]}], "]"}], "\[LeftDoubleBracket]", "1", 
+   "\[RightDoubleBracket]"}], "-", 
+  RowBox[{
+   RowBox[{"FirstPosition", "[", 
+    RowBox[{"s", ",", 
+     FractionBox["1", "3"]}], "]"}], "\[LeftDoubleBracket]", "1", 
+   "\[RightDoubleBracket]"}], "-", "1"}]}], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+  3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+  3.7250282267187443`*^9}, {3.72503044347628*^9, 3.725030445342036*^9}, {
+  3.729165014470986*^9, 3.729165035357701*^9}, {3.7291650818768153`*^9, 
+  3.7291651719877634`*^9}, {3.7291652160002937`*^9, 3.7291652175403233`*^9}, {
+  3.729165437134663*^9, 
+  3.729165452582138*^9}},ExpressionUUID->"20386a64-a558-4827-99f8-\
+04921bede5b8"],
+
+Cell[BoxData["7295372"], "Output",
+ CellChangeTimes->{
+  3.7250281599876013`*^9, {3.7250281918871064`*^9, 3.725028227147995*^9}, 
+   3.7250304482388463`*^9, 3.7291651493671646`*^9, 3.729165363120803*^9, 
+   3.729165565454876*^9},ExpressionUUID->"1a957e9c-36d2-4ff4-9db1-\
+fae4087e7e64"]
+}, Open  ]]
+},
+WindowSize->{681, 676},
+WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2394, 67, 299, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[2955, 89, 2994, 84, 267, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[5974, 177, 1454, 37, 217, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[7431, 216, 286, 5, 68, "Output",ExpressionUUID->"1a957e9c-36d2-4ff4-9db1-fae4087e7e64"]
+}, Open  ]]
+}
+]
+*)
+

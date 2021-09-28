@@ -1,0 +1,229 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7986,        221]
+NotebookOptionsPosition[      7359,        202]
+NotebookOutlinePosition[      7717,        218]
+CellTagsIndexPosition[      7674,        215]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Euler\[CloseCurlyQuote]s Totient function, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[CurlyPhi]", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d5be5b99-4164-4dee-bb76-368dd8e41c83"],
+ " [sometimes called the phi function], is used to determine the number of \
+positive numbers less than or equal to n which are relatively prime to n. For \
+example, as 1, 2, 4, 5, 7, and 8, are all less than nine and relatively prime \
+to nine, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[CurlyPhi]", "[", "9", "]"}], "=", "6"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0d8ed21c-643d-409b-907d-b05e4d82151c"],
+ ".\nThe number 1 is considered to be relatively prime to every positive \
+number, so ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[CurlyPhi]", "[", "1", "]"}], "=", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "2a091fad-83a9-4e23-aebd-7ba6e2dabde7"],
+ ".\n\nInterestingly, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[CurlyPhi]", "[", "87109", "]"}], "=", "79180"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d1abf2a6-6b35-44a0-8707-553414ca0f7d"],
+ ", and it can be seen that 87109 is a permutation of 79180.\n\nFind the \
+value of n, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "<", "n", "<", 
+    SuperscriptBox["10", "7"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0d2e47be-1c00-4bad-a1eb-61e4932c9632"],
+ ", for which ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[CurlyPhi]", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e6d52e3c-a53d-4207-a95c-d417b6ccb6a0"],
+ " is a permutation of n and the ratio ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["n", 
+    RowBox[{"\[CurlyPhi]", "[", "n", "]"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7d695a1d-08a4-4793-9fd1-a9da1f71944b"],
+ " produces a minimum."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.7333971525060234`*^9, 
+  3.7333971545281525`*^9}, {3.736853327293648*^9, 3.736853405785389*^9}, {
+  3.73685351354556*^9, 
+  3.7368535175209394`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:5728\:5c0f\:4e8e\:7b49\:4e8en\:7684\:6570\:4e2d\:ff0c\:4e0en\:4e92\:8d28\
+\:7684\:6570\:7684\:6570\:76ee\:8bb0\:4e3a\:6b27\:62c9\:603b\:8ba1\:51fd\:6570\
+",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[CurlyPhi]", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "aaac350e-5f54-4027-b0f3-a2dcd513fbbc"],
+ "\:ff08\:6709\:65f6\:4e5f\:79f0\:4e3a\[CurlyPhi]\:51fd\:6570\:ff09\:3002\
+\:4f8b\:5982\:ff0c\:56e0\:4e3a1\:30012\:30014\:30015\:30017\:548c8\:5747\:5c0f\
+\:4e8e9\:4e14\:4e0e9\:4e92\:8d28\:ff0c\:6545",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[CurlyPhi]", "[", "9", "]"}], "=", "6"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "39ed0b8d-d552-4ba2-9aea-58839ded6b20"],
+ "\:3002\n\n1\:88ab\:8ba4\:4e3a\:548c\:4efb\:610f\:6b63\:6574\:6570\:4e92\
+\:8d28\:ff0c\:6240\:4ee5",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[CurlyPhi]", "[", "1", "]"}], "=", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "eaefecb8-9d25-454c-aef0-888012dbbe00"],
+ "\:3002\n\n\:6709\:8da3\:7684\:662f\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[CurlyPhi]", "[", "87109", "]"}], "=", "79180"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3a384b54-a274-4569-922a-ed67575bbe12"],
+ "\:ff0c\:800c79180\:6070\:597d\:662f87109\:7684\:4e00\:4e2a\:91cd\:6392\:3002\
+\n\n\:5728",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "<", "n", "<", 
+    SuperscriptBox["10", "7"]}], TraditionalForm]],ExpressionUUID->
+  "89dc2051-7be0-4a3b-bf57-ff811480bfbb"],
+ "\:4e2d\:ff0c\:6709\:4e9bn\:6ee1\:8db3",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[CurlyPhi]", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "12d5c7b4-0bd1-4b3d-ab62-0b467071b9a2"],
+ "\:662fn\:7684\:4e00\:4e2a\:91cd\:6392\:ff0c\:6c42\:8fd9\:4e9b\:53d6\:503c\
+\:4e2d\:4f7f",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["n", 
+    RowBox[{"\[CurlyPhi]", "[", "n", "]"}]], TraditionalForm]],
+  ExpressionUUID->"31e38172-7f8d-4745-bff8-594169a0f239"],
+ "\:6700\:5c0f\:7684\:4e00\:4e2a\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, 3.7368533332007256`*^9, {
+   3.736853409900767*^9, 3.736853447012957*^9}, {3.736853506009737*^9, 
+   3.7368535084313593`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"IntegerPermutationQ", "[", 
+    RowBox[{"a_", ",", "b_"}], "]"}], ":=", 
+   RowBox[{"ContainsExactly", "[", 
+    RowBox[{
+     RowBox[{"Tally", "[", 
+      RowBox[{"IntegerDigits", "[", "a", "]"}], "]"}], ",", 
+     RowBox[{"Tally", "[", 
+      RowBox[{"IntegerDigits", "[", "b", "]"}], "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{"Cases", "[", 
+    RowBox[{
+     RowBox[{"Range", "[", 
+      RowBox[{"2", ",", 
+       RowBox[{
+        SuperscriptBox["10", "7"], "-", "1"}]}], "]"}], ",", 
+     RowBox[{"n_", "/;", 
+      RowBox[{"IntegerPermutationQ", "[", 
+       RowBox[{
+        RowBox[{"EulerPhi", "[", "n", "]"}], ",", "n"}], "]"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Cases", "[", 
+  RowBox[{"t", ",", 
+   RowBox[{
+    RowBox[{"n_", "/;", 
+     RowBox[{
+      FractionBox["n", 
+       RowBox[{"EulerPhi", "[", "n", "]"}]], "\[Equal]", 
+      RowBox[{"Min", "[", 
+       FractionBox["t", 
+        RowBox[{"EulerPhi", "[", "t", "]"}]], "]"}]}]}], "\[RuleDelayed]", 
+    "n"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+  3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+  3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+  3.733397177005328*^9, 3.7333972103847303`*^9}, {3.736853571194557*^9, 
+  3.7368537106037846`*^9}, {3.736853749889659*^9, 3.7368538718436036`*^9}, {
+  3.7368539251052837`*^9, 3.7368540039149837`*^9}, {3.736854115432559*^9, 
+  3.7368542102477703`*^9}},ExpressionUUID->"6a7c367e-c1c3-4109-93e6-\
+34add9704799"],
+
+Cell[BoxData[
+ RowBox[{"{", "8319823", "}"}]], "Output",
+ CellChangeTimes->{{3.7368539499933987`*^9, 3.736853962493444*^9}, 
+   3.736854196720867*^9, 
+   3.736854655948145*^9},ExpressionUUID->"589b3281-dc68-42ca-bd6a-\
+8d40b26ba37b"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2333, 61, 182, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[2894, 83, 2535, 62, 182, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[5454, 149, 1653, 43, 173, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[7110, 194, 233, 5, 37, "Output",ExpressionUUID->"589b3281-dc68-42ca-bd6a-8d40b26ba37b"]
+}, Open  ]]
+}
+]
+*)
+

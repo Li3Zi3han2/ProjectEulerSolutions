@@ -1,0 +1,217 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7864,        209]
+NotebookOptionsPosition[      6853,        186]
+NotebookOutlinePosition[      7211,        202]
+CellTagsIndexPosition[      7168,        199]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+For a number written in Roman numerals to be considered valid there are basic \
+rules which must be followed. Even though the rules allow some numbers to be \
+expressed in more than one way there is always a \[OpenCurlyDoubleQuote]best\
+\[CloseCurlyDoubleQuote] way of writing a particular number.
+
+For example, it would appear that there are at least six ways of writing the \
+number sixteen:
+
+IIIIIIIIIIIIIIII
+VIIIIIIIIIII
+VVIIIIII
+XIIIIII
+VVVI
+XVI
+
+However, according to the rules only XIIIIII and XVI are valid, and the last \
+example is considered to be the most efficient, as it uses the least number \
+of numerals.
+
+The 11K text file, roman.txt (right click and \[OpenCurlyQuote]Save \
+Link/Target As...\[CloseCurlyQuote]), contains one thousand numbers written \
+in valid, but not necessarily minimal, Roman numerals; see About... Roman \
+Numerals for the definitive rules for this problem.
+
+Find the number of characters saved by writing each of these in their minimal \
+form.
+
+Note: You can assume that all the Roman numerals in the file contain no more \
+than four consecutive identical units.\
+\>", "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.729163794973362*^9, 
+  3.729163799605137*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell["\<\
+\:8981\:6b63\:786e\:5730\:7528\:7f57\:9a6c\:6570\:5b57\:8868\:8fbe\:4e00\:4e2a\
+\:6570\:ff0c\:5fc5\:987b\:9075\:5faa\:4e00\:4e9b\:57fa\:672c\:89c4\:5219\:3002\
+\:5c3d\:7ba1\:7b26\:5408\:89c4\:5219\:7684\:5199\:6cd5\:6709\:65f6\:4f1a\:591a\
+\:4e8e\:4e00\:79cd\:ff0c\:4f46\:5bf9\:6bcf\:4e2a\:6570\:6765\:8bf4\:603b\:662f\
+\:5b58\:5728\:4e00\:79cd\[OpenCurlyDoubleQuote]\:6700\:597d\:7684\
+\[CloseCurlyDoubleQuote]\:5199\:6cd5\:3002
+
+\:4f8b\:5982\:ff0c\:657016\:5c31\:81f3\:5c11\:6709\:516d\:79cd\:5199\:6cd5\
+\:ff1a
+
+IIIIIIIIIIIIIIII
+VIIIIIIIIIII
+VVIIIIII
+XIIIIII
+VVVI
+XVI
+
+\:7136\:800c\:ff0c\:6839\:636e\:89c4\:5219\:ff0c\:53ea\:6709XIIIIII\:548cXVI\
+\:662f\:5408\:7406\:7684\:5199\:6cd5\:ff0c\:800c\:540e\:4e00\:79cd\:56e0\:4e3a\
+\:4f7f\:7528\:4e86\:6700\:5c11\:7684\:6570\:5b57\:800c\:88ab\:8ba4\:4e3a\:662f\
+\:6700\:6709\:6548\:7684\:5199\:6cd5\:3002
+
+\:5728\:8fd9\:4e2a11K\:7684\:6587\:672c\:6587\:4ef6roman.txt \:ff08\:53f3\
+\:952e\:5355\:51fb\[CloseCurlyDoubleQuote]\:4ece\:94fe\:63a5\:53e6\:5b58\:6587\
+\:4ef6\:4e3a\[Ellipsis]\[CloseCurlyDoubleQuote]\:ff09\:4e2d\:5305\:542b\:4e86\
+\:4e00\:5343\:4e2a\:5408\:7406\:7684\:7f57\:9a6c\:6570\:5b57\:5199\:6cd5\:ff0c\
+\:4f46\:5e76\:4e0d\:90fd\:662f\:6700\:6709\:6548\:7684\:5199\:6cd5\:ff1b\:6709\
+\:5173\:7f57\:9a6c\:6570\:5b57\:7684\:660e\:786e\:89c4\:5219\:ff0c\:53ef\:4ee5\
+\:53c2\:8003\:5173\:4e8e\:7f57\:9a6c\:6570\:5b57\:3002
+
+\:6c42\:51fa\:5c06\:8fd9\:4e9b\:6570\:90fd\:5199\:6210\:6700\:6709\:6548\:7684\
+\:5199\:6cd5\:6240\:8282\:7701\:7684\:5b57\:7b26\:6570\:3002
+
+\:6ce8\:610f\:ff1a\:4f60\:53ef\:4ee5\:5047\:5b9a\:6587\:4ef6\:4e2d\:7684\:6240\
+\:6709\:7f57\:9a6c\:6570\:5b57\:5199\:6cd5\:90fd\:4e0d\:5305\:542b\:8fde\:7eed\
+\:8d85\:8fc7\:56db\:4e2a\:76f8\:540c\:5b57\:7b26\:3002\
+\>", "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.7291638402455034`*^9, 
+   3.729163940864291*^9},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f", "=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{"Import", "[", 
+     RowBox[{
+     "\"\<F:\\\\\:8bfe\:4ef6\\\\Project Euler\\\\p089_roman.txt\>\"", ",", 
+      "\"\<Table\>\""}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"l1", "=", 
+   RowBox[{"Total", "[", 
+    RowBox[{"StringLength", "[", "f", "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"l2", "=", 
+   RowBox[{"Total", "[", 
+    RowBox[{"StringLength", "[", 
+     RowBox[{"RomanNumeral", "[", 
+      RowBox[{"FromRomanNumeral", "[", "f", "]"}], "]"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"l1", "-", "l2"}]}], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+  3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+  3.7250282267187443`*^9}, {3.72503044347628*^9, 3.725030445342036*^9}, {
+  3.729164014097229*^9, 3.7291641517790174`*^9}, {3.7291643028862333`*^9, 
+  3.729164308948553*^9}, {3.7291643576240406`*^9, 3.729164372136218*^9}, {
+  3.729164409207858*^9, 
+  3.7291644783884325`*^9}},ExpressionUUID->"20386a64-a558-4827-99f8-\
+04921bede5b8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "FromRomanNumeral","nrom",
+   "\"\:5b57\:7b26\:4e32 \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"MMMDLXVIIII\\\\\\\"\\\"}]\\) \:65e0\:6cd5\:8868\
+\:793a\:6709\:6548\:7684\:7f57\:9a6c\:6570\:5b57.\"",2,141,17,
+   29155918640467139944,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7291644790281863`*^9},ExpressionUUID->"1cf98978-b52a-4764-b4db-\
+b9bb500e94d3"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "FromRomanNumeral","nrom",
+   "\"\:5b57\:7b26\:4e32 \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"MMCCCLXXXXIX\\\\\\\"\\\"}]\\) \:65e0\:6cd5\:8868\
+\:793a\:6709\:6548\:7684\:7f57\:9a6c\:6570\:5b57.\"",2,141,18,
+   29155918640467139944,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.729164479031193*^9},ExpressionUUID->"9561b2e5-6ffd-4112-87b7-\
+3aabf49f661e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "FromRomanNumeral","nrom",
+   "\"\:5b57\:7b26\:4e32 \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"MDCCCXXIIII\\\\\\\"\\\"}]\\) \:65e0\:6cd5\:8868\
+\:793a\:6709\:6548\:7684\:7f57\:9a6c\:6570\:5b57.\"",2,141,19,
+   29155918640467139944,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7291644790968513`*^9},ExpressionUUID->"4c949f05-83f1-41f2-88df-\
+5d3f73b2362f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"\:5728\:672c\:6b21\:8ba1\:7b97\:4e2d\:ff0c\\!\\(\\*StyleBox[RowBox[{\\\"\
+FromRomanNumeral\\\", \\\"::\\\", \\\"nrom\\\"}], \\\"MessageName\\\"]\\) \
+\:7684\:8fdb\:4e00\:6b65\:8f93\:51fa\:5c06\:88ab\:6291\:5236.\"",2,141,20,
+   29155918640467139944,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7291644791615067`*^9},ExpressionUUID->"4eb23b0a-6e68-40c2-babc-\
+ff2edcbbb38b"],
+
+Cell[BoxData["743"], "Output",
+ CellChangeTimes->{
+  3.729164479600562*^9},ExpressionUUID->"2238f7d6-9c17-4b86-bda8-\
+c82b3a2d82cb"]
+}, Open  ]]
+},
+WindowSize->{775, 561},
+WindowMargins->{{287, Automatic}, {Automatic, 54}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1307, 34, 633, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1868, 56, 1970, 42, 495, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[3863, 102, 1158, 28, 172, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[5024, 132, 404, 10, 28, "Message",ExpressionUUID->"1cf98978-b52a-4764-b4db-b9bb500e94d3"],
+Cell[5431, 144, 403, 10, 28, "Message",ExpressionUUID->"9561b2e5-6ffd-4112-87b7-3aabf49f661e"],
+Cell[5837, 156, 404, 10, 28, "Message",ExpressionUUID->"4c949f05-83f1-41f2-88df-5d3f73b2362f"],
+Cell[6244, 168, 458, 10, 28, "Message",ExpressionUUID->"4eb23b0a-6e68-40c2-babc-ff2edcbbb38b"],
+Cell[6705, 180, 132, 3, 37, "Output",ExpressionUUID->"2238f7d6-9c17-4b86-bda8-c82b3a2d82cb"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,131 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4611,        123]
+NotebookOptionsPosition[      3988,        104]
+NotebookOutlinePosition[      4346,        120]
+CellTagsIndexPosition[      4303,        117]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+It is well known that if the square root of a natural number is not an \
+integer, then it is irrational. The decimal expansion of such square roots is \
+infinite without any repeating pattern at all.
+
+The square root of two is 1.41421356237309504880..., and the digital sum of \
+the first one hundred decimal digits is 475.
+
+For the first one hundred natural numbers, find the total of the digital sums \
+of the first one hundred decimal digits for all the irrational square roots.\
+\>", "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.729991374579835*^9, 
+  3.7299913766841607`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell["\<\
+\:4f17\:6240\:5468\:77e5\:ff0c\:5982\:679c\:4e00\:4e2a\:81ea\:7136\:6570\:7684\
+\:5e73\:65b9\:6839\:4e0d\:662f\:6574\:6570\:ff0c\:90a3\:4e48\:5c31\:4e00\:5b9a\
+\:662f\:65e0\:7406\:6570\:3002\:8fd9\:6837\:7684\:5e73\:65b9\:6839\:7684\:5c0f\
+\:6570\:90e8\:5206\:662f\:65e0\:9650\:4e0d\:5faa\:73af\:7684\:3002
+
+2\:7684\:5e73\:65b9\:6839\:4e3a1.41421356237309504880\[Ellipsis]\:ff0c\:5b83\
+\:7684\:524d\:4e00\:767e\:4f4d\:5341\:8fdb\:5236\:6570\:5b57\:7684\:6570\:5b57\
+\:603b\:548c\:662f475\:3002
+
+\:5bf9\:4e8e\:524d\:4e00\:767e\:4e2a\:81ea\:7136\:6570\:ff0c\:6c42\:6240\:6709\
+\:65e0\:7406\:6570\:5e73\:65b9\:6839\:5c0f\:6570\:70b9\:540e\:4e00\:767e\:4f4d\
+\:6570\:5b57\:7684\:603b\:548c\:3002\
+\>", "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.729991384419963*^9, {3.7299922802681913`*^9, 
+   3.7299923024498777`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{"Select", "[", 
+    RowBox[{
+     RowBox[{"Range", "[", 
+      RowBox[{"1", ",", "100"}], "]"}], ",", 
+     RowBox[{
+      RowBox[{"!", 
+       RowBox[{"IntegerQ", "[", 
+        SqrtBox["#"], "]"}]}], "&"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Total", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"d", "=", 
+      RowBox[{"RealDigits", "[", 
+       RowBox[{
+        SqrtBox[
+         RowBox[{"t", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]],
+         ",", "10", ",", "120"}], "]"}]}], ";", 
+     RowBox[{"Total", "[", 
+      RowBox[{"d", "\[LeftDoubleBracket]", 
+       RowBox[{"1", ",", 
+        RowBox[{"1", ";;", "100"}]}], "\[RightDoubleBracket]"}], "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", 
+      RowBox[{"Length", "[", "t", "]"}]}], "}"}]}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.729991401560048*^9, 3.729991428661455*^9}, {
+  3.7299915400870886`*^9, 3.7299915425082316`*^9}, {3.7299916282071*^9, 
+  3.7299918426061316`*^9}, {3.7299919474272494`*^9, 3.729991955103882*^9}, {
+  3.7299919936698103`*^9, 3.7299920165332165`*^9}, {3.7299920863509645`*^9, 
+  3.7299920874402204`*^9}, {3.729992172905543*^9, 
+  3.7299922463305244`*^9}},ExpressionUUID->"34cee827-4876-418a-9fb9-\
+01018a31f434"],
+
+Cell[BoxData["40886"], "Output",
+ CellChangeTimes->{
+  3.7299914293000455`*^9, 3.729991543480036*^9, {3.7299916323518047`*^9, 
+   3.7299916792689304`*^9}, 3.729991843331933*^9, {3.729991948410781*^9, 
+   3.7299919554014244`*^9}, {3.7299919980197687`*^9, 3.729992016947405*^9}, 
+   3.729992088204262*^9, {3.7299922439433722`*^9, 
+   3.7299922466711874`*^9}},ExpressionUUID->"5210e995-e829-45d1-a137-\
+40b888acab7f"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 686, 14, 150, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1247, 36, 947, 18, 127, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[2219, 58, 1336, 34, 122, "Input",ExpressionUUID->"34cee827-4876-418a-9fb9-01018a31f434"],
+Cell[3558, 94, 414, 7, 37, "Output",ExpressionUUID->"5210e995-e829-45d1-a137-40b888acab7f"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,244 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8816,        236]
+NotebookOptionsPosition[      8190,        217]
+NotebookOutlinePosition[      8548,        233]
+CellTagsIndexPosition[      8505,        230]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Let p(n) represent the number of different ways in which n coins can be \
+separated into piles. For example, five coins can be separated into piles in \
+exactly seven different ways, so p(5)=7.
+
+OOOOO
+OOOO\tO
+OOO\tOO
+OOO\tO\tO
+OO\tOO\tO
+OO\tO\tO\tO
+O\tO\tO\tO\tO
+
+Find the least value of n for which p(n) is divisible by one million.\
+\>", "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.7297409092529845`*^9, 
+  3.7297409401757464`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:8bb0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"p", "[", "n", "]"}], TraditionalForm]],ExpressionUUID->
+  "7be99395-f34b-46fd-964f-07126b46d948"],
+ "\:662f\:5c06n\:679a\:786c\:5e01\:5206\:62c6\:6210\:5806\:7684\:4e0d\:540c\
+\:65b9\:5f0f\:6570\:3002\:4f8b\:5982\:ff0c\:4e94\:679a\:786c\:5e01\:67097\
+\:79cd\:5206\:62c6\:6210\:5806\:7684\:4e0d\:540c\:65b9\:5f0f\:ff0c\:56e0\:6b64\
+",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"p", "[", "5", "]"}], "=", "7"}], TraditionalForm]],
+  ExpressionUUID->"3722287a-bd6b-4a1a-bb2d-626798067629"],
+ "\:3002\n\nOOOOO\nOOOO O\nOOO OO\nOOO O O\nOO OO O\nOO O O O\nO O O O O\n\n\
+\:6c42\:51fa\:80fd\:4f7f",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"p", "[", "n", "]"}], TraditionalForm]],ExpressionUUID->
+  "32044ac4-bed4-47a4-bec3-b21aa6d29a14"],
+ "\:88ab1000000\:6574\:9664\:7684\:6700\:5c0f\:7684n\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.729740963284712*^9, 
+   3.729741017687861*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"n", "=", "0"}], ",", "1", ",", 
+    RowBox[{"-", "1"}], ",", "2", ",", 
+    RowBox[{"-", "2"}], ",", "3", ",", 
+    RowBox[{"-", "3"}], ",", "\[Ellipsis]"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"GeneralizedPentagonalNumber", "[", "n_", "]"}], ":=", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"-", "1"}], ")"}], 
+        RowBox[{"n", "-", "1"}]], " ", 
+       RowBox[{"\[LeftCeiling]", 
+        FractionBox["n", "2"], "\[RightCeiling]"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"3", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"-", "1"}], ")"}], 
+           RowBox[{"n", "-", "1"}]], " ", 
+          RowBox[{"\[LeftCeiling]", 
+           FractionBox["n", "2"], "\[RightCeiling]"}]}], "-", "1"}], ")"}]}], 
+      "2"]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"p", "[", "n_", "]"}], ":=", 
+     RowBox[{
+      RowBox[{"p", "[", "n", "]"}], "=", 
+      TagBox[GridBox[{
+         {"\[Piecewise]", GridBox[{
+            {"0", 
+             RowBox[{"n", "<", "0"}]},
+            {"1", 
+             RowBox[{"n", "\[Equal]", "0"}]},
+            {
+             RowBox[{"Mod", "[", 
+              RowBox[{
+               RowBox[{
+                SubsuperscriptBox["\[Sum]", 
+                 RowBox[{"i", "=", "1"}], 
+                 RowBox[{
+                  FractionBox["1", "3"], "+", 
+                  RowBox[{
+                   FractionBox["1", "3"], " ", 
+                   SqrtBox[
+                    RowBox[{"1", "+", 
+                    RowBox[{"24", " ", "n"}]}]]}]}]], 
+                RowBox[{
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{"-", "1"}], ")"}], 
+                  RowBox[{
+                   RowBox[{"\[LeftCeiling]", 
+                    FractionBox["i", "2"], "\[RightCeiling]"}], "-", "1"}]], 
+                 " ", 
+                 RowBox[{"p", "[", 
+                  RowBox[{"n", "-", 
+                   RowBox[{"GeneralizedPentagonalNumber", "[", "i", "]"}]}], 
+                  "]"}]}]}], ",", 
+               SuperscriptBox["10", "6"]}], "]"}], 
+             RowBox[{"n", ">", "0"}]}
+           },
+           AllowedDimensions->{2, Automatic},
+           Editable->True,
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.84]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}},
+           Selectable->True]}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.35]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       "Piecewise",
+       DeleteWithContents->True,
+       Editable->False,
+       SelectWithContents->True,
+       Selectable->False]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Do", "[", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"p", "[", "n", "]"}], "\[Equal]", "0"}], ",", 
+       RowBox[{"Return", "[", "n", "]"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "1", ",", "\[Infinity]"}], "}"}]}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+   3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+   3.7250282267187443`*^9}, {3.72503044347628*^9, 3.725030445342036*^9}, {
+   3.7297410221298556`*^9, 3.7297411237110257`*^9}, {3.7297413299628468`*^9, 
+   3.7297413343367643`*^9}, {3.7297422611654882`*^9, 3.72974227141601*^9}, {
+   3.738125890389863*^9, 3.738125923804802*^9}, {3.73812596657932*^9, 
+   3.7381260134342213`*^9}, {3.7381261801709585`*^9, 3.738126194540787*^9}, {
+   3.7381263654558854`*^9, 3.7381264002656283`*^9}, {3.738126485625678*^9, 
+   3.738126497877842*^9}, {3.7381265306538553`*^9, 3.7381265431249685`*^9}, {
+   3.738126582621982*^9, 3.73812662016831*^9}, {3.738126761017952*^9, 
+   3.7381267610909586`*^9}, {3.7381270317599287`*^9, 3.738127057166098*^9}, {
+   3.738127087725449*^9, 3.738127164878761*^9}, {3.738127202676033*^9, 
+   3.738127206229494*^9}, {3.7381272586265554`*^9, 3.7381272605022745`*^9}, {
+   3.738127301175108*^9, 3.738127305544449*^9}, {3.7381273462342806`*^9, 
+   3.7381273638756075`*^9}, 3.738127567669731*^9, {3.754880955583186*^9, 
+   3.75488096201569*^9}, {3.754881418269395*^9, 3.754881422008654*^9}, {
+   3.754883050649396*^9, 3.754883144866486*^9}, {3.7548833479107494`*^9, 
+   3.7548833876278343`*^9}, {3.7548836371954746`*^9, 3.7548836986339335`*^9}, 
+   3.7548841737799454`*^9, {3.7549651675320153`*^9, 3.754965188178762*^9}, {
+   3.7549652345974474`*^9, 3.7549652369130826`*^9}, {3.7549653809174085`*^9, 
+   3.754965382298176*^9}, {3.7549654208531003`*^9, 3.754965421071067*^9}, 
+   3.754965709346775*^9},ExpressionUUID->"20386a64-a558-4827-99f8-\
+04921bede5b8"],
+
+Cell[BoxData["55374"], "Output",
+ CellChangeTimes->{3.754965662846101*^9},
+ CellLabel->
+  "Out[323]=",ExpressionUUID->"0f9efc22-24d5-478b-850d-2b29cd7c4f1b"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 540, 18, 288, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1101, 40, 1080, 27, 265, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[2206, 71, 5808, 138, 237, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[8017, 211, 157, 3, 37, "Output",ExpressionUUID->"0f9efc22-24d5-478b-850d-2b29cd7c4f1b"]
+}, Open  ]]
+}
+]
+*)
+

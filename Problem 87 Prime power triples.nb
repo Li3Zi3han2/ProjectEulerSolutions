@@ -1,0 +1,238 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8278,        230]
+NotebookOptionsPosition[      7650,        211]
+NotebookOutlinePosition[      8008,        227]
+CellTagsIndexPosition[      7965,        224]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "The smallest number expressible as the sum of a prime square, prime cube, \
+and prime fourth power is 28. In fact, there are exactly four numbers below \
+fifty that can be expressed in such a way:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"28", "=", 
+    RowBox[{
+     SuperscriptBox["2", "2"], "+", 
+     SuperscriptBox["2", "3"], "+", 
+     SuperscriptBox["2", "4"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e54ca90f-1370-42b1-94c6-dd7becf22d39"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"33", "=", 
+    RowBox[{
+     SuperscriptBox["3", "2"], "+", 
+     SuperscriptBox["2", "3"], "+", 
+     SuperscriptBox["2", "4"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "934eacd1-c409-457e-b9b5-86b137811d5a"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"49", "=", 
+    RowBox[{
+     SuperscriptBox["5", "2"], "+", 
+     SuperscriptBox["2", "3"], "+", 
+     SuperscriptBox["2", "4"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "667e2d32-ee5c-4839-bd77-6938c08acdff"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"47", "=", 
+    RowBox[{
+     SuperscriptBox["2", "2"], "+", 
+     SuperscriptBox["3", "3"], "+", 
+     SuperscriptBox["2", "4"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5e916322-1897-45ec-ab9d-1a08c21183ec"],
+ "\n\nHow many numbers below fifty million can be expressed as the sum of a \
+prime square, prime cube, and prime fourth power?"
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.730083975960692*^9, 
+  3.730084040625617*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:6700\:5c0f\:7684\:53ef\:4ee5\:8868\:793a\:4e3a\:4e00\:4e2a\:7d20\:6570\
+\:7684\:5e73\:65b9\:ff0c\:52a0\:4e0a\:4e00\:4e2a\:7d20\:6570\:7684\:7acb\:65b9\
+\:ff0c\:518d\:52a0\:4e0a\:4e00\:4e2a\:7d20\:6570\:7684\:56db\:6b21\:65b9\:7684\
+\:6570\:662f28\:3002\:5b9e\:9645\:4e0a\:ff0c\:5728\:5c0f\:4e8e50\:7684\:6570\
+\:4e2d\:ff0c\:4e00\:5171\:67094\:4e2a\:6570\:6ee1\:8db3\:8fd9\:4e00\:6027\
+\:8d28\:ff1a\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"28", "=", 
+    RowBox[{
+     SuperscriptBox["2", "2"], "+", 
+     SuperscriptBox["2", "3"], "+", 
+     SuperscriptBox["2", "4"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4f587ee7-d1bf-4d58-889d-434d2c0faefc"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"33", "=", 
+    RowBox[{
+     SuperscriptBox["3", "2"], "+", 
+     SuperscriptBox["2", "3"], "+", 
+     SuperscriptBox["2", "4"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "738cb0e7-98d6-4f62-ba33-1f3dbb2d8b16"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"49", "=", 
+    RowBox[{
+     SuperscriptBox["5", "2"], "+", 
+     SuperscriptBox["2", "3"], "+", 
+     SuperscriptBox["2", "4"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7d90e532-8c87-4577-a1f5-62f8e038901c"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"47", "=", 
+    RowBox[{
+     SuperscriptBox["2", "2"], "+", 
+     SuperscriptBox["3", "3"], "+", 
+     SuperscriptBox["2", "4"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3ee2e56e-914a-4ba8-8ae0-bf117427c2ee"],
+ "\n\n\:6709\:591a\:5c11\:4e2a\:5c0f\:4e8e\:4e94\:5343\:4e07\:7684\:6570\:ff0c\
+\:53ef\:4ee5\:8868\:793a\:4e3a\:4e00\:4e2a\:7d20\:6570\:7684\:5e73\:65b9\:ff0c\
+\:52a0\:4e0a\:4e00\:4e2a\:7d20\:6570\:7684\:7acb\:65b9\:ff0c\:518d\:52a0\:4e0a\
+\:4e00\:4e2a\:7d20\:6570\:7684\:56db\:6b21\:65b9\:ff1f"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.730084060553266*^9, 
+   3.7300840653626733`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"Prime", "[", 
+    RowBox[{"Range", "[", 
+     RowBox[{"1", ",", 
+      RowBox[{"PrimePi", "[", 
+       RadicalBox["50000000", "2"], "]"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", 
+   RowBox[{"Prime", "[", 
+    RowBox[{"Range", "[", 
+     RowBox[{"1", ",", 
+      RowBox[{"PrimePi", "[", 
+       RadicalBox["50000000", "3"], "]"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c", "=", 
+   RowBox[{"Prime", "[", 
+    RowBox[{"Range", "[", 
+     RowBox[{"1", ",", 
+      RowBox[{"PrimePi", "[", 
+       RadicalBox["50000000", "4"], "]"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Length", "[", 
+  RowBox[{"DeleteDuplicates", "[", 
+   RowBox[{"Cases", "[", 
+    RowBox[{
+     RowBox[{"Tuples", "[", 
+      RowBox[{"{", 
+       RowBox[{"a", ",", "b", ",", "c"}], "}"}], "]"}], ",", 
+     RowBox[{
+      RowBox[{"x_", "/;", 
+       RowBox[{
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"x", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
+           "2"], "+", 
+         SuperscriptBox[
+          RowBox[{"x", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}],
+           "3"], "+", 
+         SuperscriptBox[
+          RowBox[{"x", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}],
+           "4"]}], "<", "50000000"}]}], "\[RuleDelayed]", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"x", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+        "2"], "+", 
+       SuperscriptBox[
+        RowBox[{"x", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+        "3"], "+", 
+       SuperscriptBox[
+        RowBox[{"x", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}], 
+        "4"]}]}]}], "]"}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+   3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+   3.7250282267187443`*^9}, {3.72503044347628*^9, 3.725030445342036*^9}, {
+   3.730084082132061*^9, 3.7300840993260355`*^9}, {3.730084200388198*^9, 
+   3.73008422294786*^9}, {3.7300843194398003`*^9, 3.730084378393344*^9}, {
+   3.730084419165681*^9, 3.73008445250244*^9}, {3.730084544182709*^9, 
+   3.7300846309106007`*^9}, 3.730084685073203*^9, {3.7300847176490297`*^9, 
+   3.7300848021777563`*^9}, {3.7300848949111533`*^9, 3.730084902670956*^9}, {
+   3.730085088837714*^9, 3.73008510498283*^9}, {3.730085453690742*^9, 
+   3.730085474455947*^9}, {3.730085588289607*^9, 
+   3.730085592577197*^9}},ExpressionUUID->"20386a64-a558-4827-99f8-\
+04921bede5b8"],
+
+Cell[BoxData["1097343"], "Output",
+ CellChangeTimes->{
+  3.7250281599876013`*^9, {3.7250281918871064`*^9, 3.725028227147995*^9}, 
+   3.7250304482388463`*^9, 3.730084097097535*^9, {3.7300842063971786`*^9, 
+   3.7300842236667376`*^9}, {3.730084444258478*^9, 3.7300844532871666`*^9}, {
+   3.7300845604202747`*^9, 3.730084578873187*^9}, {3.730084616815051*^9, 
+   3.730084623275696*^9}, {3.7300847515338187`*^9, 3.730084802736062*^9}, {
+   3.730084895746208*^9, 3.7300849032647343`*^9}, {3.7300850977492285`*^9, 
+   3.730085117478094*^9}, {3.7300855807559714`*^9, 
+   3.730085605719105*^9}},ExpressionUUID->"038fcd19-ca47-45e3-a2f4-\
+c7ffcf88a8ca"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1689, 49, 207, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[2250, 71, 2088, 55, 184, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[4363, 130, 2624, 66, 234, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[6990, 198, 644, 10, 37, "Output",ExpressionUUID->"038fcd19-ca47-45e3-a2f4-c7ffcf88a8ca"]
+}, Open  ]]
+}
+]
+*)
+
