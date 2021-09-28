@@ -1,0 +1,167 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6258,        159]
+NotebookOptionsPosition[      5634,        140]
+NotebookOutlinePosition[      5991,        156]
+CellTagsIndexPosition[      5948,        153]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Using all of the digits 1 through 9 and concatenating them freely to form \
+decimal integers, different sets can be formed. Interestingly with the set ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{"2", ",", "5", ",", "47", ",", "89", ",", "631"}], "}"}], 
+   TraditionalForm]],ExpressionUUID->"47a32ae6-3433-468a-af9f-1efa4043408d"],
+ ", all of the elements belonging to it are prime.\n\nHow many distinct sets \
+containing each of the digits one through nine exactly once contain only \
+prime elements?"
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.7333971525060234`*^9, 
+  3.7333971545281525`*^9}, {3.7338788142645683`*^9, 
+  3.733878818731888*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:4f7f\:75281\:81f39\:7684\:5168\:90e8\:6570\:5b57\:ff0c\:5e76\:81ea\:7531\
+\:8fde\:63a5\:8d77\:6765\:7ec4\:6210\:5341\:8fdb\:5236\:6574\:6570\:ff0c\:53ef\
+\:4ee5\:6784\:9020\:4e0d\:540c\:7684\:96c6\:5408\:3002\:5176\:4e2d\:4e00\:4e2a\
+\:96c6\:5408",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{"2", ",", "5", ",", "47", ",", "89", ",", "631"}], "}"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3c10e280-a079-428a-bb59-117ce7d4d931"],
+ "\:975e\:5e38\:6709\:8da3\:ff0c\:56e0\:4e3a\:5b83\:7684\:6240\:6709\:5143\
+\:7d20\:90fd\:662f\:7d20\:6570\:3002\n\n\:6709\:4e9b\:96c6\:5408\:5305\:542b\
+\:6570\:5b571\:81f39\:6070\:597d\:5404\:4e00\:6b21\:ff0c\:4e14\:6240\:6709\
+\:5143\:7d20\:90fd\:662f\:7d20\:6570\:ff0c\:8fd9\:6837\:7684\:96c6\:5408\:6709\
+\:591a\:5c11\:4e2a\:ff1f"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, {3.7338788271439323`*^9, 
+   3.7338788336905394`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<Combinatorica`\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sp", "=", 
+   RowBox[{"SetPartitions", "[", 
+    RowBox[{"Range", "[", 
+     RowBox[{"1", ",", "9"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Permutations", "/@", 
+      RowBox[{"sp", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"Length", "[", "sp", "]"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tt", "=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"x", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Outer", "[", 
+            RowBox[{"List", ",", "##"}], "]"}], "&"}], "@@", 
+          RowBox[{"Map", "[", 
+           RowBox[{"FromDigits", ",", 
+            RowBox[{
+            "t", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], ",", 
+            RowBox[{"{", "2", "}"}]}], "]"}]}]}], ";", 
+        RowBox[{"Flatten", "[", 
+         RowBox[{"x", ",", 
+          RowBox[{
+           RowBox[{"Depth", "[", "x", "]"}], "-", "3"}]}], "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", 
+         RowBox[{"Length", "[", "t", "]"}]}], "}"}]}], "]"}], ",", "1"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Count", "[", 
+  RowBox[{"tt", ",", 
+   RowBox[{"y_", "/;", 
+    RowBox[{"And", "@@", 
+     RowBox[{"PrimeQ", "[", "y", "]"}]}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7338878349932346`*^9, 3.733887866764929*^9}, {
+   3.7338882045021963`*^9, 3.7338884466538324`*^9}, {3.7338900355638385`*^9, 
+   3.7338900492162666`*^9}, {3.733890119860093*^9, 3.7338904810927553`*^9}, {
+   3.7339230888115406`*^9, 3.733923251863731*^9}, {3.7339232970134554`*^9, 
+   3.733923314118675*^9}, 3.7339234764751015`*^9, {3.7339239907008142`*^9, 
+   3.733924076333023*^9}, {3.7339241348998256`*^9, 3.733924158570435*^9}, 
+   3.7339242000650377`*^9, {3.7339242700867205`*^9, 3.7339243003757353`*^9}, {
+   3.7339580092359505`*^9, 3.7339580193305364`*^9}, {3.733958252203336*^9, 
+   3.7339582559074025`*^9}},ExpressionUUID->"69f1f1f6-4285-46b5-8b33-\
+d57754dab7de"],
+
+Cell[BoxData["44680"], "Output",
+ CellChangeTimes->{
+  3.7338878454670005`*^9, {3.733888216572836*^9, 3.733888241362858*^9}, {
+   3.733888294663082*^9, 3.733888361136196*^9}, {3.7338883971328735`*^9, 
+   3.733888440180517*^9}, 3.7338903798057055`*^9, {3.733890413117352*^9, 
+   3.7338904218872614`*^9}, 3.7338904716761127`*^9, 3.7338905188814554`*^9, {
+   3.7339232392785935`*^9, 3.733923254141305*^9}, 3.7339233961318197`*^9, {
+   3.7339240410113378`*^9, 3.733924084167825*^9}, 3.7339241414461775`*^9, {
+   3.733924279214983*^9, 3.7339242878186493`*^9}, 3.733924321276216*^9, 
+   3.7339580227532296`*^9, 
+   3.7339582735838757`*^9},ExpressionUUID->"fc596feb-d1b5-414a-9430-\
+1aa89b8696af"]
+}, Open  ]]
+},
+WindowSize->{1350, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 828, 16, 108, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1389, 38, 1177, 23, 85, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[2591, 65, 2334, 59, 235, "Input",ExpressionUUID->"69f1f1f6-4285-46b5-8b33-d57754dab7de"],
+Cell[4928, 126, 690, 11, 37, "Output",ExpressionUUID->"fc596feb-d1b5-414a-9430-1aa89b8696af"]
+}, Open  ]]
+}
+]
+*)
+

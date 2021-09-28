@@ -1,0 +1,337 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15552,        329]
+NotebookOptionsPosition[     14921,        310]
+NotebookOutlinePosition[     15279,        326]
+CellTagsIndexPosition[     15236,        323]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "A row of five black square tiles is to have a number of its tiles replaced \
+with coloured oblong tiles chosen from red (length two), green (length \
+three), or blue (length four).\n\nIf red tiles are chosen there are exactly \
+seven ways this can be done.\n",
+ Cell[BoxData[
+  GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+1:eJzt3L1uXUUUhuEjoKDkFujdQ0tJG0RBmQgT0RgpQUJ0vsDcE5zTWZb2VuI1
+429+nkfaoERka83SO86u+P7dX2/++OpyuXz89vqPN2//+enDh7f//vLd9Re/
+Pnz88/3D/e8/P/x9//7+w4/vvr7+5m/X54frf//N9d//AQAAAAAAAAAAAAAA
+ACzq8fHRs9GjH49+PPrxzPh8aRvs4e7urvk79bMP/VChHyq+tB9t7MPPFir0
+Q4V+qKh829z+7IxP7/lXen9rr9GPPsd5v35e//29H/2Ms58Z39/7eWk/z9v4
+dLlM9Tyf//a/YG75rPb+1l57/nRvu/c5ez/6zPapH31W+qy0kT7L6Hdz9ve3
+5m7u1efs/egz26d+9Fnps9JG+iyj383Z39+au7lXn7P3o89sn/rRZ6XPShvp
+s4x+N2d/f2vu5l59zt6PPrN96keflT4rbaTPMvrdnP39rbmbe/U5ez/6zPap
+H31W+qy0kT7L6Hdz9ve35m7u1efs/egz26d+9Fnps9JG+iyj383Z39+au7lX
+n7P3o89sn/rRZ6XPShvps4x+N2d/f2vu5l59zt6PPrN96keflT4rbaTPMvrd
+nP39rbmbe/U5ez/6zPapH31W+qy0kT7L6Hdz9ve35m7u1efs/egz26d+9Fnp
+s9JG+iyj383Z39+au7lXn7P3o89sn/rRZ6XPShvps4x+N2d/f2vu5l59zt6P
+PrN96keflT4rbaTPMvrdnP39rbmbe/U5ez/6zPapH31W+qy0kT7L6Hdz9ve3
+5m7u1efs/egz26d+9Fnps9JG+iyj383Z39+au7lXn7P3o89sn/rRZ6XPShvp
+s4x+N2d/f2vu5l59zt6PPrN96keflT4rbaTPMvrdnP39rbmbe/U5ez/6zPap
+H31W+qy0kT7L6Hdz9ve35m7u1efs/egz26d+9Fnps9JG+iyj383Z39+au7lX
+n7P3o89sn/rRZ6XPShvps4x+N2d/f2vu5l59zt6PPrN96keflT4rbaTPMvrd
+nP39rbmbe/U5ez/6zPapH31W+qy0cfv1bE/v+Vd6f2sr7Kf3M/t+9KNP/Xh/
+6nlpP0//LGvr/bOFtemHCv1Q4duGI362UKEfKvRDxUu+bW5/xrPH05p+9nr0
+49GPZ5V+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAIC5PD4+ejZ69OPRj2eVfuCI3vZxd3fX/J362Yd+qOjRDxzxs2Uf/m6i
+Qj9U+LbhNT392XJrb8bH/J//fv1k9z/jM3s/K+1/xqdnP3Dk+c+WT5fLVM9q
+81+uv9fyef5+/WT3nz5vdT+9+7H/8/2n5xmtHziy2t1Jz1Od37fN2vtPn7e6
+n9792P/5/tPzjNYPHFnt7qTnqc7v22bt/afPW91P737s/3z/6XlG6weOrHZ3
+0vNU5/dts/b+0+et7qd3P/Z/vv/0PKP1A0dWuzvpearz+7ZZe//p81b307sf
++z/ff3qe0fqBI6vdnfQ81fl926y9//R5q/vp3Y/9n+8/Pc9o/cCR1e5Oep7q
+/L5t1t5/+rzV/fTux/7P95+eZ7R+4Mhqdyc9T3V+3zZr7z993up+evdj/+f7
+T88zWj9wZLW7k56nOr9vm7X3nz5vdT+9+7H/8/2n5xmtHziy2t1Jz1Od37fN
+2vtPn7e6n9792P/5/tPzjNYPHFnt7qTnqc7v22bt/afPW91P737s/3z/6XlG
+6weOrHZ30vNU5/dts/b+0+et7qd3P/Z/vv/0PKP1A0dWuzvpearz+7ZZe//p
+81b307sf+z/ff3qe0fqBI6vdnfQ81fl926y9//R5q/vp3Y/9n+8/Pc9o/cCR
+1e5Oep7q/L5t1t5/+rzV/fTux/7P95+eZ7R+4Mhqdyc9T3V+3zZr7z993up+
+evdj/+f7T88zWj9wZLW7k56nOr9vm7X3nz5vdT+9+7H/8/2n5xmtHziy2t1J
+z1Od37fN2vtPn7e6n9792P/5/tPzjNYPHFnt7qTnqc7v22bt/afPW91P737s
+/3z/6XlG6weOrHZ30vNU5/dts/b+0+et7qd3P/Z/vv/0PKP1A0dWuzvpearz
++7ZZe//p81b307sf+z/ff3qe0fqBI8/bu/16tsf8n/9+/WT3nz7rjv2stP/0
+LKP1A0eetsfaev/dxNr0Q4VvG16Tny378HcTFfqhwrcNr+n2s+XWnGePRz8e
+/XhW6QcAAAAAAAAAAAAAgD39D9MtL44=
+     "], {{0, 89}, {567, 0}}, {0, 255},
+     ColorFunction->RGBColor],
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+    Selectable->False],
+   DefaultBaseStyle->"ImageGraphics",
+   ImageSize->Automatic,
+   ImageSizeRaw->{567, 89},
+   PlotRange->{{0, 567}, {0, 89}}]], "Input",ExpressionUUID->
+  "4ace581c-c0fd-47ff-b922-8cd9804f74a6"],
+ "\n\nIf green tiles are chosen there are three ways.\n",
+ Cell[BoxData[
+  GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+1:eJzt1TFOG2EQhuE/JEVKrkAb+QC0lGlBOYCtOIjGSCZSROfbcJncKVl3EJTC
+ntmdb2beRxoQSLY0q3fsq83j7Y+LMcbT5+nH7frXzX6/fr67nP74tnt6uN9t
+v3/d/dzeb/fXm4/TP79M8/JhjE/T7z8AAAAAAAAAAAAAAAAAAGBRh8OBaTT0
+w9APk6GfOXqDptVq5f6e9NMH/cDi1H5oow8+W2BBP7CwfDcdX8u8n7mfz5Lv
+722JfuiTfrI8H8avn3/bGL8H82rePZ8xXGfp9/e2+PMRaEJp6OfEfugztE9T
+GwL7KE212/HG7ffqM30/9Bnap6kNgX2UptrteOP2e/WZvh/6DO3T1IbAPkpT
+7Xa8cfu9+kzfD32G9mlqQ2Afpal2O964/V59pu+HPkP7NLUhsI/SVLsdb9x+
+rz7T90OfoX2a2hDYR2mq3Y43br9Xn+n7oc/QPk1tCOyjNNVuxxu336vP9P3Q
+Z2ifpjYE9lGaarfjjdvv1Wf6fugztE9TGwL7KE212/HG7ffqM30/9Bnap6kN
+gX2UptrteOP2e/WZvh/6DO3T1IbAPkpT7Xa8cfu9+kzfD32G9mlqQ2Afpal2
+O964/V59pu+HPkP7NLUhsI/SVLsdb9x+rz7T90OfoX2a2hDYR2mq3Y43br9X
+n+n7oc/QPk1tCOyjNNVuxxu336vP9P3QZ2ifpjYE9lGaarfjjdvv1Wf6fugz
+tE9TGwL7KE212/HG7ffqM30/9Bnap6kNgX2UptrteOP2e/WZvh/6DO3T1IbA
+PkpT7Xa8cfu9+kzfD32G9mlqQ2Afpal2O964/V59pu+HPkP7tLRx/Jt5O3M/
+nyXf31uF55N96Efn+US3oDjn9vP6taht7s8W1EY/sOC7Cf/DZwss6AcW53w3
+HV/D9Bhv9NNr6IdR6gcAAAAAAAAAAAAAAAAAAAAAkM9fAK9FGw==
+     "], {{0, 42}, {423, 0}}, {0, 255},
+     ColorFunction->RGBColor],
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+    Selectable->False],
+   DefaultBaseStyle->"ImageGraphics",
+   ImageSize->Automatic,
+   ImageSizeRaw->{423, 42},
+   PlotRange->{{0, 423}, {0, 42}}]], "Input",ExpressionUUID->
+  "c7f5cf61-8357-4c67-9374-c0088e0d7a3f"],
+ "\n\nAnd if blue tiles are chosen there are two ways.\n",
+ Cell[BoxData[
+  GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+1:eJzt2j1OAmEUheHxp7C0s7ayYQG2lrYYFwARiQ0mYGLsWKB70qEzGBNk7nBv
+mOdNDmRI5ivmPXMqrqev4+fTpmlWF+3HePJ+t1xOPh4u24vHxeplvpg93S/e
+ZvPZ8nZ61v540+bqpGnO2+8vAAAAAAAA9M56vZYBRX/kUP3po2+oyWg0Cj9T
+f4bDf/ujG8PBtqALXbZlc28f6ft82f35R3OI/sjufiv1Z7sbm7/BROb3+Z9y
+wGw//2j4reW37/e3WzdsyzHFthx3bIvuVeleNPzW8mtbJKt70fBby69tkazu
+RcNvLb+2RbK6Fw2/tfzaFsnqXjT81vJrWySre9HwW8uvbZGs7kXDby2/tkWy
+uhcNv7X82hbJ6l40/Nbya1skq3vR8FvLr22RrO5Fw28tv7ZFsroXDb+1/NoW
+yepeNPzW8mtbJKt70fBby69tkazuRcNvLb+2RbK6Fw2/tfzaFsnqXjT81vJr
+WySre9HwW8uvbZGs7kXDby2/lbdlcx2dvs+X3Z9/NPzm55Dv777dwHHT97bg
+uLEt+Avbgi7ssy2be2QYiUZ/hhUAAAAAAAAAAADgJ9+wp/nT
+     "], {{0, 39}, {279, 0}}, {0, 255},
+     ColorFunction->RGBColor],
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+    Selectable->False],
+   DefaultBaseStyle->"ImageGraphics",
+   ImageSize->Automatic,
+   ImageSizeRaw->{279, 39},
+   PlotRange->{{0, 279}, {0, 39}}]], "Input",ExpressionUUID->
+  "4e5bc532-4d4f-4514-9afe-4c47d47583b0"],
+ "\n\nAssuming that colours cannot be mixed there are 7 + 3 + 2 = 12 ways of \
+replacing the black tiles in a row measuring five units in length.\n\nHow \
+many different ways can the black tiles in a row measuring fifty units in \
+length be replaced if colours cannot be mixed and at least one coloured tile \
+must be used?\n\nNOTE: This is related to Problem 117."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.7303356911895375`*^9, 3.7303357427391667`*^9}, {3.730335788740245*^9, 
+  3.7303357902403235`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:5c06\:4e00\:884c\:4e94\:5757\:9ed1\:8272\:65b9\:5f62\:5730\:7816\:7684\
+\:4e00\:90e8\:5206\:66ff\:6362\:6210\:7ea2\:8272\:ff08\:957f\:5ea6\:4e3a2\
+\:ff09\:3001\:7eff\:8272\:ff08\:957f\:5ea6\:4e3a3\:ff09\:6216\:84dd\:8272\
+\:ff08\:957f\:5ea6\:4e3a4\:ff09\:7684\:5730\:7816\:3002\n\n\:5982\:679c\:53ea\
+\:4f7f\:7528\:7ea2\:8272\:5730\:7816\:ff0c\:4e00\:5171\:67097\:79cd\:4e0d\
+\:540c\:7684\:66ff\:6362\:65b9\:5f0f\:3002\n",
+ Cell[BoxData[
+  GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+1:eJzt3L1uXUUUhuEjoKDkFujdQ0tJG0RBmQgT0RgpQUJ0vsDcE5zTWZb2VuI1
+429+nkfaoERka83SO86u+P7dX2/++OpyuXz89vqPN2//+enDh7f//vLd9Re/
+Pnz88/3D/e8/P/x9//7+w4/vvr7+5m/X54frf//N9d//AQAAAAAAAAAAAAAA
+ACzq8fHRs9GjH49+PPrxzPh8aRvs4e7urvk79bMP/VChHyq+tB9t7MPPFir0
+Q4V+qKh829z+7IxP7/lXen9rr9GPPsd5v35e//29H/2Ms58Z39/7eWk/z9v4
+dLlM9Tyf//a/YG75rPb+1l57/nRvu/c5ez/6zPapH31W+qy0kT7L6Hdz9ve3
+5m7u1efs/egz26d+9Fnps9JG+iyj383Z39+au7lXn7P3o89sn/rRZ6XPShvp
+s4x+N2d/f2vu5l59zt6PPrN96keflT4rbaTPMvrdnP39rbmbe/U5ez/6zPap
+H31W+qy0kT7L6Hdz9ve35m7u1efs/egz26d+9Fnps9JG+iyj383Z39+au7lX
+n7P3o89sn/rRZ6XPShvps4x+N2d/f2vu5l59zt6PPrN96keflT4rbaTPMvrd
+nP39rbmbe/U5ez/6zPapH31W+qy0kT7L6Hdz9ve35m7u1efs/egz26d+9Fnp
+s9JG+iyj383Z39+au7lXn7P3o89sn/rRZ6XPShvps4x+N2d/f2vu5l59zt6P
+PrN96keflT4rbaTPMvrdnP39rbmbe/U5ez/6zPapH31W+qy0kT7L6Hdz9ve3
+5m7u1efs/egz26d+9Fnps9JG+iyj383Z39+au7lXn7P3o89sn/rRZ6XPShvp
+s4x+N2d/f2vu5l59zt6PPrN96keflT4rbaTPMvrdnP39rbmbe/U5ez/6zPap
+H31W+qy0kT7L6Hdz9ve35m7u1efs/egz26d+9Fnps9JG+iyj383Z39+au7lX
+n7P3o89sn/rRZ6XPShvps4x+N2d/f2vu5l59zt6PPrN96keflT4rbaTPMvrd
+nP39rbmbe/U5ez/6zPapH31W+qy0cfv1bE/v+Vd6f2sr7Kf3M/t+9KNP/Xh/
+6nlpP0//LGvr/bOFtemHCv1Q4duGI362UKEfKvRDxUu+bW5/xrPH05p+9nr0
+49GPZ5V+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAIC5PD4+ejZ69OPRj2eVfuCI3vZxd3fX/J362Yd+qOjRDxzxs2Uf/m6i
+Qj9U+LbhNT392XJrb8bH/J//fv1k9z/jM3s/K+1/xqdnP3Dk+c+WT5fLVM9q
+81+uv9fyef5+/WT3nz5vdT+9+7H/8/2n5xmtHziy2t1Jz1Od37fN2vtPn7e6
+n9792P/5/tPzjNYPHFnt7qTnqc7v22bt/afPW91P737s/3z/6XlG6weOrHZ3
+0vNU5/dts/b+0+et7qd3P/Z/vv/0PKP1A0dWuzvpearz+7ZZe//p81b307sf
++z/ff3qe0fqBI6vdnfQ81fl926y9//R5q/vp3Y/9n+8/Pc9o/cCR1e5Oep7q
+/L5t1t5/+rzV/fTux/7P95+eZ7R+4Mhqdyc9T3V+3zZr7z993up+evdj/+f7
+T88zWj9wZLW7k56nOr9vm7X3nz5vdT+9+7H/8/2n5xmtHziy2t1Jz1Od37fN
+2vtPn7e6n9792P/5/tPzjNYPHFnt7qTnqc7v22bt/afPW91P737s/3z/6XlG
+6weOrHZ30vNU5/dts/b+0+et7qd3P/Z/vv/0PKP1A0dWuzvpearz+7ZZe//p
+81b307sf+z/ff3qe0fqBI6vdnfQ81fl926y9//R5q/vp3Y/9n+8/Pc9o/cCR
+1e5Oep7q/L5t1t5/+rzV/fTux/7P95+eZ7R+4Mhqdyc9T3V+3zZr7z993up+
+evdj/+f7T88zWj9wZLW7k56nOr9vm7X3nz5vdT+9+7H/8/2n5xmtHziy2t1J
+z1Od37fN2vtPn7e6n9792P/5/tPzjNYPHFnt7qTnqc7v22bt/afPW91P737s
+/3z/6XlG6weOrHZ30vNU5/dts/b+0+et7qd3P/Z/vv/0PKP1A0dWuzvpearz
++7ZZe//p81b307sf+z/ff3qe0fqBI8/bu/16tsf8n/9+/WT3nz7rjv2stP/0
+LKP1A0eetsfaev/dxNr0Q4VvG16Tny378HcTFfqhwrcNr+n2s+XWnGePRz8e
+/XhW6QcAAAAAAAAAAAAAgD39D9MtL44=
+     "], {{0, 89}, {567, 0}}, {0, 255},
+     ColorFunction->RGBColor],
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+    Selectable->False],
+   DefaultBaseStyle->"ImageGraphics",
+   ImageSize->Automatic,
+   ImageSizeRaw->{567, 89},
+   PlotRange->{{0, 567}, {0, 89}}]], "Input",ExpressionUUID->
+  "c877e700-5155-401f-b712-51fb03c83335"],
+ "\n\n\:5982\:679c\:53ea\:4f7f\:7528\:7eff\:8272\:5730\:7816\:ff0c\:4e00\:5171\
+\:67093\:79cd\:4e0d\:540c\:7684\:66ff\:6362\:65b9\:5f0f\:3002\n",
+ Cell[BoxData[
+  GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+1:eJzt1TFOG2EQhuE/JEVKrkAb+QC0lGlBOYCtOIjGSCZSROfbcJncKVl3EJTC
+ntmdb2beRxoQSLY0q3fsq83j7Y+LMcbT5+nH7frXzX6/fr67nP74tnt6uN9t
+v3/d/dzeb/fXm4/TP79M8/JhjE/T7z8AAAAAAAAAAAAAAAAAAGBRh8OBaTT0
+w9APk6GfOXqDptVq5f6e9NMH/cDi1H5oow8+W2BBP7CwfDcdX8u8n7mfz5Lv
+722JfuiTfrI8H8avn3/bGL8H82rePZ8xXGfp9/e2+PMRaEJp6OfEfugztE9T
+GwL7KE212/HG7ffqM30/9Bnap6kNgX2UptrteOP2e/WZvh/6DO3T1IbAPkpT
+7Xa8cfu9+kzfD32G9mlqQ2Afpal2O964/V59pu+HPkP7NLUhsI/SVLsdb9x+
+rz7T90OfoX2a2hDYR2mq3Y43br9Xn+n7oc/QPk1tCOyjNNVuxxu336vP9P3Q
+Z2ifpjYE9lGaarfjjdvv1Wf6fugztE9TGwL7KE212/HG7ffqM30/9Bnap6kN
+gX2UptrteOP2e/WZvh/6DO3T1IbAPkpT7Xa8cfu9+kzfD32G9mlqQ2Afpal2
+O964/V59pu+HPkP7NLUhsI/SVLsdb9x+rz7T90OfoX2a2hDYR2mq3Y43br9X
+n+n7oc/QPk1tCOyjNNVuxxu336vP9P3QZ2ifpjYE9lGaarfjjdvv1Wf6fugz
+tE9TGwL7KE212/HG7ffqM30/9Bnap6kNgX2UptrteOP2e/WZvh/6DO3T1IbA
+PkpT7Xa8cfu9+kzfD32G9mlqQ2Afpal2O964/V59pu+HPkP7tLRx/Jt5O3M/
+nyXf31uF55N96Efn+US3oDjn9vP6taht7s8W1EY/sOC7Cf/DZwss6AcW53w3
+HV/D9Bhv9NNr6IdR6gcAAAAAAAAAAAAAAAAAAAAAkM9fAK9FGw==
+     "], {{0, 42}, {423, 0}}, {0, 255},
+     ColorFunction->RGBColor],
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+    Selectable->False],
+   DefaultBaseStyle->"ImageGraphics",
+   ImageSize->Automatic,
+   ImageSizeRaw->{423, 42},
+   PlotRange->{{0, 423}, {0, 42}}]],ExpressionUUID->
+  "07a90f0c-4c29-4400-96c9-31ff4b230ad0"],
+ "\n\n\:5982\:679c\:53ea\:4f7f\:7528\:84dd\:8272\:5730\:7816\:ff0c\:4e00\:5171\
+\:67092\:79cd\:4e0d\:540c\:7684\:66ff\:6362\:65b9\:5f0f\:3002\n",
+ Cell[BoxData[
+  GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+1:eJzt2j1OAmEUheHxp7C0s7ayYQG2lrYYFwARiQ0mYGLsWKB70qEzGBNk7nBv
+mOdNDmRI5ivmPXMqrqev4+fTpmlWF+3HePJ+t1xOPh4u24vHxeplvpg93S/e
+ZvPZ8nZ61v540+bqpGnO2+8vAAAAAAAA9M56vZYBRX/kUP3po2+oyWg0Cj9T
+f4bDf/ujG8PBtqALXbZlc28f6ft82f35R3OI/sjufiv1Z7sbm7/BROb3+Z9y
+wGw//2j4reW37/e3WzdsyzHFthx3bIvuVeleNPzW8mtbJKt70fBby69tkazu
+RcNvLb+2RbK6Fw2/tfzaFsnqXjT81vJrWySre9HwW8uvbZGs7kXDby2/tkWy
+uhcNv7X82hbJ6l40/Nbya1skq3vR8FvLr22RrO5Fw28tv7ZFsroXDb+1/NoW
+yepeNPzW8mtbJKt70fBby69tkazuRcNvLb+2RbK6Fw2/tfzaFsnqXjT81vJr
+WySre9HwW8uvbZGs7kXDby2/lbdlcx2dvs+X3Z9/NPzm55Dv777dwHHT97bg
+uLEt+Avbgi7ssy2be2QYiUZ/hhUAAAAAAAAAAADgJ9+wp/nT
+     "], {{0, 39}, {279, 0}}, {0, 255},
+     ColorFunction->RGBColor],
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+    Selectable->False],
+   DefaultBaseStyle->"ImageGraphics",
+   ImageSize->Automatic,
+   ImageSizeRaw->{279, 39},
+   PlotRange->{{0, 279}, {0, 39}}]],ExpressionUUID->
+  "264621bb-61db-44e9-8c19-b81d214fc517"],
+ "\n\n\:5047\:5b9a\:989c\:8272\:4e0d\:80fd\:6df7\:5408\:4f7f\:7528\:ff0c\:4e00\
+\:5171\:67097 + 3 + 2 = 12\:79cd\:65b9\:5f0f\:66ff\:6362\:4e00\:884c\:4e94\
+\:5757\:9ed1\:8272\:5730\:7816\:3002\n\n\:5047\:5b9a\:989c\:8272\:4e0d\:80fd\
+\:6df7\:5408\:4f7f\:7528\:ff0c\:4e14\:81f3\:5c11\:4f7f\:7528\:4e00\:79cd\:5f69\
+\:8272\:5730\:7816\:ff0c\:4e00\:5171\:6709\:591a\:5c11\:79cd\:65b9\:5f0f\:66ff\
+\:6362\:4e00\:884c\:4e94\:5341\:5757\:9ed1\:8272\:5730\:7816\:ff1f\n\n\:6ce8\
+\:610f\:ff1a\:8fd9\:9053\:9898\:4e0e\:7b2c117\:9898\:6709\:5173\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.730335760970947*^9, 
+   3.7303357851306458`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "50"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubsuperscriptBox["\[Sum]", 
+    RowBox[{"i", "=", "1"}], 
+    RowBox[{"\[LeftFloor]", 
+     FractionBox["n", "2"], "\[RightFloor]"}]], 
+   RowBox[{"Binomial", "[", 
+    RowBox[{
+     RowBox[{"n", "-", "i"}], ",", "i"}], "]"}]}], "+", 
+  RowBox[{
+   SubsuperscriptBox["\[Sum]", 
+    RowBox[{"i", "=", "1"}], 
+    RowBox[{"\[LeftFloor]", 
+     FractionBox["n", "3"], "\[RightFloor]"}]], 
+   RowBox[{"Binomial", "[", 
+    RowBox[{
+     RowBox[{"n", "-", 
+      RowBox[{"2", " ", "i"}]}], ",", "i"}], "]"}]}], "+", 
+  RowBox[{
+   SubsuperscriptBox["\[Sum]", 
+    RowBox[{"i", "=", "1"}], 
+    RowBox[{"\[LeftFloor]", 
+     FractionBox["n", "4"], "\[RightFloor]"}]], 
+   RowBox[{"Binomial", "[", 
+    RowBox[{
+     RowBox[{"n", "-", 
+      RowBox[{"3", " ", "i"}]}], ",", "i"}], "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+  3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+  3.7250282267187443`*^9}, {3.72503044347628*^9, 3.725030445342036*^9}, {
+  3.7303358057036657`*^9, 3.730335865376011*^9}, {3.730335896314251*^9, 
+  3.7303358977696743`*^9}},ExpressionUUID->"20386a64-a558-4827-99f8-\
+04921bede5b8"],
+
+Cell[BoxData["20492570929"], "Output",
+ CellChangeTimes->{
+  3.7250281599876013`*^9, {3.7250281918871064`*^9, 3.725028227147995*^9}, 
+   3.7250304482388463`*^9, 
+   3.7303358987228513`*^9},ExpressionUUID->"b79359b8-962c-40cd-abe9-\
+50d7d086cb69"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 6159, 116, 527, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[6720, 138, 6634, 123, 481, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[13379, 265, 1277, 35, 89, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[14659, 302, 246, 5, 37, "Output",ExpressionUUID->"b79359b8-962c-40cd-abe9-50d7d086cb69"]
+}, Open  ]]
+}
+]
+*)
+

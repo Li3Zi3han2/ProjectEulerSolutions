@@ -1,0 +1,195 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7363,        187]
+NotebookOptionsPosition[      6736,        168]
+NotebookOutlinePosition[      7094,        184]
+CellTagsIndexPosition[      7051,        181]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+A bag contains one red disc and one blue disc. In a game of chance a player \
+takes a disc at random and its colour is noted. After each turn the disc is \
+returned to the bag, an extra red disc is added, and another disc is taken at \
+random.
+
+The player pays \[Sterling]1 to play and wins if they have taken more blue \
+discs than red discs at the end of the game.
+
+If the game is played for four turns, the probability of a player winning is \
+exactly 11/120, and so the maximum prize fund the banker should allocate for \
+winning in this game would be \[Sterling]10 before they would expect to incur \
+a loss. Note that any payout will be a whole number of pounds and also \
+includes the original \[Sterling]1 paid to play the game, so in the example \
+given the player actually wins \[Sterling]9.
+
+Find the maximum prize fund that should be allocated to a single game in \
+which fifteen turns are played.\
+\>", "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.7298275405583878`*^9, 
+  3.729827569310892*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell["\<\
+\:4e00\:5f00\:59cb\:ff0c\:5305\:91cc\:88c5\:6709\:4e00\:4e2a\:7ea2\:8272\:789f\
+\:5b50\:548c\:4e00\:4e2a\:84dd\:8272\:789f\:5b50\:3002\:5728\:4e00\:573a\:6982\
+\:7387\:6e38\:620f\:4e2d\:ff0c\:6bcf\:4e00\:8f6e\:73a9\:5bb6\:4ece\:5305\:4e2d\
+\:53d6\:51fa\:4e00\:4e2a\:789f\:5b50\:ff0c\:8bb0\:5f55\:4e0b\:5176\:989c\:8272\
+\:ff0c\:968f\:540e\:5c06\:789f\:5b50\:653e\:56de\:5305\:4e2d\:ff0c\:5e76\:5728\
+\:5305\:4e2d\:52a0\:5165\:4e00\:4e2a\:7ea2\:8272\:789f\:5b50\:ff0c\:518d\:8fdb\
+\:884c\:4e0b\:4e00\:8f6e\:3002
+
+\:73a9\:5bb6\:9700\:8981\:4ed8\[Sterling]1\:6765\:73a9\:8fd9\:4e2a\:6e38\:620f\
+\:ff0c\:5982\:679c\:4ed6\:4eec\:5728\:6e38\:620f\:7ed3\:675f\:65f6\:62ff\:51fa\
+\:7684\:84dd\:8272\:789f\:5b50\:6570\:6bd4\:7ea2\:8272\:789f\:5b50\:6570\:66f4\
+\:591a\:ff0c\:5219\:83b7\:5f97\:80dc\:5229\:3002
+
+\:5982\:679c\:6e38\:620f\:8fdb\:884c4\:8f6e\:ff0c\:90a3\:4e48\:73a9\:5bb6\
+\:83b7\:80dc\:7684\:6982\:7387\:662f11/120\:ff0c\:56e0\:6b64\:6e38\:620f\:6240\
+\:8bbe\:5b9a\:7684\:6700\:9ad8\:5956\:91d1\:4e3a\[Sterling]10\:ff0c\:5426\
+\:5219\:53ef\:80fd\:4f1a\:9020\:6210\:4e8f\:635f\:3002\:6ce8\:610f\:5956\:91d1\
+\:5fc5\:987b\:662f\:6574\:6570\:ff0c\:800c\:4e14\:5305\:542b\:4e86\:73a9\:5bb6\
+\:4ed8\:51fa\:7528\:4e8e\:73a9\:6e38\:620f\:7684\[Sterling]1\:ff0c\:4e5f\:5c31\
+\:662f\:8bf4\:73a9\:5bb6\:5b9e\:9645\:4e0a\:8d62\:5f97\:7684\:6570\:989d\:662f\
+\[Sterling]9\:3002
+
+\:5982\:679c\:6e38\:620f\:8fdb\:884c15\:8f6e\:ff0c\:6c42\:6e38\:620f\:6240\
+\:8bbe\:5b9a\:7684\:6700\:9ad8\:5956\:91d1\:3002\
+\>", "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.729827549845887*^9, {3.7298276550037856`*^9, 
+   3.7298276613449364`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"t", "=", "15"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{"i", "+", "1"}]], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "t"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"q", "=", 
+   RowBox[{"1", "-", "p"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{"Subsets", "[", 
+    RowBox[{
+     RowBox[{"Range", "[", 
+      RowBox[{"1", ",", "t"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"\[LeftFloor]", 
+         FractionBox["t", "2"], "\[RightFloor]"}], "+", "1"}], ",", "t"}], 
+      "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Complement", "[", 
+      RowBox[{
+       RowBox[{"Range", "[", 
+        RowBox[{"1", ",", "t"}], "]"}], ",", "#"}], "]"}], "&"}], "/@", 
+    "s"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"w", "=", 
+   RowBox[{"Total", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Times", "@@", 
+       RowBox[{"Join", "[", 
+        RowBox[{
+         RowBox[{"p", "\[LeftDoubleBracket]", 
+          RowBox[{"s", "\[LeftDoubleBracket]", "#", "\[RightDoubleBracket]"}],
+           "\[RightDoubleBracket]"}], ",", 
+         RowBox[{"q", "\[LeftDoubleBracket]", 
+          RowBox[{"c", "\[LeftDoubleBracket]", "#", "\[RightDoubleBracket]"}],
+           "\[RightDoubleBracket]"}]}], "]"}]}], "&"}], "/@", 
+     RowBox[{"Range", "[", 
+      RowBox[{"1", ",", 
+       RowBox[{"Length", "[", "s", "]"}]}], "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"MaxValue", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "-", "w"}], ")"}], " ", "1"}], "-", 
+       RowBox[{"w", " ", 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "1"}], ")"}]}]}], ">", "0"}]}], "}"}], ",", "x", 
+   ",", "Integers"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+  3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+  3.7250282267187443`*^9}, {3.72503044347628*^9, 3.725030445342036*^9}, {
+  3.7298277748222904`*^9, 3.7298278675870876`*^9}, {3.7298279323823385`*^9, 
+  3.7298279932241383`*^9}, {3.7298280624483943`*^9, 3.7298281965880394`*^9}, {
+  3.7298282545525455`*^9, 3.7298283089950933`*^9}, {3.729828468851808*^9, 
+  3.7298286099593287`*^9}, {3.729828701155427*^9, 
+  3.729828805280136*^9}},ExpressionUUID->"20386a64-a558-4827-99f8-\
+04921bede5b8"],
+
+Cell[BoxData["2269"], "Output",
+ CellChangeTimes->{
+  3.7250281599876013`*^9, {3.7250281918871064`*^9, 3.725028227147995*^9}, 
+   3.7250304482388463`*^9, {3.729827838687436*^9, 3.7298278678664036`*^9}, {
+   3.7298279555735664`*^9, 3.729827982660179*^9}, {3.7298280965549545`*^9, 
+   3.729828107527356*^9}, {3.7298281489001236`*^9, 3.7298281968803496`*^9}, {
+   3.729828307065914*^9, 3.7298283100622997`*^9}, {3.7298285643137426`*^9, 
+   3.729828610709176*^9}, {3.729828702856367*^9, 3.729828721072942*^9}, {
+   3.7298287579216175`*^9, 
+   3.7298288072053146`*^9}},ExpressionUUID->"3d13acbe-b21f-4193-a75f-\
+924ad117c94f"]
+}, Open  ]]
+},
+WindowSize->{775, 561},
+WindowMargins->{{287, Automatic}, {Automatic, 54}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1114, 22, 357, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1675, 44, 1752, 30, 288, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[3452, 78, 2644, 75, 328, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[6099, 155, 621, 10, 68, "Output",ExpressionUUID->"3d13acbe-b21f-4193-a75f-924ad117c94f"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,242 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9254,        234]
+NotebookOptionsPosition[      8627,        215]
+NotebookOutlinePosition[      8985,        231]
+CellTagsIndexPosition[      8942,        228]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Three distinct points are plotted at random on a Cartesian plane, for which \
+",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "1000"}], "\[LessEqual]", "x"}], ",", 
+    RowBox[{"y", "\[LessEqual]", "1000"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "034b8509-3a1f-4edc-80a2-3dfcfe8f9de5"],
+ ", such that a triangle is formed.\n\nConsider the following two triangles:\n\
+A(-340,495), B(-153,-910), C(835,-947)\nX(-175,41), Y(-421,-714), Z(574,-645)\
+\n\nIt can be verified that triangle ABC contains the origin, whereas \
+triangle XYZ does not.\n\nUsing triangles.txt (right click and \
+\[OpenCurlyQuote]Save Link/Target As...\[CloseCurlyQuote]), a 27K text file \
+containing the co-ordinates of one thousand \[OpenCurlyDoubleQuote]random\
+\[CloseCurlyDoubleQuote] triangles, find the number of triangles for which \
+the interior contains the origin.\n\nNOTE: The first two examples in the file \
+represent the triangles in the example given above."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.7302068759551125`*^9, 3.730206878339787*^9}, {3.730206922146965*^9, 
+  3.730206954785587*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:4ece\:7b1b\:5361\:5c14\:5e73\:9762\:4e2d\:968f\:673a\:9009\:62e9\:4e09\
+\:4e2a\:4e0d\:540c\:7684\:70b9\:ff0c\:5176\:5750\:6807\:5747\:6ee1\:8db3",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "1000"}], "\[LessEqual]", "x"}], ",", 
+    RowBox[{"y", "\[LessEqual]", "1000"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c332b327-14c5-42b2-b7c3-84d840dd91c9"],
+ "\:ff0c\:8fd9\:4e09\:4e2a\:70b9\:6784\:6210\:4e00\:4e2a\:4e09\:89d2\:5f62\
+\:3002\n\n\:8003\:8651\:4e0b\:9762\:4e24\:4e2a\:4e09\:89d2\:5f62\:ff1a\n\
+A(-340,495), B(-153,-910), C(835,-947)\nX(-175,41), Y(-421,-714), Z(574,-645)\
+\n\n\:53ef\:4ee5\:9a8c\:8bc1\:4e09\:89d2\:5f62ABC\:5305\:542b\:539f\:70b9\
+\:ff0c\:800c\:4e09\:89d2\:5f62XYZ\:4e0d\:5305\:542b\:539f\:70b9\:3002\n\n\
+\:572827K\:7684\:6587\:672c\:6587\:4ef6triangles.txt\:ff08\:53f3\:952e\:5355\
+\:51fb\[OpenCurlyDoubleQuote]\:4ece\:94fe\:63a5\:53e6\:5b58\:6587\:4ef6\:4e3a\
+\[Ellipsis]\[CloseCurlyDoubleQuote]\:ff09\:4e2d\:5305\:542b\:4e86\:4e00\:5343\
+\:4e2a\[OpenCurlyDoubleQuote]\:968f\:673a\[CloseCurlyDoubleQuote]\:4e09\:89d2\
+\:5f62\:7684\:5750\:6807\:ff0c\:627e\:51fa\:5176\:4e2d\:5305\:542b\:539f\:70b9\
+\:5728\:5176\:5185\:90e8\:7684\:4e09\:89d2\:5f62\:7684\:6570\:91cf\:3002\n\n\
+\:6ce8\:610f\:ff1a\:6587\:4ef6\:4e2d\:7684\:524d\:4e24\:4e2a\:4e09\:89d2\:5f62\
+\:5c31\:662f\:4e0a\:8ff0\:6837\:4f8b\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.7302068864128466`*^9, 
+   3.730206938048806*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\<F:\\\\\:8bfe\:4ef6\\\\Project Euler\\\\p102_triangles.txt\>\"", ",", 
+     "\"\<CSV\>\""}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f", "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Join", "[", 
+       RowBox[{"#", ",", 
+        RowBox[{"{", "0", "}"}]}], "]"}], "&"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Partition", "[", 
+        RowBox[{"#", ",", "2"}], "]"}], "&"}], "/@", "f"}], ",", 
+     RowBox[{"{", "2", "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Count", "[", 
+  RowBox[{"f", ",", 
+   RowBox[{"x_", "/;", 
+    RowBox[{"SameQ", "@@", 
+     RowBox[{"Sign", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+             "x", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], "-", 
+             RowBox[{
+             "x", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], 
+            ")"}], "\[Cross]", 
+           RowBox[{
+           "x", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], 
+          ")"}], ".", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+             "x", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], "-", 
+             RowBox[{
+             "x", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], 
+            ")"}], "\[Cross]", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+             "x", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], "-", 
+             RowBox[{
+             "x", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}]}], 
+            ")"}]}], ")"}]}], ",", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+             "x", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}], "-", 
+             RowBox[{
+             "x", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
+            ")"}], "\[Cross]", 
+           RowBox[{
+           "x", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
+          ")"}], ".", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+             "x", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}], "-", 
+             RowBox[{
+             "x", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
+            ")"}], "\[Cross]", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+             "x", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], "-", 
+             RowBox[{
+             "x", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], 
+            ")"}]}], ")"}]}], ",", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+             "x", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], "-", 
+             RowBox[{
+             "x", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}]}], 
+            ")"}], "\[Cross]", 
+           RowBox[{
+           "x", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}]}], 
+          ")"}], ".", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+             "x", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], "-", 
+             RowBox[{
+             "x", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}]}], 
+            ")"}], "\[Cross]", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+             "x", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}], "-", 
+             RowBox[{
+             "x", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
+            ")"}]}], ")"}]}]}], "}"}], "]"}]}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+   3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+   3.7250282267187443`*^9}, {3.72503044347628*^9, 3.725030445342036*^9}, {
+   3.730207190606184*^9, 3.730207219703844*^9}, {3.730207258133957*^9, 
+   3.7302072901258545`*^9}, {3.7302073352274632`*^9, 3.730207389253088*^9}, {
+   3.7302074311280932`*^9, 3.730207432705845*^9}, {3.7302075644636936`*^9, 
+   3.730207579450507*^9}, {3.730207621951197*^9, 3.7302076524864626`*^9}, {
+   3.7302076835793524`*^9, 3.730207714286806*^9}, 3.7302080161094856`*^9, {
+   3.7302080619519234`*^9, 3.730208133951717*^9}, {3.730273343917488*^9, 
+   3.730273360532855*^9}, {3.730273494450033*^9, 3.730273524520919*^9}, {
+   3.7302735762963285`*^9, 3.7302735948618984`*^9}, {3.7302736544560504`*^9, 
+   3.7302736595108323`*^9}, {3.7302736962810345`*^9, 
+   3.7302736964062023`*^9}},ExpressionUUID->"20386a64-a558-4827-99f8-\
+04921bede5b8"],
+
+Cell[BoxData["228"], "Output",
+ CellChangeTimes->{
+  3.73020813581781*^9, {3.730273688190752*^9, 
+   3.7302736974543805`*^9}},ExpressionUUID->"416d5136-ee6e-4ea1-8d92-\
+71a3ca738cea"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1260, 24, 288, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1821, 46, 1626, 29, 265, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[3472, 79, 4953, 127, 242, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[8428, 208, 183, 4, 37, "Output",ExpressionUUID->"416d5136-ee6e-4ea1-8d92-71a3ca738cea"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,147 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5263,        139]
+NotebookOptionsPosition[      4637,        120]
+NotebookOutlinePosition[      4995,        136]
+CellTagsIndexPosition[      4952,        133]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Working from left-to-right if no digit is exceeded by the digit to its left \
+it is called an increasing number; for example, 134468.
+
+Similarly if no digit is exceeded by the digit to its right it is called a \
+decreasing number; for example, 66420.
+
+We shall call a positive integer that is neither increasing nor decreasing a \
+\[OpenCurlyDoubleQuote]bouncy\[CloseCurlyDoubleQuote] number; for example, \
+155349.
+
+Clearly there cannot be any bouncy numbers below one-hundred, but just over \
+half of the numbers below one-thousand (525) are bouncy. In fact, the least \
+number for which the proportion of bouncy numbers first reaches 50% is 538.
+
+Surprisingly, bouncy numbers become more and more common and by the time we \
+reach 21780 the proportion of bouncy numbers is equal to 90%.
+
+Find the least number for which the proportion of bouncy numbers is exactly \
+99%.\
+\>", "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.730297692572157*^9, 
+  3.730297695004888*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell["\<\
+\:4ece\:5de6\:5f80\:53f3\:ff0c\:5982\:679c\:6bcf\:4e00\:4f4d\:6570\:5b57\:90fd\
+\:5927\:4e8e\:7b49\:4e8e\:5176\:5de6\:8fb9\:7684\:6570\:5b57\:ff0c\:8fd9\:6837\
+\:7684\:6570\:88ab\:79f0\:4e3a\:4e0a\:5347\:6570\:ff0c\:6bd4\:5982134468\:3002
+
+\:540c\:6837\:5730\:ff0c\:5982\:679c\:6bcf\:4e00\:4f4d\:6570\:5b57\:90fd\:5927\
+\:4e8e\:7b49\:4e8e\:5176\:53f3\:8fb9\:7684\:6570\:5b57\:ff0c\:8fd9\:6837\:7684\
+\:6570\:88ab\:79f0\:4e3a\:4e0b\:964d\:6570\:ff0c\:6bd4\:598266420\:3002
+
+\:5982\:679c\:4e00\:4e2a\:6b63\:6574\:6570\:65e2\:4e0d\:662f\:4e0a\:5347\:6570\
+\:4e5f\:4e0d\:662f\:4e0b\:964d\:6570\:ff0c\:6211\:4eec\:5c31\:79f0\:4e4b\:4e3a\
+\[OpenCurlyDoubleQuote]\:5f39\:8df3\[CloseCurlyDoubleQuote]\:6570\:ff0c\:6bd4\
+\:5982155349\:3002
+
+\:663e\:7136\:4e0d\:5b58\:5728\:5c0f\:4e8e\:4e00\:767e\:7684\:5f39\:8df3\:6570\
+\:ff0c\:800c\:5728\:5c0f\:4e8e\:4e00\:5343\:7684\:6570\:4e2d\:6709\:7565\:8d85\
+\:8fc7\:4e00\:534a\:ff08525\:ff09\:7684\:5f39\:8df3\:6570\:3002\:4e8b\:5b9e\
+\:4e0a\:ff0c\:4f7f\:5f97\:5f39\:8df3\:6570\:7684\:6bd4\:4f8b\:6070\:597d\:8fbe\
+\:523050%\:7684\:6700\:5c0f\:6570\:662f538\:3002
+
+\:4ee4\:4eba\:60ca\:5947\:7684\:662f\:ff0c\:5f39\:8df3\:6570\:5c06\:53d8\:5f97\
+\:8d8a\:6765\:8d8a\:666e\:904d\:ff0c\:523021780\:65f6\:ff0c\:5f39\:8df3\:6570\
+\:7684\:6bd4\:4f8b\:6070\:597d\:7b49\:4e8e90%\:3002
+
+\:627e\:51fa\:4f7f\:5f97\:5f39\:8df3\:6570\:7684\:6bd4\:4f8b\:6070\:597d\:4e3a\
+99%\:7684\:6700\:5c0f\:6570\:3002\
+\>", "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.730297702805657*^9},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"b", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"d", "=", 
+     RowBox[{"IntegerDigits", "[", "n", "]"}]}], ";", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"OrderedQ", "[", 
+         RowBox[{"d", ",", "LessEqual"}], "]"}]}], "&&", 
+       RowBox[{"!", 
+        RowBox[{"OrderedQ", "[", 
+         RowBox[{"d", ",", "GreaterEqual"}], "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{"b", "=", 
+        RowBox[{"b", "+", "1"}]}], ";", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          FractionBox["b", "n"], "\[Equal]", 
+          FractionBox["99", "100"]}], ",", 
+         RowBox[{"Return", "[", "n", "]"}]}], "]"}]}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1", ",", "\[Infinity]"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.730298366507303*^9, 3.730298410231368*^9}, {
+  3.730298533862095*^9, 3.7302985344527717`*^9}, {3.7302985702258987`*^9, 
+  3.7302987075389957`*^9}, {3.7302987456937914`*^9, 
+  3.7302988313999634`*^9}},ExpressionUUID->"effe3726-0ad5-4c42-9a01-\
+e1d67fd67987"],
+
+Cell[BoxData["1587000"], "Output",
+ CellChangeTimes->{{3.7302988194465485`*^9, 
+  3.7302988484949307`*^9}},ExpressionUUID->"d489822f-9c18-40d4-8d43-\
+169bf8135b43"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1076, 24, 288, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1637, 46, 1626, 30, 265, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[3288, 80, 1166, 32, 203, "Input",ExpressionUUID->"effe3726-0ad5-4c42-9a01-e1d67fd67987"],
+Cell[4457, 114, 164, 3, 37, "Output",ExpressionUUID->"d489822f-9c18-40d4-8d43-169bf8135b43"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,243 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7763,        235]
+NotebookOptionsPosition[      7137,        216]
+NotebookOutlinePosition[      7495,        232]
+CellTagsIndexPosition[      7452,        229]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Let ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"p", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b23e0714-aa0d-4a96-82e6-433016799554"],
+ " be the nth prime: 2, 3, 5, 7, 11, ..., and let r be the remainder when ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"p", "[", "n", "]"}], "\[Minus]", "1"}], ")"}], "n"], "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"p", "[", "n", "]"}], "+", "1"}], ")"}], "n"]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f9e1790c-135d-4d50-916d-0ec31825b130"],
+ " is divided by ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    RowBox[{"p", "[", "n", "]"}], "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b20e801f-5f6f-477a-993e-eb79ddf58c7c"],
+ ".\n\nFor example, when ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "=", "3"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "13de0ee8-3d86-48f8-9c28-c558096e9fb4"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"p", "[", "3", "]"}], "=", "5"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a478f2cf-0ea8-477f-a754-603506d82987"],
+ ", and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["4", "3"], "+", 
+       SuperscriptBox["6", "3"]}], ")"}], "\[Divide]", 
+     SuperscriptBox["5", "2"]}], "=", 
+    RowBox[{
+     RowBox[{"280", "\[Divide]", 
+      SuperscriptBox["5", "2"]}], "=", 
+     RowBox[{"11", "\[Ellipsis]\[Ellipsis]5"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "45aeef73-a908-4c9e-b009-5a8c999eba9f"],
+ ".\n\nThe least value of n for which the remainder first exceeds ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "9"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a24569e6-508d-450f-81f6-023aa1ccd2f6"],
+ " is 7037.\n\nFind the least value of n for which the remainder first \
+exceeds ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "10"], TraditionalForm]],ExpressionUUID->
+  "b7cc7e75-7ace-409e-963a-1ef354dede85"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.7297432466111107`*^9, 3.7297434403548584`*^9}, {3.7297434985602937`*^9, 
+  3.729743502067221*^9}, {3.7297435751834016`*^9, 3.7297436118946657`*^9}, {
+  3.729743657143529*^9, 
+  3.729743657143529*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:8bb0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"p", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ad7928df-7ed5-4b98-bb80-f4d379829d61"],
+ "\:662f\:7b2cn\:4e2a\:7d20\:6570\:ff1a2\:30013\:30015\:30017\:300111\
+\[Ellipsis]\[Ellipsis]\:ff1b\:8bb0r\:662f",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"p", "[", "n", "]"}], "\[Minus]", "1"}], ")"}], "n"], "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"p", "[", "n", "]"}], "+", "1"}], ")"}], "n"]}], 
+   TraditionalForm]],ExpressionUUID->"bb2ddb86-ad63-4269-a500-f48ff3acb5c1"],
+ "\:88ab",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    RowBox[{"p", "[", "n", "]"}], "2"], TraditionalForm]],ExpressionUUID->
+  "84d9f776-f651-40ef-bf71-d4918ba56ed1"],
+ "\:9664\:6240\:5f97\:7684\:4f59\:6570\:3002\n\n\:4f8b\:5982\:ff0c\:5f53",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "=", "3"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "fde09a50-e121-41c4-9f8d-577e74b946c5"],
+ "\:65f6\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"p", "[", "3", "]"}], "=", "5"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3e1effab-6648-42c3-9a14-afa002b668e1"],
+ "\:ff0c\:800c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["4", "3"], "+", 
+       SuperscriptBox["6", "3"]}], ")"}], "\[Divide]", 
+     SuperscriptBox["5", "2"]}], "=", 
+    RowBox[{
+     RowBox[{"280", "\[Divide]", 
+      SuperscriptBox["5", "2"]}], "=", 
+     RowBox[{"11", "\[Ellipsis]\[Ellipsis]5"}]}]}], TraditionalForm]],
+  ExpressionUUID->"504f1ca8-e9b7-47d2-8106-b48039f15932"],
+ "\:3002\n\n\:4f7f\:4f59\:6570\:9996\:6b21\:8d85\:8fc7",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "9"], TraditionalForm]],ExpressionUUID->
+  "f8d78bc8-5691-425e-85e7-4bc18c308900"],
+ "\:7684\:6700\:5c0fn\:503c\:662f7037\:3002\n\n\:6c42\:4f7f\:4f59\:6570\:9996\
+\:6b21\:8d85\:8fc7",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "10"], TraditionalForm]],ExpressionUUID->
+  "14840d94-1d5b-4f88-9d78-82711d3af569"],
+ "\:7684\:6700\:5c0fn\:503c\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.7297432638324533`*^9, {3.729743446437709*^9, 3.7297434959733715`*^9}, {
+   3.7297436643396287`*^9, 
+   3.729743693418311*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Mod", "[", 
+       RowBox[{
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"Prime", "[", "n", "]"}], "\[Minus]", "1"}], ")"}], "n"], 
+         "+", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"Prime", "[", "n", "]"}], "+", "1"}], ")"}], "n"]}], ",", 
+        SuperscriptBox[
+         RowBox[{"Prime", "[", "n", "]"}], "2"]}], "]"}], ">", 
+      SuperscriptBox["10", "10"]}], ",", 
+     RowBox[{"Return", "[", "n", "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1", ",", "\[Infinity]"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+  3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+  3.7250282267187443`*^9}, {3.72503044347628*^9, 3.725030445342036*^9}, {
+  3.72974371242666*^9, 3.7297437164031277`*^9}, {3.7297437517018213`*^9, 
+  3.729743881363557*^9}, {3.7297439186794796`*^9, 
+  3.7297439198007393`*^9}},ExpressionUUID->"20386a64-a558-4827-99f8-\
+04921bede5b8"],
+
+Cell[BoxData["21035"], "Output",
+ CellChangeTimes->{
+  3.7250281599876013`*^9, {3.7250281918871064`*^9, 3.725028227147995*^9}, 
+   3.7250304482388463`*^9, {3.729743829182887*^9, 3.7297438960810785`*^9}, 
+   3.729743936255234*^9},ExpressionUUID->"67c7cb4f-1ab5-4525-a5aa-\
+244a2cd81c7a"]
+}, Open  ]]
+},
+WindowSize->{775, 561},
+WindowMargins->{{287, Automatic}, {Automatic, 54}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2567, 77, 200, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[3128, 99, 2511, 73, 200, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[5664, 176, 1168, 30, 94, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[6835, 208, 286, 5, 37, "Output",ExpressionUUID->"67c7cb4f-1ab5-4525-a5aa-244a2cd81c7a"]
+}, Open  ]]
+}
+]
+*)
+

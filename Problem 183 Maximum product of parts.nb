@@ -1,0 +1,432 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     14748,        424]
+NotebookOptionsPosition[     14116,        405]
+NotebookOutlinePosition[     14474,        421]
+CellTagsIndexPosition[     14431,        418]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Let N be a positive integer and let N be split into k equal parts, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"r", "=", 
+    FractionBox["N", "k"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "79c0682c-34cb-40dc-9127-89c7ff41fd8f"],
+ ", so that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"N", "=", 
+    RowBox[{"r", "+", "r", "+", "\[Ellipsis]", "+", "r"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9ef3a804-e3b3-45af-96b3-20ef10a674eb"],
+ ".\nLet P be the product of these parts, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"P", "=", 
+    RowBox[{
+     RowBox[{
+     "r", "\[Times]", "r", "\[Times]", "\[Ellipsis]", "\[Times]", "r"}], "=", 
+     SuperscriptBox["r", "k"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "baadb1c8-6016-4062-ae16-d8abdc3eb145"],
+ ".\n\nFor example, if 11 is split into five equal parts, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"11", "=", 
+    RowBox[{"2.2", "+", "2.2", "+", "2.2", "+", "2.2", "+", "2.2"}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9e2ba3db-7e74-4ce5-b3d7-5f28d9b578ca"],
+ ", then ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"P", "=", 
+    RowBox[{
+     SuperscriptBox["2.2", "5"], "=", "51.53632"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5f0e1a29-0ef4-4f56-a09e-83b1ba9f171b"],
+ ".\n\nLet ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"M", "[", "N", "]"}], "=", 
+    SubscriptBox["P", "max"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "94d95915-579a-482f-ad10-5e2be677ba0e"],
+ " for a given value of N.\n\nIt turns out that the maximum for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"N", "=", "11"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "de17ec8e-1a9e-4f68-b8b4-87ad40e443fe"],
+ " is found by splitting eleven into four equal parts which leads to ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["P", "max"], "=", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox["11", "4"], ")"}], "4"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7e84d258-ca46-4b39-a763-47c4c9dd9792"],
+ "; that is, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"M", "[", "11", "]"}], "=", 
+    RowBox[{
+     FractionBox["14641", "256"], "=", "57.19140625"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cacebea3-e1d5-4f1e-b72d-cb703d09f052"],
+ ", which is a terminating decimal.\n\nHowever, for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"N", "=", "8"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0a2e7a89-e0a6-41a3-94d0-df292c97ea63"],
+ " the maximum is achieved by splitting it into three equal parts, so ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"M", "[", "8", "]"}], "=", 
+    FractionBox["512", "27"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "1f0a011e-bea7-4594-a077-1eb70da76a35"],
+ ", which is a non-terminating decimal.\n\nLet ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"D", "[", "N", "]"}], "=", "N"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5a9579b5-7f89-4953-a44e-aa796973d976"],
+ " if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"M", "[", "N", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d79e0504-99ee-4fd1-b0f9-b239df86aa90"],
+ " is a non-terminating decimal and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"D", "[", "N", "]"}], "=", 
+    RowBox[{"-", "N"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cd0330b8-fc98-4f1e-a03f-82908568e378"],
+ " if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"M", "[", "N", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "590a9883-3dcf-440b-ae25-830d6db47eb9"],
+ " is a terminating decimal.\n\nFor example, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Sum]", 
+    RowBox[{"D", "[", "N", "]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "06883d51-e907-4e1f-88fb-d8eb86ad5bd4"],
+ " for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"5", "\[LessEqual]", "N", "\[LessEqual]", "100"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "71eef660-1455-4d73-8685-1838eeba422c"],
+ " is 2438.\n\nFind ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Sum]", 
+    RowBox[{"D", "[", "N", "]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "884d0e39-6703-44b3-b666-1b9536a74d1a"],
+ " for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"5", "\[LessEqual]", "N", "\[LessEqual]", "10000"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e8b8b5e9-d96c-4bab-9422-954d5ecbfd03"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.7570434675303802`*^9, 3.7570434696800346`*^9}, {
+  3.757043510468416*^9, 3.7570435495066037`*^9}, {3.757043622583613*^9, 
+  3.75704379056475*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "N\:662f\:4e00\:4e2a\:6b63\:6574\:6570\:ff0c\:5c06N\:62c6\:5206\:6210k\:4e2a\
+\:76f8\:7b49\:7684\:90e8\:5206\:ff0c\:8bb0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"r", "=", 
+    FractionBox["N", "k"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "08a23fd1-8530-4897-88ce-886b3d3857a9"],
+ "\:ff0c\:4e5f\:5373",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"N", "=", 
+    RowBox[{"r", "+", "r", "+", "\[Ellipsis]", "+", "r"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cf2d7134-9d1a-4250-a3ec-6c85ac4c28f8"],
+ "\:3002\n\:8bb0P\:662f\:8fd9\:4e9b\:62c6\:5206\:7684\:4e58\:79ef\:ff0c\:4e5f\
+\:5373",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"P", "=", 
+    RowBox[{
+     RowBox[{
+     "r", "\[Times]", "r", "\[Times]", "\[Ellipsis]", "\[Times]", "r"}], "=", 
+     SuperscriptBox["r", "k"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "1347afc4-74c1-4be2-ad0a-b280421344fe"],
+ "\:3002\n\n\:4f8b\:5982\:ff0c\:5c0611\:62c6\:5206\:62105\:4e2a\:76f8\:7b49\
+\:7684\:90e8\:5206\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"11", "=", 
+    RowBox[{"2.2", "+", "2.2", "+", "2.2", "+", "2.2", "+", "2.2"}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "969c677d-9d75-4c07-a34d-b68d80c1efb2"],
+ "\:ff0c\:90a3\:4e48",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"P", "=", 
+    RowBox[{
+     SuperscriptBox["2.2", "5"], "=", "51.53632"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "dbbeb386-c2c9-4836-9049-c00d1f300faa"],
+ "\:3002\n\n\:5bf9\:4e8e\:7ed9\:5b9a\:7684N\:ff0c\:8bb0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"M", "[", "N", "]"}], "=", 
+    SubscriptBox["P", "max"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e282f11f-6ce5-4c5f-9c7b-de18e6b8e774"],
+ "\:3002\n\n\:8ba1\:7b97\:53ef\:5f97\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"N", "=", "11"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cf2ff708-37db-4e2c-af04-9485572c4a56"],
+ "\:65f6\:ff0c\:8fd9\:4e2a\:6700\:5927\:503c\:662f\:5728\:5c06\:5176\:62c6\
+\:5206\:6210\:56db\:7b49\:4efd\:65f6\:5f97\:5230\:7684\:ff0c\:6b64\:65f6",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["P", "max"], "=", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox["11", "4"], ")"}], "4"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5a55f26f-f427-49b0-8403-82de70dde78d"],
+ "\:ff0c\:4e5f\:5c31\:662f\:8bf4",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"M", "[", "11", "]"}], "=", 
+    RowBox[{
+     FractionBox["14641", "256"], "=", "57.19140625"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ea840533-1997-40e7-8ee6-4412b48f921d"],
+ "\:ff0c\:8fd9\:662f\:4e00\:4e2a\:6709\:9650\:5c0f\:6570\:3002\n\n\
+\:7136\:800c\:ff0c\:5bf9\:4e8e",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"N", "=", "8"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "85b70926-916e-4f09-b9c0-8d1538ebb575"],
+ "\:ff0c\:8fd9\:4e2a\:6700\:5927\:503c\:662f\:5728\:5c06\:5176\:62c6\:5206\
+\:6210\:4e09\:7b49\:4efd\:65f6\:5f97\:5230\:7684\:ff0c\:6b64\:65f6",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"M", "[", "8", "]"}], "=", 
+    FractionBox["512", "27"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ff421a59-f31a-40b3-9c51-545a0058b4aa"],
+ "\:ff0c\:4e0d\:662f\:6709\:9650\:5c0f\:6570\:3002\n\n\:82e5",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"M", "[", "N", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9a77bddb-92b8-4253-909a-48511eabd597"],
+ "\:4e0d\:662f\:6709\:9650\:5c0f\:6570\:ff0c\:8bb0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"D", "[", "N", "]"}], "=", "N"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "26df5d21-aa26-4718-9c01-43c7ee87eeb9"],
+ "\:ff0c\:53cd\:4e4b\:8bb0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"D", "[", "N", "]"}], "=", 
+    RowBox[{"-", "N"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "377dc5bc-bc61-4710-9fa7-d9a4773c007c"],
+ "\:3002\n\n\:4f8b\:5982\:ff0c\:5bf9\:4e8e",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"5", "\[LessEqual]", "N", "\[LessEqual]", "100"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ef864525-87a6-4748-8c73-db5564811a4f"],
+ "\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Sum]", 
+    RowBox[{"D", "[", "N", "]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ae7b5bc3-a45b-461d-a92f-f7d5274d7315"],
+ "\:4e3a2438\:3002\n\n\:5bf9\:4e8e",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"5", "\[LessEqual]", "N", "\[LessEqual]", "10000"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "17d7e1d2-ca64-497b-bb0c-4346b175ab15"],
+ "\:ff0c\:6c42",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Sum]", 
+    RowBox[{"D", "[", "N", "]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "2a4d5197-65ae-446b-94cc-3b9e2b6b51f0"],
+ "\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, 3.757043481806055*^9, {
+   3.75704391428627*^9, 
+   3.75704403957419*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"MaximumProductofParts", "[", "n_", "]"}], ":=", 
+   RowBox[{"ArgMax", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         FractionBox["n", "k"], ")"}], "k"], ",", 
+       RowBox[{
+        RowBox[{"\[LeftFloor]", 
+         FractionBox["n", "\[ExponentialE]"], "\[RightFloor]"}], 
+        "\[LessEqual]", "k", "\[LessEqual]", 
+        RowBox[{"\[LeftCeiling]", 
+         FractionBox["n", "\[ExponentialE]"], "\[RightCeiling]"}]}]}], "}"}], 
+     ",", "k", ",", "Integers"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"d", "[", "n_", "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"k1", "=", 
+        RowBox[{"\[LeftFloor]", 
+         FractionBox["n", "\[ExponentialE]"], "\[RightFloor]"}]}], ",", 
+       RowBox[{"k2", "=", 
+        RowBox[{"\[LeftCeiling]", 
+         FractionBox["n", "\[ExponentialE]"], "\[RightCeiling]"}]}], ",", 
+       "f"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"f", "=", 
+       RowBox[{"FactorInteger", "[", 
+        RowBox[{"Denominator", "[", 
+         FractionBox["n", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             SuperscriptBox[
+              RowBox[{"(", 
+               FractionBox["n", "k1"], ")"}], "k1"], "\[GreaterEqual]", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               FractionBox["n", "k2"], ")"}], "k2"]}], ",", "k1", ",", "k2"}],
+            "]"}]], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"ContainsOnly", "[", 
+         RowBox[{
+          RowBox[{"f", "\[LeftDoubleBracket]", 
+           RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "2", ",", "5"}], "}"}]}], "]"}], ",", 
+        RowBox[{"-", "n"}], ",", "n"}], "]"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Total", "[", 
+  RowBox[{"d", "/@", 
+   RowBox[{"Range", "[", 
+    RowBox[{"5", ",", "10000"}], "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7570441759900894`*^9, 3.7570441931006527`*^9}, {
+  3.7570442617446404`*^9, 3.7570443644522824`*^9}, {3.7570444166201496`*^9, 
+  3.7570444729399295`*^9}, {3.757044505814909*^9, 3.7570445264155936`*^9}, {
+  3.7570448435222244`*^9, 3.757044929147843*^9}, {3.7570457294845552`*^9, 
+  3.7570457471728168`*^9}, {3.757045867184636*^9, 3.7570458895506935`*^9}, {
+  3.757046024656522*^9, 3.7570462702641344`*^9}, {3.7570466264282064`*^9, 
+  3.7570467100234785`*^9}, {3.757046750672078*^9, 3.7570468096101484`*^9}},
+ CellLabel->
+  "In[169]:=",ExpressionUUID->"c8c60c65-48d5-4073-8268-f0f08e2c02e8"],
+
+Cell[BoxData["48861552"], "Output",
+ CellChangeTimes->{{3.7570467029065857`*^9, 3.75704671705162*^9}, {
+  3.757046806971199*^9, 3.757046814758206*^9}},
+ CellLabel->
+  "Out[171]=",ExpressionUUID->"c0bc2a54-eb71-4a76-ad1c-584d811f051f"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 5128, 150, 433, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[5689, 172, 5390, 151, 403, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[11104, 327, 2759, 69, 317, "Input",ExpressionUUID->"c8c60c65-48d5-4073-8268-f0f08e2c02e8"],
+Cell[13866, 398, 234, 4, 37, "Output",ExpressionUUID->"c0bc2a54-eb71-4a76-ad1c-584d811f051f"]
+}, Open  ]]
+}
+]
+*)
+

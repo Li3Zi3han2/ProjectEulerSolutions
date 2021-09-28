@@ -1,0 +1,262 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9365,        254]
+NotebookOptionsPosition[      8516,        231]
+NotebookOutlinePosition[      8874,        247]
+CellTagsIndexPosition[      8831,        244]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+A particular school offers cash rewards to children with good attendance and \
+punctuality. If they are absent for three consecutive days or late on more \
+than one occasion then they forfeit their prize.
+
+During an n-day period a trinary string is formed for each child consisting \
+of L\[CloseCurlyQuote]s (late), O\[CloseCurlyQuote]s (on time), and A\
+\[CloseCurlyQuote]s (absent).
+
+Although there are eighty-one trinary strings for a 4-day period that can be \
+formed, exactly forty-three strings would lead to a prize:
+
+OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA
+OAOL OAAO OAAL OALO OALA OLOO OLOA OLAO OLAA AOOO
+AOOA AOOL AOAO AOAA AOAL AOLO AOLA AAOO AAOA AAOL
+AALO AALA ALOO ALOA ALAO ALAA LOOO LOOA LOAO LOAA
+LAOO LAOA LAAO
+
+How many \[OpenCurlyDoubleQuote]prize\[CloseCurlyDoubleQuote] strings exist \
+over a 30-day period?\
+\>", "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.7310343659646606`*^9, 
+  3.7310343686996145`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell["\<\
+\:67d0\:6240\:5b66\:6821\:7ed9\:6709\:51fa\:52e4\:548c\:5b88\:65f6\:8868\:73b0\
+\:826f\:597d\:7684\:5b69\:5b50\:53d1\:653e\:73b0\:91d1\:5956\:52b1\:3002\:5982\
+\:679c\:5b69\:5b50\:8fde\:7eed\:4e09\:5929\:7f3a\:5e2d\:ff0c\:6216\:662f\:6709\
+\:591a\:4e8e\:4e00\:6b21\:8fdf\:5230\:ff0c\:5219\:62ff\:4e0d\:5230\:8fd9\:4efd\
+\:5956\:52b1\:3002
+
+\:6839\:636en\:5929\:7684\:5b9e\:9645\:51fa\:52e4\:60c5\:51b5\:ff0c\:6211\
+\:4eec\:53ef\:4ee5\:751f\:6210L\:ff08\:8fdf\:5230\:ff09\:3001O\:ff08\:51c6\
+\:65f6\:ff09\:548cA\:ff08\:7f3a\:5e2d\:ff09\:8fd9\:4e09\:4e2a\:5b57\:6bcd\
+\:7ec4\:6210\:7684\:5b57\:7b26\:4e32\:3002
+
+\:6839\:636e4\:5929\:7684\:51fa\:52e4\:60c5\:51b5\:ff0c\:80fd\:591f\:751f\
+\:6210\:7684\:5b57\:7b26\:4e32\:4e00\:5171\:670981\:79cd\:53ef\:80fd\:ff0c\
+\:5176\:4e2d\:6070\:597d\:670943\:4e2a\:4e32\:53ef\:4ee5\:83b7\:5f97\:5956\
+\:52b1\:ff1a
+
+OOOO OOOA OOOL OOAO OOAA OOAL OOLO OOLA OAOO OAOA
+OAOL OAAO OAAL OALO OALA OLOO OLOA OLAO OLAA AOOO
+AOOA AOOL AOAO AOAA AOAL AOLO AOLA AAOO AAOA AAOL
+AALO AALA ALOO ALOA ALAO ALAA LOOO LOOA LOAO LOAA
+LAOO LAOA LAAO
+
+\:6839\:636e30\:5929\:7684\:51fa\:52e4\:60c5\:51b5\:751f\:6210\:7684\:5b57\
+\:7b26\:4e32\:4e2d\:ff0c\:6709\:591a\:5c11\:4e2a\:662f\:53ef\:4ee5\:83b7\:5f97\
+\:5956\:52b1\:7684\:4e32\:ff1f\
+\>", "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.7310343760278378`*^9},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"n", "=", "30"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "a\:662f\:7f3a\:5e2d\:5929\:6570", "\:ff0c", 
+    "c\:662f\:8fde\:7eed\:4e24\:5929\:7f3a\:5e2d\:6b21\:6570"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"\:5269\:4f59n", "-", "a\:5929"}], "\:ff0c", 
+    RowBox[{"\:6709n", "-", "a", "+", 
+     RowBox[{"1", "\:4e2a\:7a7a"}]}], "\:ff0c", 
+    RowBox[{"\:653ea", "-", "c\:4e2a"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"\:7f3a\:5e2d\:5929\:6570\:5185\:90e8\:6392", "\:ff1a", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"a", "-", "c"}], ")"}], "!"}], 
+     RowBox[{
+      RowBox[{"c", "!"}], " ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"a", "-", 
+         RowBox[{"2", " ", "c"}]}], ")"}], "!"}]}]]}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "\:5c06\:4efb\:610f\:4e00\:5929\:51c6\:65f6\:53d8\:4e3a\:8fdf\:5230", 
+    "\:ff0c", 
+    RowBox[{"\:591an", "-", "a\:79cd"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubsuperscriptBox["\[Sum]", 
+   RowBox[{"a", "=", "0"}], "n"], 
+  RowBox[{
+   SubsuperscriptBox["\[Sum]", 
+    RowBox[{"c", "=", "0"}], 
+    RowBox[{"\[LeftFloor]", 
+     FractionBox["a", "2"], "\[RightFloor]"}]], 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"n", "-", "a", "+", "1"}], ")"}], " ", 
+    RowBox[{"Binomial", "[", 
+     RowBox[{
+      RowBox[{"n", "-", "a", "+", "1"}], ",", 
+      RowBox[{"a", "-", "c"}]}], "]"}], " ", 
+    RowBox[{"Binomial", "[", 
+     RowBox[{
+      RowBox[{"a", "-", "c"}], ",", "c"}], "]"}]}]}]}]}], "Input",
+ CellChangeTimes->{{3.731192679127684*^9, 3.7311927775050025`*^9}, 
+   3.7311928955453863`*^9, {3.7311930175578365`*^9, 3.731193125588004*^9}, {
+   3.731193243172604*^9, 3.7311932573686976`*^9}, {3.731193600754959*^9, 
+   3.7311936098585186`*^9}, {3.731193674314046*^9, 
+   3.7311938649464693`*^9}},ExpressionUUID->"4bde9a49-4d3c-44d9-bc99-\
+365740d4e26b"],
+
+Cell[BoxData["1918080160"], "Output",
+ CellChangeTimes->{{3.731192726550804*^9, 3.731192750049206*^9}, 
+   3.73119289628633*^9, {3.731193020186716*^9, 3.7311931277300425`*^9}, {
+   3.731193251320794*^9, 3.731193258113762*^9}, {3.7311936045768137`*^9, 
+   3.7311936102228765`*^9}},ExpressionUUID->"5b1f91e6-a9a4-43db-a394-\
+e4b82d404ac2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"\:53e6\:89e3", "\:ff1a", "\:9012\:5f52"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"n", "=", "30"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"maxabsent", "=", "2"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"maxlate", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"prize", "[", 
+      RowBox[{"0", ",", "0", ",", "0"}], "]"}], "=", "1"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"prize", "[", 
+      RowBox[{"0", ",", "_", ",", "_"}], "]"}], "=", "0"}], ";"}], "\n", 
+   RowBox[{"(*", "\:8fd9\:4e00\:5929\:662fO", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"prize", "[", 
+      RowBox[{"d_", ",", "l_", ",", "0"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{"prize", "[", 
+       RowBox[{"d", ",", "l", ",", "0"}], "]"}], "=", 
+      RowBox[{
+       RowBox[{
+        SubsuperscriptBox["\[Sum]", 
+         RowBox[{"a", "=", "0"}], "maxabsent"], 
+        RowBox[{"prize", "[", 
+         RowBox[{
+          RowBox[{"d", "-", "1"}], ",", "l", ",", "a"}], "]"}]}], "+", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"l", ">", "0"}], ",", 
+         RowBox[{
+          SubsuperscriptBox["\[Sum]", 
+           RowBox[{"a", "=", "0"}], "maxabsent"], 
+          RowBox[{"prize", "[", 
+           RowBox[{
+            RowBox[{"d", "-", "1"}], ",", 
+            RowBox[{"l", "-", "1"}], ",", "a"}], "]"}]}], ",", "0"}], 
+        "]"}]}]}]}], ";"}], "\n", 
+   RowBox[{"(*", "\:8fd9\:4e00\:5929\:662fA", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"prize", "[", 
+      RowBox[{"d_", ",", "l_", ",", "a_"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{"prize", "[", 
+       RowBox[{"d", ",", "l", ",", "a"}], "]"}], "=", 
+      RowBox[{"prize", "[", 
+       RowBox[{
+        RowBox[{"d", "-", "1"}], ",", "l", ",", 
+        RowBox[{"a", "-", "1"}]}], "]"}]}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    SubsuperscriptBox["\[Sum]", 
+     RowBox[{"l", "=", "0"}], "maxlate"], 
+    RowBox[{
+     SubsuperscriptBox["\[Sum]", 
+      RowBox[{"a", "=", "0"}], "maxabsent"], 
+     RowBox[{"prize", "[", 
+      RowBox[{"n", ",", "l", ",", "a"}], "]"}]}]}]}]}]], "Input",
+ CellChangeTimes->{{3.731034952780286*^9, 3.731034984987262*^9}, {
+   3.7310354430136676`*^9, 3.7310354530534406`*^9}, 3.731035489348966*^9, {
+   3.7310355219829903`*^9, 3.7310356477502623`*^9}, {3.7310363028947616`*^9, 
+   3.731036303598729*^9}, {3.731036384304264*^9, 3.731036410172433*^9}, 
+   3.7311929365976253`*^9, 3.7311934786861515`*^9, {3.731193613321498*^9, 
+   3.7311936135816665`*^9}, {3.731193874352588*^9, 
+   3.731193884205661*^9}},ExpressionUUID->"c4796e23-6d7c-485c-9fe1-\
+7457eed1156a"],
+
+Cell[BoxData["1918080160"], "Output",
+ CellChangeTimes->{3.731035736489812*^9, 3.7310364687544374`*^9, 
+  3.73119293729978*^9, 3.7311934790819154`*^9, 3.7311936139371243`*^9, 
+  3.731193889015728*^9},ExpressionUUID->"166cb29e-1ef9-469e-b878-\
+68dc4cba3d21"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1047, 24, 334, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1608, 46, 1457, 30, 311, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[3090, 80, 2015, 56, 198, "Input",ExpressionUUID->"4bde9a49-4d3c-44d9-bc99-365740d4e26b"],
+Cell[5108, 138, 337, 5, 37, "Output",ExpressionUUID->"5b1f91e6-a9a4-43db-a394-e4b82d404ac2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5482, 148, 2758, 74, 346, "Input",ExpressionUUID->"c4796e23-6d7c-485c-9fe1-7457eed1156a"],
+Cell[8243, 224, 257, 4, 93, "Output",ExpressionUUID->"166cb29e-1ef9-469e-b878-68dc4cba3d21"]
+}, Open  ]]
+}
+]
+*)
+

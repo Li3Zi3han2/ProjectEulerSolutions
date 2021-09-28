@@ -1,0 +1,351 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13114,        343]
+NotebookOptionsPosition[     12485,        324]
+NotebookOutlinePosition[     12842,        340]
+CellTagsIndexPosition[     12799,        337]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "A composite number can be factored many different ways. For instance, not \
+including multiplication by one, 24 can be factored in 7 distinct ways:\n\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{"24", "=", 
+    RowBox[{"2", "\[Times]", "2", "\[Times]", "2", "\[Times]", "3"}]}], 
+   TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"24", "=", 
+    RowBox[{"2", "\[Times]", "3", "\[Times]", "4"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"24", "=", 
+    RowBox[{"2", "\[Times]", "2", "\[Times]", "6"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"24", "=", 
+    RowBox[{"4", "\[Times]", "6"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"24", "=", 
+    RowBox[{"3", "\[Times]", "8"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"24", "=", 
+    RowBox[{"2", "\[Times]", "12"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"24", "=", "24"}], TraditionalForm]}],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d6e89e94-f043-4405-b3ed-3115ee2e8aa7"],
+ "\n\nRecall that the digital root of a number, in base 10, is found by \
+adding together the digits of that number, and repeating that process until a \
+number is arrived at that is less than 10. Thus the digital root of 467 is 8.\
+\n\nWe shall call a Digital Root Sum (DRS) the sum of the digital roots of \
+the individual factors of our number.\nThe chart below demonstrates all of \
+the DRS values for 24.\n\n",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {"Factorisation", 
+      RowBox[{"Digital", " ", "Root", " ", "Sum"}]},
+     {
+      RowBox[{"2", "\[Times]", "2", "\[Times]", "2", "\[Times]", "3"}], "9"},
+     {
+      RowBox[{"2", "\[Times]", "3", "\[Times]", "4"}], "9"},
+     {
+      RowBox[{"2", "\[Times]", "2", "\[Times]", "6"}], "10"},
+     {
+      RowBox[{"4", "\[Times]", "6"}], "10"},
+     {
+      RowBox[{"3", "\[Times]", "8"}], "11"},
+     {
+      RowBox[{"2", "\[Times]", "12"}], "5"},
+     {"24", "6"}
+    }], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "08085c9b-4521-4beb-835e-74a6ad3c72c3"],
+ "\n\nThe maximum Digital Root Sum of 24 is 11.\nThe function ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"mdrs", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "074afbd1-d636-4a5f-ada4-510584e093da"],
+ " gives the maximum Digital Root Sum of n. So ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"mdrs", "[", "24", "]"}], "=", "11"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e9028ddc-785e-4cb1-b51a-a2b2e2ea49cb"],
+ ".\nFind ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Sum]", 
+    RowBox[{"mdrs", "[", "n", "]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e9a63eb6-604d-4967-bedf-f28700ff4fb8"],
+ " for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "<", "n", "<", "1000000"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4e964ef2-3d15-458b-9951-065faee4cfd2"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.756879289490506*^9, 
+  3.756879457069184*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:6bcf\:4e2a\:5408\:6570\:90fd\:6709\:5f88\:591a\:79cd\:5206\:89e3\:7ea6\
+\:6570\:7684\:65b9\:5f0f\:3002\:4f8b\:5982\:ff0c\:5982\:679c\:4e0d\:5141\:8bb8\
+\:591a\:6b21\:4e581\:ff0c\:67097\:79cd\:4e0d\:540c\:7684\:65b9\:5f0f\:5206\
+\:89e324\:7684\:7ea6\:6570\:ff1a\n\n",
+ Cell[BoxData[{
+  FormBox[
+   RowBox[{"24", "=", 
+    RowBox[{"2", "\[Times]", "2", "\[Times]", "2", "\[Times]", "3"}]}], 
+   TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"24", "=", 
+    RowBox[{"2", "\[Times]", "3", "\[Times]", "4"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"24", "=", 
+    RowBox[{"2", "\[Times]", "2", "\[Times]", "6"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"24", "=", 
+    RowBox[{"4", "\[Times]", "6"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"24", "=", 
+    RowBox[{"3", "\[Times]", "8"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"24", "=", 
+    RowBox[{"2", "\[Times]", "12"}]}], TraditionalForm], "\n", 
+  FormBox[
+   RowBox[{"24", "=", "24"}], TraditionalForm]}],ExpressionUUID->
+  "9516ef85-9d9c-4ece-aa07-1b6e915d704e"],
+ "\n\n\:5728\:5341\:8fdb\:5236\:4e0b\:ff0c\:4e00\:4e2a\:6570\:7684\:6570\:5b57\
+\:6839\:662f\:4e0d\:65ad\:91cd\:590d\:5c06\:5176\:5404\:4f4d\:6570\:5b57\:76f8\
+\:52a0\:ff0c\:76f4\:5230\:5f97\:5230\:7684\:7ed3\:679c\:5c0f\:4e8e10\:4e3a\
+\:6b62\:3002\:56e0\:6b64467\:7684\:6570\:5b57\:6839\:662f8\:3002\n\n\:6211\
+\:4eec\:8bb0\:6570\:5b57\:6839\:548c\:ff08DRS\:ff09\:662f\:6240\:6709\:5206\
+\:89e3\:51fa\:7684\:7ea6\:6570\:7684\:6570\:5b57\:6839\:4e4b\:548c\:3002\n\
+\:4e0b\:8868\:662f24\:7684\:6240\:6709\:7ea6\:6570\:5206\:89e3\:7684DRS\:503c\
+\:3002\n\n",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {"\:7ea6\:6570\:5206\:89e3", "\:6570\:5b57\:6839\:548c"},
+     {
+      RowBox[{"2", "\[Times]", "2", "\[Times]", "2", "\[Times]", "3"}], "9"},
+     {
+      RowBox[{"2", "\[Times]", "3", "\[Times]", "4"}], "9"},
+     {
+      RowBox[{"2", "\[Times]", "2", "\[Times]", "6"}], "10"},
+     {
+      RowBox[{"4", "\[Times]", "6"}], "10"},
+     {
+      RowBox[{"3", "\[Times]", "8"}], "11"},
+     {
+      RowBox[{"2", "\[Times]", "12"}], "5"},
+     {"24", "6"}
+    }], TraditionalForm]],ExpressionUUID->
+  "4e1244bb-fcb8-4247-8bd7-b5a5dc91278e"],
+ "\n\n\:5bf9\:4e8e24\:7684\:6240\:6709\:5206\:89e3\:ff0c\:6700\:5927\:7684\
+\:6570\:5b57\:6839\:548c\:662f11\:3002\n\:51fd\:6570",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"mdrs", "[", "n", "]"}], TraditionalForm]],ExpressionUUID->
+  "34665db8-7a19-43be-bf05-682425ea5044"],
+ "\:8868\:793a\:5bf9\:4e8en\:7684\:4e0d\:540c\:5206\:89e3\:6700\:5927\:7684\
+\:6570\:5b57\:6839\:548c\:3002\:56e0\:6b64",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"mdrs", "[", "24", "]"}], "=", "11"}], TraditionalForm]],
+  ExpressionUUID->"024432c8-34ea-44f8-a6e0-c20fe5fd9fdd"],
+ "\:3002\n\:5bf9\:4e8e",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "<", "n", "<", "1000000"}], TraditionalForm]],ExpressionUUID->
+  "4d475f9d-dc72-42c5-9080-a93584ce6c9a"],
+ "\:ff0c\:6c42",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Sum]", 
+    RowBox[{"mdrs", "[", "n", "]"}]}], TraditionalForm]],ExpressionUUID->
+  "5e890d3a-b3de-43ad-9b2a-669222abbc7f"],
+ "\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, 3.756879310583184*^9, 
+   3.756879468035571*^9, {3.756879548327957*^9, 
+   3.7568795904823117`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"DigitalRoot", "[", "n_", "]"}], ":=", 
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {"0", 
+          RowBox[{"n", "\[Equal]", "0"}]},
+         {
+          RowBox[{"Mod", "[", 
+           RowBox[{"n", ",", "9", ",", "1"}], "]"}], "True"}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"MaxDigitalRootSum", "[", "n_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"MaxDigitalRootSum", "[", "n", "]"}], "=", 
+    RowBox[{"Block", "[", 
+     RowBox[{
+      RowBox[{"{", "divisors", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"n", "\[Equal]", "0"}], "||", 
+          RowBox[{"n", "\[Equal]", "1"}]}], ",", 
+         RowBox[{"Return", "[", "n", "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"PrimeQ", "[", "n", "]"}], ",", 
+         RowBox[{"Return", "[", 
+          RowBox[{"DigitalRoot", "[", "n", "]"}], "]"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"divisors", "=", 
+        RowBox[{"Divisors", "[", "n", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"divisors", "=", 
+        RowBox[{"divisors", "\[LeftDoubleBracket]", 
+         RowBox[{"2", ";;", 
+          RowBox[{"\[LeftCeiling]", 
+           FractionBox[
+            RowBox[{"Length", "[", "divisors", "]"}], "2"], 
+           "\[RightCeiling]"}]}], "\[RightDoubleBracket]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Max", "[", 
+        RowBox[{
+         RowBox[{"Total", "[", 
+          RowBox[{
+           RowBox[{"Map", "[", 
+            RowBox[{"MaxDigitalRootSum", ",", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"divisors", ",", 
+                 FractionBox["n", "divisors"]}], "}"}], "\[Transpose]"}], 
+              ")"}], ",", 
+             RowBox[{"{", "2", "}"}]}], "]"}], ",", 
+           RowBox[{"{", "2", "}"}]}], "]"}], ",", 
+         RowBox[{"DigitalRoot", "[", "n", "]"}]}], "]"}]}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubsuperscriptBox["\[Sum]", 
+   RowBox[{"n", "=", "2"}], 
+   RowBox[{
+    SuperscriptBox["10", "6"], "-", "1"}]], 
+  RowBox[{"MaxDigitalRootSum", "[", "n", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+   3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+   3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+   3.7564263646962595`*^9, 3.7564263899753056`*^9}, {3.7568796934266987`*^9, 
+   3.756879796819894*^9}, {3.756880179158188*^9, 3.756880215404316*^9}, {
+   3.756880250851179*^9, 3.756880369270108*^9}, {3.756880406912815*^9, 
+   3.756880452062847*^9}, 3.7568806699176188`*^9, {3.7568807081724234`*^9, 
+   3.7568807275957394`*^9}, {3.756880778424845*^9, 3.7568807803245497`*^9}, {
+   3.756883886563048*^9, 3.7568839924230404`*^9}, {3.756884029693812*^9, 
+   3.7568840772369957`*^9}, 3.7568841663617415`*^9, {3.7568842870955*^9, 
+   3.756884287318465*^9}, {3.7568843770909157`*^9, 3.756884379646521*^9}, {
+   3.7568844377778473`*^9, 3.756884479923334*^9}, {3.7568845370546346`*^9, 
+   3.7568845936443443`*^9}, {3.7568846246392055`*^9, 
+   3.7568846602203627`*^9}, {3.756885000306607*^9, 3.756885019956552*^9}, 
+   3.7568855514048223`*^9, {3.756886068662326*^9, 3.756886068801371*^9}, {
+   3.7568864667857866`*^9, 3.7568864711416388`*^9}, {3.7568867046242466`*^9, 
+   3.756886728804968*^9}},
+ CellLabel->
+  "In[136]:=",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+
+Cell[BoxData["14489159"], "Output",
+ CellChangeTimes->{3.7568868198107457`*^9},
+ CellLabel->
+  "Out[138]=",ExpressionUUID->"1460993a-b319-4d77-947e-8b2de7b01fa8"]
+}, Open  ]]
+},
+WindowSize->{1350, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 3220, 85, 680, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[3781, 107, 3527, 86, 636, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[7333, 197, 4971, 119, 394, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[12307, 318, 162, 3, 37, "Output",ExpressionUUID->"1460993a-b319-4d77-947e-8b2de7b01fa8"]
+}, Open  ]]
+}
+]
+*)
+

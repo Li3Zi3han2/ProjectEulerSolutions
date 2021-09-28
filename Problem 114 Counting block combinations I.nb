@@ -1,0 +1,351 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17147,        343]
+NotebookOptionsPosition[     16515,        324]
+NotebookOutlinePosition[     16873,        340]
+CellTagsIndexPosition[     16830,        337]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "A row measuring seven units in length has red blocks with a minimum length \
+of three units placed on it, such that any two red blocks (which are allowed \
+to be different lengths) are separated by at least one black square. There \
+are exactly seventeen ways of doing this.\n\n",
+ Cell[BoxData[
+  GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+1:eJzt3UGqZFkVRuFAbdgUHIH9GoBdm3ZLHEAVloWdEqoEsZcDzJk4CH1B8CAa
+Puu8m/e+/e99vgVLM0U25LnrbE4vfvft37/+6y9ut9tPv375j6+/+ecffvzx
+m3/96Tcvf/nzDz/97fsfvvvLH3/4x3fff/fj77/95cv/+O8Xf/vy///Vy3//
+BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACjk06dPZIzaZVe1y66e
+wVlzgC/lq6++etf/X7tIQbvoynvbfYvXpu/zrtBss98zO6ndrnZvoOvspHbd
+i5oGus4+g+em7z8JdqZmm/3e2Ufb/fwyhzMa6Do7ce9W95jihL5S2q1u2myz
+V2Yfbbd6V6U4oYGusxP3bnWPKU7oK6Xd6qbNNntl9tF2q3dVihMa6Do7ce9W
+95jihL5S2q1u2myzV2Yfbbd6V6U4oYGusxP3bnWPKU7oK6Xd6qbNNntl9tF2
+q3dVihMa6Do7ce9W95jihL5S2q1u2myzV2Yfbbd6V6U4oYGusxP3bnWPKU7o
+K6Xd6qbNNntl9tF2q3dVihMa6Do7ce9W95jihL5S2q1u2myzV2Yfbbd6V6U4
+oYGusxP3bnWPKU7oK6Xd6qbNNntl9tF2q3dVihMa6Do7ce9W95jihL5S2q1u
+2myzV2Yfbbd6V6U4oYGusxP3bnWPKU7oK6Xd6qbNNntl9tF2q3dVihMa6Do7
+ce9W95jihL5S2q1u2myzV2Yfbbd6V6U4oYGusxP3bnWPKU7oK6Xd6qbNNntl
+9tF2q3dVihMa6Do7ce9W95jihL5S2q1u2myzV2Yfbbd6V6U4oYGusxP3bnWP
+KU7oK6Xd6qbNNntl9tF2q3dVihMa6Do7ce9W95jihL5S2q1u2myzV2Yfbbd6
+V6U4oYGusxP3bnWPKU7oK6Xd6qbNNntl9tF2q3dVihMa6Do7ce9W95jihL5S
+2q1u2myzV2Yfbbd6V6U4oYGusxP3bnWPKU7oK6Xd6qbNNntl9tF2q3dVihMa
+6Do7ce9W95jihL5S2q1u2myzV2Yfbbd6V6U4oYGusxP3bnWPKU7oK6Xd6qbN
+Nntl9tF2q3dVihMa6Do7ce9W95jihL5S2l1p+v7nszXb7PfMTmq3q90b6Do7
+qV33Yl5fV84+g9d5QDVH9zFQjXbRlTPfEvdZZILaZVe1y64CAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE6n+7TbyWe2yq9plV8/grDnAl/Le
+35jRLlLQLrpy1m97vTZ95e+PdZzd1a7nfaRp7X787K5q12z34u0zOYPnpm+3
+26l+1OzPL3/nx533lbN3a9e9mHMvtNtjdnWPKR5td3LT1d8kxQnfcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKXpLaGOlja7fcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKXpLaGOlja7fcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKXpLaGOlja7fcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKXpLaGOlja7fcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKXpLaGOlja7fcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKXpLaGOlja7fcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKXpLaGOlja7fcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKXpLaGOlja7fcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKXpLaGOlja7fcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKV75lrj/+Wy7zu5q1/M+
+0vSEf2+32V3Vrtnuxdtncgav84Bqju5joBrtoitnviXus8gEtcuuapddBQAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACZS/Ttl5LPaZVe1y66e
+wVlzgC/lvb8xo12koF105azf9nptuvp3ytK88kyc99tnot1su96Lj5id1K57
+8bF2/ZZH2l1p+vPtxhefz+T28vczdd7//7y1m+tH3Yuus4+2a8f0drd2V5qu
+/iYpuud1563dXCfszJR9bMfMcbd2V5qu/iYpuud1563dXCfszJR9bMfMcbd2
+V5qu/iYpuud1563dXCfszJR9bMfMcbd2V5qu/iYpuud1563dXCfszJR9bMfM
+cbd2V5qu/iYpuud1563dXCfszJR9bMfMcbd2V5qu/iYpuud1563dXCfszJR9
+bMfMcbd2V5qu/iYpuud1563dXCfszJR9bMfMcbd2V5qu/iYpuud1563dXCfs
+zJR9bMfMcbd2V5qu/iYpuud1563dXCfszJR9bMfMcbd2V5qu/iYpuud1563d
+XCfszJR9bMfMcbd2V5qu/iYpuud1563dXCfszJR9bMfMcbd2V5qu/iYpuud1
+563dXCfszJR9bMfMcbd2V5qu/iYpuud1563dXCfszJR9bMfMcbd2V5qu/iYp
+uud1563dXCfszJR9bMfMcbd2V5qu/iYpuud1563dXCfszJR9bMfMcbd2V5qu
+/iYpuud1563dXCfszJR9bMfMcbd2V5qu/iYpuud1563dXCfszJR9bMfMcbd2
+V5qu/iYpuud1563dXCfszJR9bMfMcbd2V5qu/iYpuud1563dXCfszJR9bMfM
+cbd2V5qu/iYpuud1563dXCfszJR9bMfMcbd2V5q+/5mfLj8T5/32mWg32673
+4iNmJ7XrXnysXb/lkXZ/rmmgmqP7GKhGu+jKmW+J+ywyQe2yq9plVwEAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICJVP++GvmsdtlV7bKrZ3DW
+HOBLee9vzGgXKWgXXTnrt71em77y98c6zmbNt9Ru9my+fd5J7bKmga6zz+C5
+6dvtdqofNfvzy995rR/1LXdr173o7RntVv8beF4DXXfFGUw4h+qWdjCx6Qnt
+uhe99ZbghF1xBhPOobqlHUxsekK77kVvvSU4YVecwYRzqG5pBxObntCue9Fb
+bwlO2BVnMOEcqlvawcSmJ7TrXvTWW4ITdsUZTDiH6pZ2MLHpCe26F731luCE
+XXEGE86huqUdTGx6QrvuRW+9JThhV5zBhHOobmkHE5ue0K570VtvCU7YFWcw
+4RyqW9rBxKYntOte9NZbghN2xRlMOIfqlnYwsekJ7boXvfWW4IRdcQYTzqG6
+pR1MbHpCu+5Fb70lOGFXnMGEc6huaQcTm57QrnvRW28JTtgVZzDhHKpb2sHE
+pie061701luCE3bFGUw4h+qWdjCx6Qntuhe99ZbghF1xBhPOobqlHUxsekK7
+7kVvvSU4YVecwYRzqG5pBxObntCue9FbbwlO2BVnMOEcqlvawcSmJ7TrXvTW
+W4ITdsUZTDiH6pZ2MLHpCe26F731luCEXXEGE86huqUdTGx6QrvuRW+9JThh
+V5zBhHOobmkHE5ue0K570VtvCU7YFWcw4RyqW9rBxKYntOte9NZbghN2xRk8
+z7v/+Wy7zmbNt9Ru9my+fd5J7bKmga6zz+B1HlDN0X0MVKNddOXMt8R9Fpmg
+dtlV7bKrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwESqf1+N
+fFa77Kp22dUzOGsO8KW89zdmtIsUtIuunPXbXq9NX/n7Y9W/gcb8b3mk6c7t
+uhdzTGyXc0zbuytN3263U32e/fnl7+zrR3WS2K57wZV7cbTd6n8Dc03cuytN
+25ns1LS3BKv1luCVJu7dlabtTHZq2luC1XpL8EoT9+5K03YmOzXtLcFqvSV4
+pYl7d6VpO5OdmvaWYLXeErzSxL270rSdyU5Ne0uwWm8JXmni3l1p2s5kp6a9
+JVittwSvNHHvrjRtZ7JT094SrNZbgleauHdXmrYz2alpbwlW6y3BK03cuytN
+25ns1LS3BKv1luCVJu7dlabtTHZq2luC1XpL8EoT9+5K03YmOzXtLcFqvSV4
+pYl7d6VpO5OdmvaWYLXeErzSxL270rSdyU5Ne0uwWm8JXmni3l1p2s5kp6a9
+JVittwSvNHHvrjRtZ7JT094SrNZbgleauHdXmrYz2alpbwlW6y3BK03cuytN
+25ns1LS3BKv1luCVJu7dlabtTHZq2luC1XpL8EoT9+5K03YmOzXtLcFqvSV4
+pYl7d6VpO5OdmvaWYLXeErzSxL270vT9z2d75Wx+rB/RyS7tuhdzTGyXc0zb
+uz/XNFDN0X0MVKNddOXMt8R9FpmgdtlV7bKrAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAwESqfwONfFa77CqwM+4AUnjvb8xoFyn4fSTszus+
+vvL3x6p/A435vnaS1C654pF2gWk87+Pb7Xaqz7M/v/yd/F8+d3K03ep/A/f0
+aLvANLwlWK23BLvqLQE88JZgtd4S7Kq3BPDAW4LVekuwq94SwANvCVbrLcGu
+eksAD7wlWK23BLvqLQE88JZgtd4S7Kq3BPDAW4LVekuwq94SwANvCVbrLcGu
+eksAD7wlWK23BLvqLQE88JZgtd4S7Kq3BPDAW4LVekuwq94SwANvCVbrLcGu
+eksAD7wlWK23BLvqLQE88JZgtd4S7Kq3BPDAW4LVekuwq94SwANvCVbrLcGu
+eksAD7wlWK23BLvqLQE88JZgtd4S7Kq3BPDAW4LVekuwq94SwANvCVbrLcGu
+eksAD57vwv3PZ3vlbM7xtZOkdskVj7QLTOP1LgDVHH1LANV4S2B37vv4fg/I
+BLXLrgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAN/4LU0ttrA==
+     "], {{0, 235}, {531, 0}}, {0, 255},
+     ColorFunction->RGBColor],
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+    Selectable->False],
+   DefaultBaseStyle->"ImageGraphics",
+   ImageSize->Automatic,
+   ImageSizeRaw->{531, 235},
+   PlotRange->{{0, 531}, {0, 235}}]], "Input",ExpressionUUID->
+  "f075db3a-c144-4a2e-a67a-d49880283a87"],
+ "\n\nHow many ways can a row measuring fifty units in length be filled?\n\n\
+NOTE: Although the example above does not lend itself to the possibility, in \
+general it is permitted to mix block sizes. For example, on a row measuring \
+eight units in length you could use red (3), black (1), and red (4)."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.7333971525060234`*^9, 
+  3.7333971545281525`*^9}, {3.733958553605687*^9, 
+  3.7339585981104765`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:7528\:9ed1\:8272\:65b9\:5757\:548c\:6700\:77ed\:957f\:5ea6\:4e3a3\:7684\
+\:7ea2\:8272\:65b9\:5757\:6446\:6210\:957f\:5ea6\:4e3a7\:7684\:4e00\:884c\
+\:ff0c\:8981\:6c42\:4efb\:610f\:4e24\:4e2a\:7ea2\:8272\:65b9\:5757\:ff08\:957f\
+\:5ea6\:53ef\:4ee5\:4e0d\:540c\:ff09\:4e4b\:95f4\:81f3\:5c11\:6709\:4e00\:4e2a\
+\:9ed1\:8272\:65b9\:5757\:ff0c\:6070\:597d\:670917\:79cd\:4e0d\:540c\:7684\
+\:6446\:6cd5\:3002\n\n",
+ Cell[BoxData[
+  GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+1:eJzt3UGqZFkVRuFAbdgUHIH9GoBdm3ZLHEAVloWdEqoEsZcDzJk4CH1B8CAa
+Puu8m/e+/e99vgVLM0U25LnrbE4vfvft37/+6y9ut9tPv375j6+/+ecffvzx
+m3/96Tcvf/nzDz/97fsfvvvLH3/4x3fff/fj77/95cv/+O8Xf/vy///Vy3//
+BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACjk06dPZIzaZVe1y66e
+wVlzgC/lq6++etf/X7tIQbvoynvbfYvXpu/zrtBss98zO6ndrnZvoOvspHbd
+i5oGus4+g+em7z8JdqZmm/3e2Ufb/fwyhzMa6Do7ce9W95jihL5S2q1u2myz
+V2Yfbbd6V6U4oYGusxP3bnWPKU7oK6Xd6qbNNntl9tF2q3dVihMa6Do7ce9W
+95jihL5S2q1u2myzV2Yfbbd6V6U4oYGusxP3bnWPKU7oK6Xd6qbNNntl9tF2
+q3dVihMa6Do7ce9W95jihL5S2q1u2myzV2Yfbbd6V6U4oYGusxP3bnWPKU7o
+K6Xd6qbNNntl9tF2q3dVihMa6Do7ce9W95jihL5S2q1u2myzV2Yfbbd6V6U4
+oYGusxP3bnWPKU7oK6Xd6qbNNntl9tF2q3dVihMa6Do7ce9W95jihL5S2q1u
+2myzV2Yfbbd6V6U4oYGusxP3bnWPKU7oK6Xd6qbNNntl9tF2q3dVihMa6Do7
+ce9W95jihL5S2q1u2myzV2Yfbbd6V6U4oYGusxP3bnWPKU7oK6Xd6qbNNntl
+9tF2q3dVihMa6Do7ce9W95jihL5S2q1u2myzV2Yfbbd6V6U4oYGusxP3bnWP
+KU7oK6Xd6qbNNntl9tF2q3dVihMa6Do7ce9W95jihL5S2q1u2myzV2Yfbbd6
+V6U4oYGusxP3bnWPKU7oK6Xd6qbNNntl9tF2q3dVihMa6Do7ce9W95jihL5S
+2q1u2myzV2Yfbbd6V6U4oYGusxP3bnWPKU7oK6Xd6qbNNntl9tF2q3dVihMa
+6Do7ce9W95jihL5S2q1u2myzV2Yfbbd6V6U4oYGusxP3bnWPKU7oK6Xd6qbN
+Nntl9tF2q3dVihMa6Do7ce9W95jihL5S2l1p+v7nszXb7PfMTmq3q90b6Do7
+qV33Yl5fV84+g9d5QDVH9zFQjXbRlTPfEvdZZILaZVe1y64CAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE6n+7TbyWe2yq9plV8/grDnAl/Le
+35jRLlLQLrpy1m97vTZ95e+PdZzd1a7nfaRp7X787K5q12z34u0zOYPnpm+3
+26l+1OzPL3/nx533lbN3a9e9mHMvtNtjdnWPKR5td3LT1d8kxQnfcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKXpLaGOlja7fcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKXpLaGOlja7fcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKXpLaGOlja7fcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKXpLaGOlja7fcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKXpLaGOlja7fcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKXpLaGOlja7fcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKXpLaGOlja7fcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKXpLaGOlja7fcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKXpLaGOlja7fcrd23Ys5
+90K7PWZX95iit4Q2Vtro+i13a9e9mHMvtNtjdnWPKV75lrj/+Wy7zu5q1/M+
+0vSEf2+32V3Vrtnuxdtncgav84Bqju5joBrtoitnviXus8gEtcuuapddBQAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACZS/Ttl5LPaZVe1y66e
+wVlzgC/lvb8xo12koF105azf9nptuvp3ytK88kyc99tnot1su96Lj5id1K57
+8bF2/ZZH2l1p+vPtxhefz+T28vczdd7//7y1m+tH3Yuus4+2a8f0drd2V5qu
+/iYpuud1563dXCfszJR9bMfMcbd2V5qu/iYpuud1563dXCfszJR9bMfMcbd2
+V5qu/iYpuud1563dXCfszJR9bMfMcbd2V5qu/iYpuud1563dXCfszJR9bMfM
+cbd2V5qu/iYpuud1563dXCfszJR9bMfMcbd2V5qu/iYpuud1563dXCfszJR9
+bMfMcbd2V5qu/iYpuud1563dXCfszJR9bMfMcbd2V5qu/iYpuud1563dXCfs
+zJR9bMfMcbd2V5qu/iYpuud1563dXCfszJR9bMfMcbd2V5qu/iYpuud1563d
+XCfszJR9bMfMcbd2V5qu/iYpuud1563dXCfszJR9bMfMcbd2V5qu/iYpuud1
+563dXCfszJR9bMfMcbd2V5qu/iYpuud1563dXCfszJR9bMfMcbd2V5qu/iYp
+uud1563dXCfszJR9bMfMcbd2V5qu/iYpuud1563dXCfszJR9bMfMcbd2V5qu
+/iYpuud1563dXCfszJR9bMfMcbd2V5qu/iYpuud1563dXCfszJR9bMfMcbd2
+V5qu/iYpuud1563dXCfszJR9bMfMcbd2V5qu/iYpuud1563dXCfszJR9bMfM
+cbd2V5qu/iYpuud1563dXCfszJR9bMfMcbd2V5q+/5mfLj8T5/32mWg32673
+4iNmJ7XrXnysXb/lkXZ/rmmgmqP7GKhGu+jKmW+J+ywyQe2yq9plVwEAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICJVP++GvmsdtlV7bKrZ3DW
+HOBLee9vzGgXKWgXXTnrt71em77y98c6zmbNt9Ru9my+fd5J7bKmga6zz+C5
+6dvtdqofNfvzy995rR/1LXdr173o7RntVv8beF4DXXfFGUw4h+qWdjCx6Qnt
+uhe99ZbghF1xBhPOobqlHUxsekK77kVvvSU4YVecwYRzqG5pBxObntCue9Fb
+bwlO2BVnMOEcqlvawcSmJ7TrXvTWW4ITdsUZTDiH6pZ2MLHpCe26F731luCE
+XXEGE86huqUdTGx6QrvuRW+9JThhV5zBhHOobmkHE5ue0K570VtvCU7YFWcw
+4RyqW9rBxKYntOte9NZbghN2xRlMOIfqlnYwsekJ7boXvfWW4IRdcQYTzqG6
+pR1MbHpCu+5Fb70lOGFXnMGEc6huaQcTm57QrnvRW28JTtgVZzDhHKpb2sHE
+pie061701luCE3bFGUw4h+qWdjCx6Qntuhe99ZbghF1xBhPOobqlHUxsekK7
+7kVvvSU4YVecwYRzqG5pBxObntCue9FbbwlO2BVnMOEcqlvawcSmJ7TrXvTW
+W4ITdsUZTDiH6pZ2MLHpCe26F731luCEXXEGE86huqUdTGx6QrvuRW+9JThh
+V5zBhHOobmkHE5ue0K570VtvCU7YFWcw4RyqW9rBxKYntOte9NZbghN2xRk8
+z7v/+Wy7zmbNt9Ru9my+fd5J7bKmga6zz+B1HlDN0X0MVKNddOXMt8R9Fpmg
+dtlV7bKrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwESqf1+N
+fFa77Kp22dUzOGsO8KW89zdmtIsUtIuunPXbXq9NX/n7Y9W/gcb8b3mk6c7t
+uhdzTGyXc0zbuytN3263U32e/fnl7+zrR3WS2K57wZV7cbTd6n8Dc03cuytN
+25ns1LS3BKv1luCVJu7dlabtTHZq2luC1XpL8EoT9+5K03YmOzXtLcFqvSV4
+pYl7d6VpO5OdmvaWYLXeErzSxL270rSdyU5Ne0uwWm8JXmni3l1p2s5kp6a9
+JVittwSvNHHvrjRtZ7JT094SrNZbgleauHdXmrYz2alpbwlW6y3BK03cuytN
+25ns1LS3BKv1luCVJu7dlabtTHZq2luC1XpL8EoT9+5K03YmOzXtLcFqvSV4
+pYl7d6VpO5OdmvaWYLXeErzSxL270rSdyU5Ne0uwWm8JXmni3l1p2s5kp6a9
+JVittwSvNHHvrjRtZ7JT094SrNZbgleauHdXmrYz2alpbwlW6y3BK03cuytN
+25ns1LS3BKv1luCVJu7dlabtTHZq2luC1XpL8EoT9+5K03YmOzXtLcFqvSV4
+pYl7d6VpO5OdmvaWYLXeErzSxL270vT9z2d75Wx+rB/RyS7tuhdzTGyXc0zb
+uz/XNFDN0X0MVKNddOXMt8R9FpmgdtlV7bKrAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAwESqfwONfFa77CqwM+4AUnjvb8xoFyn4fSTszus+
+vvL3x6p/A435vnaS1C654pF2gWk87+Pb7Xaqz7M/v/yd/F8+d3K03ep/A/f0
+aLvANLwlWK23BLvqLQE88JZgtd4S7Kq3BPDAW4LVekuwq94SwANvCVbrLcGu
+eksAD7wlWK23BLvqLQE88JZgtd4S7Kq3BPDAW4LVekuwq94SwANvCVbrLcGu
+eksAD7wlWK23BLvqLQE88JZgtd4S7Kq3BPDAW4LVekuwq94SwANvCVbrLcGu
+eksAD7wlWK23BLvqLQE88JZgtd4S7Kq3BPDAW4LVekuwq94SwANvCVbrLcGu
+eksAD7wlWK23BLvqLQE88JZgtd4S7Kq3BPDAW4LVekuwq94SwANvCVbrLcGu
+eksAD57vwv3PZ3vlbM7xtZOkdskVj7QLTOP1LgDVHH1LANV4S2B37vv4fg/I
+BLXLrgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAN/4LU0ttrA==
+     "], {{0, 235}, {531, 0}}, {0, 255},
+     ColorFunction->RGBColor],
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+    Selectable->False],
+   DefaultBaseStyle->"ImageGraphics",
+   ImageSize->Automatic,
+   ImageSizeRaw->{531, 235},
+   PlotRange->{{0, 531}, {0, 235}}]],ExpressionUUID->
+  "e37973c7-e473-49ae-aab5-85a0c96dd6bf"],
+ "\n\n\:82e5\:8981\:6446\:6210\:957f\:5ea6\:4e3a50\:7684\:4e00\:884c\:ff0c\
+\:6709\:591a\:5c11\:79cd\:4e0d\:540c\:7684\:6446\:6cd5\:ff1f\n\n\:6ce8\:610f\
+\:ff1a\:5c3d\:7ba1\:4e0a\:8ff0\:6837\:4f8b\:6ca1\:6709\:6df7\:7528\:4e0d\:540c\
+\:957f\:5ea6\:7684\:65b9\:683c\:ff0c\:4f46\:8fd9\:6837\:505a\:662f\:5141\:8bb8\
+\:7684\:3002\:4f8b\:5982\:ff0c\:8981\:6446\:6210\:957f\:5ea6\:4e3a8\:7684\
+\:4e00\:884c\:ff0c\:4f60\:53ef\:4ee5\:7528\:7ea2\:ff083\:ff09\:3001\:9ed1\
+\:ff081\:ff09\:3001\:7ea2\:ff084\:ff09\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, {3.7339586089168606`*^9, 
+   3.733958626255124*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"l", "=", "50"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ip", "=", 
+   RowBox[{"Sort", "/@", 
+    RowBox[{"IntegerPartitions", "[", 
+     RowBox[{"l", ",", "All", ",", 
+      RowBox[{"Join", "[", 
+       RowBox[{
+        RowBox[{"{", "1", "}"}], ",", 
+        RowBox[{"Range", "[", 
+         RowBox[{"3", ",", "l"}], "]"}]}], "]"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{"Outer", "[", 
+    RowBox[{"Count", ",", "ip", ",", 
+     RowBox[{"Join", "[", 
+      RowBox[{
+       RowBox[{"{", "1", "}"}], ",", 
+       RowBox[{"Range", "[", 
+        RowBox[{"3", ",", "l"}], "]"}]}], "]"}], ",", "1"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Total", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Binomial", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"t", "\[LeftDoubleBracket]", 
+         RowBox[{"i", ",", "1"}], "\[RightDoubleBracket]"}], "+", "1"}], ",", 
+       RowBox[{"Total", "[", 
+        RowBox[{"t", "\[LeftDoubleBracket]", 
+         RowBox[{"i", ",", 
+          RowBox[{"2", ";;", "All"}]}], "\[RightDoubleBracket]"}], "]"}]}], 
+      "]"}], " ", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"Total", "[", 
+        RowBox[{"t", "\[LeftDoubleBracket]", 
+         RowBox[{"i", ",", 
+          RowBox[{"2", ";;", "All"}]}], "\[RightDoubleBracket]"}], "]"}], 
+       "!"}], 
+      RowBox[{"Times", "@@", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"t", "\[LeftDoubleBracket]", 
+          RowBox[{"i", ",", 
+           RowBox[{"2", ";;", "All"}]}], "\[RightDoubleBracket]"}], "!"}], 
+        ")"}]}]]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", 
+      RowBox[{"Length", "[", "t", "]"}]}], "}"}]}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+   3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+   3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+   3.733397177005328*^9, 3.7333972103847303`*^9}, {3.7339586331319923`*^9, 
+   3.73395884123972*^9}, {3.7339589380325484`*^9, 3.7339590297124815`*^9}, {
+   3.7339590895592136`*^9, 3.7339591503937435`*^9}, {3.7339592097400713`*^9, 
+   3.7339592584764347`*^9}, 3.7339593648065853`*^9, {3.733959578641117*^9, 
+   3.733959628473773*^9}, {3.733959690350471*^9, 3.733959691282688*^9}, {
+   3.7339598380279207`*^9, 3.7339598725953827`*^9}, {3.7339599073211265`*^9, 
+   3.733959908817318*^9}, {3.733959949790346*^9, 
+   3.7339599536303463`*^9}},ExpressionUUID->"6a7c367e-c1c3-4109-93e6-\
+34add9704799"],
+
+Cell[BoxData["16475640049"], "Output",
+ CellChangeTimes->{
+  3.733959960196085*^9},ExpressionUUID->"d2094466-2fc7-4f99-9ef1-\
+b25c3334385a"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 6388, 109, 431, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[6949, 131, 6763, 115, 408, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[13737, 250, 2619, 66, 192, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[16359, 318, 140, 3, 37, "Output",ExpressionUUID->"d2094466-2fc7-4f99-9ef1-b25c3334385a"]
+}, Open  ]]
+}
+]
+*)
+

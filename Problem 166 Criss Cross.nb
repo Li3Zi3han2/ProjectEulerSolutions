@@ -1,0 +1,208 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7869,        200]
+NotebookOptionsPosition[      7244,        181]
+NotebookOutlinePosition[      7601,        197]
+CellTagsIndexPosition[      7558,        194]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "A 4\[Times]4 grid is filled with digits d, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", "\[LessEqual]", "d", "\[LessEqual]", "9"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7391cf80-75d0-459f-bc8e-b0100c3028eb"],
+ ".\n\nIt can be seen that in the grid\n\n",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {"6", "3", "3", "0"},
+     {"5", "0", "4", "3"},
+     {"0", "7", "1", "4"},
+     {"1", "2", "4", "5"}
+    }], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "01838c1f-d754-4ea0-beb9-85bbfce03ad5"],
+ "\n\nthe sum of each row and each column has the value 12. Moreover the sum \
+of each diagonal is also 12.\n\nIn how many ways can you fill a 4\[Times]4 \
+grid with the digits d, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", "\[LessEqual]", "d", "\[LessEqual]", "9"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "81fe1ce1-066d-4fad-8098-a9b5f7d6c575"],
+ " so that each row, each column, and both diagonals have the same sum?"
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+   3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+   3.756426340041151*^9}, {3.756946957432034*^9, 3.7569469594717164`*^9}, {
+   3.756947140959901*^9, 3.7569472191884956`*^9}, 
+   3.7569484719712543`*^9},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "4\[Times]4\:7f51\:683c\:586b\:5145\:6570\:5b57d\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", "\[LessEqual]", "d", "\[LessEqual]", "9"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c3de2144-761c-47aa-b2b3-91ad90f66511"],
+ "\:3002\n\n\:53ef\:4ee5\:770b\:51fa\:ff0c\:5728\:7f51\:683c\:4e2d\n\n",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {"6", "3", "3", "0"},
+     {"5", "0", "4", "3"},
+     {"0", "7", "1", "4"},
+     {"1", "2", "4", "5"}
+    }], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "985f1a60-2af8-4d7b-a1f4-f24c71b08f9e"],
+ "\n\n\:6bcf\:884c\:548c\:6bcf\:5217\:7684\:603b\:548c\:4e3a12\:3002\:6b64\
+\:5916\:ff0c\:6bcf\:4e2a\:5bf9\:89d2\:7ebf\:7684\:603b\:548c\:4e5f\:662f12\
+\:3002\n\n\:5728\:591a\:5c11\:79cd\:65b9\:6cd5\:4e2d\:ff0c\:60a8\:53ef\:4ee5\
+\:4f7f\:7528\:6570\:5b57d\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", "\[LessEqual]", "d", "\[LessEqual]", "9"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ff4b1ffa-7921-40ab-9bf3-203211c77c0b"],
+ "\:586b\:51454\[Times]4\:7f51\:683c\:ff0c\:4ee5\:4fbf\:6bcf\:884c\:ff0c\:6bcf\
+\:5217\:548c\:4e24\:4e2a\:5bf9\:89d2\:7ebf\:5177\:6709\:76f8\:540c\:7684\:603b\
+\:548c\:ff1f"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.756947133255106*^9, 
+   3.7569471610096073`*^9}, {3.7569472030280304`*^9, 3.756947214711215*^9}, 
+   3.75694730903944*^9, 
+   3.7569484736039977`*^9},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"CrissCross", "[", 
+    RowBox[{"rows_", ",", "columns_", ",", "sum_"}], "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "a", ",", "varmat", ",", "vars", ",", "cons1", ",", "cons2", ",", 
+       "cons3", ",", "cons4"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"varmat", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"a", "[", 
+          RowBox[{"i", ",", "j"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "rows"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "1", ",", "columns"}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"vars", "=", 
+       RowBox[{"Flatten", "[", "varmat", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"cons1", "=", 
+       RowBox[{"Thread", "[", 
+        RowBox[{"sum", "\[Equal]", 
+         RowBox[{"Total", "[", 
+          RowBox[{"varmat", ",", 
+           RowBox[{"{", "2", "}"}]}], "]"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"cons2", "=", 
+       RowBox[{"Thread", "[", 
+        RowBox[{"sum", "\[Equal]", 
+         RowBox[{"Total", "[", 
+          RowBox[{"varmat", ",", 
+           RowBox[{"{", "1", "}"}]}], "]"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"cons3", "=", 
+       RowBox[{"Thread", "[", 
+        RowBox[{"sum", "\[Equal]", 
+         RowBox[{"Total", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Diagonal", "[", "varmat", "]"}], ",", 
+             RowBox[{"Diagonal", "[", 
+              RowBox[{"Reverse", "[", "varmat", "]"}], "]"}]}], "}"}], ",", 
+           RowBox[{"{", "2", "}"}]}], "]"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"cons4", "=", 
+       RowBox[{"Thread", "[", 
+        RowBox[{"0", "\[LessEqual]", "vars", "\[LessEqual]", "9"}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"Length", "[", 
+       RowBox[{"Solve", "[", 
+        RowBox[{
+         RowBox[{"Join", "[", 
+          RowBox[{"cons1", ",", "cons2", ",", "cons3", ",", "cons4"}], "]"}], 
+         ",", "vars", ",", "Integers"}], "]"}], "]"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Total", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"CrissCross", "[", 
+     RowBox[{"4", ",", "4", ",", "#"}], "]"}], "&"}], "/@", 
+   RowBox[{"Range", "[", 
+    RowBox[{"0", ",", "36"}], "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+  3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+  3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+  3.7564263646962595`*^9, 3.7564263899753056`*^9}, {3.7569473225683002`*^9, 
+  3.7569474042555256`*^9}, {3.756947813071469*^9, 3.756947997658572*^9}, {
+  3.756948129851866*^9, 3.756948163502594*^9}, {3.7569482033583307`*^9, 
+  3.7569482574278607`*^9}, {3.756948397881864*^9, 3.7569484530392194`*^9}},
+ CellLabel->"In[64]:=",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+
+Cell[BoxData["7130034"], "Output",
+ CellChangeTimes->{{3.7313704890957747`*^9, 3.7313705114710016`*^9}, 
+   3.731370638655486*^9, 3.756426391477058*^9, {3.756947364010809*^9, 
+   3.7569473734463315`*^9}, 3.7569478310736675`*^9, 3.756947867012018*^9, {
+   3.7569479681061816`*^9, 3.756947989341859*^9}, 3.756948063323266*^9, {
+   3.756948427492221*^9, 3.7569484305047503`*^9}, 3.7569504990356684`*^9},
+ CellLabel->"Out[65]=",ExpressionUUID->"ba3bd33e-2de2-4cc9-a324-e6d21b495a6f"]
+}, Open  ]]
+},
+WindowSize->{1350, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1388, 32, 281, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1949, 54, 1681, 37, 281, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[3655, 95, 3091, 75, 415, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[6749, 172, 479, 6, 37, "Output",ExpressionUUID->"ba3bd33e-2de2-4cc9-a324-e6d21b495a6f"]
+}, Open  ]]
+}
+]
+*)
+

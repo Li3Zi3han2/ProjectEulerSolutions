@@ -1,0 +1,280 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12491,        272]
+NotebookOptionsPosition[     11956,        255]
+NotebookOutlinePosition[     12344,        272]
+CellTagsIndexPosition[     12301,        269]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Build a triangle from all positive integers in the following way:\n\n",
+ Cell[BoxData[
+  FormBox[
+   TagBox[GridBox[{
+      {"1", "", "", "", "", "", "", "", "", "", ""},
+      {"2", "3", "", "", "", "", "", "", "", "", ""},
+      {"4", "5", "6", "", "", "", "", "", "", "", ""},
+      {"7", "8", "9", "10", "", "", "", "", "", "", ""},
+      {"11", "12", "13", "14", "15", "", "", "", "", "", ""},
+      {"16", "17", "18", "19", "20", "21", "", "", "", "", ""},
+      {"22", "23", "24", "25", "26", "27", "28", "", "", "", ""},
+      {"29", "30", "31", "32", "33", "34", "35", "36", "", "", ""},
+      {"37", "38", "39", "40", "41", "42", "43", "44", "45", "", ""},
+      {"46", "47", "48", "49", "50", "51", "52", "53", "54", "55", ""},
+      {"56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66"},
+      {"\[Ellipsis]", "", "", "", "", "", "", "", "", "", ""}
+     },
+     AutoDelete->False,
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+     GridBoxItemStyle->{
+      "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+       "ItemsIndexed" -> {{1, 1} -> None, {2, 1} -> RGBColor[1, 0, 0], {2, 2} -> 
+         RGBColor[1, 0, 0], {3, 1} -> None, {3, 2} -> 
+         RGBColor[1, 0, 0], {3, 3} -> None, {4, 1} -> 
+         RGBColor[1, 0, 0], {4, 2} -> None, {4, 3} -> None, {4, 4} -> 
+         None, {5, 1} -> RGBColor[1, 0, 0], {5, 2} -> None, {5, 3} -> 
+         RGBColor[1, 0, 0], {5, 4} -> None, {5, 5} -> None, {6, 1} -> 
+         None, {6, 2} -> RGBColor[1, 0, 0], {6, 3} -> None, {6, 4} -> 
+         RGBColor[1, 0, 0], {6, 5} -> None, {6, 6} -> None, {7, 1} -> 
+         None, {7, 2} -> RGBColor[1, 0, 0], {7, 3} -> None, {7, 4} -> 
+         None, {7, 5} -> None, {7, 6} -> None, {7, 7} -> None, {8, 1} -> 
+         RGBColor[1, 0, 0], {8, 2} -> None, {8, 3} -> 
+         RGBColor[1, 0, 0], {8, 4} -> None, {8, 5} -> None, {8, 6} -> 
+         None, {8, 7} -> None, {8, 8} -> None, {9, 1} -> 
+         RGBColor[1, 0, 0], {9, 2} -> None, {9, 3} -> None, {9, 4} -> 
+         None, {9, 5} -> RGBColor[1, 0, 0], {9, 6} -> None, {9, 7} -> 
+         RGBColor[1, 0, 0], {9, 8} -> None, {9, 9} -> None, {10, 1} -> 
+         None, {10, 2} -> RGBColor[1, 0, 0], {10, 3} -> None, {10, 4} -> 
+         None, {10, 5} -> None, {10, 6} -> None, {10, 7} -> None, {10, 8} -> 
+         RGBColor[1, 0, 0], {10, 9} -> None, {10, 10} -> None, {11, 1} -> 
+         None, {11, 2} -> None, {11, 3} -> None, {11, 4} -> 
+         RGBColor[1, 0, 0], {11, 5} -> None, {11, 6} -> 
+         RGBColor[1, 0, 0], {11, 7} -> None, {11, 8} -> None, {11, 9} -> 
+         None, {11, 10} -> None, {11, 11} -> None}}],
+    "Grid"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e45cbcfe-5b33-4426-a039-086935dade9f"],
+ "\n\nEach positive integer has up to eight neighbours in the triangle.\n\nA \
+set of three primes is called a prime triplet if one of the three primes has \
+the other two as neighbours in the triangle.\n\nFor example, in the second \
+row, the prime numbers 2 and 3 are elements of some prime triplet.\n\nIf row \
+8 is considered, it contains two primes which are elements of some prime \
+triplet, i.e. 29 and 31.\nIf row 9 is considered, it contains only one prime \
+which is an element of some prime triplet: 37.\n\nDefine ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"S", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9a6e11dc-157b-42d3-a473-81e865acb636"],
+ " as the sum of the primes in row n which are elements of any prime triplet.\
+\nThen ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"S", "[", "8", "]"}], "=", "60"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "fb58eda4-92b5-4798-b3dd-fa46a89e65be"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"S", "[", "9", "]"}], "=", "37"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d26df24d-9e38-4073-8f04-df67bc000687"],
+ ".\n\nYou are given that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"S", "[", "10000", "]"}], "=", "950007619"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "dcf920db-4b77-4367-9ac6-a4d1cba22153"],
+ ".\n\nFind ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"S", "[", "5678027", "]"}], "+", 
+    RowBox[{"S", "[", "7208785", "]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4a0cd19c-0187-4842-ae7f-ae356707a7a5"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.7679258837475777`*^9, 3.7679259017748394`*^9}, {
+  3.7679260656278276`*^9, 3.7679260656278276`*^9}, {3.7679263304338713`*^9, 
+  3.767926380702289*^9}, {3.76792649506316*^9, 
+  3.7679265663132715`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:5c06\:6240\:6709\:6b63\:6574\:6570\:6309\:5982\:4e0b\:65b9\:5f0f\:6392\
+\:5217\:6210\:4e09\:89d2\:5f62\:7684\:6837\:5f0f\:ff1a\n\n",
+ Cell[BoxData[
+  FormBox[
+   TagBox[GridBox[{
+      {"1", "", "", "", "", "", "", "", "", "", ""},
+      {"2", "3", "", "", "", "", "", "", "", "", ""},
+      {"4", "5", "6", "", "", "", "", "", "", "", ""},
+      {"7", "8", "9", "10", "", "", "", "", "", "", ""},
+      {"11", "12", "13", "14", "15", "", "", "", "", "", ""},
+      {"16", "17", "18", "19", "20", "21", "", "", "", "", ""},
+      {"22", "23", "24", "25", "26", "27", "28", "", "", "", ""},
+      {"29", "30", "31", "32", "33", "34", "35", "36", "", "", ""},
+      {"37", "38", "39", "40", "41", "42", "43", "44", "45", "", ""},
+      {"46", "47", "48", "49", "50", "51", "52", "53", "54", "55", ""},
+      {"56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66"},
+      {"\[Ellipsis]", "", "", "", "", "", "", "", "", "", ""}
+     },
+     AutoDelete->False,
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+     GridBoxItemStyle->{
+      "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}, 
+       "ItemsIndexed" -> {{1, 1} -> None, {2, 1} -> RGBColor[1, 0, 0], {2, 2} -> 
+         RGBColor[1, 0, 0], {3, 1} -> None, {3, 2} -> 
+         RGBColor[1, 0, 0], {3, 3} -> None, {4, 1} -> 
+         RGBColor[1, 0, 0], {4, 2} -> None, {4, 3} -> None, {4, 4} -> 
+         None, {5, 1} -> RGBColor[1, 0, 0], {5, 2} -> None, {5, 3} -> 
+         RGBColor[1, 0, 0], {5, 4} -> None, {5, 5} -> None, {6, 1} -> 
+         None, {6, 2} -> RGBColor[1, 0, 0], {6, 3} -> None, {6, 4} -> 
+         RGBColor[1, 0, 0], {6, 5} -> None, {6, 6} -> None, {7, 1} -> 
+         None, {7, 2} -> RGBColor[1, 0, 0], {7, 3} -> None, {7, 4} -> 
+         None, {7, 5} -> None, {7, 6} -> None, {7, 7} -> None, {8, 1} -> 
+         RGBColor[1, 0, 0], {8, 2} -> None, {8, 3} -> 
+         RGBColor[1, 0, 0], {8, 4} -> None, {8, 5} -> None, {8, 6} -> 
+         None, {8, 7} -> None, {8, 8} -> None, {9, 1} -> 
+         RGBColor[1, 0, 0], {9, 2} -> None, {9, 3} -> None, {9, 4} -> 
+         None, {9, 5} -> RGBColor[1, 0, 0], {9, 6} -> None, {9, 7} -> 
+         RGBColor[1, 0, 0], {9, 8} -> None, {9, 9} -> None, {10, 1} -> 
+         None, {10, 2} -> RGBColor[1, 0, 0], {10, 3} -> None, {10, 4} -> 
+         None, {10, 5} -> None, {10, 6} -> None, {10, 7} -> None, {10, 8} -> 
+         RGBColor[1, 0, 0], {10, 9} -> None, {10, 10} -> None, {11, 1} -> 
+         None, {11, 2} -> None, {11, 3} -> None, {11, 4} -> 
+         RGBColor[1, 0, 0], {11, 5} -> None, {11, 6} -> 
+         RGBColor[1, 0, 0], {11, 7} -> None, {11, 8} -> None, {11, 9} -> 
+         None, {11, 10} -> None, {11, 11} -> None}}],
+    "Grid"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3835dfd0-f9c3-4cb7-85df-63937ef4605b"],
+ "\n\n\:6bcf\:4e2a\:6b63\:6574\:6570\:5728\:4e09\:89d2\:5f62\:4e2d\:6709\:6700\
+\:591a\:516b\:4e2a\:90bb\:5c45\:3002\n\n\:5982\:679c\:4e09\:4e2a\:7d20\:6570\
+\:4e2d\:ff0c\:6709\:4e24\:4e2a\:5747\:4e3a\:53e6\:4e00\:4e2a\:7684\:90bb\:5c45\
+\:ff0c\:90a3\:4e48\:8fd9\:4e00\:7ec4\:4e09\:4e2a\:7d20\:6570\:88ab\:79f0\:4e3a\
+\:4e00\:4e2a\:7d20\:6570\:4e09\:5143\:7ec4\:3002\n\n\:4f8b\:5982\:ff0c\:5728\
+\:7b2c\:4e8c\:884c\:ff0c\:7d20\:65702\:548c3\:90fd\:662f\:4e00\:4e9b\:7d20\
+\:6570\:4e09\:5143\:7ec4\:7684\:5143\:7d20\:3002\n\n\:5982\:679c\:6211\:4eec\
+\:770b\:7b2c8\:884c\:ff0c\:5c06\:6709\:4e24\:4e2a\:7d20\:6570\:5c5e\:4e8e\
+\:67d0\:4e9b\:7d20\:6570\:4e09\:5143\:7ec4\:ff0c\:8fd9\:4e24\:4e2a\:7d20\:6570\
+\:662f29\:548c31\:3002\n\:5982\:679c\:6211\:4eec\:770b\:7b2c9\:884c\:ff0c\
+\:53ea\:6709\:4e00\:4e2a\:7d20\:6570\:5c5e\:4e8e\:67d0\:4e9b\:7d20\:6570\:4e09\
+\:5143\:7ec4\:ff0c\:8fd9\:4e2a\:7d20\:6570\:662f37\:3002\n\n\:8bb0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"S", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "84a32a06-a323-4562-940d-1b4d6316cd23"],
+ "\:662f\:7b2cn\:884c\:4e2d\:5c5e\:4e8e\:67d0\:4e9b\:7d20\:6570\:4e09\:5143\
+\:7ec4\:7684\:7d20\:6570\:4e4b\:548c\:3002\n\:56e0\:6b64",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"S", "[", "8", "]"}], "=", "60"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ccafd262-5b99-45b4-be0b-950ba93be937"],
+ "\:ff0c\:800c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"S", "[", "9", "]"}], "=", "37"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "67a554d4-2503-40ee-b191-fd8f67c3e46a"],
+ "\:3002\n\n\:5df2\:77e5",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"S", "[", "10000", "]"}], "=", "950007619"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4901481b-c4a1-4230-905c-0421dfa30c30"],
+ "\:3002\n\n\:6c42",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"S", "[", "5678027", "]"}], "+", 
+    RowBox[{"S", "[", "7208785", "]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bf47f92f-5484-4d5c-8c5a-f3331ee51e5b"],
+ "\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.7679264005048475`*^9, 
+   3.7679264774178205`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PrimeTripletQ", "[", "n_", "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "t", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"t", "=", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{
+         FractionBox[
+          RowBox[{"n", " ", 
+           RowBox[{"(", 
+            RowBox[{"n", "-", "1"}], ")"}]}], "2"], "+", "i"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Cases", "[", 
+      RowBox[{"t", ",", 
+       RowBox[{"x_", "/;"}]}], "]"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+   3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+   3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+   3.7564263646962595`*^9, 3.7564263899753056`*^9}, 3.7679260918809586`*^9, {
+   3.7679262311480665`*^9, 3.7679263231877356`*^9}, {3.7679265817992926`*^9, 
+   3.767926692270116*^9}, {3.7679267294084535`*^9, 
+   3.767926738542632*^9}},ExpressionUUID->"6a7c367e-c1c3-4109-93e6-\
+34add9704799"]
+},
+WindowSize->{2560, 1336},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
+Magnification:>2. Inherited,
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 4898, 98, 1274, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[5459, 120, 5325, 103, 1274, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[10787, 225, 1165, 28, 314, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"]
+}
+]
+*)
+

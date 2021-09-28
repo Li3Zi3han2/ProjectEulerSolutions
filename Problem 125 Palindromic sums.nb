@@ -1,0 +1,201 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6849,        193]
+NotebookOptionsPosition[      6222,        174]
+NotebookOutlinePosition[      6580,        190]
+CellTagsIndexPosition[      6537,        187]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "The palindromic number 595 is interesting because it can be written as the \
+sum of consecutive squares: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["6", "2"], "+", 
+    SuperscriptBox["7", "2"], "+", 
+    SuperscriptBox["8", "2"], "+", 
+    SuperscriptBox["9", "2"], "+", 
+    SuperscriptBox["10", "2"], "+", 
+    SuperscriptBox["11", "2"], "+", 
+    SuperscriptBox["12", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c5f59339-887e-477c-8b17-0a423bc531d6"],
+ ".\n\nThere are exactly eleven palindromes below one-thousand that can be \
+written as consecutive square sums, and the sum of these palindromes is 4164. \
+Note that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "=", 
+    RowBox[{
+     SuperscriptBox["0", "2"], "+", 
+     SuperscriptBox["1", "2"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bd00b337-b179-4414-add9-e97fbbf6e45b"],
+ " has not been included as this problem is concerned with the squares of \
+positive integers.\n\nFind the sum of all the numbers less than ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "8"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "87f3900a-600c-43ed-ab4f-ac2819e7e911"],
+ " that are both palindromic and can be written as the sum of consecutive \
+squares."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.730423911044902*^9, 3.730423968467654*^9}, {3.730424082749589*^9, 
+  3.7304240844683585`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:56de\:6587\:6570595\:5f88\:6709\:8da3\:ff0c\:56e0\:4e3a\:5b83\:53ef\:4ee5\
+\:5199\:6210\:8fde\:7eed\:5e73\:65b9\:6570\:7684\:548c\:ff1a",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["6", "2"], "+", 
+    SuperscriptBox["7", "2"], "+", 
+    SuperscriptBox["8", "2"], "+", 
+    SuperscriptBox["9", "2"], "+", 
+    SuperscriptBox["10", "2"], "+", 
+    SuperscriptBox["11", "2"], "+", 
+    SuperscriptBox["12", "2"]}], TraditionalForm]],ExpressionUUID->
+  "e2d62cb7-f0b6-4fc6-ba37-5e62913b8795"],
+ "\:3002\n\n\
+\:6070\:597d\:6709\:5341\:4e00\:4e2a\:5c0f\:4e8e\:4e00\:5343\:7684\:56de\:6587\
+\:6570\:53ef\:4ee5\:5199\:6210\:8fde\:7eed\:5e73\:65b9\:6570\:7684\:548c\:ff0c\
+\:8fd9\:4e9b\:56de\:6587\:6570\:7684\:548c\:662f4164\:3002\:6ce8\:610f",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "=", 
+    RowBox[{
+     SuperscriptBox["0", "2"], "+", 
+     SuperscriptBox["1", "2"]}]}], TraditionalForm]],ExpressionUUID->
+  "9eedb56a-24df-4f07-98c6-378bb74d07cf"],
+ "\:5e76\:6ca1\:6709\:7b97\:5728\:5185\:ff0c\:56e0\:4e3a\:672c\:9898\:53ea\
+\:8003\:8651\:6b63\:6574\:6570\:7684\:5e73\:65b9\:3002\n\n\:5728\:5c0f\:4e8e",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "8"], TraditionalForm]],ExpressionUUID->
+  "e4243771-724f-4cf8-9275-eece80538322"],
+ "\:7684\:6570\:4e2d\:ff0c\:627e\:51fa\:6240\:6709\:53ef\:4ee5\:5199\:6210\
+\:8fde\:7eed\:5e73\:65b9\:6570\:7684\:548c\:7684\:56de\:6587\:6570\:ff0c\:5e76\
+\:6c42\:5b83\:4eec\:7684\:548c\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.730423984906495*^9, 3.730423994952149*^9}, 
+   3.7304240879696383`*^9},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", "=", "1"}], ",", 
+    RowBox[{"i", "\[LessEqual]", 
+     RowBox[{
+      SqrtBox[
+       SuperscriptBox["10", "8"]], "-", "1"}]}], ",", 
+    RowBox[{"i", "=", 
+     RowBox[{"i", "+", "1"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"j", "=", 
+       RowBox[{"i", "+", "1"}]}], ",", 
+      RowBox[{"j", "\[LessEqual]", 
+       SqrtBox[
+        SuperscriptBox["10", "8"]]}], ",", 
+      RowBox[{"j", "=", 
+       RowBox[{"j", "+", "1"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"s", "=", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"j", " ", 
+           RowBox[{"(", 
+            RowBox[{"j", "+", "1"}], ")"}], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", " ", "j"}], "+", "1"}], ")"}]}], "-", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"i", "-", "1"}], ")"}], " ", "i", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"2", " ", "i"}], "-", "1"}], ")"}]}]}], "6"]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"s", "<", 
+          SuperscriptBox["10", "8"]}], ",", 
+         RowBox[{
+          RowBox[{"d", "=", 
+           RowBox[{"IntegerDigits", "[", "s", "]"}]}], ";", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"d", "\[Equal]", 
+             RowBox[{"Reverse", "[", "d", "]"}]}], ",", 
+            RowBox[{"t", "=", 
+             RowBox[{"{", 
+              RowBox[{"t", ",", "s"}], "}"}]}]}], "]"}]}], ",", 
+         RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{"DeleteDuplicates", "[", 
+    RowBox[{"Flatten", "[", "t", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Total", "[", "t", "]"}]}], "Input",
+ CellChangeTimes->{{3.730424693291482*^9, 3.7304248502982645`*^9}},
+ NumberMarks->False,ExpressionUUID->"95514a83-b20d-4089-90ff-359221acf00f"],
+
+Cell[BoxData["2906969179"], "Output",
+ CellChangeTimes->{3.73042452303201*^9, 3.730424837119237*^9, 
+  3.730424898132848*^9},ExpressionUUID->"f81f03dd-bbc7-4dd5-aeac-\
+2075ac1c1774"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1574, 39, 150, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[2135, 61, 1707, 39, 127, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[3867, 104, 2154, 62, 345, "Input",ExpressionUUID->"95514a83-b20d-4089-90ff-359221acf00f"],
+Cell[6024, 168, 182, 3, 93, "Output",ExpressionUUID->"f81f03dd-bbc7-4dd5-aeac-2075ac1c1774"]
+}, Open  ]]
+}
+]
+*)
+

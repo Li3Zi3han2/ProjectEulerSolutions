@@ -1,0 +1,161 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5196,        153]
+NotebookOptionsPosition[      4571,        134]
+NotebookOutlinePosition[      4928,        150]
+CellTagsIndexPosition[      4885,        147]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "A number consisting entirely of ones is called a repunit. We shall define ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"R", "[", "k", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ce9a33be-aa2f-4d39-a5f2-0ee21a783098"],
+ " to be a repunit of length k.\n\nFor example, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"R", "[", "10", "]"}], "=", 
+    RowBox[{"1111111111", "=", 
+     RowBox[{
+     "11", "\[Times]", "41", "\[Times]", "271", "\[Times]", "9091"}]}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f4786b91-c588-4501-a066-9276948bf380"],
+ ", and the sum of these prime factors is 9414.\n\nFind the sum of the first \
+forty prime factors of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"R", "[", 
+    SuperscriptBox["10", "9"], "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8244fa3e-5a9f-4aab-94c1-35a66e9643a6"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.7318964550211277`*^9, 
+  3.7318964978357706`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:53ea\:5305\:542b\:6570\:5b571\:7684\:6570\:88ab\:79f0\:4e3a\:5faa\:73af\
+\:5355\:4f4d\:6570\:ff0c\:6211\:4eec\:5b9a\:4e49",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"R", "[", "k", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d785325c-7729-4bb7-ac7c-c2a008be259b"],
+ "\:662f\:957f\:4e3ak\:7684\:5faa\:73af\:5355\:4f4d\:6570\:3002\n\n\:4f8b\
+\:5982\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"R", "[", "10", "]"}], "=", 
+    RowBox[{"1111111111", "=", 
+     RowBox[{
+     "11", "\[Times]", "41", "\[Times]", "271", "\[Times]", "9091"}]}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5c21e6b0-e33f-4ba5-8517-9e8d0e21bb9e"],
+ "\:ff0c\:8fd9\:4e9b\:8d28\:56e0\:6570\:7684\:548c\:662f9414\:3002\n\n\:627e\
+\:51fa",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"R", "[", 
+    SuperscriptBox["10", "9"], "]"}], TraditionalForm]],ExpressionUUID->
+  "3c5ca6ec-200b-4d12-a8fa-9a327d17aa43"],
+ "\:7684\:524d40\:4e2a\:8d28\:56e0\:6570\:7684\:548c\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.7318965074907303`*^9, 
+   3.7318965235292835`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"s", "=", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"c", "=", "1"}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"c", "\[LessEqual]", "40"}], ",", 
+   RowBox[{"i", "=", 
+    RowBox[{"i", "+", "1"}]}], ",", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"PowerMod", "[", 
+       RowBox[{"10", ",", 
+        SuperscriptBox["10", "9"], ",", 
+        RowBox[{
+         RowBox[{"Prime", "[", "i", "]"}], " ", "9"}]}], "]"}], "\[Equal]", 
+      "1"}], ",", 
+     RowBox[{
+      RowBox[{"s", "=", 
+       RowBox[{"s", "+", 
+        RowBox[{"Prime", "[", "i", "]"}]}]}], ";", 
+      RowBox[{"c", "=", 
+       RowBox[{"c", "+", "1"}]}]}]}], "]"}]}], "]"}], "\n", "s"}], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+   3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+   3.7250282267187443`*^9}, {3.72503044347628*^9, 3.725030445342036*^9}, {
+   3.73137022057948*^9, 3.731370282652954*^9}, {3.731896551286578*^9, 
+   3.731896581571149*^9}, {3.731896639345878*^9, 3.731896655409308*^9}, {
+   3.73189687377626*^9, 3.7318968754980164`*^9}, 
+   3.7318969553349514`*^9},ExpressionUUID->"20386a64-a558-4827-99f8-\
+04921bede5b8"],
+
+Cell[BoxData["843296"], "Output",
+ CellChangeTimes->{
+  3.7250281599876013`*^9, {3.7250281918871064`*^9, 3.725028227147995*^9}, 
+   3.7250304482388463`*^9, {3.7313702770172396`*^9, 3.7313702832809863`*^9}, {
+   3.731896928715551*^9, 
+   3.7318969574109616`*^9}},ExpressionUUID->"80476e50-44ec-4358-97b5-\
+48bc566005d5"]
+}, Open  ]]
+},
+WindowSize->{1350, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1131, 31, 130, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1692, 53, 1250, 33, 130, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[2967, 90, 1266, 33, 137, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[4236, 125, 319, 6, 37, "Output",ExpressionUUID->"80476e50-44ec-4358-97b5-48bc566005d5"]
+}, Open  ]]
+}
+]
+*)
+

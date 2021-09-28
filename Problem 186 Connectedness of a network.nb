@@ -1,0 +1,539 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21368,        531]
+NotebookOptionsPosition[     20637,        511]
+NotebookOutlinePosition[     20995,        527]
+CellTagsIndexPosition[     20952,        524]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Here are the records from a busy telephone system with one million users:\n\
+\n",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {"RecNr", "Caller", "Called"},
+     {"1", "200007", "100053"},
+     {"2", "600183", "500439"},
+     {"3", "600863", "701497"},
+     {"\[Ellipsis]", "\[Ellipsis]", "\[Ellipsis]"}
+    }], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "1f42efff-c083-40b1-bc52-7a6ae4a46fed"],
+ "\n\nThe telephone number of the caller and the called number in record n \
+are ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Caller", "[", "n", "]"}], "=", 
+    SubscriptBox["S", 
+     RowBox[{
+      RowBox[{"2", " ", "n"}], "-", "1"}]]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "41d09950-9e91-4c25-826c-631029b15e33"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Called", "[", "n", "]"}], "=", 
+    SubscriptBox["S", 
+     RowBox[{"2", " ", "n"}]]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "339394aa-4750-4ad7-966f-28ebd2a33750"],
+ " where ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["S", 
+    RowBox[{"1", ",", "2", ",", "3", ",", "\[Ellipsis]"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "45e196a8-0d5f-4955-9319-1282aecb4474"],
+ " come from the \[OpenCurlyDoubleQuote]Lagged Fibonacci Generator\
+\[CloseCurlyDoubleQuote]:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["S", "k"], "=", 
+    TagBox[GridBox[{
+       {"\[Piecewise]", GridBox[{
+          {
+           RowBox[{"Mod", "[", 
+            RowBox[{
+             RowBox[{"100003", "-", 
+              RowBox[{"200003", "k"}], "+", 
+              RowBox[{"300007", 
+               SuperscriptBox["k", "3"]}]}], ",", "1000000"}], "]"}], 
+           RowBox[{"1", "\[LessEqual]", "k", "\[LessEqual]", "55"}]},
+          {
+           RowBox[{"Mod", "[", 
+            RowBox[{
+             RowBox[{
+              SubscriptBox["S", 
+               RowBox[{"k", "-", "24"}]], "+", 
+              SubscriptBox["S", 
+               RowBox[{"k", "-", "55"}]]}], ",", "1000000"}], "]"}], 
+           RowBox[{"56", "\[LessEqual]", "k"}]}
+         },
+         AllowedDimensions->{2, Automatic},
+         Editable->True,
+         GridBoxAlignment->{
+          "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.84]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}},
+         Selectable->True]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{
+       "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.35]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     "Piecewise",
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True,
+     Selectable->False]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "94ae2b80-a0be-478c-a405-f91b34edb303"],
+ "\n\nIf ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Caller", "[", "n", "]"}], "=", 
+    RowBox[{"Called", "[", "n", "]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "55dc8ed5-9cf1-41e1-8c34-476f3dbede2f"],
+ " then the user is assumed to have misdialled and the call fails; otherwise \
+the call is successful.\n\nFrom the start of the records, we say that any \
+pair of users X and Y are friends if X calls Y or vice-versa. Similarly, X is \
+a friend of a friend of Z if X is a friend of Y and Y is a friend of Z; and \
+so on for longer chains.\n\nThe Prime Minister\[CloseCurlyQuote]s phone \
+number is 524287. After how many successful calls, not counting misdials, \
+will 99% of the users (including the PM) be a friend, or a friend of a friend \
+etc., of the Prime Minister?"
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.7572235891814165`*^9, 3.757223591568487*^9}, {
+  3.757223640858569*^9, 3.7572236863726597`*^9}, {3.7572237275432463`*^9, 
+  3.757223847538207*^9}, {3.7572238938651037`*^9, 
+  3.7572239153025293`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:4ee5\:4e0b\:662f\:4e00\:4e2a\:6709\:7740\:4e00\:767e\:4e07\:7528\:6237\
+\:7684\:5fd9\:788c\:7535\:8bdd\:7cfb\:7edf\:7684\:90e8\:5206\:8bb0\:5f55\:ff1a\
+\n\n",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {"\:7f16\:53f7", "\:547c\:53eb", "\:63a5\:542c"},
+     {"1", "200007", "100053"},
+     {"2", "600183", "500439"},
+     {"3", "600863", "701497"},
+     {"\[Ellipsis]", "\[Ellipsis]", "\[Ellipsis]"}
+    }], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "2ed42ea1-dcba-4908-ba58-943c25dbab3a"],
+ "\n\n\:7f16\:53f7\:4e3an\:7684\:8bb0\:5f55\:4e2d\:ff0c\:547c\:53eb\:8005\
+\:7684\:7535\:8bdd\:53f7\:7801\:662f",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Caller", "[", "n", "]"}], "=", 
+    SubscriptBox["S", 
+     RowBox[{
+      RowBox[{"2", " ", "n"}], "-", "1"}]]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ab74af92-f87f-4036-8ba2-565f7804f046"],
+ "\:ff0c\:63a5\:542c\:8005\:7684\:7535\:8bdd\:53f7\:7801\:662f",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Called", "[", "n", "]"}], "=", 
+    SubscriptBox["S", 
+     RowBox[{"2", " ", "n"}]]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0e98e2ec-1d3d-482e-aacb-99143ef6ae3b"],
+ "\:ff0c\:5176\:4e2d",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["S", 
+    RowBox[{"1", ",", "2", ",", "3", ",", "\[Ellipsis]"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "17312b7e-fd9f-4873-8f7d-1d3f71790abe"],
+ "\:6765\:81ea\:4e8e\:6240\:8c13\[OpenCurlyDoubleQuote]\:5ef6\:8fdf\:6590\
+\:6ce2\:90a3\:5951\:968f\:673a\:6570\:751f\:6210\:5668\[CloseCurlyDoubleQuote]\
+\:ff1a\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["S", "k"], "=", 
+    TagBox[GridBox[{
+       {"\[Piecewise]", GridBox[{
+          {
+           RowBox[{"Mod", "[", 
+            RowBox[{
+             RowBox[{"100003", "-", 
+              RowBox[{"200003", "k"}], "+", 
+              RowBox[{"300007", 
+               SuperscriptBox["k", "3"]}]}], ",", "1000000"}], "]"}], 
+           RowBox[{"1", "\[LessEqual]", "k", "\[LessEqual]", "55"}]},
+          {
+           RowBox[{"Mod", "[", 
+            RowBox[{
+             RowBox[{
+              SubscriptBox["S", 
+               RowBox[{"k", "-", "24"}]], "+", 
+              SubscriptBox["S", 
+               RowBox[{"k", "-", "55"}]]}], ",", "1000000"}], "]"}], 
+           RowBox[{"56", "\[LessEqual]", "k"}]}
+         },
+         AllowedDimensions->{2, Automatic},
+         Editable->True,
+         GridBoxAlignment->{
+          "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.84]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}},
+         Selectable->True]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{
+       "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.35]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     "Piecewise",
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True,
+     Selectable->False]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ea2c4cc4-407e-447c-a92e-1f6a5cdd5b79"],
+ "\n\n\:5982\:679c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Caller", "[", "n", "]"}], "=", 
+    RowBox[{"Called", "[", "n", "]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "671bdfbe-1520-4156-a5d3-2418828850d9"],
+ "\:ff0c\:90a3\:4e48\:6211\:4eec\:8ba4\:4e3a\:547c\:53eb\:8005\:62e8\:9519\
+\:4e86\:53f7\:7801\:ff0c\:547c\:53eb\:5931\:8d25\:ff1b\:5426\:5219\:6211\:4eec\
+\:8ba4\:4e3a\:547c\:53eb\:6210\:529f\:3002\n\n\:6839\:636e\:8fd9\:4efd\:8bb0\
+\:5f55\:ff0c\:5982\:679cX\:66fe\:7ecf\:547c\:53eb\:8fc7Y\:6216\:8005Y\:547c\
+\:53eb\:8fc7X\:ff0c\:5219\:6211\:4eec\:8ba4\:4e3a\:8fd9\:4e24\:4e2a\:7535\
+\:8bdd\:7528\:6237X\:548cY\:662f\:670b\:53cb\:3002\:540c\:6837\:7684\:ff0c\
+\:5982\:679cX\:662fY\:7684\:670b\:53cb\:ff0cY\:662fZ\:7684\:670b\:53cb\:ff0c\
+\:90a3\:4e48\:6211\:4eec\:8bf4X\:662fZ\:7684\:670b\:53cb\:7684\:670b\:53cb\
+\:ff1b\:6211\:4eec\:53ef\:4ee5\:540c\:7406\:7ec4\:6210\:66f4\:957f\:7684\
+\[OpenCurlyDoubleQuote]\:670b\:53cb\[CloseCurlyDoubleQuote]\:94fe\:3002\n\n\
+\:9996\:76f8\:7684\:7535\:8bdd\:53f7\:7801\:662f524287\:3002\:5728\:591a\:5c11\
+\:6b21\:547c\:53eb\:6210\:529f\:ff08\:4e0d\:8ba1\:547c\:53eb\:5931\:8d25\:ff09\
+\:4e4b\:540e\:ff0c99%\:7684\:7528\:6237\:ff08\:5305\:62ec\:9996\:76f8\:ff09\
+\:5c06\:4f1a\:6210\:4e3a\:9996\:76f8\:7684\:670b\:53cb\:ff0c\:6216\:662f\:670b\
+\:53cb\:7684\:670b\:53cb\:ff0c\:6216\:662f\:670b\:53cb\:7684\:670b\:53cb\:7684\
+\:670b\:53cb\[Ellipsis]\[Ellipsis]\:ff1f"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, 3.757223603759359*^9, {
+   3.7572236908251657`*^9, 3.757223708130189*^9}, {3.7572238682532325`*^9, 
+   3.7572239239108715`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"user", "=", "1000000"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"s", "[", "k_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"s", "[", "k", "]"}], "=", 
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{"100003", "-", 
+             RowBox[{"200003", "k"}], "+", 
+             RowBox[{"300007", 
+              SuperscriptBox["k", "3"]}]}], ",", "user"}], "]"}], 
+          RowBox[{"1", "\[LessEqual]", "k", "\[LessEqual]", "55"}]},
+         {
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"s", "[", 
+              RowBox[{"k", "-", "24"}], "]"}], "+", 
+             RowBox[{"s", "[", 
+              RowBox[{"k", "-", "55"}], "]"}]}], ",", "user"}], "]"}], 
+          RowBox[{"56", "\[LessEqual]", "k"}]}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"caller", "[", "n_", "]"}], ":=", 
+   RowBox[{"s", "[", 
+    RowBox[{
+     RowBox[{"2", " ", "n"}], "-", "1"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"called", "[", "n_", "]"}], ":=", 
+   RowBox[{"s", "[", 
+    RowBox[{"2", " ", "n"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"primeminister", "=", "524287"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"firstappearance", "=", 
+   RowBox[{"Do", "[", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"s", "[", "i", "]"}], "\[Equal]", "primeminister"}], ",", 
+       RowBox[{"Return", "[", "i", "]"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "\[Infinity]"}], "}"}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+   3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+   3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+   3.7564263646962595`*^9, 3.7564263899753056`*^9}, {3.7572240406144547`*^9, 
+   3.7572240996928167`*^9}, {3.757224235204558*^9, 3.7572242372722335`*^9}, {
+   3.7572242817067347`*^9, 3.7572242952576275`*^9}, 3.7572245473575163`*^9, {
+   3.757224856083798*^9, 3.7572249305180993`*^9}, 3.7572250126999016`*^9, {
+   3.7572250554057727`*^9, 3.7572250896562643`*^9}, {3.757225157538566*^9, 
+   3.7572252192429137`*^9}, {3.7572255386940613`*^9, 3.75722554692677*^9}, {
+   3.7572256271172075`*^9, 3.757225633460225*^9}, {3.757225742683106*^9, 
+   3.757225747954281*^9}, {3.757225783663686*^9, 3.7572258528678455`*^9}, {
+   3.757225935395919*^9, 3.7572260375239224`*^9}, {3.7572261115553236`*^9, 
+   3.7572262003624334`*^9}, {3.75722640617832*^9, 3.7572264156488523`*^9}, {
+   3.7572265984561977`*^9, 3.7572266531836257`*^9}, {3.757226771299125*^9, 
+   3.7572268911493683`*^9}, {3.7572271718622155`*^9, 3.757227214465542*^9}, {
+   3.7572272730873594`*^9, 3.757227275376999*^9}, 3.757227323067531*^9, {
+   3.757227365717848*^9, 3.7572273666786976`*^9}, {3.75722740759629*^9, 
+   3.7572274716182594`*^9}, {3.7572303036148453`*^9, 3.757230305254589*^9}, {
+   3.7572307711006365`*^9, 3.757230775222971*^9}, {3.757231447392221*^9, 
+   3.757231448628028*^9}, {3.757232895610388*^9, 3.757232909552204*^9}, {
+   3.7572330571640797`*^9, 3.757233079881503*^9}, 3.757233240127402*^9, 
+   3.7572332733602123`*^9, {3.7572339843497553`*^9, 3.7572339957519493`*^9}, {
+   3.757283011550645*^9, 3.7572830184285717`*^9}, {3.7572830502426014`*^9, 
+   3.7572831079145966`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"\[LeftFloor]", 
+    FractionBox[
+     RowBox[{"firstappearance", "+", "1"}], "2"], "\[RightFloor]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", "3000000"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"calllist1", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"caller", "[", "i", "]"}], "\[UndirectedEdge]", 
+      RowBox[{"called", "[", "i", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "a"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[ScriptCapitalG]1", "=", 
+   RowBox[{"SimpleGraph", "[", "calllist1", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"temp1", "=", 
+   RowBox[{"Length", "[", 
+    RowBox[{"VertexComponent", "[", 
+     RowBox[{"\[ScriptCapitalG]1", ",", " ", 
+      RowBox[{"{", "primeminister", "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"While", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"temp1", "<", 
+     RowBox[{
+      FractionBox["99", "100"], " ", "user"}]}], "&&", 
+    RowBox[{
+     RowBox[{"b", "-", "a"}], ">", "1"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"c", "=", 
+     RowBox[{"\[LeftCeiling]", 
+      FractionBox[
+       RowBox[{"a", "+", "b"}], "2"], "\[RightCeiling]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"calllist3", "=", 
+     RowBox[{"Join", "[", 
+      RowBox[{"calllist1", ",", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"caller", "[", "i", "]"}], "\[UndirectedEdge]", 
+          RowBox[{"called", "[", "i", "]"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{"a", "+", "1"}], ",", "c"}], "}"}]}], "]"}]}], "]"}]}], 
+    ";", "\[IndentingNewLine]", 
+    RowBox[{"\[ScriptCapitalG]3", "=", 
+     RowBox[{"SimpleGraph", "[", "calllist3", "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"temp3", "=", 
+     RowBox[{"Length", "[", 
+      RowBox[{"VertexComponent", "[", 
+       RowBox[{"\[ScriptCapitalG]3", ",", " ", 
+        RowBox[{"{", "primeminister", "}"}]}], "]"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"temp3", "<", 
+       RowBox[{
+        FractionBox["99", "100"], " ", "user"}]}], ",", 
+      RowBox[{
+       RowBox[{"calllist1", "=", "calllist3"}], ";", 
+       RowBox[{"temp1", "=", "temp3"}], ";", 
+       RowBox[{"a", "=", "c"}]}], ",", 
+      RowBox[{"b", "=", "c"}]}], "]"}]}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Length", "[", 
+   RowBox[{"DeleteCases", "[", 
+    RowBox[{"calllist1", ",", 
+     RowBox[{
+      RowBox[{"c1_", "\[UndirectedEdge]", "c2_"}], "/;", 
+      RowBox[{"c1", "\[Equal]", "c2"}]}]}], "]"}], "]"}], "+", 
+  "1"}]}], "Input",
+ CellChangeTimes->{{3.757233092846472*^9, 3.7572331815395784`*^9}, {
+   3.757233242024106*^9, 3.7572332966915426`*^9}, {3.757234105565749*^9, 
+   3.757234170464582*^9}, 3.757234232709777*^9, {3.7572343629273295`*^9, 
+   3.7572343890383067`*^9}, {3.7572344469425526`*^9, 3.757234478927837*^9}, 
+   3.7572345209063406`*^9, {3.7572345566181746`*^9, 3.757234556819125*^9}, {
+   3.757234587239689*^9, 3.7572345993018074`*^9}, {3.7572346586332397`*^9, 
+   3.7572346690534286`*^9}, {3.7572347575607996`*^9, 3.757234872692444*^9}, {
+   3.7572349465335503`*^9, 3.7572349731309724`*^9}, {3.757235059132543*^9, 
+   3.7572352004099884`*^9}, {3.7572352898692303`*^9, 
+   3.7572353209293337`*^9}, {3.7572354333125486`*^9, 3.75723543741012*^9}, {
+   3.7572355652775645`*^9, 3.7572355967677994`*^9}, {3.75723599432987*^9, 
+   3.7572359960081735`*^9}, {3.7572360384151583`*^9, 3.757236047901842*^9}, {
+   3.757236111768862*^9, 3.757236141638364*^9}, {3.7572831102732267`*^9, 
+   3.7572831116550117`*^9}, {3.7572836508088064`*^9, 
+   3.7572836568628616`*^9}, {3.757283700068115*^9, 3.757283711215373*^9}, {
+   3.7572837531948166`*^9, 3.7572837589559183`*^9}, {3.757284100186735*^9, 
+   3.757284106489751*^9}, {3.7572841912185173`*^9, 3.7572841915924587`*^9}, {
+   3.7572843825376387`*^9, 3.7572843910393114`*^9}},
+ CellLabel->"In[34]:=",ExpressionUUID->"67c84c84-a33a-44c2-adef-44fcfe03c6a6"],
+
+Cell[BoxData["2325629"], "Output",
+ CellChangeTimes->{3.7572357325796804`*^9, 3.7572373544665585`*^9, 
+  3.7572843033570046`*^9, 3.7572851625488195`*^9},
+ CellLabel->"Out[40]=",ExpressionUUID->"c01025b0-1c88-4a2b-ad7c-14a4002290e5"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 4915, 126, 491, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[5476, 148, 5794, 136, 447, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[11273, 286, 4911, 112, 210, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[CellGroupData[{
+Cell[16209, 402, 4177, 101, 577, "Input",ExpressionUUID->"67c84c84-a33a-44c2-adef-44fcfe03c6a6"],
+Cell[20389, 505, 232, 3, 37, "Output",ExpressionUUID->"c01025b0-1c88-4a2b-ad7c-14a4002290e5"]
+}, Open  ]]
+}
+]
+*)
+

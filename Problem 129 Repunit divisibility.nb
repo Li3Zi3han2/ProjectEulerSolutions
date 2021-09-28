@@ -1,0 +1,257 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8992,        249]
+NotebookOptionsPosition[      8365,        230]
+NotebookOutlinePosition[      8723,        246]
+CellTagsIndexPosition[      8680,        243]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "A number consisting entirely of ones is called a repunit. We shall define ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"R", "[", "k", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5adfa7f7-62cf-4bf8-9058-6c8c997e9d24"],
+ " to be a repunit of length k; for example, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"R", "[", "6", "]"}], "=", "111111"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5d67d879-c94d-49a1-91a6-1adf46d7fb00"],
+ ".\n\nGiven that n is a positive integer and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"GCD", "[", 
+     RowBox[{"n", ",", "10"}], "]"}], "=", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "46579a7f-4fc2-456c-9a43-839659d850b1"],
+ ", it can be shown that there always exists a value, k, for which ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"R", "[", "k", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7e6f0e53-b2a9-424b-99e4-ee419749c04c"],
+ " is divisible by n, and let ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7201b21f-53cd-49dd-b5a7-bd68e50c94f0"],
+ " be the least such value of k; for example, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"A", "[", "7", "]"}], "=", "6"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "342bb6c7-b5cc-4407-9680-e6eede61d4f7"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"A", "[", "41", "]"}], "=", "5"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b3010884-4a9d-4b6e-a98b-a27dfcc7ed9e"],
+ ".\n\nThe least value of n for which ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "2c3a3e35-6bd5-40a3-a8ed-cf136105960d"],
+ " first exceeds ten is 17.\n\nFind the least value of n for which ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "98121952-dfd9-4889-bd30-fd070f8a6e7b"],
+ " first exceeds one-million."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.7333971525060234`*^9, 
+  3.7333971545281525`*^9}, {3.734053400905619*^9, 
+  3.734053471882298*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:53ea\:5305\:542b\:6570\:5b571\:7684\:6570\:88ab\:79f0\:4e3a\:5faa\:73af\
+\:5355\:4f4d\:6570\:ff0c\:6211\:4eec\:5b9a\:4e49",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"R", "[", "k", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "2964278c-8d6e-4a43-a5ad-997e5a80bdae"],
+ "\:662f\:957f\:4e3ak\:7684\:5faa\:73af\:5355\:4f4d\:6570\:ff0c\:4f8b\:5982\
+\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"R", "[", "6", "]"}], "=", "111111"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "edddbbba-2d2e-4886-8b6f-12fc098a81c5"],
+ "\:3002\n\n\:5982\:679cn\:662f\:4e00\:4e2a\:6574\:6570\:ff0c\:4e14",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"GCD", "[", 
+     RowBox[{"n", ",", "10"}], "]"}], "=", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "143e47dd-0f7a-4e17-be84-e7a417abb6da"],
+ "\:ff0c\:53ef\:4ee5\:9a8c\:8bc1\:603b\:5b58\:5728k\:4f7f\:5f97",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"R", "[", "k", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6879130c-cf2d-4026-909f-e8b6d4af1e32"],
+ "\:80fd\:591f\:88abn\:6574\:9664\:ff0c\:5e76\:4e14\:8bb0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7b7fce13-4c27-4fae-a264-1d264c4a80bd"],
+ "\:662f\:8fd9\:4e9bk\:4e2d\:6700\:5c0f\:7684\:4e00\:4e2a\:3002\:4f8b\:5982\
+\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"A", "[", "7", "]"}], "=", "6"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b9d28859-0ff3-4cd0-b863-51ca691271d1"],
+ "\:ff0c\:800c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"A", "[", "41", "]"}], "=", "5"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cf0ef8fd-c9eb-4472-9b80-2c6f18e51ee6"],
+ "\:3002\n\n\:4f7f\:5f97",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "fb22e076-a08b-4d6b-8e2a-9c0abee83879"],
+ "\:7b2c\:4e00\:6b21\:8d85\:8fc7\:5341\:7684n\:662f17\:3002\n\n\:6c42\:4f7f\
+\:5f97",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "808da07d-faa5-4bfc-95ca-e7951199945b"],
+ "\:7b2c\:4e00\:6b21\:8d85\:8fc7\:4e00\:767e\:4e07\:7684n\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, 3.7340534119182005`*^9, {
+   3.7340534767481174`*^9, 3.7340535235062723`*^9}, {3.734053952822667*^9, 
+   3.734053955359497*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"l", "=", "1000000"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"a", "[", "n_", "]"}], ":=", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"GCD", "[", 
+      RowBox[{"n", ",", "10"}], "]"}], "\[Equal]", "1"}], ",", 
+    RowBox[{"Block", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"s", "=", "1"}], ",", 
+        RowBox[{"p", "=", "1"}]}], "}"}], ",", 
+      RowBox[{"Do", "[", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Mod", "[", 
+            RowBox[{"s", ",", "n"}], "]"}], "\[Equal]", "0"}], ",", 
+          RowBox[{"Return", "[", "k", "]"}], ",", 
+          RowBox[{
+           RowBox[{"p", "=", 
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{"p", "*", "10"}], ",", "n"}], "]"}]}], ";", 
+           RowBox[{"s", "=", 
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{"s", "+", "p"}], ",", "n"}], "]"}]}]}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"k", ",", "1", ",", "\[Infinity]"}], "}"}]}], "]"}]}], "]"}],
+     ",", "0"}], "]"}]}], "\n", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"a", "[", "n", "]"}], ">", "l"}], ",", 
+     RowBox[{"Return", "[", "n", "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "l", ",", "\[Infinity]"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+  3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+  3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+  3.733397177005328*^9, 3.7333972103847303`*^9}, {3.7340535309788446`*^9, 
+  3.734053546775876*^9}, {3.7340535843694944`*^9, 3.7340536315752015`*^9}, {
+  3.7340539267196507`*^9, 3.7340539617959833`*^9}, {3.73405400338253*^9, 
+  3.7340540196927137`*^9}, {3.734054068409048*^9, 3.734054180052265*^9}, {
+  3.734054338684606*^9, 3.7340543424454517`*^9}, {3.734054697725313*^9, 
+  3.734054737847664*^9}, {3.73405479173912*^9, 3.734054806407818*^9}, {
+  3.7340548512826667`*^9, 
+  3.734054930326068*^9}},ExpressionUUID->"6a7c367e-c1c3-4109-93e6-\
+34add9704799"],
+
+Cell[BoxData["1000023"], "Output",
+ CellChangeTimes->{{3.734054134118271*^9, 3.734054137607412*^9}, 
+   3.734054177769281*^9, 3.7340542913384457`*^9, 3.7340543620760946`*^9, {
+   3.734054887565546*^9, 3.734054896092057*^9}, 
+   3.734054946979171*^9},ExpressionUUID->"cf1f2868-ba97-405a-97d4-\
+9f7ff162e193"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2452, 66, 199, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[3013, 88, 2790, 72, 176, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[5828, 164, 2211, 56, 167, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[8042, 222, 307, 5, 37, "Output",ExpressionUUID->"cf1f2868-ba97-405a-97d4-9f7ff162e193"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,264 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11096,        256]
+NotebookOptionsPosition[     10320,        235]
+NotebookOutlinePosition[     10734,        252]
+CellTagsIndexPosition[     10691,        249]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "In the hexadecimal number system numbers are represented using 16 different \
+digits:\n0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F\n\nThe hexadecimal number AF when \
+written in the decimal number system equals ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"10", "\[Times]", "16"}], "+", "15"}], "=", "175"}], 
+   TraditionalForm]],ExpressionUUID->"c5480d0d-f4b3-4ffe-a565-b650cca925bf"],
+ ".\n\nIn the 3-digit hexadecimal numbers 10A, 1A0, A10, and A01 the digits \
+0,1 and A are all present.\nLike numbers written in base ten we write \
+hexadecimal numbers without leading zeroes.\n\nHow many hexadecimal numbers \
+containing at most sixteen hexadecimal digits exist with all of the digits \
+0,1, and A present at least once?\nGive your answer as a hexadecimal number.\n\
+\n(A,B,C,D,E and F in upper case, without any leading or trailing code that \
+marks the number as hexadecimal and without leading zeroes , e.g. 1A3F and \
+not: 1a3f and not 0x1a3f and not $1A3F and not #1A3F and not 0000001A3F)"
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.731455833435907*^9, 3.7314558357289343`*^9}, {3.731455931189786*^9, 
+  3.7314559351320267`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:5341\:516d\:8fdb\:5236\:6570\:7cfb\:7edf\:4f7f\:752816\:4e2a\:4e0d\:540c\
+\:7684\:6570\:5b57\:ff1a\n0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F\n\n\:5341\:516d\
+\:8fdb\:5236\:6570AF\:5728\:5341\:8fdb\:5236\:4e0b\:7b49\:4e8e",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"10", "\[Times]", "16"}], "+", "15"}], "=", "175"}], 
+   TraditionalForm]],ExpressionUUID->"97c6a757-c1ff-4061-9f2e-98b9fd0e73f9"],
+ "\:3002\n\n\:4e09\:4f4d\:5341\:516d\:8fdb\:5236\:657010A\:ff0c1A0\:ff0cA10\
+\:548cA01\:90fd\:5305\:542b\:6570\:5b570\:ff0c1\:548cA\:3002\n\:548c\:5341\
+\:8fdb\:5236\:4e0b\:4e00\:6837\:ff0c\:5728\:5341\:516d\:8fdb\:5236\:4e2d\:6ca1\
+\:6709\:524d\:5bfc\:96f6\:3002\n\n\:6709\:591a\:5c11\:81f3\:591a\:5341\:516d\
+\:4f4d\:7684\:5341\:516d\:8fdb\:5236\:6570\:540c\:65f6\:5305\:542b0\:ff0c1\
+\:548cA\:ff1f\n\:7528\:5341\:516d\:8fdb\:5236\:6570\:8868\:793a\:4f60\:7684\
+\:7b54\:6848\:3002\n\n\:ff08A,B,C,D,E\:548cF\:5747\:4e3a\:5927\:5199\:5b57\
+\:6bcd\:ff0c\:6ca1\:6709\:524d\:5bfc\:96f6\:6216\:672b\:5c3e\:6807\:8bc6\:7b26\
+\:6765\:8868\:660e\:8be5\:6570\:5b57\:4e3a\:5341\:516d\:8fdb\:5236\:ff0c\:4f8b\
+\:5982\:ff0c1A3F\:4e0d\:80fd\:5199\:6210:1a3f\:62160x1a3f\:6216$1A3F\:6216#\
+1A3F\:62160000001A3F\:ff09"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.7314558520546513`*^9, {3.7314559228457017`*^9, 
+   3.7314559270482817`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{"\:5bf9\:4e8e\:540c\:65f6\:5305\:542b0", ",", "1", ",", 
+  "A\:7684d\:4f4d\:6570", "\:ff0c", "\:5b83\:6700\:5c11\:75313\:79cd\:6570", 
+  "\:3001", 
+  "\:6700\:591a\:753116\:79cd\:6570\:6784\:6210"}], "\[IndentingNewLine]", 
+ RowBox[{"\:5148\:9009\:51fa0", ",", "1", ",", 
+  RowBox[{
+   RowBox[{"A\:548c\:5176\:4ed6Length", "[", 
+    RowBox[{"c", "\[LeftDoubleBracket]", 
+     RowBox[{
+      RowBox[{"d", "-", "2"}], ",", "i"}], "\[RightDoubleBracket]"}], "]"}], 
+   "-", 
+   RowBox[{"3", "\:79cd\:6570"}]}], "\:ff0c", 
+  "\:518d\:8003\:8651\:6bcf\:79cd\:6570\:7684\:6392\:5217"}], "\
+\[IndentingNewLine]", 
+ RowBox[{"\:786e\:5b9a0\:7684\:4e2a\:6570", "\:ff0c", 
+  "\:518d\:8003\:8651\:5269\:4e0b\:7684\:6bcf\:79cd\:6570\:7684\:6392\:5217", 
+  "\:ff0c", "\:4e58\:4ee5\:5bf9\:5e94\:7684\:6bd4\:4f8b"}]}], "Text",
+ CellChangeTimes->{{3.799911553703807*^9, 3.7999117091362534`*^9}, {
+  3.7999117454631453`*^9, 3.7999117775917273`*^9}, {3.799912204049589*^9, 
+  3.7999122333223467`*^9}, {3.7999126454808407`*^9, 3.799912750570449*^9}, {
+  3.7999127861875906`*^9, 
+  3.7999128883719964`*^9}},ExpressionUUID->"e23f5d2a-96fb-4148-b537-\
+8dc648036b6d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"c", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"IntegerPartitions", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", "16"}], "}"}]}], "]"}], "&"}], "/@", 
+    RowBox[{"Range", "[", 
+     RowBox[{"3", ",", "16"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"l", "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{"Union", ",", "c", ",", 
+     RowBox[{"{", "2", "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{
+    SubsuperscriptBox["\[Sum]", 
+     RowBox[{"d", "=", "3"}], "16"], 
+    RowBox[{
+     SubsuperscriptBox["\[Sum]", 
+      RowBox[{"i", "=", "1"}], 
+      RowBox[{"Length", "[", 
+       RowBox[{"c", "\[LeftDoubleBracket]", 
+        RowBox[{"d", "-", "2"}], "\[RightDoubleBracket]"}], "]"}]], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"Binomial", "[", 
+         RowBox[{
+          RowBox[{"16", "-", "3"}], ",", 
+          RowBox[{
+           RowBox[{"Length", "[", 
+            RowBox[{"c", "\[LeftDoubleBracket]", 
+             RowBox[{
+              RowBox[{"d", "-", "2"}], ",", "i"}], "\[RightDoubleBracket]"}], 
+            "]"}], "-", "3"}]}], "]"}], " ", 
+        RowBox[{
+         SubsuperscriptBox["\[Sum]", 
+          RowBox[{"j", "=", "1"}], 
+          RowBox[{"Length", "[", 
+           RowBox[{"l", "\[LeftDoubleBracket]", 
+            RowBox[{
+             RowBox[{"d", "-", "2"}], ",", "i"}], "\[RightDoubleBracket]"}], 
+           "]"}]], 
+         RowBox[{
+          FractionBox[
+           RowBox[{
+            RowBox[{"Total", "[", 
+             RowBox[{
+              RowBox[{"Tally", "[", 
+               RowBox[{"DeleteCases", "[", 
+                RowBox[{
+                 RowBox[{"c", "\[LeftDoubleBracket]", 
+                  RowBox[{
+                   RowBox[{"d", "-", "2"}], ",", "i"}], 
+                  "\[RightDoubleBracket]"}], ",", 
+                 RowBox[{"l", "\[LeftDoubleBracket]", 
+                  RowBox[{
+                   RowBox[{"d", "-", "2"}], ",", "i", ",", "j"}], 
+                  "\[RightDoubleBracket]"}], ",", 
+                 RowBox[{"{", "1", "}"}], ",", "1"}], "]"}], "]"}], 
+              "\[LeftDoubleBracket]", 
+              RowBox[{"All", ",", "2"}], "\[RightDoubleBracket]"}], "]"}], 
+            "!"}], 
+           RowBox[{"Times", "@@", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Tally", "[", 
+                RowBox[{"DeleteCases", "[", 
+                 RowBox[{
+                  RowBox[{"c", "\[LeftDoubleBracket]", 
+                   RowBox[{
+                    RowBox[{"d", "-", "2"}], ",", "i"}], 
+                   "\[RightDoubleBracket]"}], ",", 
+                  RowBox[{"l", "\[LeftDoubleBracket]", 
+                   RowBox[{
+                    RowBox[{"d", "-", "2"}], ",", "i", ",", "j"}], 
+                   "\[RightDoubleBracket]"}], ",", 
+                  RowBox[{"{", "1", "}"}], ",", "1"}], "]"}], "]"}], 
+               "\[LeftDoubleBracket]", 
+               RowBox[{"All", ",", "2"}], "\[RightDoubleBracket]"}], "!"}], 
+             ")"}]}]], " ", 
+          FractionBox[
+           RowBox[{"d", "-", 
+            RowBox[{"l", "\[LeftDoubleBracket]", 
+             RowBox[{
+              RowBox[{"d", "-", "2"}], ",", "i", ",", "j"}], 
+             "\[RightDoubleBracket]"}]}], "d"]}]}]}], ")"}], " ", 
+      FractionBox[
+       RowBox[{"d", "!"}], 
+       RowBox[{"Times", "@@", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"c", "\[LeftDoubleBracket]", 
+           RowBox[{
+            RowBox[{"d", "-", "2"}], ",", "i"}], "\[RightDoubleBracket]"}], 
+          "!"}], ")"}]}]]}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ToUpperCase", "[", 
+  RowBox[{"IntegerString", "[", 
+   RowBox[{"n", ",", "16"}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+   3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+   3.7250282267187443`*^9}, {3.72503044347628*^9, 3.725030445342036*^9}, {
+   3.73137022057948*^9, 3.731370282652954*^9}, {3.731455966580081*^9, 
+   3.731456031779605*^9}, {3.731456116513794*^9, 3.731456145592046*^9}, {
+   3.731456191587327*^9, 3.7314561947320304`*^9}, {3.7314562261426487`*^9, 
+   3.7314563295048566`*^9}, {3.731456375621137*^9, 3.7314563807649727`*^9}, {
+   3.7314577731231594`*^9, 3.731457875638589*^9}, {3.7314579385073895`*^9, 
+   3.731457940773473*^9}, {3.7314580557522035`*^9, 3.7314580729286222`*^9}, {
+   3.731459709722777*^9, 3.731459717622995*^9}, {3.731459749581375*^9, 
+   3.731459758439715*^9}, {3.7314598100260344`*^9, 3.7314598146854935`*^9}, {
+   3.731459864333519*^9, 3.7314598979638367`*^9}, {3.73146011506367*^9, 
+   3.7314601927775335`*^9}, 3.7314602904777374`*^9, {3.731460421240635*^9, 
+   3.731460421981482*^9}, {3.7314604524843225`*^9, 3.7314604728340483`*^9}, {
+   3.7314605772510166`*^9, 3.731460594588286*^9}, {3.731460844687684*^9, 
+   3.7314608489566927`*^9}, {3.731460882941408*^9, 3.7314608859639597`*^9}, {
+   3.7314609258515944`*^9, 3.7314609259887357`*^9}, 3.7314609577759*^9, {
+   3.731460992552555*^9, 3.7314609926256433`*^9}, {3.7314613759056425`*^9, 
+   3.7314614122193584`*^9}},ExpressionUUID->"20386a64-a558-4827-99f8-\
+04921bede5b8"],
+
+Cell[BoxData["\<\"3D58725572C62302\"\>"], "Output",
+ CellChangeTimes->{
+  3.7250281599876013`*^9, {3.7250281918871064`*^9, 3.725028227147995*^9}, 
+   3.7250304482388463`*^9, {3.7313702770172396`*^9, 3.7313702832809863`*^9}, 
+   3.731460291276673*^9, 3.731460479550687*^9, 3.73146060222122*^9, 
+   3.7314608955681696`*^9, 3.7314609268227196`*^9, 3.7314609585788374`*^9, 
+   3.7314609933635063`*^9, {3.731461391985794*^9, 
+   3.731461412641296*^9}},ExpressionUUID->"06f0593f-e464-4626-89d7-\
+32c74626e768"]
+}, Open  ]]
+},
+WindowSize->{1920, 997},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (2020\:5e744\:670815\
+\:65e5)",
+StyleDefinitions->"Homework.nb",
+ExpressionUUID->"2c7cd922-4fab-4f40-a1a6-4d1394c03797"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1270, 22, 276, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1831, 44, 1480, 26, 276, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[3314, 72, 1167, 23, 83, "Text",ExpressionUUID->"e23f5d2a-96fb-4148-b537-8dc648036b6d"],
+Cell[CellGroupData[{
+Cell[4506, 99, 5291, 123, 189, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[9800, 224, 504, 8, 34, "Output",ExpressionUUID->"06f0593f-e464-4626-89d7-32c74626e768"]
+}, Open  ]]
+}
+]
+*)
+

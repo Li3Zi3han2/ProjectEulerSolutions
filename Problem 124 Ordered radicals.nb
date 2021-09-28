@@ -1,0 +1,311 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10134,        303]
+NotebookOptionsPosition[      9505,        284]
+NotebookOutlinePosition[      9863,        300]
+CellTagsIndexPosition[      9820,        297]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "The radical of n, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"rad", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e9a4ac3e-6595-485e-8fd6-f981b89c4885"],
+ ", is the product of the distinct prime factors of n. For example, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"504", "=", 
+    RowBox[{
+     SuperscriptBox["2", "3"], "\[Times]", 
+     SuperscriptBox["3", "2"], "\[Times]", "7"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ec5f55a2-a49f-458d-ba0b-1e377d3a6e2a"],
+ ", so ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"rad", "[", "504", "]"}], "=", 
+    RowBox[{
+     RowBox[{"2", "\[Times]", "3", "\[Times]", "7"}], "=", "42"}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c70e672e-b97b-4b11-8201-3f2ddd30903d"],
+ ".\n\nIf we calculate ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"rad", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "02e1aebc-1d45-4321-9640-92ba70a27e2d"],
+ " for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "\[LessEqual]", "n", "\[LessEqual]", "10"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e0df487a-0d2f-4fe7-b1bd-a0eb14b13319"],
+ ", then sort them on ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"rad", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "91d7a327-1a00-46ec-a14a-770f6519bc8a"],
+ ", and sorting on n if the radical values are equal, we get:\n",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {"Unsorted", "\[Placeholder]", "Sorted", "\[Placeholder]", 
+      "\[Placeholder]"},
+     {"n", 
+      RowBox[{"rad", "[", "n", "]"}], "n", 
+      RowBox[{"rad", "[", "n", "]"}], "k"},
+     {"1", "1", "1", "1", "1"},
+     {"2", "2", "2", "2", "2"},
+     {"3", "3", "4", "2", "3"},
+     {"4", "2", "8", "2", "4"},
+     {"5", "5", "3", "3", "5"},
+     {"6", "6", "9", "3", "6"},
+     {"7", "7", "5", "5", "7"},
+     {"8", "2", "6", "6", "8"},
+     {"9", "3", "7", "7", "9"},
+     {"10", "10", "10", "10", "10"}
+    }], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8088c97e-6d63-4ad9-8f94-981d0aa34f43"],
+ "\n\nLet ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"E", "[", "k", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "45fa8529-03cd-40b8-af53-3cca123c4f23"],
+ " be the kth element in the sorted n column; for example, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"E", "[", "4", "]"}], "=", "8"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "73a1a437-23fd-4b74-afbe-6755181b32ab"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"E", "[", "6", "]"}], "=", "9"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6c6f1e4e-0fda-4e30-98c7-1c414dae937f"],
+ ".\n\nIf ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"rad", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ec369f40-c399-41c3-8337-32cbfa32e31d"],
+ " is sorted for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "\[LessEqual]", "n", "\[LessEqual]", "100000"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bae91684-70ae-4483-810b-0cce63f2109e"],
+ ", find ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"E", "[", "10000", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7750867d-e2dd-4701-a79e-e7e4c291939e"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.7298289344671803`*^9, 
+  3.729829250599513*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:6570n\:7684\:57fa",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"rad", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "25ddd232-0535-4bae-bae7-81a8f910c52d"],
+ "\:ff0c\:662f\:6307n\:7684\:4e0d\:540c\:8d28\:56e0\:6570\:4e4b\:79ef\:3002\
+\:4f8b\:5982\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"504", "=", 
+    RowBox[{
+     SuperscriptBox["2", "3"], "\[Times]", 
+     SuperscriptBox["3", "2"], "\[Times]", "7"}]}], TraditionalForm]],
+  ExpressionUUID->"9f405426-6280-4a35-8392-f80dc5758c82"],
+ "\:ff0c\:6240\:4ee5",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"rad", "[", "504", "]"}], "=", 
+    RowBox[{
+     RowBox[{"2", "\[Times]", "3", "\[Times]", "7"}], "=", "42"}]}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e752891a-7f21-4ed1-80a7-cd766869302d"],
+ "\:3002\n\n\:5982\:679c\:6211\:4eec\:8ba1\:7b97",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "\[LessEqual]", "n", "\[LessEqual]", "10"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9d949785-c62a-4e7a-ac47-f1d9644cd9f2"],
+ "\:7684",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"rad", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e8c8d0df-5b2c-456e-8b87-080ce127bd42"],
+ "\:ff0c\:5e76\:5148\:6309\:7167",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"rad", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f8b6abed-a576-4fe1-b923-39c17036d41f"],
+ "\:518d\:6309\:7167n\:4ece\:5c0f\:5230\:5927\:6392\:5e8f\:ff0c\:6211\:4eec\
+\:5f97\:5230\:ff1a\n",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {"\:6392\:5e8f\:524d", "\[Placeholder]", "\:6392\:5e8f\:540e", 
+      "\[Placeholder]", "\[Placeholder]"},
+     {"n", 
+      RowBox[{"rad", "[", "n", "]"}], "n", 
+      RowBox[{"rad", "[", "n", "]"}], "k"},
+     {"1", "1", "1", "1", "1"},
+     {"2", "2", "2", "2", "2"},
+     {"3", "3", "4", "2", "3"},
+     {"4", "2", "8", "2", "4"},
+     {"5", "5", "3", "3", "5"},
+     {"6", "6", "9", "3", "6"},
+     {"7", "7", "5", "5", "7"},
+     {"8", "2", "6", "6", "8"},
+     {"9", "3", "7", "7", "9"},
+     {"10", "10", "10", "10", "10"}
+    }], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cb0cfaa0-b731-4d1e-a877-71d9b361e16a"],
+ "\n\n\:8bb0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"E", "[", "k", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "da679b35-254d-4493-bd5d-4284f8b03326"],
+ "\:662f\:524dn\:4e2a\:6570\:6392\:5e8f\:540e\:7684\:7b2ck\:4e2a\:6570\:ff0c\
+\:4f8b\:5982\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"E", "[", "4", "]"}], "=", "8"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bfcf5057-32b8-4f47-ae75-4bcaa60d6444"],
+ "\:4ee5\:53ca",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"E", "[", "6", "]"}], "=", "9"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "23cc7d6b-a61f-4494-b17e-4f642a20bceb"],
+ "\:3002\n\n\:5bf9",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "\[LessEqual]", "n", "\[LessEqual]", "100000"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "beaa9d60-e26d-4f07-80d7-cf49010176bd"],
+ "\:6309\:7167",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"rad", "[", "n", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6f0a78a9-fedd-4cff-8283-6b3331e94ab2"],
+ "\:6392\:5e8f\:540e\:ff0c\:6c42",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"E", "[", "10000", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "40eac039-7624-4447-a617-66f9a7bff6ba"],
+ "\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.7298289535837927`*^9, {3.729829092287608*^9, 3.7298291288259015`*^9}, {
+   3.7298292595675926`*^9, 
+   3.72982930801006*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Thread", "[", 
+      RowBox[{"{", 
+       RowBox[{"#", ",", 
+        RowBox[{"Times", "@@", 
+         RowBox[{
+          RowBox[{"FactorInteger", "[", "#", "]"}], "\[LeftDoubleBracket]", 
+          RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}]}]}], "}"}], 
+      "]"}], "&"}], "/@", 
+    RowBox[{"Range", "[", 
+     RowBox[{"1", ",", "100000"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SortBy", "[", 
+   RowBox[{"t", ",", "Last"}], "]"}], "\[LeftDoubleBracket]", 
+  RowBox[{"10000", ",", "1"}], "\[RightDoubleBracket]"}]}], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+  3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+  3.7250282267187443`*^9}, {3.72503044347628*^9, 3.725030445342036*^9}, {
+  3.7298293123098745`*^9, 3.7298294236620417`*^9}, {3.7298294800614204`*^9, 
+  3.7298295345957165`*^9}, {3.7298295664024644`*^9, 
+  3.729829641561942*^9}},ExpressionUUID->"20386a64-a558-4827-99f8-\
+04921bede5b8"],
+
+Cell[BoxData["21417"], "Output",
+ CellChangeTimes->{
+  3.7250281599876013`*^9, {3.7250281918871064`*^9, 3.725028227147995*^9}, 
+   3.7250304482388463`*^9, 3.729829414857134*^9, 3.7298295351193027`*^9, {
+   3.729829567046187*^9, 
+   3.7298296428604*^9}},ExpressionUUID->"803d2639-54ae-4917-8b38-\
+9650bf1426fb"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 3617, 109, 438, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[4178, 131, 3898, 113, 440, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[8101, 248, 1075, 25, 97, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[9179, 275, 310, 6, 37, "Output",ExpressionUUID->"803d2639-54ae-4917-8b38-9650bf1426fb"]
+}, Open  ]]
+}
+]
+*)
+

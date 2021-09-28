@@ -1,0 +1,445 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13906,        437]
+NotebookOptionsPosition[     13180,        417]
+NotebookOutlinePosition[     13538,        433]
+CellTagsIndexPosition[     13495,        430]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "The most naive way of computing ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["n", "15"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "133d5909-341a-42f4-bcba-e4a9cb5060cf"],
+ " requires fourteen multiplications:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+    "n", "\[Times]", "n", "\[Times]", "\[Ellipsis]", "\[Times]", "n"}], "=", 
+    SuperscriptBox["n", "15"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3fa8cf8c-740b-42ee-bdc7-1a67e20c4d3f"],
+ "\n\nBut using a \[OpenCurlyDoubleQuote]binary\[CloseCurlyDoubleQuote] \
+method you can compute it in six multiplications:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"n", "\[Times]", "n"}], "=", 
+    SuperscriptBox["n", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "df20d26d-d85c-45e8-9069-d649fcfd0a9e"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["n", "2"], "\[Times]", 
+     SuperscriptBox["n", "2"]}], "=", 
+    SuperscriptBox["n", "4"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0e4517df-d213-48d1-a915-c252a8f3c0ad"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["n", "4"], "\[Times]", 
+     SuperscriptBox["n", "4"]}], "=", 
+    SuperscriptBox["n", "8"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7e486637-292f-4fbe-8c68-38db872d2f65"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["n", "8"], "\[Times]", 
+     SuperscriptBox["n", "4"]}], "=", 
+    SuperscriptBox["n", "12"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "38f68a9e-eec8-4073-a168-dae811302dcb"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["n", "12"], "\[Times]", 
+     SuperscriptBox["n", "2"]}], "=", 
+    SuperscriptBox["n", "14"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0f7cbe7c-4371-4ced-bfd1-e780c3e71e61"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["n", "14"], "\[Times]", "n"}], "=", 
+    SuperscriptBox["n", "15"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7e88f532-c29f-45db-925e-e64a0cac7796"],
+ "\n\nHowever it is yet possible to compute it in only five multiplications:\n\
+\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"n", "\[Times]", "n"}], "=", 
+    SuperscriptBox["n", "2"]}], TraditionalForm]],ExpressionUUID->
+  "79cfaffc-e84c-4690-bb10-c80651eb639b"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["n", "2"], "\[Times]", "n"}], "=", 
+    SuperscriptBox["n", "3"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "02d57f0c-269b-434a-8584-3896133ac38c"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["n", "3"], "\[Times]", 
+     SuperscriptBox["n", "3"]}], "=", 
+    SuperscriptBox["n", "6"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "778f909f-e737-4be6-8dc8-b1fbcf96d08f"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["n", "6"], "\[Times]", 
+     SuperscriptBox["n", "6"]}], "=", 
+    SuperscriptBox["n", "12"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e835babe-dff3-4bf6-a82e-ae9dc2e11db0"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["n", "12"], "\[Times]", 
+     SuperscriptBox["n", "3"]}], "=", 
+    SuperscriptBox["n", "15"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "1e22594d-7dfa-491c-a693-4721ef38ee4f"],
+ "\n\nWe shall define ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"m", "[", "k", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5e43e25a-0f77-42f6-8382-d25f906da237"],
+ " to be the minimum number of multiplications to compute ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["n", "k"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "2a2f0201-f68b-4916-8a7f-2009856057cc"],
+ "; for example ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"m", "[", "15", "]"}], "=", "5"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "82893fca-5bde-47bc-bdfd-d7137e26ef7f"],
+ ".\n\nFor ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "\[LessEqual]", "k", "\[LessEqual]", "200"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "dbe6018e-6187-4975-a032-482921a1ee1b"],
+ ", find ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubsuperscriptBox["\[Sum]", 
+     RowBox[{"k", "=", "1"}], "200"], 
+    RowBox[{"m", "[", "k", "]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "2143d4ef-45aa-47f8-9e42-61013207e01c"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.73037261582034*^9, 
+  3.730372803329661*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:8ba1\:7b97",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["n", "15"], TraditionalForm]],ExpressionUUID->
+  "101476a7-c77d-48aa-b903-d9554d678909"],
+ "\:6700\:6734\:7d20\:7684\:65b9\:5f0f\:9700\:898114\:6b21\:4e58\:6cd5\:ff1a\n\
+\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+    "n", "\[Times]", "n", "\[Times]", "\[Ellipsis]", "\[Times]", "n"}], "=", 
+    SuperscriptBox["n", "15"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "fa4a0446-ba4a-4c6e-89c8-c0e7a8eb2e3b"],
+ "\n\n\:4f46\:4f7f\:7528\:4e00\:4e2a\[OpenCurlyDoubleQuote]\:4e8c\:8fdb\:5236\
+\[CloseCurlyDoubleQuote]\:7684\:7b97\:6cd5\:ff0c\:4f60\:53ef\:4ee5\:53ea\:7528\
+6\:6b21\:4e58\:6cd5\:ff1a\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"n", "\[Times]", "n"}], "=", 
+    SuperscriptBox["n", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5481b183-fa55-4f62-a443-2c4890188b56"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["n", "2"], "\[Times]", 
+     SuperscriptBox["n", "2"]}], "=", 
+    SuperscriptBox["n", "4"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "395c3f49-a8e1-4cb6-8828-3a8a2b2b2e37"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["n", "4"], "\[Times]", 
+     SuperscriptBox["n", "4"]}], "=", 
+    SuperscriptBox["n", "8"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "57e7f522-1de1-495f-9f87-2bb5ccd2a57e"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["n", "8"], "\[Times]", 
+     SuperscriptBox["n", "4"]}], "=", 
+    SuperscriptBox["n", "12"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "177e733a-2e82-4cc7-b1ee-25fbf7791c67"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["n", "12"], "\[Times]", 
+     SuperscriptBox["n", "2"]}], "=", 
+    SuperscriptBox["n", "14"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d6ed0fc7-a66d-42e5-89bd-c9e6eca5d61c"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["n", "14"], "\[Times]", "n"}], "=", 
+    SuperscriptBox["n", "15"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bec8acf6-713d-4eb9-b4de-a0ec1db815b2"],
+ "\n\n\:7136\:800c\:ff0c\:5b9e\:9645\:4e0a\:4ec5\:75285\:6b21\:4e58\:6cd5\
+\:4e5f\:662f\:53ef\:4ee5\:7684\:ff1a\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"n", "\[Times]", "n"}], "=", 
+    SuperscriptBox["n", "2"]}], TraditionalForm]],ExpressionUUID->
+  "135eaf25-978a-4145-b9d6-a388d787076a"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["n", "2"], "\[Times]", "n"}], "=", 
+    SuperscriptBox["n", "3"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "20e37bc4-0425-412a-9bf4-00a2d8897990"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["n", "3"], "\[Times]", 
+     SuperscriptBox["n", "3"]}], "=", 
+    SuperscriptBox["n", "6"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "bfcc69e3-ba56-4664-8897-e5d13c221e4f"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["n", "6"], "\[Times]", 
+     SuperscriptBox["n", "6"]}], "=", 
+    SuperscriptBox["n", "12"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8a7d953d-8ca8-4928-b03c-efd317f9b748"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["n", "12"], "\[Times]", 
+     SuperscriptBox["n", "3"]}], "=", 
+    SuperscriptBox["n", "15"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "eb882be5-a302-4cab-8517-ba636c7d9f75"],
+ "\n\n\:8bb0",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"m", "[", "k", "]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b158e912-f162-476b-8bf3-492dc0e7a96d"],
+ "\:662f\:8ba1\:7b97",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["n", "k"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4cb448d0-80a5-419d-8169-2f62769359b4"],
+ "\:6240\:9700\:8981\:7684\:6700\:5c11\:4e58\:6cd5\:6b21\:6570\:ff0c\:4f8b\
+\:5982",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"m", "[", "15", "]"}], "=", "5"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ecc5e488-02d0-47e2-8890-7417e31d40c7"],
+ "\:3002\n\n\:5bf9\:4e8e",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "\[LessEqual]", "k", "\[LessEqual]", "200"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "37dc5b28-84c9-491c-b8a5-5d42d886bbd2"],
+ "\:ff0c\:6c42",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubsuperscriptBox["\[Sum]", 
+     RowBox[{"k", "=", "1"}], "200"], 
+    RowBox[{"m", "[", "k", "]"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "1057d8cc-1327-42df-9514-99d382261773"],
+ "\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.7303726282090693`*^9, {3.730372819569155*^9, 3.7303728632228713`*^9}, 
+   3.730372984038249*^9},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], ":=", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Append", "[", 
+       RowBox[{"x", ",", "#"}], "]"}], "&"}], ",", 
+     RowBox[{
+      RowBox[{"x", "\[LeftDoubleBracket]", 
+       RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "+", "x"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", "x_", "]"}], ":=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{
+     RowBox[{"f", "/@", "x"}], ",", "1"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{"NestList", "[", 
+    RowBox[{"g", ",", 
+     RowBox[{"f", "[", 
+      RowBox[{"{", "1", "}"}], "]"}], ",", "9"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"FirstPosition", "[", 
+      RowBox[{"t", ",", "i"}], "]"}], "\[LeftDoubleBracket]", "1", 
+     "\[RightDoubleBracket]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", "200"}], "}"}]}], "]"}], "-", 
+  "1"}]}], "Input",
+ CellChangeTimes->{{3.7340513040732117`*^9, 3.7340514900608263`*^9}, {
+   3.7340516409657927`*^9, 3.7340517080613527`*^9}, {3.734051760667394*^9, 
+   3.734051927781874*^9}, {3.7340520375116477`*^9, 3.7340520669224806`*^9}, {
+   3.7340521054954185`*^9, 3.7340521563219614`*^9}, 3.73405231184564*^9, {
+   3.73405240356233*^9, 3.7340524061749697`*^9}, {3.734052447540257*^9, 
+   3.7340524476809187`*^9}, 3.73405267620407*^9, 3.734052851641458*^9, 
+   3.7340531591924295`*^9},ExpressionUUID->"c167619b-00c9-4a97-8bc5-\
+5524c54ac6bd"],
+
+Cell[BoxData[
+ RowBox[{"1571", "+", "\<\"NotFound\"\>"}]], "Output",
+ CellChangeTimes->{{3.7340514765704737`*^9, 3.7340514905996003`*^9}, {
+   3.7340516721944685`*^9, 3.734051708717779*^9}, {3.734051793987235*^9, 
+   3.7340518208355117`*^9}, {3.734051852646755*^9, 3.734051875767103*^9}, {
+   3.73405191628513*^9, 3.734051928203845*^9}, {3.7340520568693776`*^9, 
+   3.7340520672505727`*^9}, 3.7340524405597425`*^9, 3.7340527192666903`*^9, 
+   3.7340531933264275`*^9},ExpressionUUID->"4e88c236-750b-4e3b-a45b-\
+f723a9a2c8eb"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"\:731c\:6d4b\:7b54\:6848\:4e3a1571", "+", "11"}], "=", "1582"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.7340531985512543`*^9, 
+  3.734053211568842*^9}},ExpressionUUID->"30f28586-49c7-4041-9b13-\
+598b9bee959d"]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 4992, 161, 534, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[5553, 183, 5191, 164, 534, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[10769, 351, 1599, 44, 187, "Input",ExpressionUUID->"c167619b-00c9-4a97-8bc5-5524c54ac6bd"],
+Cell[12371, 397, 524, 8, 37, "Output",ExpressionUUID->"4e88c236-750b-4e3b-a45b-f723a9a2c8eb"]
+}, Open  ]],
+Cell[12910, 408, 266, 7, 33, "Input",ExpressionUUID->"30f28586-49c7-4041-9b13-598b9bee959d"]
+}
+]
+*)
+

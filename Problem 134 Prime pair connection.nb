@@ -1,0 +1,240 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8618,        232]
+NotebookOptionsPosition[      7992,        213]
+NotebookOutlinePosition[      8349,        229]
+CellTagsIndexPosition[      8306,        226]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Consider the consecutive primes ",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["p", "1"], "=", "19"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "6c3507a3-1f56-4ca3-8e5b-223c4e7fedce"],
+ " and ",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["p", "2"], "=", "23"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "6502f0cb-f61d-41ed-bde1-3fe117f8eb9e"],
+ ". It can be verified that 1219 is the smallest number such that the last \
+digits are formed by ",
+ Cell[BoxData[
+  SubscriptBox["p", "1"]], "InlineFormula",ExpressionUUID->
+  "44b8112c-6acd-4635-9050-02b28a1e97cf"],
+ " whilst also being divisible by ",
+ Cell[BoxData[
+  SubscriptBox["p", "2"]], "InlineFormula",ExpressionUUID->
+  "f6967101-110d-4650-8351-6322245eb763"],
+ ".\n\nIn fact, with the exception of ",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["p", "1"], "=", "3"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "f135bd50-a251-40d4-abb0-5cf508f8497e"],
+ " and ",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["p", "2"], "=", "5"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "e16e87f8-61d3-43a1-9d55-3bdcf14a7333"],
+ ", for every pair of consecutive primes, ",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["p", "2"], ">", 
+   SubscriptBox["p", "1"]}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "ea1ab763-0002-4613-93d4-b57bb64d2b2e"],
+ ", there exist values of n for which the last digits are formed by ",
+ Cell[BoxData[
+  SubscriptBox["p", "1"]], "InlineFormula",ExpressionUUID->
+  "e44394ed-d020-4f4a-964b-24297ba3d8b1"],
+ " and n is divisible by ",
+ Cell[BoxData[
+  SubscriptBox["p", "2"]], "InlineFormula",ExpressionUUID->
+  "3571c6c9-2aa1-46b4-b7a0-855a9ee077e9"],
+ ". Let S be the smallest of these values of n.\n\nFind ",
+ Cell[BoxData[
+  RowBox[{"\[Sum]", "S"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "d17a600b-a58c-4a0c-9dd3-bf74e29997c8"],
+ " for every pair of consecutive primes with ",
+ Cell[BoxData[
+  RowBox[{"5", "\[LessEqual]", 
+   SubscriptBox["p", "1"], "\[LessEqual]", "1000000"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "241bd425-bc93-4526-bf64-e33d7330a5e6"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.7625701185322094`*^9, 3.762570120416912*^9}, {
+  3.7625702508521776`*^9, 
+  3.7625703057234*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+
+Cell[TextData[{
+ "\:8003\:8651\:8fde\:7eed\:7684\:8d28\:6570",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["p", "1"], "=", "19"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "91fc3ba0-e5b2-45c8-89a6-3fbdf04a2fbc"],
+ "\:548c",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["p", "2"], "=", "23"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "e6b4917b-3f57-46f3-9fe4-beb3974ea85f"],
+ "\:3002\:53ef\:4ee5\:9a8c\:8bc1\:ff0c1219\:662f\:6240\:6709\:4ee5",
+ Cell[BoxData[
+  SubscriptBox["p", "1"]], "InlineFormula",ExpressionUUID->
+  "ce4b8247-0b0a-4542-a5f7-c7bf1a6be9ed"],
+ "\:7ed3\:5c3e\:5e76\:4e14\:80fd\:88ab",
+ Cell[BoxData[
+  SubscriptBox["p", "2"]], "InlineFormula",ExpressionUUID->
+  "14e88501-37d3-4195-9d0d-1715b2c77c19"],
+ "\:6574\:9664\:7684\:6570\:4e2d\:6700\:5c0f\:7684\:4e00\:4e2a\:3002\n\n\
+\:4e8b\:5b9e\:4e0a\:ff0c\:9664\:4e86",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["p", "1"], "=", "3"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "1bd4192b-3ea4-4deb-aa19-51ea6378d812"],
+ "\:548c",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["p", "2"], "=", "5"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "c4d31e21-20cb-4792-9ea2-efe1627d4332"],
+ "\:8fd9\:4e00\:5bf9\:4e4b\:5916\:ff0c\:5bf9\:4e8e\:4efb\:610f\:4e00\:5bf9\
+\:8fde\:7eed\:8d28\:6570",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["p", "2"], ">", 
+   SubscriptBox["p", "1"]}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "c5a59010-4955-41a8-9180-26921b99f9d4"],
+ "\:ff0c\:90fd\:5b58\:5728\:4e00\:7cfb\:5217\:7684\:6570n\:ff0c\:5176\:5c3e\
+\:6570\:662f",
+ Cell[BoxData[
+  SubscriptBox["p", "1"]], "InlineFormula",ExpressionUUID->
+  "8200b21a-b1e1-463e-8ad6-510b428b7746"],
+ "\:ff0c\:4e14\:80fd\:591f\:88ab",
+ Cell[BoxData[
+  SubscriptBox["p", "2"]], "InlineFormula",ExpressionUUID->
+  "9269402d-9e0a-484e-bafe-bebe58d1a49b"],
+ "\:6574\:9664\:3002\:8bb0S\:662f\:6240\:6709\:7684n\:4e2d\:7684\:6700\:5c0f\
+\:503c\:3002\n\n\:5bf9\:4e8e",
+ Cell[BoxData[
+  RowBox[{"5", "\[LessEqual]", 
+   SubscriptBox["p", "1"], "\[LessEqual]", "1000000"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "77b1f424-a8cd-4931-afe6-f8d552903420"],
+ "\:5185\:7684\:6240\:6709\:8fde\:7eed\:8d28\:6570\:5bf9\:ff0c\:6c42",
+ Cell[BoxData[
+  RowBox[{"\[Sum]", "S"}]], "InlineFormula",
+  FormatType->"StandardForm",ExpressionUUID->
+  "b8a832fa-8330-41d9-9eab-fbf8d7ef2fc5"],
+ "\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, 3.76257012666955*^9, {
+   3.7625701576661215`*^9, 
+   3.762570242685793*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"p", "=", 
+   RowBox[{"Append", "[", 
+    RowBox[{
+     RowBox[{"Prime", "[", 
+      RowBox[{"Range", "[", 
+       RowBox[{"3", ",", 
+        RowBox[{"PrimePi", "[", "1000000", "]"}]}], "]"}], "]"}], ",", 
+     RowBox[{"NextPrime", "[", "1000000", "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Total", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"ChineseRemainder", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        RowBox[{"p", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}],
+        "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"p", "\[LeftDoubleBracket]", 
+         RowBox[{"i", "+", "1"}], "\[RightDoubleBracket]"}], ",", 
+        SuperscriptBox["10", 
+         RowBox[{"IntegerLength", "[", 
+          RowBox[{"p", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}],
+           "]"}]]}], "}"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", 
+      RowBox[{
+       RowBox[{"Length", "[", "p", "]"}], "-", "1"}]}], "}"}]}], "]"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+  3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+  3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+  3.7564263646962595`*^9, 3.7564263899753056`*^9}, {3.762570420383972*^9, 
+  3.7625705587737308`*^9}, {3.762570632894394*^9, 3.7625706361278644`*^9}, {
+  3.7625707233325624`*^9, 3.762570728638005*^9}, {3.7625708066465597`*^9, 
+  3.7625708190374355`*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+
+Cell[BoxData["18613426663617118"], "Output",
+ CellChangeTimes->{{3.7313704890957747`*^9, 3.7313705114710016`*^9}, 
+   3.731370638655486*^9, 3.756426391477058*^9, 3.7625704507408495`*^9, 
+   3.7625705635723267`*^9, 3.7625706664462857`*^9, 3.762570743188374*^9, 
+   3.7625708326335864`*^9},
+ CellLabel->"Out[20]=",ExpressionUUID->"83b207b7-bb7b-4c05-aed3-7e9f0f2fc35c"]
+}, Open  ]]
+},
+WindowSize->{1350, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2560, 66, 173, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[3121, 88, 2809, 71, 127, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[5955, 163, 1651, 40, 109, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[7609, 205, 367, 5, 37, "Output",ExpressionUUID->"83b207b7-bb7b-4c05-aed3-7e9f0f2fc35c"]
+}, Open  ]]
+}
+]
+*)
+

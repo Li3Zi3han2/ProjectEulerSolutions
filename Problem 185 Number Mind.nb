@@ -1,0 +1,432 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17768,        424]
+NotebookOptionsPosition[     16948,        403]
+NotebookOutlinePosition[     17306,        419]
+CellTagsIndexPosition[     17263,        416]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+The game Number Mind is a variant of the well known game Master Mind.
+
+Instead of coloured pegs, you have to guess a secret sequence of digits. \
+After each guess you\[CloseCurlyQuote]re only told in how many places you\
+\[CloseCurlyQuote]ve guessed the correct digit. So, if the sequence was 1234 \
+and you guessed 2036, you\[CloseCurlyQuote]d be told that you have one \
+correct digit; however, you would NOT be told that you also have another \
+digit in the wrong place.
+
+For instance, given the following guesses for a 5-digit secret sequence,
+
+90342 ;2 correct
+70794 ;0 correct
+39458 ;2 correct
+34109 ;1 correct
+51545 ;2 correct
+12531 ;1 correct
+
+The correct sequence 39542 is unique.
+
+Based on the following guesses,
+
+5616185650518293 ;2 correct
+3847439647293047 ;1 correct
+5855462940810587 ;3 correct
+9742855507068353 ;3 correct
+4296849643607543 ;3 correct
+3174248439465858 ;1 correct
+4513559094146117 ;2 correct
+7890971548908067 ;3 correct
+8157356344118483 ;1 correct
+2615250744386899 ;2 correct
+8690095851526254 ;3 correct
+6375711915077050 ;1 correct
+6913859173121360 ;1 correct
+6442889055042768 ;2 correct
+2321386104303845 ;0 correct
+2326509471271448 ;2 correct
+5251583379644322 ;2 correct
+1748270476758276 ;3 correct
+4895722652190306 ;1 correct
+3041631117224635 ;3 correct
+1841236454324589 ;3 correct
+2659862637316867 ;2 correct
+
+Find the unique 16-digit secret sequence.\
+\>", "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.7570480381394167`*^9, 
+  3.7570480416728673`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell["\<\
+\[OpenCurlyDoubleQuote]\:6570\:5b57\:5934\:8111\[CloseCurlyDoubleQuote]\:6e38\
+\:620f\:662f\:8457\:540d\:7684\:6e38\:620f\[OpenCurlyDoubleQuote]\:5927\:5e08\
+\:5934\:8111\[CloseCurlyDoubleQuote]\:7684\:4e00\:4e2a\:53d8\:79cd\:3002
+
+\:5728\[OpenCurlyDoubleQuote]\:6570\:5b57\:5934\:8111\[CloseCurlyDoubleQuote]\
+\:4e2d\:ff0c\:4f60\:9700\:8981\:731c\:6d4b\:4e00\:4e2a\:6570\:5b57\:5e8f\:5217\
+\:ff0c\:800c\:4e0d\:662f\[OpenCurlyDoubleQuote]\:5927\:5e08\:5934\:8111\
+\[CloseCurlyDoubleQuote]\:4e2d\:7684\:5f69\:8272\:65b9\:5757\:3002\:6bcf\:6b21\
+\:731c\:6d4b\:4e4b\:540e\:ff0c\:4f60\:4f1a\:88ab\:544a\:77e5\:4f60\:731c\:5bf9\
+\:4e86\:591a\:5c11\:4e2a\:4f4d\:7f6e\:4e0a\:7684\:6570\:5b57\:3002\:56e0\:6b64\
+\:ff0c\:5982\:679c\:6b63\:786e\:7684\:5e8f\:5217\:662f1234\:ff0c\:800c\:4f60\
+\:731c\:7684\:662f2036\:ff0c\:90a3\:4e48\:4f60\:4f1a\:88ab\:544a\:77e5\:4f60\
+\:731c\:5bf9\:4e86\:4e00\:4e2a\:4f4d\:7f6e\:4e0a\:7684\:6570\:5b57\:3002\:7136\
+\:800c\:ff0c\:4f60\:5e76\:4e0d\:4f1a\:77e5\:9053\:4f60\:662f\:5426\:731c\:5bf9\
+\:4e86\:6570\:5b57\:4f46\:4e0d\:5728\:5176\:6b63\:786e\:4f4d\:7f6e\:4e0a\:3002
+
+\:4f8b\:5982\:ff0c\:6839\:636e\:4f60\:5bf9\:4e00\:4e2a\:4e94\:4f4d\:7684\:6570\
+\:5b57\:5e8f\:5217\:4f5c\:7684\:5982\:4e0b\:731c\:6d4b\:ff1a
+
+90342\:ff1b2\:4e2a\:6570\:5b57\:6b63\:786e
+70794\:ff1b0\:4e2a\:6570\:5b57\:6b63\:786e
+39458\:ff1b2\:4e2a\:6570\:5b57\:6b63\:786e
+34109\:ff1b1\:4e2a\:6570\:5b57\:6b63\:786e
+51545\:ff1b2\:4e2a\:6570\:5b57\:6b63\:786e
+12531\:ff1b1\:4e2a\:6570\:5b57\:6b63\:786e
+
+\:552f\:4e00\:6b63\:786e\:7684\:5e8f\:5217\:662f39542\:3002
+
+\:6839\:636e\:4e0b\:9762\:7684\:731c\:6d4b\:ff0c
+
+5616185650518293\:ff1b2\:4e2a\:6570\:5b57\:6b63\:786e
+3847439647293047\:ff1b1\:4e2a\:6570\:5b57\:6b63\:786e
+5855462940810587\:ff1b3\:4e2a\:6570\:5b57\:6b63\:786e
+9742855507068353\:ff1b3\:4e2a\:6570\:5b57\:6b63\:786e
+4296849643607543\:ff1b3\:4e2a\:6570\:5b57\:6b63\:786e
+3174248439465858\:ff1b1\:4e2a\:6570\:5b57\:6b63\:786e
+4513559094146117\:ff1b2\:4e2a\:6570\:5b57\:6b63\:786e
+7890971548908067\:ff1b3\:4e2a\:6570\:5b57\:6b63\:786e
+8157356344118483\:ff1b1\:4e2a\:6570\:5b57\:6b63\:786e
+2615250744386899\:ff1b2\:4e2a\:6570\:5b57\:6b63\:786e
+8690095851526254\:ff1b3\:4e2a\:6570\:5b57\:6b63\:786e
+6375711915077050\:ff1b1\:4e2a\:6570\:5b57\:6b63\:786e
+6913859173121360\:ff1b1\:4e2a\:6570\:5b57\:6b63\:786e
+6442889055042768\:ff1b2\:4e2a\:6570\:5b57\:6b63\:786e
+2321386104303845\:ff1b0\:4e2a\:6570\:5b57\:6b63\:786e
+2326509471271448\:ff1b2\:4e2a\:6570\:5b57\:6b63\:786e
+5251583379644322\:ff1b2\:4e2a\:6570\:5b57\:6b63\:786e
+1748270476758276\:ff1b3\:4e2a\:6570\:5b57\:6b63\:786e
+4895722652190306\:ff1b1\:4e2a\:6570\:5b57\:6b63\:786e
+3041631117224635\:ff1b3\:4e2a\:6570\:5b57\:6b63\:786e
+1841236454324589\:ff1b3\:4e2a\:6570\:5b57\:6b63\:786e
+2659862637316867\:ff1b2\:4e2a\:6570\:5b57\:6b63\:786e
+
+\:6c42\:51fa\:552f\:4e00\:6b63\:786e\:768416\:4f4d\:5e8f\:5217\:3002\
+\>", "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, 
+   3.757048062765256*^9},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"test", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"9", ",", "0", ",", "3", ",", "4", ",", "2"}], "}"}], ",", 
+       "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"7", ",", "0", ",", "7", ",", "9", ",", "4"}], "}"}], ",", 
+       "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"3", ",", "9", ",", "4", ",", "5", ",", "8"}], "}"}], ",", 
+       "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"3", ",", "4", ",", "1", ",", "0", ",", "9"}], "}"}], ",", 
+       "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"5", ",", "1", ",", "5", ",", "4", ",", "5"}], "}"}], ",", 
+       "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "2", ",", "5", ",", "3", ",", "1"}], "}"}], ",", 
+       "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"guesses", "=", 
+   RowBox[{"ImportString", "[", 
+    RowBox[{
+    "\"\<5616185650518293 ;2 correct\n3847439647293047 ;1 correct\n\
+5855462940810587 ;3 correct\n9742855507068353 ;3 correct\n4296849643607543 ;3 \
+correct\n3174248439465858 ;1 correct\n4513559094146117 ;2 correct\n\
+7890971548908067 ;3 correct\n8157356344118483 ;1 correct\n2615250744386899 ;2 \
+correct\n8690095851526254 ;3 correct\n6375711915077050 ;1 correct\n\
+6913859173121360 ;1 correct\n6442889055042768 ;2 correct\n2321386104303845 ;0 \
+correct\n2326509471271448 ;2 correct\n5251583379644322 ;2 correct\n\
+1748270476758276 ;3 correct\n4895722652190306 ;1 correct\n3041631117224635 ;3 \
+correct\n1841236454324589 ;3 correct\n2659862637316867 ;2 correct\>\"", ",", 
+     "\"\<List\>\""}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"guesses", "=", 
+   RowBox[{"StringSplit", "[", 
+    RowBox[{"guesses", ",", "\"\<;\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"guesses", "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"StringDelete", "[", 
+       RowBox[{"#", ",", 
+        RowBox[{"Except", "[", "DigitCharacter", "]"}]}], "]"}], "&"}], ",", 
+     "guesses", ",", 
+     RowBox[{"{", "2", "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"guesses", "=", 
+   RowBox[{"ToExpression", "[", "guesses", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"guesses", "\[LeftDoubleBracket]", 
+    RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}], "=", 
+   RowBox[{"IntegerDigits", "[", 
+    RowBox[{"guesses", "\[LeftDoubleBracket]", 
+     RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBWIQPaM/RY/t7GvHhOwQAxBd0X/TDERfmXTACkQ/tZxt
+D6I55j12AtEPnMMCQXSViFEwiD7kPq3/wp/XjltM908C0S0nH2ky/HvtmMbU
+oQWiv9yYrQeiWc4bGoPoi7aXHUH0u5UubiD6jb+kH4gua+kPANE6/kahIHpS
+UXQUiD62Rz0dRE8VmpINonP8ogrB+qzjwfSM43mTQLTNuYXzQXTPnLrFIDrv
+3KJlIPqGW+0qED3lW/RmEN0otHI3iGbQ3HIURO/eHn8KRLfqe5wB0VuYvC6A
+aJHV9ldB9L+XsjdB9JMDhx6C6DXyXAmMQNpR2hRMmyT9FWAD0mGh3IIgGgCM
+4q0O
+  "],
+ CellLabel->
+  "In[310]:=",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"NumberMind", "[", "guesslist_", "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"length", "=", 
+        RowBox[{"Length", "[", 
+         RowBox[{"guesslist", "\[LeftDoubleBracket]", 
+          RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}], "]"}]}], ",", 
+       "randomguess", ",", "olddigit", ",", "Shuffle", ",", "TotalError", ",",
+        "error1", ",", "error2", ",", "temperror", ",", 
+       RowBox[{"counter", "=", "0"}], ",", 
+       RowBox[{"LevelIterations", "=", "20"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"randomguess", "=", 
+       RowBox[{"RandomInteger", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "9"}], "}"}], ",", "length"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Shuffle", "[", "i_", "]"}], ":=", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"olddigit", "=", 
+          RowBox[{
+          "randomguess", "\[LeftDoubleBracket]", "i", 
+           "\[RightDoubleBracket]"}]}], ";", 
+         RowBox[{
+          RowBox[{
+          "randomguess", "\[LeftDoubleBracket]", "i", 
+           "\[RightDoubleBracket]"}], "=", 
+          RowBox[{"RandomChoice", "[", 
+           RowBox[{"Complement", "[", 
+            RowBox[{
+             RowBox[{"Range", "[", 
+              RowBox[{"0", ",", "9"}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+              "randomguess", "\[LeftDoubleBracket]", "i", 
+               "\[RightDoubleBracket]"}], "}"}]}], "]"}], "]"}]}], ";"}], 
+        ")"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"TotalError", "[", 
+        RowBox[{"guess_", "/;", 
+         RowBox[{"VectorQ", "[", 
+          RowBox[{"guess", ",", "NumberQ"}], "]"}]}], "]"}], ":=", 
+       RowBox[{"Total", "[", 
+        RowBox[{"Abs", "[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"length", "-", 
+              RowBox[{"HammingDistance", "[", 
+               RowBox[{"#", ",", "guess"}], "]"}]}], "&"}], "/@", 
+            RowBox[{"guesslist", "\[LeftDoubleBracket]", 
+             RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}]}], ")"}], 
+          "-", 
+          RowBox[{"guesslist", "\[LeftDoubleBracket]", 
+           RowBox[{"All", ",", "2"}], "\[RightDoubleBracket]"}]}], "]"}], 
+        "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"error1", "=", 
+       RowBox[{"error2", "=", 
+        RowBox[{"TotalError", "[", "randomguess", "]"}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{"error2", ">", "0"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"i", "=", "1"}], ",", 
+           RowBox[{"i", "\[LessEqual]", "length"}], ",", 
+           RowBox[{"i", "=", 
+            RowBox[{"i", "+", "1"}]}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Shuffle", "[", "i", "]"}], ";", "\[IndentingNewLine]", 
+            RowBox[{"temperror", "=", 
+             RowBox[{"TotalError", "[", "randomguess", "]"}]}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"temperror", "\[LessEqual]", "error2"}], ",", 
+              RowBox[{"error2", "=", "temperror"}], ",", 
+              RowBox[{
+               RowBox[{
+               "randomguess", "\[LeftDoubleBracket]", "i", 
+                "\[RightDoubleBracket]"}], "=", "olddigit"}]}], "]"}]}]}], 
+          "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"error1", "\[Equal]", "error2"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"counter", "=", 
+             RowBox[{"counter", "+", "1"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"counter", "\[Equal]", "LevelIterations"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"randomguess", "=", 
+                RowBox[{"RandomInteger", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"0", ",", "9"}], "}"}], ",", "length"}], "]"}]}], 
+               ";", "\[IndentingNewLine]", 
+               RowBox[{"error2", "=", 
+                RowBox[{"TotalError", "[", "randomguess", "]"}]}], ";", 
+               "\[IndentingNewLine]", 
+               RowBox[{"counter", "=", "0"}]}]}], "]"}]}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"error1", "=", "error2"}], ";", 
+            RowBox[{"counter", "=", "0"}]}]}], "]"}]}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"FromDigits", "[", "randomguess", "]"}]}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.75704973097019*^9, 3.757049749616126*^9}, {
+   3.757049961353073*^9, 3.757050004471493*^9}, {3.757050036741705*^9, 
+   3.7570500380455017`*^9}, {3.757050120564802*^9, 3.7570501839184647`*^9}, {
+   3.7570502308314695`*^9, 3.7570503159284964`*^9}, {3.7570504707825813`*^9, 
+   3.7570504736631308`*^9}, {3.7570506404536924`*^9, 
+   3.7570507106057653`*^9}, {3.7570509972287536`*^9, 
+   3.7570510645954685`*^9}, {3.757054637892333*^9, 3.7570546505703473`*^9}, {
+   3.7570546858796053`*^9, 3.7570547888782616`*^9}, {3.7570548981535273`*^9, 
+   3.757054957539193*^9}, {3.757055104857583*^9, 3.75705516283788*^9}, {
+   3.7570551994517565`*^9, 3.7570552049077024`*^9}, {3.7570552559591193`*^9, 
+   3.7570552722873273`*^9}, 3.7570554419604273`*^9, {3.757055520688162*^9, 
+   3.7570556790779314`*^9}, {3.7570557183099403`*^9, 3.7570557979086328`*^9}, 
+   3.757055853852175*^9, {3.7570576563916206`*^9, 3.7570576654720483`*^9}, {
+   3.757057724939669*^9, 3.757057845305684*^9}, {3.757057899996148*^9, 
+   3.757058093957347*^9}, {3.7570581345112567`*^9, 3.7570581705359764`*^9}, 
+   3.7570584492333813`*^9, {3.7570584928298006`*^9, 3.7570585242213063`*^9}, {
+   3.757058558680298*^9, 3.757058565753065*^9}, {3.7570591490180078`*^9, 
+   3.7570591846494846`*^9}, 3.757062923109167*^9, {3.7571259932903385`*^9, 
+   3.757126087978532*^9}, {3.7571262384320335`*^9, 3.7571262602556276`*^9}, {
+   3.7571263034129047`*^9, 3.757126321986986*^9}, {3.7571263768184223`*^9, 
+   3.7571263769533997`*^9}, 3.757126448061294*^9, {3.7571264885869675`*^9, 
+   3.7571265057442856`*^9}, {3.7571265650200295`*^9, 3.757126586641652*^9}, {
+   3.757126652293418*^9, 3.757126810838736*^9}, {3.757127812606283*^9, 
+   3.7571278679336433`*^9}, {3.7571279147553315`*^9, 
+   3.7571279157761893`*^9}, {3.7571280344476357`*^9, 3.757128036577303*^9}, {
+   3.7571280958160505`*^9, 3.7571281052525797`*^9}, 3.757128158578249*^9, 
+   3.757128199664835*^9, 3.7571282577617607`*^9, {3.7571287529294267`*^9, 
+   3.757128791164456*^9}, {3.7571501537905197`*^9, 3.757150182965094*^9}, {
+   3.757150255381379*^9, 3.7571503105505886`*^9}, {3.757150502395565*^9, 
+   3.7571505756523685`*^9}, {3.757150607962866*^9, 3.7571506238040648`*^9}, {
+   3.7571506843311844`*^9, 3.7571508608548727`*^9}, {3.7571509726750574`*^9, 
+   3.757150981660921*^9}, {3.757151031311353*^9, 3.7571510396739345`*^9}, {
+   3.7571511322528267`*^9, 3.757151165692252*^9}, {3.757151210794093*^9, 
+   3.7571512224915895`*^9}, {3.7571512550692773`*^9, 3.757151314156485*^9}, {
+   3.757151781253883*^9, 3.7571518099363995`*^9}, {3.7571537920981216`*^9, 
+   3.7571537922340813`*^9}, {3.757153967984704*^9, 3.757154011044382*^9}},
+ CellLabel->
+  "In[308]:=",ExpressionUUID->"a8607504-26d4-4bd3-a6c7-e7d73eaededd"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NumberMind", "[", "guesses", "]"}]], "Input",
+ CellChangeTimes->{
+  3.7571518156286917`*^9, {3.7571540673246126`*^9, 3.757154068647436*^9}},
+ CellLabel->
+  "In[316]:=",ExpressionUUID->"a0524f76-50a8-46a3-a140-e47907ffff46"],
+
+Cell[BoxData["4640261571849533"], "Output",
+ CellChangeTimes->{3.7571519947909927`*^9, 3.7571522985240664`*^9, 
+  3.7571527026704116`*^9, 3.757154054558448*^9, 3.757160536493566*^9},
+ CellLabel->
+  "Out[316]=",ExpressionUUID->"184dee34-711d-4d6e-acea-f6af6ea50563"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1686, 52, 1001, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[2247, 74, 3196, 61, 978, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[5446, 137, 3282, 86, 793, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[8731, 225, 7661, 160, 702, "Input",ExpressionUUID->"a8607504-26d4-4bd3-a6c7-e7d73eaededd"],
+Cell[CellGroupData[{
+Cell[16417, 389, 247, 5, 33, "Input",ExpressionUUID->"a0524f76-50a8-46a3-a140-e47907ffff46"],
+Cell[16667, 396, 265, 4, 37, "Output",ExpressionUUID->"184dee34-711d-4d6e-acea-f6af6ea50563"]
+}, Open  ]]
+}
+]
+*)
+

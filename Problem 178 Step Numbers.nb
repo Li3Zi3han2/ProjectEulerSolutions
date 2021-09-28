@@ -1,0 +1,166 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6115,        158]
+NotebookOptionsPosition[      5405,        137]
+NotebookOutlinePosition[      5848,        155]
+CellTagsIndexPosition[      5805,        152]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Consider the number 45656.\nIt can be seen that each pair of consecutive \
+digits of 45656 has a difference of one.\nA number for which every pair of \
+consecutive digits has a difference of one is called a step number.\nA \
+pandigital number contains every decimal digit from 0 to 9 at least once.\n\
+How many pandigital step numbers less than ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "40"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ae5bfb5a-6a30-45ab-ab7a-3667045fb22e"],
+ " are there?"
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.8056799229605856`*^9, 
+  3.805679941940155*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:8003\:8651\:6574\:657045656\:3002\n\:53ef\:4ee5\:770b\:51fa45656\:7684\
+\:6bcf\:4e00\:5bf9\:76f8\:90bb\:6570\:5b57\:4e4b\:95f4\:90fd\:5dee1\:3002\n\
+\:8fd9\:79cd\:4efb\:610f\:4e00\:5bf9\:76f8\:90bb\:6570\:5b57\:4e4b\:95f4\:90fd\
+\:5dee1\:7684\:6570\:79f0\:4e3a\:53f0\:9636\:6570\:3002\n\:4e00\:4e2a\:5168\
+\:6570\:5b57\:6570\:5305\:542b\:67090\:52309\:8fd910\:4e2a\:6570\:5b57\:81f3\
+\:5c11\:5404\:4e00\:6b21\:3002\n\n\:5728\:5c0f\:4e8e",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "40"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c6cd3ce2-8ac0-4dfe-9951-49cd51cfc2e4"],
+ "\:7684\:6570\:4e2d\:ff0c\:6709\:591a\:5c11\:4e2a\:5168\:6570\:5b57\:53f0\
+\:9636\:6570\:ff1f"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, {3.8056799318431644`*^9, 
+   3.8056799377214394`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Ways", "[", 
+   RowBox[{"digits_", ",", "head_", ",", "low_", ",", "high_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Ways", "[", 
+    RowBox[{"digits", ",", "head", ",", "low", ",", "high"}], "]"}], "=", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"digits", "\[LessEqual]", "1"}], ",", 
+     RowBox[{"Boole", "[", 
+      RowBox[{"head", "\[Equal]", "low", "\[Equal]", "high"}], "]"}], ",", 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"head", "-", "1"}], "<", "low"}], ",", "0", ",", 
+        RowBox[{
+         RowBox[{"Ways", "[", 
+          RowBox[{
+           RowBox[{"digits", "-", "1"}], ",", 
+           RowBox[{"head", "-", "1"}], ",", "low", ",", "high"}], "]"}], "+", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"head", "\[Equal]", "high"}], ",", 
+           RowBox[{"Ways", "[", 
+            RowBox[{
+             RowBox[{"digits", "-", "1"}], ",", 
+             RowBox[{"head", "-", "1"}], ",", "low", ",", 
+             RowBox[{"high", "-", "1"}]}], "]"}], ",", "0"}], "]"}]}]}], 
+       "]"}], "+", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"head", "+", "1"}], ">", "high"}], ",", "0", ",", 
+        RowBox[{
+         RowBox[{"Ways", "[", 
+          RowBox[{
+           RowBox[{"digits", "-", "1"}], ",", 
+           RowBox[{"head", "+", "1"}], ",", "low", ",", "high"}], "]"}], "+", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"head", "\[Equal]", "low"}], ",", 
+           RowBox[{"Ways", "[", 
+            RowBox[{
+             RowBox[{"digits", "-", "1"}], ",", 
+             RowBox[{"head", "+", "1"}], ",", 
+             RowBox[{"low", "+", "1"}], ",", "high"}], "]"}], ",", "0"}], 
+          "]"}]}]}], "]"}]}]}], "]"}]}]}], "\n", 
+ RowBox[{
+  RowBox[{"lim", "=", "40"}], ";"}], "\n", 
+ RowBox[{"Sum", "[", 
+  RowBox[{
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{"Ways", "[", 
+      RowBox[{"i", ",", "j", ",", "0", ",", "9"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"j", ",", "1", ",", "9"}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "lim"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+  3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+  3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+  3.7564263646962595`*^9, 3.7564263899753056`*^9}, {3.80568008955124*^9, 
+  3.8056800924674397`*^9}, {3.80568012732092*^9, 3.80568015477875*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+
+Cell[BoxData["126461847755"], "Output",
+ CellChangeTimes->{{3.7313704890957747`*^9, 3.7313705114710016`*^9}, 
+   3.731370638655486*^9, 3.756426391477058*^9, 3.8056801553851275`*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"c402db33-b584-490c-a40a-154e0c44f532"]
+}, Open  ]]
+},
+WindowSize->{1920, 997},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+Magnification:>2. Inherited,
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (2020\:5e744\:670815\
+\:65e5)",
+StyleDefinitions->"Homework.nb",
+ExpressionUUID->"df097f66-9382-4b44-aaa3-6a67666be8d3"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 838, 17, 244, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1399, 39, 1065, 20, 288, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[2489, 63, 2638, 66, 387, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[5130, 131, 259, 3, 66, "Output",ExpressionUUID->"c402db33-b584-490c-a40a-154e0c44f532"]
+}, Open  ]]
+}
+]
+*)
+

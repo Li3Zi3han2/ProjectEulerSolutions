@@ -1,0 +1,251 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8639,        243]
+NotebookOptionsPosition[      7918,        223]
+NotebookOutlinePosition[      8275,        239]
+CellTagsIndexPosition[      8232,        236]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "In the following equation x, y, and n are positive integers.\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "x"], "+", 
+     FractionBox["1", "y"]}], "=", 
+    FractionBox["1", "n"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4d23c2be-a336-4857-88fb-59406afdddb7"],
+ "\n\nFor ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "=", "4"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "537a49ea-99d4-4bca-a839-ec9c86491faa"],
+ " there are exactly three distinct solutions:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "5"], "+", 
+     FractionBox["1", "20"]}], "=", 
+    FractionBox["1", "4"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6889d0b8-5a00-44c9-b45a-dac5c0de26aa"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "6"], "+", 
+     FractionBox["1", "12"]}], "=", 
+    FractionBox["1", "4"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d008f54f-ca33-47b9-8132-bd7a5151e965"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "8"], "+", 
+     FractionBox["1", "8"]}], "=", 
+    FractionBox["1", "4"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "86ab0b72-377e-4d59-8b72-7968220a7771"],
+ "\n\nWhat is the least value of n for which the number of distinct solutions \
+exceeds one-thousand?\n\nNOTE: This problem is an easier version of Problem \
+110; it is strongly advised that you solve this one first."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.7291709687663507`*^9, 3.7291709742680006`*^9}, {3.729171029896233*^9, 
+  3.729171125709151*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:5728\:5982\:4e0b\:65b9\:7a0b\:4e2d\:ff0cx\:3001y\:3001n\:5747\:4e3a\:6b63\
+\:6574\:6570\:3002\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "x"], "+", 
+     FractionBox["1", "y"]}], "=", 
+    FractionBox["1", "n"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0334f383-bc4a-4034-850e-4559e792f42d"],
+ "\n\n\:5bf9\:4e8e",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "=", "4"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a51cd0a6-7caf-45d9-af62-8900c7dd4c1a"],
+ "\:ff0c\:4e0a\:8ff0\:65b9\:7a0b\:6070\:597d\:67093\:4e2a\:4e0d\:540c\:7684\
+\:89e3\:ff1a\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "5"], "+", 
+     FractionBox["1", "20"]}], "=", 
+    FractionBox["1", "4"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8b9337a8-5e80-4203-bc13-651dd179a455"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "6"], "+", 
+     FractionBox["1", "12"]}], "=", 
+    FractionBox["1", "4"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "829ae130-ea60-470a-a293-26ea7e64f291"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "8"], "+", 
+     FractionBox["1", "8"]}], "=", 
+    FractionBox["1", "4"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c8516b77-46d1-40eb-8375-879c87a08b8b"],
+ "\n\n\:4f7f\:5f97\:4e0d\:540c\:7684\:89e3\:7684\:6570\:76ee\:8d85\:8fc71000\
+\:7684\:6700\:5c0fn\:503c\:662f\:591a\:5c11\:ff1f\n\n\:6ce8\:610f\:ff1a\:8fd9\
+\:4e2a\:95ee\:9898\:662f\:7b2c110\:9898\:7684\:7b80\:5355\:7248\:672c\:ff1b\
+\:5f3a\:70c8\:63a8\:8350\:5148\:89e3\:51b3\:8fd9\:4e00\:9898\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.7291710162716074`*^9, {3.7291711045050583`*^9, 
+   3.7291711166756964`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\:9996\:5148x", ">", "n"}], ",", 
+  RowBox[{"y", ">", "n"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\:8bbex", "=", 
+   RowBox[{"n", "+", "i"}]}], "\:ff0c", 
+  RowBox[{"\:5219y", "=", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"n", " ", 
+      RowBox[{"(", 
+       RowBox[{"n", "+", "i"}], ")"}]}], "i"], "=", 
+    RowBox[{
+     FractionBox[
+      SuperscriptBox["n", "2"], "i"], "+", "n"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\:56e0\:4e3ax", "\[LessEqual]", "y"}], "\:ff0c", 
+  RowBox[{"\:6240\:4ee5i", "\[LessEqual]", "n"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "<", "x", "\[LessEqual]", 
+   RowBox[{"2", " ", "n"}]}], ",", 
+  RowBox[{
+   RowBox[{"2", " ", "n"}], "\[LessEqual]", "y"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  SuperscriptBox["\:53ea\:8981\:6c42n", "2"], 
+  "\:7684\:5c0f\:4e8e\:7b49\:4e8en\:7684\:7ea6\:6570\:4e2a\:6570"}], "\
+\[IndentingNewLine]", 
+ RowBox[{"\:5373", 
+  FractionBox[
+   RowBox[{
+    RowBox[{"DivisorSigma", "[", 
+     RowBox[{"0", ",", 
+      SuperscriptBox["n", "2"]}], "]"}], "+", "1"}], "2"]}]}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.7291710162716074`*^9, {3.7291711045050583`*^9, 3.7291711166756964`*^9}, {
+   3.7337167994299974`*^9, 3.73371685732342*^9}, {3.733716904647055*^9, 
+   3.7337169102528477`*^9}, {3.7337169716384883`*^9, 
+   3.7337169878084416`*^9}, {3.733717269658589*^9, 
+   3.7337173099707546`*^9}},ExpressionUUID->"4d73ac32-15d4-4c00-9669-\
+6b615d7ce2da"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{
+      FractionBox[
+       RowBox[{
+        RowBox[{"DivisorSigma", "[", 
+         RowBox[{"0", ",", 
+          SuperscriptBox["n", "2"]}], "]"}], "+", "1"}], "2"], ">", "1000"}], 
+     ",", 
+     RowBox[{"Return", "[", "n", "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1000", ",", "\[Infinity]"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+   3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+   3.7250282267187443`*^9}, {3.72503044347628*^9, 3.725030445342036*^9}, {
+   3.7291711475159583`*^9, 3.7291711796920724`*^9}, {3.729171211282854*^9, 
+   3.7291712691495876`*^9}, 3.7291713811645136`*^9, {3.7291714816726227`*^9, 
+   3.7291714842490063`*^9}, 3.733716279980899*^9, {3.733716354711579*^9, 
+   3.733716354828065*^9}, {3.7337167441724496`*^9, 3.7337167902026176`*^9}, {
+   3.733716998238386*^9, 3.733717060156248*^9}, {3.7337171142609463`*^9, 
+   3.7337171147500772`*^9}, 3.7337171482650595`*^9, {3.7337171928919115`*^9, 
+   3.7337171937995205`*^9}, {3.7337172340137496`*^9, 3.733717241680955*^9}, {
+   3.733717518497059*^9, 
+   3.7337175259876423`*^9}},ExpressionUUID->"20386a64-a558-4827-99f8-\
+04921bede5b8"],
+
+Cell[BoxData["180180"], "Output",
+ CellChangeTimes->{
+  3.7250281599876013`*^9, {3.7250281918871064`*^9, 3.725028227147995*^9}, 
+   3.7250304482388463`*^9, 3.7291711702986293`*^9, {3.72917121647396*^9, 
+   3.7291712272144165`*^9}, 3.7291712668803577`*^9, 3.729171343906884*^9, 
+   3.7291714591122913`*^9, 3.729171559953182*^9, {3.7337163480927477`*^9, 
+   3.733716355733121*^9}, 3.733717062083572*^9, 3.733717116084242*^9, 
+   3.7337171497315316`*^9, 3.7337171943158484`*^9, {3.7337172394977913`*^9, 
+   3.733717247298133*^9}, 
+   3.7337175314882555`*^9},ExpressionUUID->"1394e640-6f2e-4248-83bf-\
+6d6ece94403c"]
+}, Open  ]]
+},
+WindowSize->{775, 561},
+WindowMargins->{{Automatic, 45}, {Automatic, 37}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1834, 54, 376, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[2395, 76, 2009, 58, 330, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[4407, 136, 1554, 41, 217, "Text",ExpressionUUID->"4d73ac32-15d4-4c00-9669-6b615d7ce2da"],
+Cell[CellGroupData[{
+Cell[5986, 181, 1301, 27, 76, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[7290, 210, 612, 10, 68, "Output",ExpressionUUID->"1394e640-6f2e-4248-83bf-6d6ece94403c"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,227 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8076,        219]
+NotebookOptionsPosition[      7359,        199]
+NotebookOutlinePosition[      7716,        215]
+CellTagsIndexPosition[      7673,        212]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "A positive integer n is called squarefree, if no square of a prime divides \
+n, thus ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+   "1", ",", "2", ",", "3", ",", "5", ",", "6", ",", "7", ",", "10", ",", 
+    "11"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5d740951-7dd3-42eb-a9cf-4fef4a54a154"],
+ " are squarefree, but not ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"4", ",", "8", ",", "9", ",", "12"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f610e3de-9767-4347-abde-9e591a1846b1"],
+ ".\n\nHow many squarefree numbers are there below ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["2", "50"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a19ea067-0381-476a-9fe6-3454ede7c47f"],
+ "?"
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.7333971525060234`*^9, 
+  3.7333971545281525`*^9}, {3.7366560056416717`*^9, 3.7366560220771055`*^9}, {
+  3.736656058698386*^9, 
+  3.736656066910104*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:82e5\:6b63\:6574\:6570n\:4e0d\:80fd\:88ab\:4efb\:610f\:7d20\:6570\:7684\
+\:5e73\:65b9\:6574\:9664\:ff0c\:5219n\:88ab\:79f0\:4e3a\:65e0\:5e73\:65b9\
+\:56e0\:5b50\:6570\:ff0c\:56e0\:6b64",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+   "1", ",", "2", ",", "3", ",", "5", ",", "6", ",", "7", ",", "10", ",", 
+    "11"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "56d09cc1-172e-4934-b928-d1b20b9516d2"],
+ "\:662f\:65e0\:5e73\:65b9\:56e0\:5b50\:7684\:ff0c\:800c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"4", ",", "8", ",", "9", ",", "12"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "55a3899a-f69d-4c23-be4f-26572e226b3e"],
+ "\:4e0d\:662f\:3002\n\n\:5728\:5c0f\:4e8e",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["2", "50"], TraditionalForm]],ExpressionUUID->
+  "0e4abb80-1668-4302-a6dd-212426cdbb45"],
+ "\:7684\:6570\:4e2d\:ff0c\:6709\:591a\:5c11\:4e2a\:65e0\:5e73\:65b9\:56e0\
+\:5b50\:6570\:ff1f"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, {3.7366560172368617`*^9, 
+   3.736656054397066*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"MoebiusMu", "[", "n", "]"}], "=", 
+  TagBox[GridBox[{
+     {"\[Piecewise]", GridBox[{
+        {
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"-", "1"}], ")"}], "k"], 
+         RowBox[{"n", "=", 
+          RowBox[{
+           SubscriptBox["p", "1"], " ", 
+           SubscriptBox["p", "2"], " ", "\[Ellipsis]", " ", 
+           SubscriptBox["p", "k"]}]}]},
+        {"0", "True"}
+       },
+       AllowedDimensions->{2, Automatic},
+       Editable->True,
+       GridBoxAlignment->{
+        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+          "RowsIndexed" -> {}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+         "RowsIndexed" -> {}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.84]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}},
+       Selectable->True]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxItemSize->{
+     "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.35]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   "Piecewise",
+   DeleteWithContents->True,
+   Editable->False,
+   SelectWithContents->True,
+   Selectable->False]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\:5f53d", ">", 
+   RowBox[{"1", "\:65f6"}]}], "\:ff0c", 
+  RowBox[{"k", " ", 
+   SuperscriptBox["d", "2"], 
+   "\:5fc5\:662f\:5e73\:65b9\:56e0\:5b50\:6570"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+  "\:5f53d", "=", "\:5947\:6570\:4e2a\:7d20\:56e0\:6570\:4e4b\:79ef\:65f6"}], 
+  "\:ff1b", 
+  RowBox[{"k", "=", 
+   RowBox[{"Quotient", "[", 
+    RowBox[{"n", ",", 
+     SuperscriptBox["d", "2"]}], "]"}]}], "\:ff1b", 
+  RowBox[{
+  "\:5f53d", "=", "\:5076\:6570\:4e2a\:7d20\:56e0\:6570\:4e4b\:79ef\:65f6"}], 
+  "\:ff0c", "\:88ab\:91cd\:590d\:8ba1\:7b971\:6b21"}]}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.7333971651026163`*^9, {3.7366560172368617`*^9, 
+   3.736656054397066*^9}, {3.736657021189068*^9, 3.7366571045260525`*^9}, {
+   3.7366574296462793`*^9, 3.736657518140475*^9}, {3.7366575496455464`*^9, 
+   3.736657555680592*^9}, {3.736657661507064*^9, 3.736657680706066*^9}, 
+   3.7366577111323137`*^9, {3.736657745579934*^9, 
+   3.7366577997214975`*^9}},ExpressionUUID->"12b3573f-5db7-45d5-9038-\
+140776cfa4c9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", " ", "=", " ", 
+   SuperscriptBox["2", "50"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Monitor", "[", 
+  RowBox[{
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"MoebiusMu", "[", "d", "]"}], " ", 
+      RowBox[{"Quotient", "[", 
+       RowBox[{"n", ",", 
+        SuperscriptBox["d", "2"]}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"d", ",", "1", ",", 
+       RowBox[{"Floor", "[", 
+        SqrtBox["n"], "]"}]}], "}"}]}], "]"}], ",", 
+   RowBox[{
+    RowBox[{"Log2", "[", "d", "]"}], "//", "N"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+  3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+  3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+  3.733397177005328*^9, 3.7333972103847303`*^9}, {3.736656078707262*^9, 
+  3.736656123013342*^9}, {3.736656471763894*^9, 
+  3.73665653305431*^9}},ExpressionUUID->"6a7c367e-c1c3-4109-93e6-\
+34add9704799"],
+
+Cell[BoxData["684465067343069"], "Output",
+ CellChangeTimes->{{3.7313704890957747`*^9, 3.7313705114710016`*^9}, 
+   3.731370638655486*^9, 3.7333972122504797`*^9, 3.7366561068718653`*^9, {
+   3.736656469125286*^9, 3.7366565294608636`*^9}, 
+   3.7366568619369383`*^9},ExpressionUUID->"a805d8b0-d7b0-4847-a416-\
+89e7c35fbe9e"]
+}, Open  ]]
+},
+WindowSize->{1350, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1128, 29, 81, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1689, 51, 1305, 30, 81, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[2997, 83, 2984, 77, 121, "Text",ExpressionUUID->"12b3573f-5db7-45d5-9038-140776cfa4c9"],
+Cell[CellGroupData[{
+Cell[6006, 164, 1011, 25, 92, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[7020, 191, 323, 5, 37, "Output",ExpressionUUID->"a805d8b0-d7b0-4847-a416-89e7c35fbe9e"]
+}, Open  ]]
+}
+]
+*)
+

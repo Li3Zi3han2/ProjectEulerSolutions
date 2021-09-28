@@ -1,0 +1,136 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5125,        128]
+NotebookOptionsPosition[      4507,        109]
+NotebookOutlinePosition[      4864,        125]
+CellTagsIndexPosition[      4821,        122]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+How many 20 digit numbers n (without any leading zero) exist such that no \
+three consecutive digits of n have a sum greater than 9?\
+\>", "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}, {3.7568974816716714`*^9, 
+  3.7568974838163567`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell["\:6709\:591a\:5c11\:4e2a20\:4f4d\:6570\:5b57n\:ff08\:4e0d\:5305\:62ec\
+\:524d\:5bfc0\:ff09\:6ee1\:8db3\:ff0c\:4e0d\:5b58\:5728\:8fde\:7eed\:4e09\
+\:4f4d\:6570\:5b57\:7684\:548c\:8d85\:8fc79\:ff1f", "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 3.756426354403901*^9, 
+   3.756897490122958*^9},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"d", "=", "20"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"s", "=", "9"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"search", "[", 
+   RowBox[{"digit1_", ",", "digit2_", ",", "ndigitremains_", ",", "firstQ_"}],
+    "]"}], ":=", 
+  RowBox[{
+   RowBox[{"search", "[", 
+    RowBox[{"digit1", ",", "digit2", ",", "ndigitremains", ",", "firstQ"}], 
+    "]"}], "=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"result", ",", "digit3"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"ndigitremains", "\[Equal]", "0"}], ",", 
+        RowBox[{"Return", "[", "1", "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"result", "=", "0"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"digit3", "=", "0"}], ",", 
+        RowBox[{"digit3", "\[LessEqual]", 
+         RowBox[{"s", "-", "digit1", "-", "digit2"}]}], ",", 
+        RowBox[{"digit3", "=", 
+         RowBox[{"digit3", "+", "1"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"digit3", "\[Equal]", "0"}], "&&", "firstQ"}], ",", 
+           RowBox[{"Continue", "[", "]"}]}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"result", "=", 
+          RowBox[{"result", "+", 
+           RowBox[{"search", "[", 
+            RowBox[{"digit2", ",", "digit3", ",", 
+             RowBox[{"ndigitremains", "-", "1"}], ",", "False"}], 
+            "]"}]}]}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", "result", "]"}]}]}], 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"search", "[", 
+  RowBox[{"0", ",", "0", ",", "d", ",", "True"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+   3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+   3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+   3.7564263646962595`*^9, 3.7564263899753056`*^9}, {3.75689760387912*^9, 
+   3.7568976218007345`*^9}, {3.75689793527754*^9, 3.756897974474543*^9}, {
+   3.7568980475595245`*^9, 3.7568980511310005`*^9}, {3.7568983700496664`*^9, 
+   3.7568984612332077`*^9}, 3.7568985037947154`*^9, {3.7568985808594337`*^9, 
+   3.7568987230863476`*^9}, {3.7568987767561235`*^9, 3.756898902773638*^9}, {
+   3.75689896667958*^9, 3.756898985213195*^9}, {3.7568990353554077`*^9, 
+   3.756899047691532*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+
+Cell[BoxData["378158756814587"], "Output",
+ CellChangeTimes->{{3.7313704890957747`*^9, 3.7313705114710016`*^9}, 
+   3.731370638655486*^9, 3.756426391477058*^9, {3.756898964613901*^9, 
+   3.756898970778945*^9}, {3.756899030020151*^9, 3.7568990483554544`*^9}},
+ CellLabel->"Out[21]=",ExpressionUUID->"46122eaf-a431-419d-a7c0-91140c259014"]
+}, Open  ]]
+},
+WindowSize->{1350, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 436, 8, 35, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[997, 30, 514, 8, 35, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[1536, 42, 2615, 58, 414, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[4154, 102, 337, 4, 37, "Output",ExpressionUUID->"46122eaf-a431-419d-a7c0-91140c259014"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,335 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12043,        327]
+NotebookOptionsPosition[     11412,        308]
+NotebookOutlinePosition[     11770,        324]
+CellTagsIndexPosition[     11727,        321]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Let x be a real number.\nA best approximation to x for the denominator \
+bound d is a rational number ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["r", "s"], TraditionalForm]],ExpressionUUID->
+  "266fd452-3616-4563-b55b-530a67f2f453"],
+ " in reduced form, with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"s", "\[LessEqual]", "d"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d8de6b73-c73f-40da-8371-bd133f01302e"],
+ ", such that any rational number which is closer to x than ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["r", "s"], TraditionalForm]],ExpressionUUID->
+  "ff7845ba-076b-4704-897d-e40457e1c7ef"],
+ " has a denominator larger than d:\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[LeftBracketingBar]", 
+      RowBox[{
+       FractionBox["p", "q"], "-", "x"}], "\[RightBracketingBar]"}], "<", 
+     RowBox[{"\[LeftBracketingBar]", 
+      RowBox[{
+       FractionBox["r", "s"], "-", "x"}], "\[RightBracketingBar]"}]}], 
+    "\[DoubleRightArrow]", 
+    RowBox[{"q", ">", "d"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3233fe59-7262-4b27-b72c-ac04a5fa141d"],
+ "\n\nFor example, the best approximation to ",
+ Cell[BoxData[
+  FormBox[
+   SqrtBox["13"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "84adf695-5ac8-4975-b273-a0b4fe3559d8"],
+ " for the denominator bound 20 is ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["18", "5"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "156cba0b-5682-4b85-aad9-cfcbcb8402a0"],
+ " and the best approximation to ",
+ Cell[BoxData[
+  FormBox[
+   SqrtBox["13"], TraditionalForm]],ExpressionUUID->
+  "c014e405-3192-4082-8c3b-7ad87fe0e051"],
+ " for the denominator bound 30 is ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["101", "28"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "58f1ae19-12e8-42ff-8ba7-6b92fd608a61"],
+ ".\n\nFind the sum of all denominators of the best approximations to ",
+ Cell[BoxData[
+  FormBox[
+   SqrtBox["n"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8a9a288b-2077-4f17-9e72-534992a309f4"],
+ " for the denominator bound ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "12"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b7aa8532-1c4e-468b-b8b4-0849e07328dd"],
+ ", where n is not a perfect square and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "<", "n", "\[LessEqual]", "100000"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "648a2716-391d-4e34-b4de-651bf760974e"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.7311943086758394`*^9, 3.731194313287022*^9}, {3.7311943602498064`*^9, 
+  3.731194411126991*^9}, {3.7311947178275657`*^9, 3.7311947554522643`*^9}, {
+  3.7311948337761297`*^9, 
+  3.731194844485124*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "x\:662f\:4e00\:4e2a\:5b9e\:6570\:3002\n\
+\:5bf9\:4e8ex\:ff0c\:5206\:6bcd\:4e0a\:9650\:4e3ad\:7684\:6700\:4f73\:903c\
+\:8fd1\:ff0c\:662f\:4e00\:4e2a\:6700\:7b80\:5206\:6570\:5f62\:5f0f\:7684\:6709\
+\:7406\:6570",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["r", "s"], TraditionalForm]],ExpressionUUID->
+  "88e512e5-40dd-4f59-a41b-b97948788108"],
+ "\:ff0c\:5176\:4e2d",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"s", "\[LessEqual]", "d"}], TraditionalForm]],ExpressionUUID->
+  "3c23fd84-8bde-435d-9712-bb630f9b2569"],
+ "\:ff0c\:4f7f\:5f97\:6240\:6709\:6bd4",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["r", "s"], TraditionalForm]],ExpressionUUID->
+  "c9346719-689f-4b87-b0bc-165b1fdfbc4b"],
+ "\:66f4\:63a5\:8fd1x\:7684\:6709\:7406\:6570\:5176\:6700\:7b80\:5206\:6570\
+\:5f62\:5f0f\:7684\:5206\:6bcd\:90fd\:5927\:4e8ed\:ff1a\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[LeftBracketingBar]", 
+      RowBox[{
+       FractionBox["p", "q"], "-", "x"}], "\[RightBracketingBar]"}], "<", 
+     RowBox[{"\[LeftBracketingBar]", 
+      RowBox[{
+       FractionBox["r", "s"], "-", "x"}], "\[RightBracketingBar]"}]}], 
+    "\[DoubleRightArrow]", 
+    RowBox[{"q", ">", "d"}]}], TraditionalForm]],ExpressionUUID->
+  "55b1843b-98a1-4d31-9c29-e3810d820dc2"],
+ "\n\n\:4f8b\:5982\:ff0c\:5bf9\:4e8e",
+ Cell[BoxData[
+  FormBox[
+   SqrtBox["13"], TraditionalForm]],ExpressionUUID->
+  "8cc6bc08-33e9-404f-b344-b656755a0efa"],
+ "\:ff0c\:5206\:6bcd\:4e0a\:9650\:4e3a20\:7684\:6700\:4f73\:903c\:8fd1\:662f",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["18", "5"], TraditionalForm]],ExpressionUUID->
+  "de70d1c2-f5ac-4df2-9103-468f77418325"],
+ "\:ff0c\:800c\:5206\:6bcd\:4e0a\:9650\:4e3a30\:7684\:6700\:4f73\:903c\:8fd1\
+\:662f",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["101", "28"], TraditionalForm]],ExpressionUUID->
+  "7d16d8b7-b17f-4be3-9c0c-47a315247ec8"],
+ "\:3002\n\n\:5bf9\:4e8e\:6240\:6709\:6ee1\:8db3",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "<", "n", "\[LessEqual]", "100000"}], TraditionalForm]],
+  ExpressionUUID->"bec56942-634b-4d0f-b6ab-f94ef2759e60"],
+ "\:7684\:975e\:5e73\:65b9\:6570n\:ff0c\:627e\:51fa\:5176\:5206\:6bcd\:4e0a\
+\:9650\:4e3a",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "12"], TraditionalForm]],ExpressionUUID->
+  "f96169fa-61f1-4711-b70a-da576fcfc06f"],
+ "\:7684\:6700\:4f73\:903c\:8fd1\:ff0c\:5e76\:6c42\:51fa\:6240\:6709\:8fd9\
+\:4e9b\:6709\:7406\:6570\:7684\:5206\:6bcd\:4e4b\:548c\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.731194326331685*^9, 3.7311943531358113`*^9}, {3.7311948253627872`*^9, 
+   3.731194877155897*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"BestApproximation", "[", 
+    RowBox[{"x_", ",", "q_"}], "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "convergents", ",", "m", ",", "h1", ",", "h2", ",", "k1", ",", "k2", 
+       ",", "semiconvergents"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"convergents", "=", 
+       RowBox[{"Do", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"temp", "=", 
+           RowBox[{"Convergents", "[", 
+            RowBox[{"x", ",", "i"}], "]"}]}], ";", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Denominator", "[", 
+              RowBox[{"temp", "\[LeftDoubleBracket]", 
+               RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "]"}], ">", 
+             "q"}], ",", 
+            RowBox[{
+             RowBox[{"m", "=", "i"}], ";", 
+             RowBox[{"Return", "[", 
+              RowBox[{"Most", "[", "temp", "]"}], "]"}]}]}], "]"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "\[Infinity]"}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"m", "=", 
+       RowBox[{
+        RowBox[{"ContinuedFraction", "[", 
+         RowBox[{"x", ",", "m"}], "]"}], "\[LeftDoubleBracket]", 
+        RowBox[{"-", "1"}], "\[RightDoubleBracket]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"h1", ",", "k1"}], "}"}], "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Numerator", "[", 
+          RowBox[{"convergents", "\[LeftDoubleBracket]", 
+           RowBox[{"-", "2"}], "\[RightDoubleBracket]"}], "]"}], ",", 
+         RowBox[{"Denominator", "[", 
+          RowBox[{"convergents", "\[LeftDoubleBracket]", 
+           RowBox[{"-", "2"}], "\[RightDoubleBracket]"}], "]"}]}], "}"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"h2", ",", "k2"}], "}"}], "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Numerator", "[", 
+          RowBox[{"convergents", "\[LeftDoubleBracket]", 
+           RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "]"}], ",", 
+         RowBox[{"Denominator", "[", 
+          RowBox[{"convergents", "\[LeftDoubleBracket]", 
+           RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], "]"}]}], "}"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"semiconvergents", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         FractionBox[
+          RowBox[{"h1", "+", 
+           RowBox[{"i", " ", "h2"}]}], 
+          RowBox[{"k1", "+", 
+           RowBox[{"i", " ", "k2"}]}]], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "0", ",", 
+           FractionBox[
+            RowBox[{"q", "-", "k1"}], "k2"]}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"MinimalBy", "[", 
+        RowBox[{
+         RowBox[{"Prepend", "[", 
+          RowBox[{"semiconvergents", ",", 
+           RowBox[{"convergents", "\[LeftDoubleBracket]", 
+            RowBox[{"-", "1"}], "\[RightDoubleBracket]"}]}], "]"}], ",", 
+         RowBox[{
+          RowBox[{"N", "[", 
+           RowBox[{
+            RowBox[{"Abs", "[", 
+             RowBox[{"#", "-", "x"}], "]"}], ",", "50"}], "]"}], "&"}]}], 
+        "]"}], "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}]}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Total", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Denominator", "[", 
+     RowBox[{"BestApproximation", "[", 
+      RowBox[{"#", ",", 
+       SuperscriptBox["10", "12"]}], "]"}], "]"}], "&"}], "/@", 
+   RowBox[{"Select", "[", 
+    RowBox[{
+     SqrtBox[
+      RowBox[{"Range", "[", 
+       RowBox[{"2", ",", "100000"}], "]"}]], ",", 
+     RowBox[{
+      RowBox[{"!", 
+       RowBox[{"IntegerQ", "[", "#", "]"}]}], "&"}]}], "]"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->CompressedData["
+1:eJwdzTtIQgEABdBXCEUEDQZKDiVUtIgpUvgaSoiIRCi1D0gq5gssRHiBCjUG
+RmANfYwKi0iztCCl0D4mVEqb2WcQQcmhoKEtFCrzvuFyuNzh8g0WJVVJEASv
+HJj2PnCtf5+yZEjJg14t3QbJ31sJLKnFJGS1cNVM741r4LuW1sPw/ZYRUvFR
+CkrYtAmmH5/MkI6Qa1C9+7YJM5mED56Ynv1QenHksJV1fxeWoDLGWYddOcE2
+JPrGPHDh5tgPf84sWWgYz+fgYIr9BXsEJcbFq4oCTLpERZguvjTYsfNdjVCh
+iTTDQH+UcePaIYTVMU47rF3Jd8CmWWkndAcmFbDVVzMMByZ0enj3KjfCcHZn
+CtbLhqbhgW7EBqOeUzt0pubnYLBO44QfIvcqtHYr9mGGZfbBPeHMIeO5P8j8
+XVaFoDisSkCVfJnxHwq3/QI=
+  "],
+ CellLabel->
+  "In[134]:=",ExpressionUUID->"d611883c-f8db-464b-bee5-7ee98a944d31"],
+
+Cell[BoxData["57060635927998347"], "Output",
+ CellChangeTimes->{
+  3.757292665802788*^9, 3.7572927310446186`*^9, 3.7572927706304345`*^9, {
+   3.757292843698398*^9, 3.7572928940165405`*^9}, 3.757293561772251*^9, {
+   3.7572938129200277`*^9, 3.7572938212067327`*^9}, 3.757293862937216*^9, {
+   3.7572939490337706`*^9, 3.7572939536680455`*^9}, {3.7572940036422405`*^9, 
+   3.757294010332196*^9}, {3.7572943642699203`*^9, 3.757294371125849*^9}, 
+   3.7572944315644107`*^9, {3.75729452657857*^9, 3.7572945342643695`*^9}, 
+   3.7572946997755213`*^9, 3.7572947602340794`*^9, 3.7572948729294815`*^9, 
+   3.757294949977445*^9, 3.757300590096805*^9},
+ CellLabel->
+  "Out[135]=",ExpressionUUID->"93d470bd-3cca-4b76-80a6-857857550232"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2941, 81, 225, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[3502, 103, 2707, 68, 195, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[6234, 175, 4436, 117, 418, "Input",ExpressionUUID->"d611883c-f8db-464b-bee5-7ee98a944d31"],
+Cell[10673, 294, 723, 11, 37, "Output",ExpressionUUID->"93d470bd-3cca-4b76-80a6-857857550232"]
+}, Open  ]]
+}
+]
+*)
+

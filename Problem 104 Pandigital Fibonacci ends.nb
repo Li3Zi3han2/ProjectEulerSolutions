@@ -1,0 +1,271 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9268,        263]
+NotebookOptionsPosition[      8641,        244]
+NotebookOutlinePosition[      8998,        260]
+CellTagsIndexPosition[      8955,        257]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "The Fibonacci sequence is defined by the recurrence relation:\n\n    ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["F", "n"], "=", 
+    RowBox[{
+     SubscriptBox["F", 
+      RowBox[{"n", "-", "1"}]], "+", 
+     SubscriptBox["F", 
+      RowBox[{"n", "-", "2"}]]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "67dbc7e4-b02b-4d2a-8c2f-1cf49d1726e2"],
+ ", where ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["F", "1"], "=", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e4f21748-1cf6-4027-9670-199627bca6ac"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["F", "2"], "=", "1"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a7707cba-3fc1-41ed-823f-824d157bd15c"],
+ ".\n\nIt turns out that ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["F", "541"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "894f36d5-b124-408e-880a-d1045a1de0bf"],
+ ", which contains 113 digits, is the first Fibonacci number for which the \
+last nine digits are 1-9 pandigital (contain all the digits 1 to 9, but not \
+necessarily in order). And ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["F", "2749"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9ba7d21f-233f-4f15-a98e-168f7ec55adf"],
+ ", which contains 575 digits, is the first Fibonacci number for which the \
+first nine digits are 1-9 pandigital.\n\nGiven that ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["F", "k"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cc7c679b-c2f8-4471-9585-f1d653b4b7ce"],
+ " is the first Fibonacci number for which the first nine digits AND the last \
+nine digits are 1-9 pandigital, find k."
+}], "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.7306994279702744`*^9, 
+  3.730699508065274*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell[TextData[{
+ "\:6590\:6ce2\:90a3\:5951\:6570\:5217\:7531\:5982\:4e0b\:9012\:5f52\:5173\
+\:7cfb\:751f\:6210\:ff1a\n\n    ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["F", "n"], "=", 
+    RowBox[{
+     SubscriptBox["F", 
+      RowBox[{"n", "-", "1"}]], "+", 
+     SubscriptBox["F", 
+      RowBox[{"n", "-", "2"}]]}]}], TraditionalForm]],ExpressionUUID->
+  "9513ab13-4d09-4d68-98b4-914485a1d223"],
+ "\:ff0c\:5176\:4e2d",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["F", "1"], "=", "1"}], TraditionalForm]],ExpressionUUID->
+  "64735174-a4dc-4f48-9d1e-cdc5b9dd3e22"],
+ "\:4e14",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["F", "2"], "=", "1"}], TraditionalForm]],ExpressionUUID->
+  "a8c9dce7-7d40-4501-9579-642f2fd3c9cb"],
+ "\:3002\n\n\:53ef\:4ee5\:53d1\:73b0\:ff0c\:5305\:542b\:6709113\:4f4d\:6570\
+\:5b57\:7684",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["F", "541"], TraditionalForm]],ExpressionUUID->
+  "6a7786a5-ec3f-4a6b-8948-3c31d34d803e"],
+ "\:662f\:7b2c\:4e00\:4e2a\:540e9\:4f4d\:6570\:5b57\:662f1\:81f39\:5168\:6570\
+\:5b57\:ff08\:5305\:542b1\:81f39\:6240\:6709\:7684\:6570\:5b57\:ff0c\:4f46\
+\:4e0d\:4e00\:5b9a\:6309\:7167\:4ece\:5c0f\:5230\:5927\:7684\:987a\:5e8f\:ff09\
+\:7684\:6590\:6ce2\:90a3\:5951\:6570\:ff0c\:800c\:5305\:542b\:6709575\:4f4d\
+\:6570\:5b57\:7684",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["F", "2749"], TraditionalForm]],ExpressionUUID->
+  "a883255b-dab9-4855-b32b-1404b942fe3e"],
+ "\:662f\:7b2c\:4e00\:4e2a\:524d9\:4f4d\:6570\:5b57\:662f1\:81f39\:5168\:6570\
+\:5b57\:7684\:6590\:6ce2\:90a3\:5951\:6570\:3002\n\n\:82e5",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["F", "k"], TraditionalForm]],ExpressionUUID->
+  "200dad0e-bded-4bf0-a37a-a1687634854d"],
+ "\:662f\:7b2c\:4e00\:4e2a\:524d9\:4f4d\:6570\:5b57\:548c\:540e9\:4f4d\:6570\
+\:5b57\:90fd\:662f1\:81f39\:5168\:6570\:5b57\:7684\:6590\:6ce2\:90a3\:5951\
+\:6570\:ff0c\:6c42k\:3002"
+}], "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.7306994367561445`*^9, {3.7306995147537746`*^9, 3.730699539956091*^9}, 
+   3.730699598727121*^9},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Fibonacci", "[", "n", "]"}], "=", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        FractionBox[
+         RowBox[{"1", "+", 
+          SqrtBox["5"]}], "2"], ")"}], "n"], "-", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        FractionBox[
+         RowBox[{"1", "-", 
+          SqrtBox["5"]}], "2"], ")"}], "n"]}], 
+     SqrtBox["5"]]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"\:5f53n\:6bd4\:8f83\:5927\:65f6", "\:ff0c", 
+    RowBox[{
+     RowBox[{"Fibonacci", "[", "n", "]"}], 
+     "\:5c06\:4e3b\:8981\:53d6\:51b3\:4e8e\:7b2c\:4e00\:9879"}]}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Mod", "[", 
+     RowBox[{
+      RowBox[{"a", "+", "b"}], ",", "c"}], "]"}], "=", 
+    RowBox[{"Mod", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Mod", "[", 
+        RowBox[{"a", ",", "c"}], "]"}], "+", 
+       RowBox[{"Mod", "[", 
+        RowBox[{"b", ",", "c"}], "]"}]}], ",", "c"}], "]"}]}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"ff", "[", "n_", "]"}], ":=", 
+     RowBox[{"Round", "[", 
+      RowBox[{"N", "[", 
+       FractionBox[
+        SuperscriptBox[
+         RowBox[{"(", 
+          FractionBox[
+           RowBox[{"1", "+", 
+            SqrtBox["5"]}], "2"], ")"}], "n"], 
+        SqrtBox["5"]], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"fl", "[", "n_", "]"}], ":=", 
+     RowBox[{"Mod", "[", 
+      RowBox[{
+       RowBox[{"Fibonacci", "[", "n", "]"}], ",", 
+       SuperscriptBox["10", "9"]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Do", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "=", 
+       RowBox[{"ff", "[", "n", "]"}]}], ";", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"ContainsExactly", "[", 
+         RowBox[{
+          RowBox[{"IntegerDigits", "[", 
+           RowBox[{"Quotient", "[", 
+            RowBox[{"x", ",", 
+             SuperscriptBox["10", 
+              RowBox[{
+               RowBox[{"IntegerLength", "[", "x", "]"}], "-", "9"}]]}], "]"}],
+            "]"}], ",", 
+          RowBox[{"Range", "[", 
+           RowBox[{"1", ",", "9"}], "]"}]}], "]"}], ",", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"ContainsExactly", "[", 
+           RowBox[{
+            RowBox[{"IntegerDigits", "[", 
+             RowBox[{"fl", "[", "n", "]"}], "]"}], ",", 
+            RowBox[{"Range", "[", 
+             RowBox[{"1", ",", "9"}], "]"}]}], "]"}], ",", 
+          RowBox[{"Return", "[", "n", "]"}]}], "]"}]}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "1", ",", "\[Infinity]"}], "}"}]}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBmIQbf7tccjbA68dD9gdjgfRS3p00kC0ntCndBCtVfYw
+G0R/+R9WAKI32Oa3vgPSXz+uAtN1Mj2r9p1+7fhjQ9YuEB1Wk34QRNe8vXMM
+RCu5q/XsB9LLvi4H0y8+v+Q5AKQT6s/xgWi12T80QPSVCnFDED2JSTMeRFco
+/04G0Rc5z5SBaLv8SXUg+rNkfxOIviOzDkyHCTa2g+W3rp8MoiU67i8G0UcO
+/l8JokMygjaC6C++YjtBNF/3s4Ski68dhTROJoHoP18600A07zWLfBA9I/pP
+M4ieHvhhCoi+U3N7AYi+1bd8OYgGADVguEA=
+  "],ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+
+Cell[BoxData["329468"], "Output",
+ CellChangeTimes->{
+  3.7250281599876013`*^9, {3.7250281918871064`*^9, 3.725028227147995*^9}, 
+   3.7250304482388463`*^9, {3.7306996078744173`*^9, 3.7306996273492804`*^9}, 
+   3.7306997326195498`*^9, 3.730699801462895*^9, 3.730700074735916*^9, 
+   3.7307018416155095`*^9, {3.730703352148093*^9, 3.730703381950576*^9}, 
+   3.7307034880918255`*^9, {3.7307036868901987`*^9, 3.730703701044098*^9}, {
+   3.73070378521867*^9, 3.730703817234618*^9}, {3.7336563361333313`*^9, 
+   3.733656343901534*^9}, {3.733656675181835*^9, 3.7336566802138696`*^9}, 
+   3.7336567409299126`*^9, 3.7336568209939384`*^9, 
+   3.7336569963317127`*^9},ExpressionUUID->"d09a056a-2216-48b4-a399-\
+e75d59573ba2"]
+}, Open  ]]
+},
+WindowSize->{1350, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1964, 54, 219, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[2525, 76, 2167, 54, 196, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[4717, 134, 3191, 94, 399, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[7911, 230, 714, 11, 68, "Output",ExpressionUUID->"d09a056a-2216-48b4-a399-e75d59573ba2"]
+}, Open  ]]
+}
+]
+*)
+

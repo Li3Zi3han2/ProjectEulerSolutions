@@ -1,0 +1,200 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7402,        192]
+NotebookOptionsPosition[      6781,        173]
+NotebookOutlinePosition[      7139,        189]
+CellTagsIndexPosition[      7096,        186]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+How many 18-digit numbers n (without leading zeros) are there such that no \
+digit occurs more than three times in n?\
+\>", "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.7313954454235992`*^9, 
+  3.7313954480315304`*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell["\:6709\:591a\:5c11\:4e2a18\:4f4d\:6570n\:ff08\:4e0d\:8003\:8651\:524d\
+\:5bfc\:96f6\:ff09\:6ee1\:8db3\:5728n\:4e2d\:6ca1\:6709\:4e00\:4e2a\:6570\
+\:5b57\:51fa\:73b0\:8d85\:8fc7\:4e09\:6b21\:ff1f", "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, 
+   3.731395457248891*^9},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"c", "=", 
+   RowBox[{"Cases", "[", 
+    RowBox[{
+     RowBox[{"IntegerPartitions", "[", 
+      RowBox[{"18", ",", "10"}], "]"}], ",", 
+     RowBox[{"x_", "/;", 
+      RowBox[{
+       RowBox[{"Max", "[", "x", "]"}], "\[LessEqual]", "3"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"l", "=", 
+   RowBox[{"Union", "/@", "c"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubsuperscriptBox["\[Sum]", 
+   RowBox[{"i", "=", "1"}], 
+   RowBox[{"Length", "[", "c", "]"}]], 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Binomial", "[", 
+       RowBox[{"9", ",", 
+        RowBox[{"Length", "[", 
+         RowBox[{"c", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+         "]"}]}], "]"}], " ", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"Total", "[", 
+         RowBox[{
+          RowBox[{"Tally", "[", 
+           RowBox[{
+           "c", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], "]"}],
+           "\[LeftDoubleBracket]", 
+          RowBox[{"All", ",", "2"}], "\[RightDoubleBracket]"}], "]"}], "!"}], 
+       RowBox[{"Times", "@@", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Tally", "[", 
+            RowBox[{
+            "c", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+            "]"}], "\[LeftDoubleBracket]", 
+           RowBox[{"All", ",", "2"}], "\[RightDoubleBracket]"}], "!"}], 
+         ")"}]}]]}], "+", 
+     RowBox[{
+      RowBox[{"Binomial", "[", 
+       RowBox[{"9", ",", 
+        RowBox[{
+         RowBox[{"Length", "[", 
+          RowBox[{"c", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}],
+           "]"}], "-", "1"}]}], "]"}], " ", 
+      RowBox[{
+       SubsuperscriptBox["\[Sum]", 
+        RowBox[{"j", "=", "1"}], 
+        RowBox[{"Length", "[", 
+         RowBox[{"l", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+         "]"}]], 
+       RowBox[{
+        FractionBox[
+         RowBox[{
+          RowBox[{"Total", "[", 
+           RowBox[{
+            RowBox[{"Tally", "[", 
+             RowBox[{"DeleteCases", "[", 
+              RowBox[{
+               RowBox[{
+               "c", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+               ",", 
+               RowBox[{"l", "\[LeftDoubleBracket]", 
+                RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}], ",", 
+               RowBox[{"{", "1", "}"}], ",", "1"}], "]"}], "]"}], 
+            "\[LeftDoubleBracket]", 
+            RowBox[{"All", ",", "2"}], "\[RightDoubleBracket]"}], "]"}], 
+          "!"}], 
+         RowBox[{"Times", "@@", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Tally", "[", 
+              RowBox[{"DeleteCases", "[", 
+               RowBox[{
+                RowBox[{
+                "c", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+                ",", 
+                RowBox[{"l", "\[LeftDoubleBracket]", 
+                 RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}], ",", 
+                RowBox[{"{", "1", "}"}], ",", "1"}], "]"}], "]"}], 
+             "\[LeftDoubleBracket]", 
+             RowBox[{"All", ",", "2"}], "\[RightDoubleBracket]"}], "!"}], 
+           ")"}]}]], " ", 
+        FractionBox[
+         RowBox[{"18", "-", 
+          RowBox[{"l", "\[LeftDoubleBracket]", 
+           RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}]}], 
+         "18"]}]}]}]}], ")"}], " ", 
+   FractionBox[
+    RowBox[{"18", "!"}], 
+    RowBox[{"Times", "@@", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"c", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+       "!"}], ")"}]}]]}]}]}], "Input",
+ CellChangeTimes->{{3.7313957712508163`*^9, 3.731395777532895*^9}, {
+   3.7313958204691515`*^9, 3.7313958459848337`*^9}, {3.731395995889303*^9, 
+   3.731396003050352*^9}, {3.7313962005093083`*^9, 3.731396202474512*^9}, 
+   3.731396434310075*^9, {3.7313964731887712`*^9, 3.731396485856009*^9}, 
+   3.7313966308770075`*^9, {3.731396889195349*^9, 3.731396891568035*^9}, {
+   3.731396924220731*^9, 3.7313969246382003`*^9}, {3.7313969610951624`*^9, 
+   3.7313969752170343`*^9}, {3.731397496605012*^9, 3.7313975071659007`*^9}, {
+   3.731397554443019*^9, 3.7313976153454714`*^9}, {3.731397905894047*^9, 
+   3.73139791585023*^9}, {3.7313979661147246`*^9, 3.7313979680428915`*^9}, {
+   3.731398034990139*^9, 3.731398053557006*^9}, {3.731398111391013*^9, 
+   3.7313981133812675`*^9}, {3.7313982104344654`*^9, 3.7313982309284997`*^9}, 
+   3.7313983486448298`*^9, 3.7313983828011994`*^9, 3.731399146966734*^9, 
+   3.731399184590475*^9, {3.731400088026867*^9, 3.7314000996327505`*^9}, {
+   3.7314004480346193`*^9, 3.731400475147328*^9}, {3.731400615725591*^9, 
+   3.7314006575961313`*^9}},ExpressionUUID->"200393ac-af1f-4ba0-be29-\
+d2c0e9722f38"],
+
+Cell[BoxData["227485267000992000"], "Output",
+ CellChangeTimes->{
+  3.731396434667494*^9, {3.7313964812178173`*^9, 3.7313964862324333`*^9}, 
+   3.7313966312484245`*^9, 3.7313968918803864`*^9, {3.7313969614665794`*^9, 
+   3.7313969869402122`*^9}, 3.7313975289173284`*^9, {3.731397907397728*^9, 
+   3.7313979164719477`*^9}, 3.7313979708160076`*^9, 3.7313982330849433`*^9, 
+   3.731398348903099*^9, 3.7313984805010295`*^9, 3.7313991474824734`*^9, 
+   3.731399185216464*^9, 3.7313997812876244`*^9, 3.7313999773575134`*^9, 
+   3.7314004890607305`*^9, {3.7314006191916494`*^9, 
+   3.7314006584564233`*^9}},ExpressionUUID->"fce28e1d-4cca-486e-8662-\
+2563ec60be90"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 324, 7, 35, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[885, 29, 388, 6, 35, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[1298, 39, 4807, 119, 239, "Input",ExpressionUUID->"200393ac-af1f-4ba0-be29-d2c0e9722f38"],
+Cell[6108, 160, 657, 10, 68, "Output",ExpressionUUID->"fce28e1d-4cca-486e-8662-2563ec60be90"]
+}, Open  ]]
+}
+]
+*)
+
