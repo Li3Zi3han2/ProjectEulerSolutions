@@ -1,0 +1,104 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3787,         96]
+NotebookOptionsPosition[      3169,         77]
+NotebookOutlinePosition[      3526,         93]
+CellTagsIndexPosition[      3483,         90]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+2520 is the smallest number that can be divided by each of the numbers from 1 \
+to 10 without any remainder.
+
+What is the smallest positive number that is evenly divisible by all of the \
+numbers from 1 to 20?\
+\>", "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+   3.725028473459318*^9, 3.7250284801961555`*^9}, {3.72502968208926*^9, 
+   3.72502968558521*^9}, 3.725030013214984*^9, 3.725030112682036*^9, 
+   3.725030516419236*^9},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell["\<\
+2520\:662f\:53ef\:4ee5\:88ab1\:523010\:4e2d\:6bcf\:4e2a\:6570\:6574\:9664\
+\:7684\:6700\:5c0f\:6570\:5b57\:3002
+
+\:53ef\:4ee5\:540c\:6837\:5730\:88ab1\:523020\:4e2d\:6bcf\:4e2a\:6570\:6574\
+\:9664\:7684\:6700\:5c0f\:6b63\:6570\:662f\:591a\:5c11\:ff1f\
+\>", "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7250296977151575`*^9, 
+   3.7250297384176817`*^9}, {3.7250298443621716`*^9, 
+   3.7250298579866343`*^9}, {3.725030039339078*^9, 3.725030042920444*^9}, {
+   3.725030077306404*^9, 3.7250301759143248`*^9}, 3.7250305327502375`*^9, {
+   3.725030601930706*^9, 3.72503067521985*^9}, {3.7250307093224964`*^9, 
+   3.7250307452423506`*^9}},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LCM", "@@", 
+  RowBox[{"Range", "[", 
+   RowBox[{"1", ",", "20"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7250280071238055`*^9, 3.72502809410141*^9}, {
+  3.725028145392168*^9, 3.725028159564719*^9}, {3.7250281910456743`*^9, 
+  3.7250282267187443`*^9}, {3.7250286197898483`*^9, 3.7250286218020897`*^9}, {
+  3.725028746283649*^9, 3.7250287866305513`*^9}, {3.725028831854048*^9, 
+  3.725028929804706*^9}, {3.7250290743937836`*^9, 3.7250291525482025`*^9}, {
+  3.725029228881976*^9, 3.7250292800154133`*^9}, {3.7250294589483767`*^9, 
+  3.7250294698810997`*^9}, {3.725029558599684*^9, 3.725029577319728*^9}, {
+  3.7250298758924227`*^9, 3.725029935579175*^9}, {3.7250302229045053`*^9, 
+  3.7250304136183543`*^9}, {3.725030759363305*^9, 3.72503075950103*^9}, {
+  3.7250307972093534`*^9, 3.725030797971449*^9}, {3.7250308360418587`*^9, 
+  3.725030854677144*^9}},ExpressionUUID->"20386a64-a558-4827-99f8-\
+04921bede5b8"],
+
+Cell[BoxData["232792560"], "Output",
+ CellChangeTimes->{
+  3.7250295794758034`*^9, 3.725029621789152*^9, {3.725029900533125*^9, 
+   3.7250299362779264`*^9}, 3.7250304166314583`*^9, {3.7250308409142265`*^9, 
+   3.725030855696144*^9}},ExpressionUUID->"6d6ec7c4-ddd5-4289-8632-\
+de5c210eff61"]
+}, Open  ]]
+},
+WindowSize->{1350, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 530, 11, 81, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1091, 33, 808, 15, 81, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[1924, 52, 936, 15, 52, "Input",ExpressionUUID->"20386a64-a558-4827-99f8-04921bede5b8"],
+Cell[2863, 69, 290, 5, 37, "Output",ExpressionUUID->"6d6ec7c4-ddd5-4289-8632-de5c210eff61"]
+}, Open  ]]
+}
+]
+*)
+

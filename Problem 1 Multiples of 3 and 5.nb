@@ -1,0 +1,100 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3212,         92]
+NotebookOptionsPosition[      2594,         73]
+NotebookOutlinePosition[      2952,         89]
+CellTagsIndexPosition[      2909,         86]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we \
+get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+Find the sum of all the multiples of 3 or 5 below 1000.\
+\>", "Text",
+ CellChangeTimes->{{3.7250279304970117`*^9, 3.7250279484658413`*^9}, {
+  3.725028473459318*^9, 3.7250284801961555`*^9}, {3.756426338166428*^9, 
+  3.756426340041151*^9}},ExpressionUUID->"8d5dc51e-a071-405d-a21a-\
+94427f13d78d"],
+
+Cell["\<\
+\:5982\:679c\:6211\:4eec\:5217\:51fa10\:4ee5\:5185\:6240\:67093\:62165\:7684\
+\:500d\:6570\:ff0c\:6211\:4eec\:5c06\:5f97\:52303\:30015\:30016\:548c9\:ff0c\
+\:8fd9\:4e9b\:6570\:7684\:548c\:662f23\:3002
+
+\:6c421000\:4ee5\:5185\:6240\:67093\:62165\:7684\:500d\:6570\:7684\:548c\:3002\
+\>", "Text",
+ CellChangeTimes->{
+  3.725027950998102*^9, {3.7250283246450253`*^9, 3.7250283558422575`*^9}, {
+   3.725028500250637*^9, 3.72502860976897*^9}, {3.7313703918936124`*^9, 
+   3.7313703934405937`*^9}, 
+   3.756426354403901*^9},ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-\
+e4f4d6ba60af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Total", "[", 
+  RowBox[{"Select", "[", 
+   RowBox[{
+    RowBox[{"Range", "[", 
+     RowBox[{"1", ",", 
+      RowBox[{"1000", "-", "1"}]}], "]"}], ",", 
+    RowBox[{
+     RowBox[{"Or", "@@", 
+      RowBox[{"Divisible", "[", 
+       RowBox[{"#", ",", 
+        RowBox[{"{", 
+         RowBox[{"3", ",", "5"}], "}"}]}], "]"}]}], "&"}]}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7313703551425285`*^9, 3.7313703706381073`*^9}, {
+  3.7313704227987633`*^9, 3.7313704540179234`*^9}, {3.731370492850817*^9, 
+  3.731370519113041*^9}, {3.7313706346957855`*^9, 3.7313706495649996`*^9}, {
+  3.7564263646962595`*^9, 3.7564263899753056`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+
+Cell[BoxData["233168"], "Output",
+ CellChangeTimes->{{3.7313704890957747`*^9, 3.7313705114710016`*^9}, 
+   3.731370638655486*^9, 3.756426391477058*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"2b605364-26fb-43a2-947e-dead58ae6085"]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670828\
+\:65e5)",
+StyleDefinitions->"Homework.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 439, 9, 81, "Text",ExpressionUUID->"8d5dc51e-a071-405d-a21a-94427f13d78d"],
+Cell[1000, 31, 585, 12, 81, "Text",ExpressionUUID->"9c8b4bdc-480f-44ee-b76f-e4f4d6ba60af"],
+Cell[CellGroupData[{
+Cell[1610, 47, 736, 18, 52, "Input",ExpressionUUID->"6a7c367e-c1c3-4109-93e6-34add9704799"],
+Cell[2349, 67, 229, 3, 37, "Output",ExpressionUUID->"2b605364-26fb-43a2-947e-dead58ae6085"]
+}, Open  ]]
+}
+]
+*)
+
